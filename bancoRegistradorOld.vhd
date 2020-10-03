@@ -2,10 +2,10 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
-ENTITY bancoRegistrador IS
+ENTITY bancoRegistradorOld IS
   GENERIC (
     ADDR_WIDTH : NATURAL := 4;
-    DATA_WIDTH : NATURAL := 10;
+    DATA_WIDTH : NATURAL := 10
   );
 
   PORT (
@@ -24,10 +24,10 @@ ENTITY bancoRegistrador IS
   );
 END ENTITY;
 
-SIGNAL reg0, reg1, reg2. reg3, reg4, reg5, reg6, reg7 : std_logic_vector(DATA_WIDTH - 1 DOWNTO 0);
-SIGNAL enable0, enable1, enable2, enable3, enable4, enable5, enable6, enable7 : std_logic;
+ARCHITECTURE arch_name OF bancoRegistradorOld IS
 
-ARCHITECTURE arch_name OF entity_name IS
+SIGNAL reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7 : std_logic_vector(DATA_WIDTH - 1 DOWNTO 0);
+SIGNAL enable0, enable1, enable2, enable3, enable4, enable5, enable6, enable7 : std_logic;
 
 BEGIN
   enable0 <= '1' WHEN (end_regC = "0000" AND enable = '1') ELSE
@@ -47,21 +47,21 @@ BEGIN
   enable7 <= '1' WHEN (end_regC = "0111" AND enable = '1') ELSE
     '0';
 
-  R0 : ENTITY work.registradorGenerico GENERIC MAP (larguraDados => DATA_WIDTH)
+  R0 : ENTITY work.registrador GENERIC MAP (larguraDados => DATA_WIDTH)
     PORT MAP(DIN => data_input, DOUT => reg0, ENABLE => enable0, CLK => clk, RST => '0');
-  R1 : ENTITY work.registradorGenerico GENERIC MAP (larguraDados => DATA_WIDTH)
+  R1 : ENTITY work.registrador GENERIC MAP (larguraDados => DATA_WIDTH)
     PORT MAP(DIN => data_input, DOUT => reg1, ENABLE => enable1, CLK => clk, RST => '0');
-  R2 : ENTITY work.registradorGenerico GENERIC MAP (larguraDados => DATA_WIDTH)
+  R2 : ENTITY work.registrador GENERIC MAP (larguraDados => DATA_WIDTH)
     PORT MAP(DIN => data_input, DOUT => reg2, ENABLE => enable2, CLK => clk, RST => '0');
-  R3 : ENTITY work.registradorGenerico GENERIC MAP (larguraDados => DATA_WIDTH)
+  R3 : ENTITY work.registrador GENERIC MAP (larguraDados => DATA_WIDTH)
     PORT MAP(DIN => data_input, DOUT => reg3, ENABLE => enable3, CLK => clk, RST => '0');
-  R4 : ENTITY work.registradorGenerico GENERIC MAP (larguraDados => DATA_WIDTH)
+  R4 : ENTITY work.registrador GENERIC MAP (larguraDados => DATA_WIDTH)
     PORT MAP(DIN => data_input, DOUT => reg4, ENABLE => enable4, CLK => clk, RST => '0');
-  R5 : ENTITY work.registradorGenerico GENERIC MAP (larguraDados => DATA_WIDTH)
+  R5 : ENTITY work.registrador GENERIC MAP (larguraDados => DATA_WIDTH)
     PORT MAP(DIN => data_input, DOUT => reg5, ENABLE => enable5, CLK => clk, RST => '0');
-  R6 : ENTITY work.registradorGenerico GENERIC MAP (larguraDados => DATA_WIDTH)
+  R6 : ENTITY work.registrador GENERIC MAP (larguraDados => DATA_WIDTH)
     PORT MAP(DIN => data_input, DOUT => reg6, ENABLE => enable6, CLK => clk, RST => '0');
-  R7 : ENTITY work.registradorGenerico GENERIC MAP (larguraDados => DATA_WIDTH)
+  R7 : ENTITY work.registrador GENERIC MAP (larguraDados => DATA_WIDTH)
     PORT MAP(DIN => data_input, DOUT => reg7, ENABLE => enable7, CLK => clk, RST => '0');
 
   regA_out <= reg0 WHEN end_regA = "000" ELSE

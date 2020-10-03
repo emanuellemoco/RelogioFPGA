@@ -31,7 +31,7 @@ BEGIN
     PORT MAP(
       CLK => CLOCK_50, palavraControle => palavraControle, entrada_dados => entrada_dados,
       opCode => opCode, data_out => saida_dados, programCounter => progCount, equal_ULA => equal_ULA);
-  opCode => opCode, data_out => saida_dados, programCounter => progCount, equal_ULA => equal_ULA);
 
   UC : ENTITY work.Unidade_Controle GENERIC MAP (DATA_WIDTH => DATA_WIDTH, ADDR_WIDTH => ADDR_WIDTH)
     PORT MAP(CLK => CLOCK_50, opCode => opCode, equal_ULA => equal_ULA, palavraControle => palavraControle);
+END ARCHITECTURE;

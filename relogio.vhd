@@ -9,6 +9,8 @@ ENTITY relogio IS
   );
 
   PORT (
+  
+  CLOCK : IN std_logic
 
   );
 END ENTITY;

@@ -12,6 +12,15 @@ ENTITY memoriaROM IS
         Dado : OUT std_logic_vector (dataWidth - 1 DOWNTO 0)
     );
 END ENTITY;
+  ---------------INSTRUÇÕES---------------
+  ----------------------------------------
+  -- leaw -----------------------------0000   
+  -- add  -----------------------------0001     
+  -- inc  -----------------------------0011
+  -- je   -----------------------------0100         
+  -- load -----------------------------0101
+  -- jmp  -----------------------------0110
+  -- store-----------------------------0111
 
 ARCHITECTURE assincrona OF memoriaROM IS
 
@@ -21,14 +30,16 @@ ARCHITECTURE assincrona OF memoriaROM IS
         RETURN blocoMemoria IS VARIABLE tmp : blocoMemoria := (OTHERS => (OTHERS => '0'));
     BEGIN
         -- Inicializa os endereços:
-        tmp(0) := x"AA";
-        tmp(1) := x"42";
-        tmp(2) := x"43";
-        tmp(3) := x"44";
-        tmp(4) := x"45";
-        tmp(5) := x"46";
-        tmp(6) := x"47";
-        tmp(7) := x"55";
+        tmp(0) := b"0101" & b"0000" & b"0000" & b"0000" & b"0000010001" ;
+        tmp(1) := b"0111" & b"0000" & b"0000" & b"0000" & b"00" & x"FF";
+        tmp(2) := b"0110" & b"0000" & b"0000" & b"0000" & b"0000000000";
+        --tmp(1) := x"42";
+        --tmp(2) := x"43";
+        --tmp(3) := x"44";
+        --tmp(4) := x"45";
+        --tmp(5) := x"46";
+        --tmp(6) := x"47";
+        --tmp(7) := x"55";
         RETURN tmp;
     END initMemory;
 

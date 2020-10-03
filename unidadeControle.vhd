@@ -68,14 +68,14 @@ BEGIN
     '0';
   selMuxULAImed <= '1' WHEN opcode = "0001" ELSE
     '0';
-  habEscritaRegistrador <= '1' WHEN opcode = "0000" OR opcode = "0001" OR opcode = "0101" ELSE
-    0;
-  ULA <= "010" opcode = "0000" ELSE
-    "000" opcode = "0001" ELSE
-    "100" opcode = "0011" ELSE
+  HabEscritaReg <= '1' WHEN opcode = "0000" OR opcode = "0001" OR opcode = "0101" ELSE
+    '0';
+  selOperacaoULA <= "010" WHEN opcode = "0000" ELSE
+    "000" WHEN opcode = "0001" ELSE
+    "100" WHEN opcode = "0011" ELSE
     "010";
   selMuxProxPC <= '1' WHEN opcode = "0110" OR (opCode = "0100" AND equal_ULA = '1') ELSE
-    0;
+    '0';
   -- Para instanciar, a atribuição de sinais (e generics) segue a ordem: (nomeSinalArquivoDefinicaoComponente => nomeSinalNesteArquivo)
   -- regA:  entity work.nome_do_componente generic map (DATA_WIDTH => DATA_WIDTH)
   --        port map (dataIN => dataIN, dataOUT =>  RegAmuxA, enable =>  habRegA, clk =>  clk, rst => rst);

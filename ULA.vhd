@@ -23,18 +23,21 @@ ARCHITECTURE comportamento OF ULA IS
   SIGNAL op_or : STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
   SIGNAL op_xor : STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
   SIGNAL op_not : STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
+  SIGNAL op_inc : STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
+  SIGNAL ULAout : STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
 
-BEGIN
+      BEGIN
   soma <= STD_LOGIC_VECTOR(unsigned(entradaA) + unsigned(entradaB));
   sub <= STD_LOGIC_VECTOR(unsigned(entradaA) - unsigned(entradaB));
   op_and <= entradaA AND entradaB;
   op_or <= entradaA OR entradaB;
-  op_inc <= entradaA + 1;
+  op_inc <= STD_LOGIC_VECTOR(to_unsigned(to_integer(unsigned(entradaA)) + 1,10));
+ 
   --equal     <= entradaA = entradaB;
   --     op_xor    <= entradaA xor entradaB;
   --      op_not    <= not entradaA;
 
-  saida <= soma WHEN (seletor = "000") ELSE
+  ULAout <= soma WHEN (seletor = "000") ELSE
     sub WHEN (seletor = "001") ELSE
     entradaA WHEN (seletor = "010") ELSE
     entradaB WHEN (seletor = "011") ELSE
@@ -46,7 +49,8 @@ BEGIN
 
     entradaA; -- outra opcao: saida = entradaA
 
-  flagZero <= '1' WHEN unsigned(saida) = unsigned(zero) ELSE
+  flagZero <= '1' WHEN (seletor= "001") and (unsigned(ULAout) = unsigned(zero)) ELSE
     '0';
+    saida <= ULAout;
 
 END ARCHITECTURE;
