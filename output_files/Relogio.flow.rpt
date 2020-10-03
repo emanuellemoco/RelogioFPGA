@@ -1,5 +1,5 @@
 Flow report for Relogio
-Sun Sep 27 16:15:56 2020
+Sat Oct  3 17:08:19 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -37,24 +37,29 @@ refer to the applicable agreement for further details.
 
 
 
-+---------------------------------------------------------------------------+
-; Flow Summary                                                              ;
-+-----------------------------+---------------------------------------------+
-; Flow Status                 ; Flow Failed - Sun Sep 27 16:15:56 2020      ;
-; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
-; Revision Name               ; Relogio                                     ;
-; Top-level Entity Name       ; relogio                                     ;
-; Family                      ; Cyclone V                                   ;
-; Device                      ; 5CEBA4F23C7                                 ;
-; Timing Models               ; Final                                       ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
-; Total registers             ; N/A until Partition Merge                   ;
-; Total pins                  ; N/A until Partition Merge                   ;
-; Total virtual pins          ; N/A until Partition Merge                   ;
-; Total block memory bits     ; N/A until Partition Merge                   ;
-; Total PLLs                  ; N/A until Partition Merge                   ;
-; Total DLLs                  ; N/A until Partition Merge                   ;
-+-----------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------+
+; Flow Summary                                                                  ;
++---------------------------------+---------------------------------------------+
+; Flow Status                     ; Successful - Sat Oct  3 17:08:19 2020       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; Relogio                                     ;
+; Top-level Entity Name           ; CPU                                         ;
+; Family                          ; Cyclone V                                   ;
+; Device                          ; 5CEBA4F23C7                                 ;
+; Timing Models                   ; Final                                       ;
+; Logic utilization (in ALMs)     ; 1 / 18,480 ( < 1 % )                        ;
+; Total registers                 ; 0                                           ;
+; Total pins                      ; 31 / 224 ( 14 % )                           ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0 / 3,153,920 ( 0 % )                       ;
+; Total DSP Blocks                ; 0 / 66 ( 0 % )                              ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0 / 4 ( 0 % )                               ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
++---------------------------------+---------------------------------------------+
 
 
 +-----------------------------------------+
@@ -62,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/27/2020 16:15:46 ;
+; Start date & time ; 10/03/2020 17:02:20 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Relogio             ;
 +-------------------+---------------------+
@@ -73,16 +78,19 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 110425377442705.160123414627108        ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 110425377442705.160175534032284        ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --             ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --             ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; relogio     ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; relogio     ; Top            ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; relogio     ; Top            ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; CPU         ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; CPU         ; Top            ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; CPU         ; Top            ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --             ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --             ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --             ;
+; TOP_LEVEL_ENTITY                    ; CPU                                    ; Relogio       ; --          ; --             ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 
 
@@ -91,8 +99,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:01:05     ; 1.0                     ; 988 MB              ; 00:00:28                           ;
-; Total                ; 00:01:05     ; --                      ; --                  ; 00:00:28                           ;
+; Analysis & Synthesis ; 00:01:06     ; 1.0                     ; 995 MB              ; 00:00:30                           ;
+; Fitter               ; 00:01:24     ; 1.0                     ; 2078 MB             ; 00:00:26                           ;
+; Assembler            ; 00:01:20     ; 1.0                     ; 929 MB              ; 00:00:04                           ;
+; Timing Analyzer      ; 00:00:59     ; 1.0                     ; 1091 MB             ; 00:00:04                           ;
+; EDA Netlist Writer   ; 00:00:56     ; 1.0                     ; 1105 MB             ; 00:00:01                           ;
+; Total                ; 00:05:45     ; --                      ; --                  ; 00:01:05                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -102,6 +114,10 @@ refer to the applicable agreement for further details.
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
 ; Analysis & Synthesis ; arch             ; Arch Linux ; Arch Linux ; x86_64         ;
+; Fitter               ; arch             ; Arch Linux ; Arch Linux ; x86_64         ;
+; Assembler            ; arch             ; Arch Linux ; Arch Linux ; x86_64         ;
+; Timing Analyzer      ; arch             ; Arch Linux ; Arch Linux ; x86_64         ;
+; EDA Netlist Writer   ; arch             ; Arch Linux ; Arch Linux ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -109,6 +125,10 @@ refer to the applicable agreement for further details.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off Relogio -c Relogio
+quartus_fit --read_settings_files=off --write_settings_files=off Relogio -c Relogio
+quartus_asm --read_settings_files=off --write_settings_files=off Relogio -c Relogio
+quartus_sta Relogio -c Relogio
+quartus_eda --read_settings_files=off --write_settings_files=off Relogio -c Relogio
 
 
 

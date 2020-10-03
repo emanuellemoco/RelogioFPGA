@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Relogio
-Sun Sep 27 16:15:56 2020
+Sat Oct  3 17:02:31 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -10,7 +10,28 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Parameter Settings for User Entity Instance: Top-level Entity: |CPU
+ 10. Parameter Settings for User Entity Instance: Fluxo_Dados:FD
+ 11. Parameter Settings for User Entity Instance: Fluxo_Dados:FD|registrador:PC
+ 12. Parameter Settings for User Entity Instance: Fluxo_Dados:FD|mux2x1:MuxProxPC
+ 13. Parameter Settings for User Entity Instance: Fluxo_Dados:FD|mux2x1:muxRAM_Imediato
+ 14. Parameter Settings for User Entity Instance: Fluxo_Dados:FD|mux2x1:muxULA_Imediato
+ 15. Parameter Settings for User Entity Instance: Fluxo_Dados:FD|somaConstante:somaUm
+ 16. Parameter Settings for User Entity Instance: Fluxo_Dados:FD|memoriaROM:ROM
+ 17. Parameter Settings for User Entity Instance: Fluxo_Dados:FD|bancoRegistrador:bancoReg
+ 18. Parameter Settings for User Entity Instance: Fluxo_Dados:FD|ULA:ULA
+ 19. Parameter Settings for User Entity Instance: Unidade_Controle:UC
+ 20. Port Connectivity Checks: "Fluxo_Dados:FD|memoriaROM:ROM"
+ 21. Port Connectivity Checks: "Fluxo_Dados:FD|mux2x1:muxULA_Imediato"
+ 22. Port Connectivity Checks: "Fluxo_Dados:FD|registrador:PC"
+ 23. Port Connectivity Checks: "Fluxo_Dados:FD"
+ 24. Post-Synthesis Netlist Statistics for Top Partition
+ 25. Elapsed Time Per Partition
+ 26. Analysis & Synthesis Messages
 
 
 
@@ -33,22 +54,27 @@ refer to the applicable agreement for further details.
 
 
 
-+---------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                              ;
-+-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Sun Sep 27 16:15:56 2020           ;
-; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
-; Revision Name               ; Relogio                                     ;
-; Top-level Entity Name       ; relogio                                     ;
-; Family                      ; Cyclone V                                   ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
-; Total registers             ; N/A until Partition Merge                   ;
-; Total pins                  ; N/A until Partition Merge                   ;
-; Total virtual pins          ; N/A until Partition Merge                   ;
-; Total block memory bits     ; N/A until Partition Merge                   ;
-; Total PLLs                  ; N/A until Partition Merge                   ;
-; Total DLLs                  ; N/A until Partition Merge                   ;
-+-----------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sat Oct  3 17:02:31 2020       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; Relogio                                     ;
+; Top-level Entity Name           ; CPU                                         ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 0                                           ;
+; Total pins                      ; 31                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -57,7 +83,7 @@ refer to the applicable agreement for further details.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CEBA4F23C7        ;                    ;
-; Top-level entity name                                                           ; relogio            ; Relogio            ;
+; Top-level entity name                                                           ; CPU                ; Relogio            ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -154,49 +180,367 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                  ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                           ; Library ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------+---------+
+; bancoRegistrador.vhd             ; yes             ; User VHDL File  ; /home/leo/Desktop/DesComp/Projeto/bancoRegistrador.vhd ;         ;
+; fluxoDados.vhd                   ; yes             ; User VHDL File  ; /home/leo/Desktop/DesComp/Projeto/fluxoDados.vhd       ;         ;
+; unidadeControle.vhd              ; yes             ; User VHDL File  ; /home/leo/Desktop/DesComp/Projeto/unidadeControle.vhd  ;         ;
+; mux2x1.vhd                       ; yes             ; User VHDL File  ; /home/leo/Desktop/DesComp/Projeto/mux2x1.vhd           ;         ;
+; somador.vhd                      ; yes             ; User VHDL File  ; /home/leo/Desktop/DesComp/Projeto/somador.vhd          ;         ;
+; ULA.vhd                          ; yes             ; User VHDL File  ; /home/leo/Desktop/DesComp/Projeto/ULA.vhd              ;         ;
+; registrador.vhd                  ; yes             ; User VHDL File  ; /home/leo/Desktop/DesComp/Projeto/registrador.vhd      ;         ;
+; memoriaROM.vhd                   ; yes             ; User VHDL File  ; /home/leo/Desktop/DesComp/Projeto/memoriaROM.vhd       ;         ;
+; CPU.vhd                          ; yes             ; User VHDL File  ; /home/leo/Desktop/DesComp/Projeto/CPU.vhd              ;         ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------+---------+
+
+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Estimate of Logic utilization (ALMs needed) ; 0        ;
+;                                             ;          ;
+; Combinational ALUT usage for logic          ; 0        ;
+;     -- 7 input functions                    ; 0        ;
+;     -- 6 input functions                    ; 0        ;
+;     -- 5 input functions                    ; 0        ;
+;     -- 4 input functions                    ; 0        ;
+;     -- <=3 input functions                  ; 0        ;
+;                                             ;          ;
+; Dedicated logic registers                   ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 31       ;
+;                                             ;          ;
+; Total DSP Blocks                            ; 0        ;
+;                                             ;          ;
+; Maximum fan-out node                        ; CLOCK_50 ;
+; Maximum fan-out                             ; 1        ;
+; Total fan-out                               ; 31       ;
+; Average fan-out                             ; 0.50     ;
++---------------------------------------------+----------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; |CPU                       ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 31   ; 0            ; |CPU                ; CPU         ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |CPU ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; DATA_WIDTH     ; 10    ; Signed Integer                             ;
+; ADDR_WIDTH     ; 12    ; Signed Integer                             ;
+; ROM_DATA_WIDTH ; 26    ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Fluxo_Dados:FD ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; data_width     ; 10    ; Signed Integer                     ;
+; rom_data_width ; 26    ; Signed Integer                     ;
+; addr_width     ; 12    ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Fluxo_Dados:FD|registrador:PC ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; larguradados   ; 12    ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Fluxo_Dados:FD|mux2x1:MuxProxPC ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; larguradados   ; 12    ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Fluxo_Dados:FD|mux2x1:muxRAM_Imediato ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; larguradados   ; 10    ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Fluxo_Dados:FD|mux2x1:muxULA_Imediato ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; larguradados   ; 10    ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Fluxo_Dados:FD|somaConstante:somaUm ;
++----------------+-------+---------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                    ;
++----------------+-------+---------------------------------------------------------+
+; larguradados   ; 12    ; Signed Integer                                          ;
+; constante      ; 1     ; Signed Integer                                          ;
++----------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Fluxo_Dados:FD|memoriaROM:ROM ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; datawidth      ; 26    ; Signed Integer                                    ;
+; addrwidth      ; 12    ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Fluxo_Dados:FD|bancoRegistrador:bancoReg ;
++---------------------+-------+---------------------------------------------------------+
+; Parameter Name      ; Value ; Type                                                    ;
++---------------------+-------+---------------------------------------------------------+
+; larguradados        ; 10    ; Signed Integer                                          ;
+; larguraendbancoregs ; 4     ; Signed Integer                                          ;
++---------------------+-------+---------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Fluxo_Dados:FD|ULA:ULA ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; larguradados   ; 10    ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Unidade_Controle:UC ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; data_width     ; 10    ; Signed Integer                          ;
+; addr_width     ; 12    ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Fluxo_Dados:FD|memoriaROM:ROM"                                                              ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; dado[25..22] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Fluxo_Dados:FD|mux2x1:muxULA_Imediato"                                                   ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; saida_mux ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "Fluxo_Dados:FD|registrador:PC" ;
++--------+-------+----------+-------------------------------+
+; Port   ; Type  ; Severity ; Details                       ;
++--------+-------+----------+-------------------------------+
+; enable ; Input ; Info     ; Stuck at VCC                  ;
+; rst    ; Input ; Info     ; Stuck at GND                  ;
++--------+-------+----------+-------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Fluxo_Dados:FD"                                                                               ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; programcounter ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_lcell_comb     ; 1                           ;
+;     normal            ; 1                           ;
+;         0 data inputs ; 1                           ;
+; boundary_port         ; 31                          ;
+;                       ;                             ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun Sep 27 16:14:51 2020
+    Info: Processing started: Sat Oct  3 17:01:25 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Relogio -c Relogio
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Error (10500): VHDL syntax error at relogio.vhd(16) near text "<";  expecting an identifier, or "constant", or "file", or "signal", or "variable" File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 16
-Error (10500): VHDL syntax error at relogio.vhd(23) near text "<";  expecting an identifier, or "constant", or "file", or "signal", or "variable" File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 23
-Info (12021): Found 0 design units, including 0 entities, in source file relogio.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file bancoRegistrador.vhd
+    Info (12022): Found design unit 1: bancoRegistrador-comportamento File: /home/leo/Desktop/DesComp/Projeto/bancoRegistrador.vhd Line: 24
+    Info (12023): Found entity 1: bancoRegistrador File: /home/leo/Desktop/DesComp/Projeto/bancoRegistrador.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file bancoRegistradorOld.vhd
+    Info (12022): Found design unit 1: bancoRegistradorOld-arch_name File: /home/leo/Desktop/DesComp/Projeto/bancoRegistradorOld.vhd Line: 27
+    Info (12023): Found entity 1: bancoRegistradorOld File: /home/leo/Desktop/DesComp/Projeto/bancoRegistradorOld.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file fluxoDados.vhd
+    Info (12022): Found design unit 1: Fluxo_Dados-arch_name File: /home/leo/Desktop/DesComp/Projeto/fluxoDados.vhd Line: 26
+    Info (12023): Found entity 1: Fluxo_Dados File: /home/leo/Desktop/DesComp/Projeto/fluxoDados.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file unidadeControle.vhd
+    Info (12022): Found design unit 1: Unidade_Controle-arch_name File: /home/leo/Desktop/DesComp/Projeto/unidadeControle.vhd Line: 21
+    Info (12023): Found entity 1: Unidade_Controle File: /home/leo/Desktop/DesComp/Projeto/unidadeControle.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file relogio.vhd
+    Info (12022): Found design unit 1: relogio-arch_name File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 17
+    Info (12023): Found entity 1: relogio File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file mux2x1.vhd
     Info (12022): Found design unit 1: mux2x1-comportamento File: /home/leo/Desktop/DesComp/Projeto/mux2x1.vhd Line: 14
     Info (12023): Found entity 1: mux2x1 File: /home/leo/Desktop/DesComp/Projeto/mux2x1.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file hex.vhd
-    Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: /home/leo/Desktop/DesComp/Projeto/hex.vhd Line: 17
+    Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: /home/leo/Desktop/DesComp/Projeto/hex.vhd Line: 16
     Info (12023): Found entity 1: conversorHex7Seg File: /home/leo/Desktop/DesComp/Projeto/hex.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file somador.vhd
-    Info (12022): Found design unit 1: somaConstante-comportamento File: /home/leo/Desktop/DesComp/Projeto/somador.vhd Line: 18
+    Info (12022): Found design unit 1: somaConstante-comportamento File: /home/leo/Desktop/DesComp/Projeto/somador.vhd Line: 16
     Info (12023): Found entity 1: somaConstante File: /home/leo/Desktop/DesComp/Projeto/somador.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file ULA.vhd
-    Info (12022): Found design unit 1: ULA-comportamento File: /home/leo/Desktop/DesComp/Projeto/ULA.vhd Line: 19
+    Info (12022): Found design unit 1: ULA-comportamento File: /home/leo/Desktop/DesComp/Projeto/ULA.vhd Line: 17
     Info (12023): Found entity 1: ULA File: /home/leo/Desktop/DesComp/Projeto/ULA.vhd Line: 5
 Info (12021): Found 4 design units, including 1 entities, in source file divisor.vhd
-    Info (12022): Found design unit 1: divisorTempo-divPor2 File: /home/leo/Desktop/DesComp/Projeto/divisor.vhd Line: 16
-    Info (12022): Found design unit 2: divisorTempo-divPotenciaDe2 File: /home/leo/Desktop/DesComp/Projeto/divisor.vhd Line: 31
-    Info (12022): Found design unit 3: divisorTempo-divInteiro File: /home/leo/Desktop/DesComp/Projeto/divisor.vhd Line: 46
+    Info (12022): Found design unit 1: divisorTempo-divPor2 File: /home/leo/Desktop/DesComp/Projeto/divisor.vhd Line: 15
+    Info (12022): Found design unit 2: divisorTempo-divPotenciaDe2 File: /home/leo/Desktop/DesComp/Projeto/divisor.vhd Line: 30
+    Info (12022): Found design unit 3: divisorTempo-divInteiro File: /home/leo/Desktop/DesComp/Projeto/divisor.vhd Line: 45
     Info (12023): Found entity 1: divisorTempo File: /home/leo/Desktop/DesComp/Projeto/divisor.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file registrador.vhd
-    Info (12022): Found design unit 1: registrador-comportamento File: /home/leo/Desktop/DesComp/Projeto/registrador.vhd Line: 15
+    Info (12022): Found design unit 1: registrador-comportamento File: /home/leo/Desktop/DesComp/Projeto/registrador.vhd Line: 16
     Info (12023): Found entity 1: registrador File: /home/leo/Desktop/DesComp/Projeto/registrador.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file memoriaROM.vhd
-    Info (12022): Found design unit 1: memoriaROM-assincrona File: /home/leo/Desktop/DesComp/Projeto/memoriaROM.vhd Line: 16
+    Info (12022): Found design unit 1: memoriaROM-assincrona File: /home/leo/Desktop/DesComp/Projeto/memoriaROM.vhd Line: 25
     Info (12023): Found entity 1: memoriaROM File: /home/leo/Desktop/DesComp/Projeto/memoriaROM.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file memoriaRAM.vhd
-    Info (12022): Found design unit 1: memoriaRAM-rtl File: /home/leo/Desktop/DesComp/Projeto/memoriaRAM.vhd Line: 20
+    Info (12022): Found design unit 1: memoriaRAM-rtl File: /home/leo/Desktop/DesComp/Projeto/memoriaRAM.vhd Line: 19
     Info (12023): Found entity 1: memoriaRAM File: /home/leo/Desktop/DesComp/Projeto/memoriaRAM.vhd Line: 5
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 1 warning
-    Error: Peak virtual memory: 988 megabytes
-    Error: Processing ended: Sun Sep 27 16:15:56 2020
-    Error: Elapsed time: 00:01:05
-    Error: Total CPU time (on all processors): 00:00:28
+Info (12021): Found 2 design units, including 1 entities, in source file CPU.vhd
+    Info (12022): Found design unit 1: CPU-arch_name File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 22
+    Info (12023): Found entity 1: CPU File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 5
+Info (12127): Elaborating entity "CPU" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at CPU.vhd(18): used implicit default value for signal "decodificadorEnd" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 18
+Warning (10036): Verilog HDL or VHDL warning at CPU.vhd(23): object "progCount" assigned a value but never read File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 23
+Info (12128): Elaborating entity "Fluxo_Dados" for hierarchy "Fluxo_Dados:FD" File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 30
+Warning (10541): VHDL Signal Declaration warning at fluxoDados.vhd(20): used implicit default value for signal "opCode" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/leo/Desktop/DesComp/Projeto/fluxoDados.vhd Line: 20
+Warning (10541): VHDL Signal Declaration warning at fluxoDados.vhd(21): used implicit default value for signal "data_out" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/leo/Desktop/DesComp/Projeto/fluxoDados.vhd Line: 21
+Warning (10541): VHDL Signal Declaration warning at fluxoDados.vhd(22): used implicit default value for signal "programCounter" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/leo/Desktop/DesComp/Projeto/fluxoDados.vhd Line: 22
+Warning (10036): Verilog HDL or VHDL warning at fluxoDados.vhd(31): object "saida_muxULAImed" assigned a value but never read File: /home/leo/Desktop/DesComp/Projeto/fluxoDados.vhd Line: 31
+Info (12128): Elaborating entity "registrador" for hierarchy "Fluxo_Dados:FD|registrador:PC" File: /home/leo/Desktop/DesComp/Projeto/fluxoDados.vhd Line: 53
+Info (12128): Elaborating entity "mux2x1" for hierarchy "Fluxo_Dados:FD|mux2x1:MuxProxPC" File: /home/leo/Desktop/DesComp/Projeto/fluxoDados.vhd Line: 56
+Info (12128): Elaborating entity "mux2x1" for hierarchy "Fluxo_Dados:FD|mux2x1:muxRAM_Imediato" File: /home/leo/Desktop/DesComp/Projeto/fluxoDados.vhd Line: 60
+Info (12128): Elaborating entity "somaConstante" for hierarchy "Fluxo_Dados:FD|somaConstante:somaUm" File: /home/leo/Desktop/DesComp/Projeto/fluxoDados.vhd Line: 69
+Info (12128): Elaborating entity "memoriaROM" for hierarchy "Fluxo_Dados:FD|memoriaROM:ROM" File: /home/leo/Desktop/DesComp/Projeto/fluxoDados.vhd Line: 72
+Info (12128): Elaborating entity "bancoRegistrador" for hierarchy "Fluxo_Dados:FD|bancoRegistrador:bancoReg" File: /home/leo/Desktop/DesComp/Projeto/fluxoDados.vhd Line: 77
+Info (12128): Elaborating entity "ULA" for hierarchy "Fluxo_Dados:FD|ULA:ULA" File: /home/leo/Desktop/DesComp/Projeto/fluxoDados.vhd Line: 84
+Info (12128): Elaborating entity "Unidade_Controle" for hierarchy "Unidade_Controle:UC" File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 35
+Warning (10873): Using initial value X (don't care) for net "palavraControle[1..0]" at unidadeControle.vhd(18) File: /home/leo/Desktop/DesComp/Projeto/unidadeControle.vhd Line: 18
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "decodificadorEnd[0]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 18
+    Warning (13410): Pin "decodificadorEnd[1]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 18
+    Warning (13410): Pin "decodificadorEnd[2]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 18
+    Warning (13410): Pin "decodificadorEnd[3]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 18
+    Warning (13410): Pin "decodificadorEnd[4]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 18
+    Warning (13410): Pin "decodificadorEnd[5]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 18
+    Warning (13410): Pin "decodificadorEnd[6]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 18
+    Warning (13410): Pin "decodificadorEnd[7]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 18
+    Warning (13410): Pin "decodificadorEnd[8]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 18
+    Warning (13410): Pin "decodificadorEnd[9]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 18
+    Warning (13410): Pin "saida_dados[0]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 19
+    Warning (13410): Pin "saida_dados[1]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 19
+    Warning (13410): Pin "saida_dados[2]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 19
+    Warning (13410): Pin "saida_dados[3]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 19
+    Warning (13410): Pin "saida_dados[4]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 19
+    Warning (13410): Pin "saida_dados[5]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 19
+    Warning (13410): Pin "saida_dados[6]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 19
+    Warning (13410): Pin "saida_dados[7]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 19
+    Warning (13410): Pin "saida_dados[8]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 19
+    Warning (13410): Pin "saida_dados[9]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 19
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 11 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLOCK_50" File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 14
+    Warning (15610): No output dependent on input pin "entrada_dados[0]" File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 15
+    Warning (15610): No output dependent on input pin "entrada_dados[1]" File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 15
+    Warning (15610): No output dependent on input pin "entrada_dados[2]" File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 15
+    Warning (15610): No output dependent on input pin "entrada_dados[3]" File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 15
+    Warning (15610): No output dependent on input pin "entrada_dados[4]" File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 15
+    Warning (15610): No output dependent on input pin "entrada_dados[5]" File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 15
+    Warning (15610): No output dependent on input pin "entrada_dados[6]" File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 15
+    Warning (15610): No output dependent on input pin "entrada_dados[7]" File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 15
+    Warning (15610): No output dependent on input pin "entrada_dados[8]" File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 15
+    Warning (15610): No output dependent on input pin "entrada_dados[9]" File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 15
+Info (21057): Implemented 31 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
+    Info (21059): Implemented 20 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 41 warnings
+    Info: Peak virtual memory: 996 megabytes
+    Info: Processing ended: Sat Oct  3 17:02:31 2020
+    Info: Elapsed time: 00:01:06
+    Info: Total CPU time (on all processors): 00:00:30
 
 
