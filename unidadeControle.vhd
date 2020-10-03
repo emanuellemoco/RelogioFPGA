@@ -57,7 +57,7 @@ BEGIN
   --  001 ULA (sub)
 
   --  jmp 0110
-  -- 1 selMuxPselMuxProxPCC
+  -- 1 selMuxPselMuxProxPCCee
 
   --  store 0111->  xxxxxxx
 
@@ -68,7 +68,7 @@ BEGIN
     '0';
   selMuxULAImed <= '1' WHEN opcode = "0001" ELSE
     '0';
-  HabEscritaReg <= '1' WHEN opcode = "0000" OR opcode = "0001" OR opcode = "0101" ELSE
+  HabEscritaReg <= '1' WHEN opcode = "0000" OR opcode = "0001" OR opcode = "0101" OR opcode = "0011" ELSE 
     '0';
   selOperacaoULA <= "010" WHEN opcode = "0000" ELSE
     "000" WHEN opcode = "0001" ELSE

@@ -29,9 +29,11 @@ ARCHITECTURE arch_name OF CPU IS
 BEGIN
   FD : ENTITY work.Fluxo_Dados GENERIC MAP (DATA_WIDTH => DATA_WIDTH, ROM_DATA_WIDTH => ROM_DATA_WIDTH, ADDR_WIDTH => ADDR_WIDTH)
     PORT MAP(
-      CLK => CLOCK_50, palavraControle => palavraControle, entrada_dados => entrada_dados,
+      CLK => CLOCK_50, palavraControle => palavraControle, entrada_dados => "0000000010",
       opCode => opCode, data_out => saida_dados, programCounter => progCount, equal_ULA => equal_ULA);
 
   UC : ENTITY work.Unidade_Controle GENERIC MAP (DATA_WIDTH => DATA_WIDTH, ADDR_WIDTH => ADDR_WIDTH)
     PORT MAP(CLK => CLOCK_50, opCode => opCode, equal_ULA => equal_ULA, palavraControle => palavraControle);
+
+    decodificadorEnd <= opcode & "000000";
 END ARCHITECTURE;

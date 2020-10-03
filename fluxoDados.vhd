@@ -77,7 +77,7 @@ BEGIN
   bancoReg : ENTITY work.bancoRegistrador GENERIC MAP (larguraDados => DATA_WIDTH, larguraEndBancoRegs => 4)
     PORT MAP(
       CLK => clk, enderecoA => Instrucao(21 DOWNTO 18), enderecoB => Instrucao(17 DOWNTO 14), enderecoC =>
-      Instrucao(13 DOWNTO 10), dadoEscritaC => saidaULA, escreveC => HabEscritaReg, saidaA => regA, saidaB => regB);
+      Instrucao(13 DOWNTO 10), dadoEscritaC => saida_muxULAImed, escreveC => HabEscritaReg, saidaA => regA, saidaB => regB);
 
   -- old:port map (enable => HabEscritaReg , CLK=> clk,  end_regA => Instrucao(21 downto 18), end_regB =>Instrucao(17 downto 14) , data_input => saidaULA , regA_out => regA , regB_out => regB);
 
@@ -88,4 +88,8 @@ BEGIN
 
   -- estendeSinal:  entity work.estendeSinalGenerico   generic map (larguraDadoEntrada => 12, larguraDadoSaida => DATA_WIDTH)
   --         port map (estendeSinal_IN => imediato_entradaExtSinal, estendeSinal_OUT => saidaExtSinal_muxULAImed_0);
+
+  data_out <= regA;
+  opCode <= Instrucao(25 downto 22);
+
  END ARCHITECTURE;

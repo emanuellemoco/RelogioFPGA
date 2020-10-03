@@ -2,7 +2,36 @@
 	"partitions" : [
 		{
 			"name" : "Top",
-			"pins" : []
+			"pins" : [
+				{
+					"name" : "decodificadorEnd[6]",
+					"strict" : false
+				},
+				{
+					"name" : "decodificadorEnd[7]",
+					"strict" : false
+				},
+				{
+					"name" : "decodificadorEnd[8]",
+					"strict" : false
+				},
+				{
+					"name" : "saida_dados[0]",
+					"strict" : false
+				},
+				{
+					"name" : "saida_dados[1]",
+					"strict" : false
+				},
+				{
+					"name" : "saida_dados[2]",
+					"strict" : false
+				},
+				{
+					"name" : "CLOCK_50",
+					"strict" : false
+				}
+			]
 		}
 	]
 }
