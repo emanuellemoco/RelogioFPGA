@@ -1,25 +1,25 @@
-library IEEE;
-use IEEE.std_logic_1164.all;
-use ieee.numeric_std.all;
+LIBRARY IEEE;
+USE IEEE.std_logic_1164.ALL;
+USE ieee.numeric_std.ALL;
 
-entity memoriaROM is
-   generic (
-          dataWidth: natural := 8;
-          addrWidth: natural := 3
+ENTITY memoriaROM IS
+    GENERIC (
+        dataWidth : NATURAL := 8;
+        addrWidth : NATURAL := 3
     );
-   port (
-          Endereco : in std_logic_vector (addrWidth-1 DOWNTO 0);
-          Dado : out std_logic_vector (dataWidth-1 DOWNTO 0)
+    PORT (
+        Endereco : IN std_logic_vector (addrWidth - 1 DOWNTO 0);
+        Dado : OUT std_logic_vector (dataWidth - 1 DOWNTO 0)
     );
-end entity;
+END ENTITY;
 
-architecture assincrona of memoriaROM is
+ARCHITECTURE assincrona OF memoriaROM IS
 
-  type blocoMemoria is array(0 TO 2**addrWidth - 1) of std_logic_vector(dataWidth-1 DOWNTO 0);
+    TYPE blocoMemoria IS ARRAY(0 TO 2 ** addrWidth - 1) OF std_logic_vector(dataWidth - 1 DOWNTO 0);
 
-  function initMemory
-        return blocoMemoria is variable tmp : blocoMemoria := (others => (others => '0'));
-  begin
+    FUNCTION initMemory
+        RETURN blocoMemoria IS VARIABLE tmp : blocoMemoria := (OTHERS => (OTHERS => '0'));
+    BEGIN
         -- Inicializa os endereços:
         tmp(0) := x"AA";
         tmp(1) := x"42";
@@ -29,11 +29,11 @@ architecture assincrona of memoriaROM is
         tmp(5) := x"46";
         tmp(6) := x"47";
         tmp(7) := x"55";
-        return tmp;
-    end initMemory;
+        RETURN tmp;
+    END initMemory;
 
-    signal memROM : blocoMemoria := initMemory;
+    SIGNAL memROM : blocoMemoria := initMemory;
 
-begin
+BEGIN
     Dado <= memROM (to_integer(unsigned(Endereco)));
-end architecture;
+END ARCHITECTURE;

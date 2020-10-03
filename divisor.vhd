@@ -1,62 +1,61 @@
-   LIBRARY ieee;
-   USE ieee.std_logic_1164.ALL;
-   use ieee.numeric_std.all;
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.numeric_std.ALL;
 
-   entity divisorTempo is
-    generic
-    (divisor : natural := 8);
-       port(
-           clk      :   in std_logic;
-           saida_clk :   out std_logic
-           );
-   end entity;
+ENTITY divisorTempo IS
+    GENERIC (divisor : NATURAL := 8);
+    PORT (
+        clk : IN std_logic;
+        saida_clk : OUT std_logic
+    );
+END ENTITY;
 
-   -- Nao usa o valor do divisor. So divide por 2.
+-- Nao usa o valor do divisor. So divide por 2.
 
-   architecture divPor2 of divisorTempo is
-       signal tick : std_logic;
-   begin
-       process(clk)
-       begin
-           if rising_edge(clk) then
-               tick <= not tick;
-           end if;
-       end process;
-       saida_clk <= tick;
-   end architecture divPor2;
-
-   -- O valor "n" do divisor, define a divisao por 2^(n+1).
-   -- Ou seja, 2^n é metade do período da frequência de saída.
-
-   architecture divPotenciaDe2 of divisorTempo is
-        signal contador : std_logic_vector(divisor downto 0);
-   begin
-        process(clk)
-        begin
-            if rising_edge(clk) then
-                contador <= std_logic_vector(unsigned(contador) + 1);
-            end if;
-        end process;
-    saida_clk <= contador(divisor);
-   end architecture divPotenciaDe2;
-
-   -- O valor "n" do divisor, define a divisao por "2n".
-   -- Ou seja, n é metade do período da frequência de saída.
-
-   architecture divInteiro of divisorTempo is
-        signal tick : std_logic := '0';
-        signal contador : integer range 0 to divisor+1 := 0;
-   begin
-        process(clk)
-        begin
-            if rising_edge(clk) then
-                if contador = divisor then
-                    contador <= 0;
-                    tick <= not tick;
-                else
-                    contador <= contador + 1;
-                end if;
-            end if;
-        end process;
+ARCHITECTURE divPor2 OF divisorTempo IS
+    SIGNAL tick : std_logic;
+BEGIN
+    PROCESS (clk)
+    BEGIN
+        IF rising_edge(clk) THEN
+            tick <= NOT tick;
+        END IF;
+    END PROCESS;
     saida_clk <= tick;
-    end architecture divInteiro;
+END ARCHITECTURE divPor2;
+
+-- O valor "n" do divisor, define a divisao por 2^(n+1).
+-- Ou seja, 2^n é metade do período da frequência de saída.
+
+ARCHITECTURE divPotenciaDe2 OF divisorTempo IS
+    SIGNAL contador : std_logic_vector(divisor DOWNTO 0);
+BEGIN
+    PROCESS (clk)
+    BEGIN
+        IF rising_edge(clk) THEN
+            contador <= std_logic_vector(unsigned(contador) + 1);
+        END IF;
+    END PROCESS;
+    saida_clk <= contador(divisor);
+END ARCHITECTURE divPotenciaDe2;
+
+-- O valor "n" do divisor, define a divisao por "2n".
+-- Ou seja, n é metade do período da frequência de saída.
+
+ARCHITECTURE divInteiro OF divisorTempo IS
+    SIGNAL tick : std_logic := '0';
+    SIGNAL contador : INTEGER RANGE 0 TO divisor + 1 := 0;
+BEGIN
+    PROCESS (clk)
+    BEGIN
+        IF rising_edge(clk) THEN
+            IF contador = divisor THEN
+                contador <= 0;
+                tick <= NOT tick;
+            ELSE
+                contador <= contador + 1;
+            END IF;
+        END IF;
+    END PROCESS;
+    saida_clk <= tick;
+END ARCHITECTURE divInteiro;

@@ -1,31 +1,18 @@
-library ieee;
-use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.numeric_std.ALL;
 
-entity relogio is
-  generic   (
-    DATA_WIDTH  : natural :=  8;
-    ADDR_WIDTH  : natural :=  8
+ENTITY relogio IS
+  GENERIC (
+    DATA_WIDTH : NATURAL := 8;
+    ADDR_WIDTH : NATURAL := 8
   );
 
-  port   (
-    -- Input ports
-    dataIN  :  in  std_logic_vector(DATA_WIDTH-1 downto 0);
-    enable  : in  std_logic;
-    clk     : in  std_logic;
-    <name>  : in  <type> := <default_value>;
+  PORT (
 
-    -- Inout ports
-    <name>  : inout <type>;
-
-    -- Output ports
-    dataOUT :  out  std_logic_vector(DATA_WIDTH-1 downto 0);
-    <name>  : out <type> := <default_value>
   );
-end entity;
-
-
-architecture arch_name of relogio is
+END ENTITY;
+ARCHITECTURE arch_name OF relogio IS
 
   -- Declarations (optional):
   -- signal <name> : std_logic;
@@ -37,10 +24,10 @@ architecture arch_name of relogio is
   -- alias memWRsignal: std_logic is controlWord(0);
   -- alias ulaOPvalue:  std_logic_vector(1 downto 0) is controlWord(5 downto 4);
 
-begin
+BEGIN
 
   -- Para instanciar, a atribuição de sinais (e generics) segue a ordem: (nomeSinalArquivoDefinicaoComponente => nomeSinalNesteArquivo)
   -- regA:  entity work.nome_do_componente generic map (DATA_WIDTH => DATA_WIDTH)
   --        port map (dataIN => dataIN, dataOUT =>  RegAmuxA, enable =>  habRegA, clk =>  clk, rst => rst);
 
-end architecture;
+END ARCHITECTURE;

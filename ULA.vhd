@@ -1,49 +1,52 @@
-library ieee;
-use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;    -- Biblioteca IEEE para funções aritméticas
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.numeric_std.ALL; -- Biblioteca IEEE para funções aritméticas
 
-entity ULA is
-    generic
-    (
-        larguraDados : natural := 8
-    );
-    port
-    (
-      entradaA, entradaB:  in STD_LOGIC_VECTOR((larguraDados-1) downto 0);
-      seletor:  in STD_LOGIC_VECTOR(2 downto 0);
-      saida:    out STD_LOGIC_VECTOR((larguraDados-1) downto 0);
-      flagZero: out std_logic
-    );
-end entity;
+ENTITY ULA IS
+  GENERIC (
+    larguraDados : NATURAL := 8
+  );
+  PORT (
+    entradaA, entradaB : IN STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
+    seletor : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+    saida : OUT STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
+    flagZero : OUT std_logic
+  );
+END ENTITY;
 
-architecture comportamento of ULA is
-  constant zero : std_logic_vector(larguraDados-1 downto 0) := (others => '0');
+ARCHITECTURE comportamento OF ULA IS
+  CONSTANT zero : std_logic_vector(larguraDados - 1 DOWNTO 0) := (OTHERS => '0');
 
-   signal soma :      STD_LOGIC_VECTOR((larguraDados-1) downto 0);
-   signal subtracao : STD_LOGIC_VECTOR((larguraDados-1) downto 0);
-   signal op_and :    STD_LOGIC_VECTOR((larguraDados-1) downto 0);
-   signal op_or :     STD_LOGIC_VECTOR((larguraDados-1) downto 0);
-   signal op_xor :    STD_LOGIC_VECTOR((larguraDados-1) downto 0);
-   signal op_not :    STD_LOGIC_VECTOR((larguraDados-1) downto 0);
+  SIGNAL soma : STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
+  SIGNAL sub : STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
+  SIGNAL op_and : STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
+  SIGNAL op_or : STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
+  SIGNAL op_xor : STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
+  SIGNAL op_not : STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
 
-    begin
-      soma      <= STD_LOGIC_VECTOR(unsigned(entradaA) + unsigned(entradaB));
-      subtracao <= STD_LOGIC_VECTOR(unsigned(entradaA) - unsigned(entradaB));
-      op_and    <= entradaA and entradaB;
-      op_or     <= entradaA or entradaB;
-      op_xor    <= entradaA xor entradaB;
-      op_not    <= not entradaA;
+BEGIN
+  soma <= STD_LOGIC_VECTOR(unsigned(entradaA) + unsigned(entradaB));
+  sub <= STD_LOGIC_VECTOR(unsigned(entradaA) - unsigned(entradaB));
+  op_and <= entradaA AND entradaB;
+  op_or <= entradaA OR entradaB;
+  op_inc <= entradaA + 1;
+  --equal     <= entradaA = entradaB;
+  --     op_xor    <= entradaA xor entradaB;
+  --      op_not    <= not entradaA;
 
-      saida <= soma when (seletor = "000") else
-          subtracao when (seletor = "001") else
-          entradaA when  (seletor = "010") else
-          entradaB when  (seletor = "011") else
-          op_xor when    (seletor = "100") else
-          op_not when    (seletor = "101") else
-          op_and when    (seletor = "110") else
-          op_or when     (seletor = "111") else
-          entradaA;      -- outra opcao: saida = entradaA
+  saida <= soma WHEN (seletor = "000") ELSE
+    sub WHEN (seletor = "001") ELSE
+    entradaA WHEN (seletor = "010") ELSE
+    entradaB WHEN (seletor = "011") ELSE
+    op_inc WHEN (seletor = "100") ELSE
+    --          op_xor when   (seletor = "xxx") else
+    --          op_not when   (seletor = "101") else
+    op_and WHEN (seletor = "110") ELSE
+    op_or WHEN (seletor = "111") ELSE
 
-      flagZero <= '1' when unsigned(saida) = unsigned(zero) else '0';
+    entradaA; -- outra opcao: saida = entradaA
 
-end architecture;
+  flagZero <= '1' WHEN unsigned(saida) = unsigned(zero) ELSE
+    '0';
+
+END ARCHITECTURE;
