@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 d/home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/simulation/qsim
 Ecpu
-Z1 w1601762340
+Z1 w1601839626
 Z2 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 OGn598C_0mX<WSGfCb?AK2
 Z3 DPx8 cyclonev 19 cyclonev_components 0 22 CcdNAEi>PYH4@n><]NQ]V2
 Z4 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 QZo1Vh6en2ZO3=hNmAfQ>0
@@ -24,13 +24,13 @@ Z11 8Relogio.vho
 Z12 FRelogio.vho
 l0
 L38
-VJk<lkHE248I8YIE;kY5NW3
-!s100 5B9ok>1QUKz4BU^9:nLH`1
+VPS?C<Q>zRnfXVR[k_NPOW1
+!s100 ?>Z=k@[zc>JKoW[Em36Rn1
 Z13 OV;C;10.5b;63
 32
-Z14 !s110 1601762340
+Z14 !s110 1601839627
 !i10b 1
-Z15 !s108 1601762340.000000
+Z15 !s108 1601839627.000000
 Z16 !s90 -work|work|Relogio.vho|
 Z17 !s107 Relogio.vho|
 !i113 1
@@ -46,11 +46,11 @@ R7
 R8
 R9
 R10
-DEx4 work 3 cpu 0 22 Jk<lkHE248I8YIE;kY5NW3
-l238
+DEx4 work 3 cpu 0 22 PS?C<Q>zRnfXVR[k_NPOW1
+l229
 L81
-VA?Yl9AG_m_Od35le^HQ0[1
-!s100 az@QmelA45;oQ_PQX9Nca2
+V7[cCI@eI1b6R30ei0nT_h0
+!s100 A2aC3iRzTlX49D`K0CEfR1
 R13
 32
 R14
@@ -62,7 +62,7 @@ R17
 R18
 R19
 Ecpu_vhd_vec_tst
-Z20 w1601762338
+Z20 w1601839624
 R8
 R9
 R0
@@ -74,29 +74,29 @@ Vc6a:X_Z[;7ckbMGcA6;Mk3
 !s100 Ad:;LA9HMBdjFGcZPldj<3
 R13
 32
-Z23 !s110 1601762341
+R14
 !i10b 1
-Z24 !s108 1601762341.000000
-Z25 !s90 -work|work|Waveform.vwf.vht|
-Z26 !s107 Waveform.vwf.vht|
+R15
+Z23 !s90 -work|work|Waveform.vwf.vht|
+Z24 !s107 Waveform.vwf.vht|
 !i113 1
 R18
 R19
 Acpu_arch
 R8
 R9
-Z27 DEx4 work 15 cpu_vhd_vec_tst 0 22 c6a:X_Z[;7ckbMGcA6;Mk3
+Z25 DEx4 work 15 cpu_vhd_vec_tst 0 22 c6a:X_Z[;7ckbMGcA6;Mk3
 l48
 L33
-Z28 V;RZP^:[3j=Z_:2>W9?GA80
-Z29 !s100 8XKATFjBEAh`JF8djYzSi1
+VKF?7D8L>ZmL^1;E0<cGR52
+!s100 ^Lbj6O44cW_EGJm8MdD8G3
 R13
 32
-R23
+R14
 !i10b 1
+R15
+R23
 R24
-R25
-R26
 !i113 1
 R18
 R19

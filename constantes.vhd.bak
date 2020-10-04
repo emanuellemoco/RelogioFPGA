@@ -1,0 +1,28 @@
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+use ieee.numeric_std.all;
+
+package constantes is
+
+    constant REG_A_WIDTH    : natural := 4;
+    constant REG_B_WIDTH    : natural := 4;
+    constant REG_C_WIDTH    : natural := 4;
+    constant OPCODE_WIDTH   : natural := 4;
+    
+-- codigos das instrucoes do DLX:
+    subtype opCode_t  is std_logic_vector(OPCODE_WIDTH-1 downto 0);
+    subtype regA is is std_logic_vector(OPCODE_WIDTH-1 downto 0);
+    subtype regB is is std_logic_vector(OPCODE_WIDTH-1 downto 0);
+    subtype regC is is std_logic_vector(OPCODE_WIDTH-1 downto 0);
+    
+
+    constant leaw : opCode_t := "0000";
+    constant add  : opCode_t := "0001";
+    constant store: opCode_t := "0010";
+    constant inc  : opCode_t := "0011";
+    constant je   : opCode_t := "0100";
+    constant load : opCode_t := "0101";
+    constant jmp  : opCode_t := "0110";
+
+end package constantesMIPS;

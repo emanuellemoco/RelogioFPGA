@@ -31,7 +31,10 @@ ARCHITECTURE comportamento OF ULA IS
   sub <= STD_LOGIC_VECTOR(unsigned(entradaA) - unsigned(entradaB));
   op_and <= entradaA AND entradaB;
   op_or <= entradaA OR entradaB;
-  op_inc <= STD_LOGIC_VECTOR(to_unsigned(to_integer(unsigned(entradaA)) + 1,10));
+  
+  --op_inc <= STD_LOGIC_VECTOR(to_unsigned(to_integer(unsigned(entradaA)) + 1,10));
+    
+  op_inc <= STD_LOGIC_VECTOR(unsigned(entradaA) + 1);
  
   --equal     <= entradaA = entradaB;
   --     op_xor    <= entradaA xor entradaB;
@@ -39,7 +42,7 @@ ARCHITECTURE comportamento OF ULA IS
 
   ULAout <= soma WHEN (seletor = "000") ELSE
     sub WHEN (seletor = "001") ELSE
-    entradaA WHEN (seletor = "010") ELSE
+    entradaA WHEN (seletor = "010") ELSE --entradaA WHEN (seletor = "010") ELSE
     entradaB WHEN (seletor = "011") ELSE
     op_inc WHEN (seletor = "100") ELSE
     --          op_xor when   (seletor = "xxx") else
@@ -49,7 +52,7 @@ ARCHITECTURE comportamento OF ULA IS
 
     entradaA; -- outra opcao: saida = entradaA
 
-  flagZero <= '1' WHEN (seletor= "001") and (unsigned(ULAout) = unsigned(zero)) ELSE
+  flagZero <= '1' WHEN (seletor= "001") and (unsigned(entradaA) = unsigned(entradaB)) ELSE
     '0';
     saida <= ULAout;
 

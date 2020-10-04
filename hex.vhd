@@ -8,6 +8,7 @@ ENTITY conversorHex7Seg IS
         apaga : IN std_logic := '0';
         negativo : IN std_logic := '0';
         overFlow : IN std_logic := '0';
+        
         -- Output ports
         saida7seg : OUT std_logic_vector(6 DOWNTO 0) -- := (others => '1')
     );

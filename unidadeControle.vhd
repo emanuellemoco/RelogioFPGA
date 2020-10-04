@@ -1,6 +1,7 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
+USE work.constantes.ALL;
 
 ENTITY Unidade_Controle IS
   GENERIC (
@@ -29,52 +30,28 @@ ARCHITECTURE arch_name OF Unidade_Controle IS
 
   ---------------INSTRUÇÕES---------------
   ----------------------------------------
-  -- leaw -----------------------------0000     leaw R3, 0 
-  -- add  -----------------------------0001     
-  -- inc  -----------------------------0011
-  -- je   -----------------------------0100
-  -- load -----------------------------0101
-  -- jmp  -----------------------------0110
-  -- store-----------------------------0111
+  -- leaw -----------------------------0000                     OK
+  -- add  -----------------------------0001                     OK
+  -- store-----------------------------0010 grava valor         OK
+  -- inc  -----------------------------0011                     OK
+  -- je   -----------------------------0100                     OK
+  -- load -----------------------------0101 carrega valor       OK
+  -- jmp  -----------------------------0110                     OK
+
 BEGIN
-  -- Para instanciar, a atribuição de sinais (e generics) segue a ordem: (nomeSinalArquivoDefinicaoComponente => nomeSinalNesteArquivo)
-  -- regA:  entity work.nome_do_componente generic map (DATA_WIDTH => DATA_WIDTH)
-  --        port map (dataIN => dataIN, dataOUT =>  RegAmuxA, enable =>  habRegA, clk =>  clk, rst => rst); 
 
-  --  LEAW 0000 -> 
-  --  1 selMuxImedRam, habEscritaRegistrador
-  --  0 selMuxULAImed
-  --  010 ULA (entrada_a)
-
-  --  add 0001 ->
-  --  000 ULA   (soma)
-  --  1 selMuxULAImed, habEscritaRegistrador
-
-  --  inc 0011 ->
-  --  100 ULA   (inc)
-
-  --  je 0100 ->    je R3, R4 => LB2
-  --  001 ULA (sub)
-
-  --  jmp 0110
-  -- 1 selMuxPselMuxProxPCCee
-
-  --  store 0111->  xxxxxxx
-
-  --  load 0101 ->
-  --  0 selMuxImedRam, selMuxULAImed
-  --  1 habEscritaRegistrador
-  selMuxImedRam <= '1' WHEN opcode = "0000" ELSE
+  selMuxImedRam <= '1' WHEN opcode = leaw ELSE
     '0';
-  selMuxULAImed <= '1' WHEN opcode = "0001" ELSE
+  selMuxULAImed <= '1' WHEN opcode = add OR opcode = inc ELSE
     '0';
-  HabEscritaReg <= '1' WHEN opcode = "0000" OR opcode = "0001" OR opcode = "0101" OR opcode = "0011" ELSE 
+  HabEscritaReg <= '1' WHEN opcode = leaw OR opcode = add OR opcode = load OR opcode = inc ELSE 
     '0';
-  selOperacaoULA <= "010" WHEN opcode = "0000" ELSE
-    "000" WHEN opcode = "0001" ELSE
-    "100" WHEN opcode = "0011" ELSE
+  selOperacaoULA <= "010" WHEN opcode = leaw ELSE
+    "000" WHEN opcode = add ELSE
+    "100" WHEN opcode = inc ELSE
+    "001" WHEN opcode = je ELSE 
     "010";
-  selMuxProxPC <= '1' WHEN opcode = "0110" OR (opCode = "0100" AND equal_ULA = '1') ELSE
+  selMuxProxPC <= '1' WHEN opcode = jmp OR (opCode = je AND equal_ULA = '1') ELSE
     '0';
   -- Para instanciar, a atribuição de sinais (e generics) segue a ordem: (nomeSinalArquivoDefinicaoComponente => nomeSinalNesteArquivo)
   -- regA:  entity work.nome_do_componente generic map (DATA_WIDTH => DATA_WIDTH)
@@ -82,12 +59,12 @@ BEGIN
   --selMucProxPC <= '1' when opCode = "1000" else '0';
   --selMuxULAImed <= '0' when opcode = "0101" else '1';
   --selHabEscritaAcumulador <= '1' when opCode = "0011" or opcode = "0101" else '0';
-  --selOperacaoULA <= "000" when opcode = "0011" or opcode ="0100" else
-  --"001" when opcode = "0101" or opcode = "0110" else
+  --selOperacaoULA <= "000" when opcode = "0011" or opcode =je else
+  --"001" when opcode = "0101" or opcode = jmp else
   --"010" when opcode ="" --NAO SEI EM Q CASOS CARREGAR O A 
   --"011" when opcode="0100" or opcode="0110" else --CARREGA B QUANDO SOMA/SUBTRAI COM A MEMORIA?
   --"100" when opcode = "0111" else "010";
-  --habLeituraMEM <= '1' when opCode = "0001" or opcode="0100" or opcode="0110" 
+  --habLeituraMEM <= '1' when opCode = add or opcode="0100" or opcode="0110" 
   --else '0';
 
   --habEscritaMEM <= '1' opcode="0010" else '0';

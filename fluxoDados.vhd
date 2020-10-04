@@ -19,7 +19,6 @@ ENTITY Fluxo_Dados IS
     -- Output ports
     opCode : OUT std_logic_vector(3 DOWNTO 0);
     data_out : OUT std_logic_vector(DATA_WIDTH - 1 DOWNTO 0);
-    programCounter : OUT std_logic_vector(ADDR_WIDTH - 1 DOWNTO 0);
     equal_ULA : OUT std_logic
   );
 END ENTITY;
@@ -72,8 +71,7 @@ BEGIN
   ROM : ENTITY work.memoriaROM GENERIC MAP (dataWidth => ROM_DATA_WIDTH, addrWidth => ADDR_WIDTH)
     PORT MAP(Endereco => PC_ROM, Dado => Instrucao);
 
-  -- RAM: entity work.memoriaRAM   generic map (dataWidth => DATA_WIDTH, addrWidth => ADDR_WIDTH)
-  --        port map (addr => enderecoRAM, we => habEscritaMEM, dado_in => Acumulador_ULA_A, dado_out => DadoLidoRAM_ULA_B, clk => clk);
+
   bancoReg : ENTITY work.bancoRegistrador GENERIC MAP (larguraDados => DATA_WIDTH, larguraEndBancoRegs => 4)
     PORT MAP(
       CLK => clk, enderecoA => Instrucao(21 DOWNTO 18), enderecoB => Instrucao(17 DOWNTO 14), enderecoC =>

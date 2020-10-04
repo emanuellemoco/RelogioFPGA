@@ -1,7 +1,7 @@
 LIBRARY IEEE;
 USE IEEE.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
-
+USE work.constantes.ALL;
 ENTITY memoriaROM IS
     GENERIC (
         dataWidth : NATURAL := 8;
@@ -16,11 +16,12 @@ END ENTITY;
   ----------------------------------------
   -- leaw -----------------------------0000                     OK
   -- add  -----------------------------0001                     OK
-  -- inc  -----------------------------0011                     NAO
-  -- je   -----------------------------0100                     NAO
+  -- store-----------------------------0010 grava valor         OK
+  -- inc  -----------------------------0011                     OK
+  -- je   -----------------------------0100                     OK
   -- load -----------------------------0101 carrega valor       OK
   -- jmp  -----------------------------0110                     OK
-  -- store-----------------------------0111 grava valor         OK
+
 
 ARCHITECTURE assincrona OF memoriaROM IS
 
@@ -29,21 +30,17 @@ ARCHITECTURE assincrona OF memoriaROM IS
     FUNCTION initMemory
         RETURN blocoMemoria IS VARIABLE tmp : blocoMemoria := (OTHERS => (OTHERS => '0'));
     BEGIN
-        -- Inicializa os endereços:
+        
+        --        OPCODE  REGA  REGB  REGC    IMED/EndPerf
+        tmp(0) := leaw  & NOP & NOP & R01 & b"0000000010" ; --carregando 2 no RegC 0001                uwuwuwuwuwuuwuwuwuwuwuwuwuwuw
+        tmp(1) := leaw  & NOP & NOP & R02 & b"0000000010" ; --carregando 2 no RegC 0010
+        tmp(2) := leaw  & NOP & NOP & R03 & b"0000000101" ; --carregando 5 no RegC 0011
+        tmp(3) := je    & R01 & R02 & NOP & b"0000000101" ; --compara se 2 =2 pula para o temp 5
+        tmp(4) := leaw  & NOP & NOP & R03 & b"0000000011" ; -- se nao igual grava 3
+        tmp(5) := store & R03 & NOP & NOP & b"0000000000" ; -- se igual grava 5
+        tmp(6) := jmp   & NOP & NOP & NOP & b"0000000000" ;
 
-        -- tmp(0) := b"0000" & b"0000" & b"0000" & b"0000" & b"0000010001" ;
-        -- tmp(1) := b"0111" & b"0000" & b"1111" & b"1111" & b"00" & x"FF";
-        -- tmp(2) := b"0110" & b"0000" & b"0000" & b"0000" & b"0000000000";
-        
-        --        OPCODE    REGA       REGB      REGC      IMED/EndPerf
-        tmp(0) := b"0000" & b"0000" & b"0000" & b"0001" & b"0000000010" ; --carregando 2 no RegC 0001
-        tmp(1) := b"0000" & b"0000" & b"0000" & b"0010" & b"0000000010" ; --carregando 2 no RegC 0010
-        tmp(2) := b"0000" & b"0000" & b"0000" & b"0011" & b"0000000101" ; --carregando 5 no RegC 0011
-        tmp(3) := b"0100" & b"0001" & b"0010" & b"1111" & b"0000000101" ; --compara se 2 =2 pula para o temp 5
-        tmp(4) := b"0000" & b"0000" & b"0000" & b"0011" & b"0000000011" ; -- se nao igual grava 3
-        tmp(5) := b"0111" & b"0011" & b"1111" & b"1111" & b"0000000000" ; -- se igual grava 5
-        tmp(6) := b"0110" & b"0000" & b"0000" & b"0000" & b"0000000000";
-        
+
         RETURN tmp;
     END initMemory;
 
