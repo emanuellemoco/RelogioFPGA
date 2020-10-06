@@ -24,7 +24,8 @@ ENTITY relogio IS
             HEX2 : OUT std_logic_vector(6 DOWNTO 0);
             HEX3 : OUT std_logic_vector(6 DOWNTO 0);
             HEX4 : OUT std_logic_vector(6 DOWNTO 0);
-            HEX5 : OUT std_logic_vector(6 DOWNTO 0)
+            HEX5 : OUT std_logic_vector(6 DOWNTO 0);
+            tempo : OUT std_logic
 
       );
 END ENTITY;
@@ -113,7 +114,9 @@ BEGIN
       REG5 : ENTITY work.registrador GENERIC MAP (larguraDados => HEX_WIDTH)
             PORT MAP(DIN =>CPUOut(3 downto 0), DOUT =>reg5Out, ENABLE =>habReg5, CLK => CLOCK_50, RST =>'0');
       HEX_5: ENTITY work.hex
-            PORT MAP(dadoHEX => reg5Out, apaga => '0', negativo => '0', overflow => '0', saida7seg => HEX5);     
+            PORT MAP(dadoHEX => reg5Out, apaga => '0', negativo => '0', overflow => '0', saida7seg => HEX5);
+            
+      tempo <= baseTempoOut;
 
 
 END ARCHITECTURE;

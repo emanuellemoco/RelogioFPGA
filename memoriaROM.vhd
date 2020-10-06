@@ -16,12 +16,18 @@ END ENTITY;
   ----------------------------------------
   -- leaw -----------------------------0000                     OK
   -- add  -----------------------------0001                     OK
-  -- store-----------------------------0010 grava valor         OK
+  -- rw--------------------------------0010 grava/escreve valor OK
   -- inc  -----------------------------0011                     OK
   -- je   -----------------------------0100                     OK
-  -- load -----------------------------0101 carrega valor       OK
+  -- rd -------------------------------0101 carrega/le valor    OK
   -- jmp  -----------------------------0110                     OK
+  -- nope -----------------------------0111
+  -- cl -------------------------------1000 limpa
 
+--   Testar:
+--   HEX            OK
+--   RAM            OK
+--   Base tempo
 
 ARCHITECTURE assincrona OF memoriaROM IS
 
@@ -32,11 +38,22 @@ ARCHITECTURE assincrona OF memoriaROM IS
     BEGIN
         
         --        OPCODE  REGA  REGB  REGC    IMED/EndPerf
-        tmp(0) := leaw  & NOP & NOP & R01 & b"0000000010" ; --carregando 2 no RegC 0001  
-        tmp(1) := store & R01 & NOP & NOP & b"0000000001" ; -- se igual grava 5
-        tmp(2) := jmp   & NOP & NOP & NOP & b"0000000000" ;
+        tmp(0) := leaw  & NOP & NOP & R01 & b"0000000011" ;
+        tmp(1) := leaw  & NOP & NOP & R02 & b"0000000000" ;
+        tmp(2) := rd    & NOP & NOP & R03 & b"0000000000" ;
+        tmp(3) := cl    & NOP & NOP & R03 & b"0000000000" ;
+        tmp(4) := je    & R02 & R03 & NOP & b"0000000010" ;
+        tmp(5) := inc   & R01 & NOP & R01 & b"0000000000" ;
+        tmp(6) := wr    & R01 & NOP & NOP & b"0000000010" ;
+        tmp(7) := jmp   & NOP & NOP & NOP & b"0000000010" ;
 
 
+
+
+
+
+
+    
         RETURN tmp;
     END initMemory;
 

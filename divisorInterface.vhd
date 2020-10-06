@@ -17,7 +17,7 @@ architecture interface of divisorInterface is
 begin
 
 baseTempo: entity work.divisor
-           generic map (divisor => 5)   -- divide por 10.
+           generic map (divisor => 25000000 )   --25000000
            port map (clk => clk, saida_clk => saidaclk_reg1seg);
 
 registraUmSegundo: entity work.flipFlop
@@ -26,6 +26,6 @@ registraUmSegundo: entity work.flipFlop
          RST => limpaLeitura);
 
 -- Faz o tristate de saida:
-leituraUmSegundo <= sinalUmSegundo when habilitaLeitura = '1' else 'Z';
+leituraUmSegundo <= sinalUmSegundo when habilitaLeitura = '1' else '0';
 
 end architecture interface;

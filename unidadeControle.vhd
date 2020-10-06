@@ -44,7 +44,7 @@ BEGIN
     '0';
   selMuxULAImed <= '1' WHEN opcode = add OR opcode = inc ELSE
     '0';
-  HabEscritaReg <= '1' WHEN opcode = leaw OR opcode = add OR opcode = load OR opcode = inc ELSE 
+  HabEscritaReg <= '1' WHEN opcode = leaw OR opcode = add OR opcode = rd OR opcode = inc ELSE 
     '0';
   selOperacaoULA <= "010" WHEN opcode = leaw ELSE
     "000" WHEN opcode = add ELSE

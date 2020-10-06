@@ -60,34 +60,34 @@ BEGIN
   selMux <= '1' WHEN unsigned(endereco) >= 8 ELSE
     '0';
 
-  habRegHEX <= '1' WHEN (unsigned(endereco) >= 1 AND unsigned(endereco) <= 6) AND opcode = load ELSE
+  habRegHEX <= '1' WHEN (unsigned(endereco) >= 1 AND unsigned(endereco) <= 6) AND opcode = wr ELSE
     '0';
 
-  habRegLED <= '1' WHEN (unsigned(endereco) = 7) AND opcode = load ELSE
+  habRegLED <= '1' WHEN (unsigned(endereco) = 7) AND opcode = wr ELSE
     '0';
 
-  habLeituraRAM <= '1' WHEN (unsigned(endereco) >= 8 AND opcode = store) ELSE
+  habLeituraRAM <= '1' WHEN (unsigned(endereco) >= 8 AND opcode = rd) ELSE
     '0';
 
-  habEscritaRAM <= '1' WHEN (unsigned(endereco) >= 8 AND opcode = load) ELSE
+  habEscritaRAM <= '1' WHEN (unsigned(endereco) >= 8 AND opcode = wr) ELSE
     '0';
 
-  habLeituraInterface <= '1' WHEN (unsigned(endereco) = 0 AND opcode = store) ELSE
+  habLeituraInterface <= '1' WHEN (unsigned(endereco) = 0 AND opcode = rd) ELSE
     '0';
 
-  limpaLeituraInterface <= '1' WHEN (unsigned(endereco) = 0 AND opcode = store) ELSE
+  limpaLeituraInterface <= '1' WHEN (unsigned(endereco) = 0 AND opcode = cl) ELSE
     '0';
-  habReg0 <= '1' WHEN (unsigned(endereco) =1 AND opcode = store) ELSE
+  habReg0 <= '1' WHEN (unsigned(endereco) =1 AND opcode = wr) ELSE
     '0';
-  habReg1 <= '1' WHEN (unsigned(endereco) = 2 AND opcode = store) ELSE
+  habReg1 <= '1' WHEN (unsigned(endereco) = 2 AND opcode = wr) ELSE
     '0';
-  habReg2 <= '1' WHEN (unsigned(endereco) = 3 AND opcode = store) ELSE
+  habReg2 <= '1' WHEN (unsigned(endereco) = 3 AND opcode = wr) ELSE
     '0';
-  habReg3 <= '1' WHEN (unsigned(endereco) = 4 AND opcode = store) ELSE
+  habReg3 <= '1' WHEN (unsigned(endereco) = 4 AND opcode = wr) ELSE
     '0';
-  habReg4 <= '1' WHEN (unsigned(endereco) = 5 AND opcode = store) ELSE
+  habReg4 <= '1' WHEN (unsigned(endereco) = 5 AND opcode = wr) ELSE
     '0';
-  habReg5 <= '1' WHEN (unsigned(endereco) = 6 AND opcode = store) ELSE
+  habReg5 <= '1' WHEN (unsigned(endereco) = 6 AND opcode = wr) ELSE
     '0';
     
 

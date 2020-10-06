@@ -18,9 +18,9 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "10/04/2020 16:27:04"
+-- Generated on "10/06/2020 16:57:17"
                                                              
--- Vhdl Test Bench(with test vectors) for design  :          CPU
+-- Vhdl Test Bench(with test vectors) for design  :          relogio
 -- 
 -- Simulation tool : 3rd Party
 -- 
@@ -28,102 +28,42 @@
 LIBRARY ieee;                                               
 USE ieee.std_logic_1164.all;                                
 
-ENTITY CPU_vhd_vec_tst IS
-END CPU_vhd_vec_tst;
-ARCHITECTURE CPU_arch OF CPU_vhd_vec_tst IS
+ENTITY relogio_vhd_vec_tst IS
+END relogio_vhd_vec_tst;
+ARCHITECTURE relogio_arch OF relogio_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
 SIGNAL CLOCK_50 : STD_LOGIC;
-SIGNAL decodificadorEnd : STD_LOGIC_VECTOR(9 DOWNTO 0);
-SIGNAL entrada_dados : STD_LOGIC_VECTOR(9 DOWNTO 0);
-SIGNAL saida_dados : STD_LOGIC_VECTOR(9 DOWNTO 0);
-COMPONENT CPU
+SIGNAL HEX0 : STD_LOGIC_VECTOR(6 DOWNTO 0);
+SIGNAL HEX1 : STD_LOGIC_VECTOR(6 DOWNTO 0);
+SIGNAL HEX2 : STD_LOGIC_VECTOR(6 DOWNTO 0);
+SIGNAL HEX3 : STD_LOGIC_VECTOR(6 DOWNTO 0);
+SIGNAL HEX4 : STD_LOGIC_VECTOR(6 DOWNTO 0);
+SIGNAL HEX5 : STD_LOGIC_VECTOR(6 DOWNTO 0);
+SIGNAL tempo : STD_LOGIC;
+COMPONENT relogio
 	PORT (
 	CLOCK_50 : IN STD_LOGIC;
-	decodificadorEnd : BUFFER STD_LOGIC_VECTOR(9 DOWNTO 0);
-	entrada_dados : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
-	saida_dados : BUFFER STD_LOGIC_VECTOR(9 DOWNTO 0)
+	HEX0 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+	HEX1 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+	HEX2 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+	HEX3 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+	HEX4 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+	HEX5 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+	tempo : OUT STD_LOGIC
 	);
 END COMPONENT;
 BEGIN
-	i1 : CPU
+	i1 : relogio
 	PORT MAP (
 -- list connections between master ports and signals
 	CLOCK_50 => CLOCK_50,
-	decodificadorEnd => decodificadorEnd,
-	entrada_dados => entrada_dados,
-	saida_dados => saida_dados
+	HEX0 => HEX0,
+	HEX1 => HEX1,
+	HEX2 => HEX2,
+	HEX3 => HEX3,
+	HEX4 => HEX4,
+	HEX5 => HEX5,
+	tempo => tempo
 	);
-
--- CLOCK_50
-t_prcs_CLOCK_50: PROCESS
-BEGIN
-LOOP
-	CLOCK_50 <= '0';
-	WAIT FOR 20000 ps;
-	CLOCK_50 <= '1';
-	WAIT FOR 20000 ps;
-	IF (NOW >= 1000000 ps) THEN WAIT; END IF;
-END LOOP;
-END PROCESS t_prcs_CLOCK_50;
--- entrada_dados[9]
-t_prcs_entrada_dados_9: PROCESS
-BEGIN
-	entrada_dados(9) <= '0';
-WAIT;
-END PROCESS t_prcs_entrada_dados_9;
--- entrada_dados[8]
-t_prcs_entrada_dados_8: PROCESS
-BEGIN
-	entrada_dados(8) <= '0';
-WAIT;
-END PROCESS t_prcs_entrada_dados_8;
--- entrada_dados[7]
-t_prcs_entrada_dados_7: PROCESS
-BEGIN
-	entrada_dados(7) <= '0';
-WAIT;
-END PROCESS t_prcs_entrada_dados_7;
--- entrada_dados[6]
-t_prcs_entrada_dados_6: PROCESS
-BEGIN
-	entrada_dados(6) <= '0';
-WAIT;
-END PROCESS t_prcs_entrada_dados_6;
--- entrada_dados[5]
-t_prcs_entrada_dados_5: PROCESS
-BEGIN
-	entrada_dados(5) <= '0';
-WAIT;
-END PROCESS t_prcs_entrada_dados_5;
--- entrada_dados[4]
-t_prcs_entrada_dados_4: PROCESS
-BEGIN
-	entrada_dados(4) <= '0';
-WAIT;
-END PROCESS t_prcs_entrada_dados_4;
--- entrada_dados[3]
-t_prcs_entrada_dados_3: PROCESS
-BEGIN
-	entrada_dados(3) <= '0';
-WAIT;
-END PROCESS t_prcs_entrada_dados_3;
--- entrada_dados[2]
-t_prcs_entrada_dados_2: PROCESS
-BEGIN
-	entrada_dados(2) <= '0';
-WAIT;
-END PROCESS t_prcs_entrada_dados_2;
--- entrada_dados[1]
-t_prcs_entrada_dados_1: PROCESS
-BEGIN
-	entrada_dados(1) <= '0';
-WAIT;
-END PROCESS t_prcs_entrada_dados_1;
--- entrada_dados[0]
-t_prcs_entrada_dados_0: PROCESS
-BEGIN
-	entrada_dados(0) <= '0';
-WAIT;
-END PROCESS t_prcs_entrada_dados_0;
-END CPU_arch;
+END relogio_arch;
