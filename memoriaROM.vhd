@@ -32,13 +32,9 @@ ARCHITECTURE assincrona OF memoriaROM IS
     BEGIN
         
         --        OPCODE  REGA  REGB  REGC    IMED/EndPerf
-        tmp(0) := leaw  & NOP & NOP & R01 & b"0000000010" ; --carregando 2 no RegC 0001                uwuwuwuwuwuuwuwuwuwuwuwuwuwuw
-        tmp(1) := leaw  & NOP & NOP & R02 & b"0000000010" ; --carregando 2 no RegC 0010
-        tmp(2) := leaw  & NOP & NOP & R03 & b"0000000101" ; --carregando 5 no RegC 0011
-        tmp(3) := je    & R01 & R02 & NOP & b"0000000101" ; --compara se 2 =2 pula para o temp 5
-        tmp(4) := leaw  & NOP & NOP & R03 & b"0000000011" ; -- se nao igual grava 3
-        tmp(5) := store & R03 & NOP & NOP & b"0000000000" ; -- se igual grava 5
-        tmp(6) := jmp   & NOP & NOP & NOP & b"0000000000" ;
+        tmp(0) := leaw  & NOP & NOP & R01 & b"0000000010" ; --carregando 2 no RegC 0001  
+        tmp(1) := store & R01 & NOP & NOP & b"0000000001" ; -- se igual grava 5
+        tmp(2) := jmp   & NOP & NOP & NOP & b"0000000000" ;
 
 
         RETURN tmp;

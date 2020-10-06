@@ -1,7 +1,7 @@
 LIBRARY IEEE;
 USE ieee.std_logic_1164.ALL;
 
-ENTITY conversorHex7Seg IS
+ENTITY hex IS
     PORT (
         -- Input ports
         dadoHex : IN std_logic_vector(3 DOWNTO 0);
@@ -14,7 +14,7 @@ ENTITY conversorHex7Seg IS
     );
 END ENTITY;
 
-ARCHITECTURE comportamento OF conversorHex7Seg IS
+ARCHITECTURE comportamento OF hex IS
     --
     --       0
     --      ---

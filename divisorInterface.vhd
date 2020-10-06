@@ -3,7 +3,8 @@ USE ieee.std_logic_1164.ALL;
 use ieee.numeric_std.all;
 
 entity divisorInterface is
-   port(clk      :   in std_logic;
+   port(
+      clk      :   in std_logic;
       habilitaLeitura : in std_logic;
       limpaLeitura : in std_logic;
       leituraUmSegundo :   out std_logic

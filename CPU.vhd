@@ -15,7 +15,7 @@ ENTITY CPU IS
     entrada_dados : IN std_logic_vector(DATA_WIDTH - 1 DOWNTO 0);
 
     -- Output ports
-    decodificadorEnd : OUT std_logic_vector(DATA_WIDTH - 1 DOWNTO 0);
+    decodificadorEnd : OUT std_logic_vector(10 DOWNTO 0);
     saida_dados : OUT std_logic_vector(DATA_WIDTH - 1 DOWNTO 0)
   );
 END ENTITY;
@@ -23,17 +23,18 @@ ARCHITECTURE arch_name OF CPU IS
   SIGNAL saidaReg : std_logic_vector(DATA_WIDTH - 1 DOWNTO 0);
   SIGNAL palavraControle : std_logic_vector(8 DOWNTO 0);
   SIGNAL opCode : std_logic_vector(3 DOWNTO 0);
+  SIGNAL endPerif : std_logic_vector(6 DOWNTO 0);
   SIGNAL equal_ULA : std_logic;
 
 BEGIN
   FD : ENTITY work.Fluxo_Dados GENERIC MAP (DATA_WIDTH => DATA_WIDTH, ROM_DATA_WIDTH => ROM_DATA_WIDTH, ADDR_WIDTH => ADDR_WIDTH)
     PORT MAP(
-      CLK => clk, palavraControle => palavraControle, entrada_dados => "0000000010",
-      opCode => opCode, data_out => saida_dados, equal_ULA => equal_ULA);
+      CLK => clk, palavraControle => palavraControle, entrada_dados => entrada_dados,
+      opCode => opCode, endPerif   => endPerif,  data_out => saida_dados, equal_ULA => equal_ULA);
 
   UC : ENTITY work.Unidade_Controle GENERIC MAP (DATA_WIDTH => DATA_WIDTH, ADDR_WIDTH => ADDR_WIDTH)
     PORT MAP(CLK => clk, opCode => opCode, equal_ULA => equal_ULA, palavraControle => palavraControle);
 
-    decodificadorEnd <= opcode & "000000";
+    decodificadorEnd <= opcode & endPerif ;
 
     END ARCHITECTURE;

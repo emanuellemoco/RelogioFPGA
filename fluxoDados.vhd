@@ -18,6 +18,7 @@ ENTITY Fluxo_Dados IS
     entrada_dados : IN std_logic_vector(DATA_WIDTH - 1 DOWNTO 0);
     -- Output ports
     opCode : OUT std_logic_vector(3 DOWNTO 0);
+    endPerif: OUT std_logic_vector(6 downto 0 );
     data_out : OUT std_logic_vector(DATA_WIDTH - 1 DOWNTO 0);
     equal_ULA : OUT std_logic
   );
@@ -89,5 +90,6 @@ BEGIN
 
   data_out <= regA;
   opCode <= Instrucao(25 downto 22);
+  endPerif <= Instrucao(6 downto 0);
 
  END ARCHITECTURE;

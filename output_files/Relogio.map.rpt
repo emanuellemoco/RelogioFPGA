@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Relogio
-Sun Oct  4 16:25:52 2020
+Tue Oct  6 11:48:12 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -14,23 +14,49 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Parameter Settings for User Entity Instance: Top-level Entity: |CPU
- 11. Parameter Settings for User Entity Instance: Fluxo_Dados:FD
- 12. Parameter Settings for User Entity Instance: Fluxo_Dados:FD|registrador:PC
- 13. Parameter Settings for User Entity Instance: Fluxo_Dados:FD|mux2x1:MuxProxPC
- 14. Parameter Settings for User Entity Instance: Fluxo_Dados:FD|mux2x1:muxRAM_Imediato
- 15. Parameter Settings for User Entity Instance: Fluxo_Dados:FD|mux2x1:muxULA_Imediato
- 16. Parameter Settings for User Entity Instance: Fluxo_Dados:FD|somaConstante:somaUm
- 17. Parameter Settings for User Entity Instance: Fluxo_Dados:FD|memoriaROM:ROM
- 18. Parameter Settings for User Entity Instance: Fluxo_Dados:FD|bancoRegistrador:bancoReg
- 19. Parameter Settings for User Entity Instance: Fluxo_Dados:FD|ULA:ULA
- 20. Parameter Settings for User Entity Instance: Unidade_Controle:UC
- 21. Port Connectivity Checks: "Fluxo_Dados:FD|registrador:PC"
- 22. Port Connectivity Checks: "Fluxo_Dados:FD"
- 23. Post-Synthesis Netlist Statistics for Top Partition
- 24. Elapsed Time Per Partition
- 25. Analysis & Synthesis Messages
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Parameter Settings for User Entity Instance: Top-level Entity: |relogio
+ 12. Parameter Settings for User Entity Instance: CPU:CPU
+ 13. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD
+ 14. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|registrador:PC
+ 15. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|mux2x1:MuxProxPC
+ 16. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|mux2x1:muxRAM_Imediato
+ 17. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato
+ 18. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|somaConstante:somaUm
+ 19. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|memoriaROM:ROM
+ 20. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg
+ 21. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|ULA:ULA
+ 22. Parameter Settings for User Entity Instance: CPU:CPU|Unidade_Controle:UC
+ 23. Parameter Settings for User Entity Instance: decodificador:DEC
+ 24. Parameter Settings for User Entity Instance: memoriaRAM:RAM
+ 25. Parameter Settings for User Entity Instance: mux2x1:MUX
+ 26. Parameter Settings for User Entity Instance: divisorInterface:BASEDETEMPO|divisor:baseTempo
+ 27. Parameter Settings for User Entity Instance: registrador:REG0
+ 28. Parameter Settings for User Entity Instance: registrador:REG1
+ 29. Parameter Settings for User Entity Instance: registrador:REG2
+ 30. Parameter Settings for User Entity Instance: registrador:REG3
+ 31. Parameter Settings for User Entity Instance: registrador:REG4
+ 32. Parameter Settings for User Entity Instance: registrador:REG5
+ 33. Port Connectivity Checks: "hex:HEX_5"
+ 34. Port Connectivity Checks: "registrador:REG5"
+ 35. Port Connectivity Checks: "hex:HEX_4"
+ 36. Port Connectivity Checks: "registrador:REG4"
+ 37. Port Connectivity Checks: "hex:HEX_3"
+ 38. Port Connectivity Checks: "registrador:REG3"
+ 39. Port Connectivity Checks: "hex:HEX_2"
+ 40. Port Connectivity Checks: "registrador:REG2"
+ 41. Port Connectivity Checks: "hex:HEX_1"
+ 42. Port Connectivity Checks: "registrador:REG1"
+ 43. Port Connectivity Checks: "hex:HEX_0"
+ 44. Port Connectivity Checks: "registrador:REG0"
+ 45. Port Connectivity Checks: "divisorInterface:BASEDETEMPO|flipFlop:registraUmSegundo"
+ 46. Port Connectivity Checks: "mux2x1:MUX"
+ 47. Port Connectivity Checks: "decodificador:DEC"
+ 48. Port Connectivity Checks: "CPU:CPU|Fluxo_Dados:FD|registrador:PC"
+ 49. Post-Synthesis Netlist Statistics for Top Partition
+ 50. Elapsed Time Per Partition
+ 51. Analysis & Synthesis Messages
 
 
 
@@ -56,14 +82,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Oct  4 16:25:52 2020       ;
+; Analysis & Synthesis Status     ; Successful - Tue Oct  6 11:48:12 2020       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; Relogio                                     ;
-; Top-level Entity Name           ; CPU                                         ;
+; Top-level Entity Name           ; relogio                                     ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 20                                          ;
-; Total pins                      ; 31                                          ;
+; Total registers                 ; 13                                          ;
+; Total pins                      ; 43                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -82,7 +108,7 @@ refer to the applicable agreement for further details.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CEBA4F23C7        ;                    ;
-; Top-level entity name                                                           ; CPU                ; Relogio            ;
+; Top-level entity name                                                           ; relogio            ; Relogio            ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -190,214 +216,256 @@ refer to the applicable agreement for further details.
 ; bancoRegistrador.vhd             ; yes             ; User VHDL File  ; /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/bancoRegistrador.vhd ;         ;
 ; fluxoDados.vhd                   ; yes             ; User VHDL File  ; /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd       ;         ;
 ; unidadeControle.vhd              ; yes             ; User VHDL File  ; /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/unidadeControle.vhd  ;         ;
+; relogio.vhd                      ; yes             ; User VHDL File  ; /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd          ;         ;
 ; mux2x1.vhd                       ; yes             ; User VHDL File  ; /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/mux2x1.vhd           ;         ;
+; hex.vhd                          ; yes             ; User VHDL File  ; /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/hex.vhd              ;         ;
 ; somador.vhd                      ; yes             ; User VHDL File  ; /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/somador.vhd          ;         ;
 ; ULA.vhd                          ; yes             ; User VHDL File  ; /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/ULA.vhd              ;         ;
+; divisor.vhd                      ; yes             ; User VHDL File  ; /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/divisor.vhd          ;         ;
 ; registrador.vhd                  ; yes             ; User VHDL File  ; /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/registrador.vhd      ;         ;
 ; memoriaROM.vhd                   ; yes             ; User VHDL File  ; /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/memoriaROM.vhd       ;         ;
+; memoriaRAM.vhd                   ; yes             ; User VHDL File  ; /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/memoriaRAM.vhd       ;         ;
 ; CPU.vhd                          ; yes             ; User VHDL File  ; /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd              ;         ;
+; divisorInterface.vhd             ; yes             ; User VHDL File  ; /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/divisorInterface.vhd ;         ;
+; flipFlop.vhd                     ; yes             ; User VHDL File  ; /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/flipFlop.vhd         ;         ;
+; decodificador.vhd                ; yes             ; User VHDL File  ; /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/decodificador.vhd    ;         ;
 +----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                  ;
-+---------------------------------------------+----------------+
-; Resource                                    ; Usage          ;
-+---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 26             ;
-;                                             ;                ;
-; Combinational ALUT usage for logic          ; 43             ;
-;     -- 7 input functions                    ; 0              ;
-;     -- 6 input functions                    ; 7              ;
-;     -- 5 input functions                    ; 9              ;
-;     -- 4 input functions                    ; 16             ;
-;     -- <=3 input functions                  ; 11             ;
-;                                             ;                ;
-; Dedicated logic registers                   ; 20             ;
-;                                             ;                ;
-; I/O pins                                    ; 31             ;
-;                                             ;                ;
-; Total DSP Blocks                            ; 0              ;
-;                                             ;                ;
-; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 20             ;
-; Total fan-out                               ; 261            ;
-; Average fan-out                             ; 2.09           ;
-+---------------------------------------------+----------------+
++---------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                 ;
++---------------------------------------------+-----------------------------------------------+
+; Resource                                    ; Usage                                         ;
++---------------------------------------------+-----------------------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 15                                            ;
+;                                             ;                                               ;
+; Combinational ALUT usage for logic          ; 28                                            ;
+;     -- 7 input functions                    ; 0                                             ;
+;     -- 6 input functions                    ; 1                                             ;
+;     -- 5 input functions                    ; 12                                            ;
+;     -- 4 input functions                    ; 3                                             ;
+;     -- <=3 input functions                  ; 12                                            ;
+;                                             ;                                               ;
+; Dedicated logic registers                   ; 13                                            ;
+;                                             ;                                               ;
+; I/O pins                                    ; 43                                            ;
+;                                             ;                                               ;
+; Total DSP Blocks                            ; 0                                             ;
+;                                             ;                                               ;
+; Maximum fan-out node                        ; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[0] ;
+; Maximum fan-out                             ; 16                                            ;
+; Total fan-out                               ; 181                                           ;
+; Average fan-out                             ; 1.43                                          ;
++---------------------------------------------+-----------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                          ;
-+-----------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------+------------------+--------------+
-; Compilation Hierarchy Node        ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                           ; Entity Name      ; Library Name ;
-+-----------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------+------------------+--------------+
-; |CPU                              ; 43 (0)              ; 20 (0)                    ; 0                 ; 0          ; 31   ; 0            ; |CPU                                          ; CPU              ; work         ;
-;    |Fluxo_Dados:FD|               ; 43 (0)              ; 20 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |CPU|Fluxo_Dados:FD                           ; Fluxo_Dados      ; work         ;
-;       |bancoRegistrador:bancoReg| ; 7 (7)               ; 12 (12)                   ; 0                 ; 0          ; 0    ; 0            ; |CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg ; bancoRegistrador ; work         ;
-;       |memoriaROM:ROM|            ; 14 (14)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CPU|Fluxo_Dados:FD|memoriaROM:ROM            ; memoriaROM       ; work         ;
-;       |mux2x1:MuxProxPC|          ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CPU|Fluxo_Dados:FD|mux2x1:MuxProxPC          ; mux2x1           ; work         ;
-;       |mux2x1:muxRAM_Imediato|    ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CPU|Fluxo_Dados:FD|mux2x1:muxRAM_Imediato    ; mux2x1           ; work         ;
-;       |registrador:PC|            ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |CPU|Fluxo_Dados:FD|registrador:PC            ; registrador      ; work         ;
-;       |somaConstante:somaUm|      ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |CPU|Fluxo_Dados:FD|somaConstante:somaUm      ; somaConstante    ; work         ;
-+-----------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------+------------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                         ;
++--------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------+------------------+--------------+
+; Compilation Hierarchy Node           ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                       ; Entity Name      ; Library Name ;
++--------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------+------------------+--------------+
+; |relogio                             ; 28 (0)              ; 13 (0)                    ; 0                 ; 0          ; 43   ; 0            ; |relogio                                                  ; relogio          ; work         ;
+;    |CPU:CPU|                         ; 24 (0)              ; 11 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU                                          ; CPU              ; work         ;
+;       |Fluxo_Dados:FD|               ; 24 (0)              ; 11 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD                           ; Fluxo_Dados      ; work         ;
+;          |bancoRegistrador:bancoReg| ; 3 (3)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg ; bancoRegistrador ; work         ;
+;          |memoriaROM:ROM|            ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|memoriaROM:ROM            ; memoriaROM       ; work         ;
+;          |mux2x1:MuxProxPC|          ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|mux2x1:MuxProxPC          ; mux2x1           ; work         ;
+;          |mux2x1:muxRAM_Imediato|    ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|mux2x1:muxRAM_Imediato    ; mux2x1           ; work         ;
+;          |registrador:PC|            ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|registrador:PC            ; registrador      ; work         ;
+;          |somaConstante:somaUm|      ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|somaConstante:somaUm      ; somaConstante    ; work         ;
+;    |decodificador:DEC|               ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|decodificador:DEC                                ; decodificador    ; work         ;
+;    |hex:HEX_0|                       ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|hex:HEX_0                                        ; hex              ; work         ;
+;    |registrador:REG0|                ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|registrador:REG0                                 ; registrador      ; work         ;
++--------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+---------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                ;
-+----------------------------------------------------------+----------------------------------------+
-; Register name                                            ; Reason for Removal                     ;
-+----------------------------------------------------------+----------------------------------------+
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~55  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~56  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~57  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~58  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~59  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~60  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~61  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~62  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~63  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~64  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~65  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~66  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~67  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~68  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~69  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~70  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~71  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~72  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~73  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~74  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~75  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~76  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~77  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~78  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~79  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~80  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~81  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~82  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~83  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~84  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~85  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~86  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~87  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~88  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~89  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~90  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~91  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~92  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~93  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~94  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~95  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~96  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~97  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~98  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~99  ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~100 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~101 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~102 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~103 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~104 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~105 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~106 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~107 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~108 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~109 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~110 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~111 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~112 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~113 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~114 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~115 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~116 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~117 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~118 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~119 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~120 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~121 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~122 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~123 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~124 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~125 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~126 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~127 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~128 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~129 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~130 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~131 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~132 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~133 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~134 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~135 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~136 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~137 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~138 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~139 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~140 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~141 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~142 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~143 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~144 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~145 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~146 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~147 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~148 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~149 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~150 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~151 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~152 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~153 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~154 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~155 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~156 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~157 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~158 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~159 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~160 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~161 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~162 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~163 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~164 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~165 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~166 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~167 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~168 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~169 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~170 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~171 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~172 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~173 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~174 ; Lost fanout                            ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~18  ; Stuck at GND due to stuck port data_in ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~28  ; Stuck at GND due to stuck port data_in ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~38  ; Stuck at GND due to stuck port data_in ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~48  ; Stuck at GND due to stuck port data_in ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~19  ; Stuck at GND due to stuck port data_in ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~29  ; Stuck at GND due to stuck port data_in ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~39  ; Stuck at GND due to stuck port data_in ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~49  ; Stuck at GND due to stuck port data_in ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~20  ; Stuck at GND due to stuck port data_in ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~30  ; Stuck at GND due to stuck port data_in ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~40  ; Stuck at GND due to stuck port data_in ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~50  ; Stuck at GND due to stuck port data_in ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~21  ; Stuck at GND due to stuck port data_in ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~31  ; Stuck at GND due to stuck port data_in ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~41  ; Stuck at GND due to stuck port data_in ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~51  ; Stuck at GND due to stuck port data_in ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~22  ; Stuck at GND due to stuck port data_in ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~32  ; Stuck at GND due to stuck port data_in ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~42  ; Stuck at GND due to stuck port data_in ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~52  ; Stuck at GND due to stuck port data_in ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~23  ; Stuck at GND due to stuck port data_in ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~33  ; Stuck at GND due to stuck port data_in ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~43  ; Stuck at GND due to stuck port data_in ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~53  ; Stuck at GND due to stuck port data_in ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~24  ; Stuck at GND due to stuck port data_in ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~34  ; Stuck at GND due to stuck port data_in ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~44  ; Stuck at GND due to stuck port data_in ;
-; Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~54  ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 148                  ;                                        ;
-+----------------------------------------------------------+----------------------------------------+
++----------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                             ;
++------------------------------------------------------------------+---------------------------------------------+
+; Register name                                                    ; Reason for Removal                          ;
++------------------------------------------------------------------+---------------------------------------------+
+; registrador:REG5|DOUT[0..3]                                      ; Stuck at GND due to stuck port clock_enable ;
+; registrador:REG4|DOUT[0..3]                                      ; Stuck at GND due to stuck port clock_enable ;
+; registrador:REG3|DOUT[0..3]                                      ; Stuck at GND due to stuck port clock_enable ;
+; registrador:REG2|DOUT[0..3]                                      ; Stuck at GND due to stuck port clock_enable ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~35  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~36  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~37  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~38  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~39  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~40  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~41  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~42  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~43  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~44  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~45  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~46  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~47  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~48  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~49  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~50  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~51  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~52  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~53  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~54  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~55  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~56  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~57  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~58  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~59  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~60  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~61  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~62  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~63  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~64  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~65  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~66  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~67  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~68  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~69  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~70  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~71  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~72  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~73  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~74  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~75  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~76  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~77  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~78  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~79  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~80  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~81  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~82  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~83  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~84  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~85  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~86  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~87  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~88  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~89  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~90  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~91  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~92  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~93  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~94  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~95  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~96  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~97  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~98  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~99  ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~100 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~101 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~102 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~103 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~104 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~105 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~106 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~107 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~108 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~109 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~110 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~111 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~112 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~113 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~114 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~115 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~116 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~117 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~118 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~119 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~120 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~121 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~122 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~123 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~124 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~125 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~126 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~127 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~128 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~129 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~130 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~131 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~132 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~133 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~134 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~135 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~136 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~137 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~138 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~139 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~140 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~141 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~142 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~143 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~144 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~145 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~146 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~147 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~148 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~149 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~150 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~151 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~152 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~153 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~154 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~155 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~156 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~157 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~158 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~159 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~160 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~161 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~162 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~163 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~164 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~165 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~166 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~167 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~168 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~169 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~170 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~171 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~172 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~173 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~174 ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~17  ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~27  ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~18  ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~28  ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~24  ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~34  ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~23  ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~33  ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~22  ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~32  ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~21  ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~31  ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~20  ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~30  ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~19  ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~29  ; Stuck at GND due to stuck port data_in      ;
+; registrador:REG0|DOUT[2,3]                                       ; Stuck at GND due to stuck port data_in      ;
+; registrador:REG1|DOUT[2,3]                                       ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~26  ; Stuck at VCC due to stuck port data_in      ;
+; registrador:REG1|DOUT[0,1]                                       ; Stuck at GND due to stuck port clock_enable ;
+; divisorInterface:BASEDETEMPO|flipFlop:registraUmSegundo|DOUT     ; Stuck at VCC due to stuck port data_in      ;
+; Total Number of Removed Registers = 180                          ;                                             ;
++------------------------------------------------------------------+---------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                      ;
++-----------------------------------------------------------------+---------------------------+----------------------------------------------------+
+; Register name                                                   ; Reason for Removal        ; Registers Removed due to This Register             ;
++-----------------------------------------------------------------+---------------------------+----------------------------------------------------+
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~27 ; Stuck at GND              ; registrador:REG0|DOUT[2], registrador:REG1|DOUT[2] ;
+;                                                                 ; due to stuck port data_in ;                                                    ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~28 ; Stuck at GND              ; registrador:REG0|DOUT[3], registrador:REG1|DOUT[3] ;
+;                                                                 ; due to stuck port data_in ;                                                    ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~26 ; Stuck at VCC              ; registrador:REG1|DOUT[1]                           ;
+;                                                                 ; due to stuck port data_in ;                                                    ;
++-----------------------------------------------------------------+---------------------------+----------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -405,153 +473,406 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 20    ;
+; Total registers                              ; 13    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 12    ;
+; Number of registers using Clock Enable       ; 5     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |relogio ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; DATA_WIDTH     ; 10    ; Signed Integer                                 ;
+; DECODE_WIDTH   ; 11    ; Signed Integer                                 ;
+; ROM_DATA_WIDTH ; 26    ; Signed Integer                                 ;
+; HEX_WIDTH      ; 4     ; Signed Integer                                 ;
+; RAM_ADDR_WIDTH ; 6     ; Signed Integer                                 ;
+; ADDR_WIDTH     ; 8     ; Signed Integer                                 ;
++----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CPU:CPU ;
++----------------+-------+-----------------------------+
+; Parameter Name ; Value ; Type                        ;
++----------------+-------+-----------------------------+
+; data_width     ; 10    ; Signed Integer              ;
+; addr_width     ; 8     ; Signed Integer              ;
+; rom_data_width ; 26    ; Signed Integer              ;
++----------------+-------+-----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +---------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |CPU ;
+; Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD ;
 +----------------+-------+--------------------------------------------+
 ; Parameter Name ; Value ; Type                                       ;
 +----------------+-------+--------------------------------------------+
-; DATA_WIDTH     ; 10    ; Signed Integer                             ;
-; ADDR_WIDTH     ; 8     ; Signed Integer                             ;
-; ROM_DATA_WIDTH ; 26    ; Signed Integer                             ;
+; data_width     ; 10    ; Signed Integer                             ;
+; rom_data_width ; 26    ; Signed Integer                             ;
+; addr_width     ; 8     ; Signed Integer                             ;
 +----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|registrador:PC ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|mux2x1:MuxProxPC ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|mux2x1:muxRAM_Imediato ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; larguradados   ; 10    ; Signed Integer                                                    ;
++----------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; larguradados   ; 10    ; Signed Integer                                                    ;
++----------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|somaConstante:somaUm ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                                  ;
+; constante      ; 1     ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|memoriaROM:ROM ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; datawidth      ; 26    ; Signed Integer                                            ;
+; addrwidth      ; 8     ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg ;
++---------------------+-------+-----------------------------------------------------------------+
+; Parameter Name      ; Value ; Type                                                            ;
++---------------------+-------+-----------------------------------------------------------------+
+; larguradados        ; 10    ; Signed Integer                                                  ;
+; larguraendbancoregs ; 4     ; Signed Integer                                                  ;
++---------------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|ULA:ULA ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; larguradados   ; 10    ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CPU:CPU|Unidade_Controle:UC ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; data_width     ; 10    ; Signed Integer                                  ;
+; addr_width     ; 8     ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: decodificador:DEC ;
++----------------+-------+---------------------------------------+
+; Parameter Name ; Value ; Type                                  ;
++----------------+-------+---------------------------------------+
+; decode_width   ; 11    ; Signed Integer                        ;
++----------------+-------+---------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Fluxo_Dados:FD ;
+; Parameter Settings for User Entity Instance: memoriaRAM:RAM ;
 +----------------+-------+------------------------------------+
 ; Parameter Name ; Value ; Type                               ;
 +----------------+-------+------------------------------------+
-; data_width     ; 10    ; Signed Integer                     ;
-; rom_data_width ; 26    ; Signed Integer                     ;
-; addr_width     ; 8     ; Signed Integer                     ;
+; datawidth      ; 10    ; Signed Integer                     ;
+; addrwidth      ; 6     ; Signed Integer                     ;
 +----------------+-------+------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Fluxo_Dados:FD|registrador:PC ;
-+----------------+-------+---------------------------------------------------+
-; Parameter Name ; Value ; Type                                              ;
-+----------------+-------+---------------------------------------------------+
-; larguradados   ; 8     ; Signed Integer                                    ;
-+----------------+-------+---------------------------------------------------+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux2x1:MUX ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; larguradados   ; 10    ; Signed Integer                 ;
++----------------+-------+--------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Fluxo_Dados:FD|mux2x1:MuxProxPC ;
-+----------------+-------+-----------------------------------------------------+
-; Parameter Name ; Value ; Type                                                ;
-+----------------+-------+-----------------------------------------------------+
-; larguradados   ; 8     ; Signed Integer                                      ;
-+----------------+-------+-----------------------------------------------------+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: divisorInterface:BASEDETEMPO|divisor:baseTempo ;
++----------------+-------+--------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                               ;
++----------------+-------+--------------------------------------------------------------------+
+; divisor        ; 5     ; Signed Integer                                                     ;
++----------------+-------+--------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Fluxo_Dados:FD|mux2x1:muxRAM_Imediato ;
-+----------------+-------+-----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                      ;
-+----------------+-------+-----------------------------------------------------------+
-; larguradados   ; 10    ; Signed Integer                                            ;
-+----------------+-------+-----------------------------------------------------------+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: registrador:REG0 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; larguradados   ; 4     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Fluxo_Dados:FD|mux2x1:muxULA_Imediato ;
-+----------------+-------+-----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                      ;
-+----------------+-------+-----------------------------------------------------------+
-; larguradados   ; 10    ; Signed Integer                                            ;
-+----------------+-------+-----------------------------------------------------------+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: registrador:REG1 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; larguradados   ; 4     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Fluxo_Dados:FD|somaConstante:somaUm ;
-+----------------+-------+---------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                    ;
-+----------------+-------+---------------------------------------------------------+
-; larguradados   ; 8     ; Signed Integer                                          ;
-; constante      ; 1     ; Signed Integer                                          ;
-+----------------+-------+---------------------------------------------------------+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: registrador:REG2 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; larguradados   ; 4     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Fluxo_Dados:FD|memoriaROM:ROM ;
-+----------------+-------+---------------------------------------------------+
-; Parameter Name ; Value ; Type                                              ;
-+----------------+-------+---------------------------------------------------+
-; datawidth      ; 26    ; Signed Integer                                    ;
-; addrwidth      ; 8     ; Signed Integer                                    ;
-+----------------+-------+---------------------------------------------------+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: registrador:REG3 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; larguradados   ; 4     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Fluxo_Dados:FD|bancoRegistrador:bancoReg ;
-+---------------------+-------+---------------------------------------------------------+
-; Parameter Name      ; Value ; Type                                                    ;
-+---------------------+-------+---------------------------------------------------------+
-; larguradados        ; 10    ; Signed Integer                                          ;
-; larguraendbancoregs ; 4     ; Signed Integer                                          ;
-+---------------------+-------+---------------------------------------------------------+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: registrador:REG4 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; larguradados   ; 4     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Fluxo_Dados:FD|ULA:ULA ;
-+----------------+-------+--------------------------------------------+
-; Parameter Name ; Value ; Type                                       ;
-+----------------+-------+--------------------------------------------+
-; larguradados   ; 10    ; Signed Integer                             ;
-+----------------+-------+--------------------------------------------+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: registrador:REG5 ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; larguradados   ; 4     ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Unidade_Controle:UC ;
-+----------------+-------+-----------------------------------------+
-; Parameter Name ; Value ; Type                                    ;
-+----------------+-------+-----------------------------------------+
-; data_width     ; 10    ; Signed Integer                          ;
-; addr_width     ; 8     ; Signed Integer                          ;
-+----------------+-------+-----------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
++--------------------------------------------+
+; Port Connectivity Checks: "hex:HEX_5"      ;
++----------+-------+----------+--------------+
+; Port     ; Type  ; Severity ; Details      ;
++----------+-------+----------+--------------+
+; apaga    ; Input ; Info     ; Stuck at GND ;
+; negativo ; Input ; Info     ; Stuck at GND ;
+; overflow ; Input ; Info     ; Stuck at GND ;
++----------+-------+----------+--------------+
 
 
-+-----------------------------------------------------------+
-; Port Connectivity Checks: "Fluxo_Dados:FD|registrador:PC" ;
-+--------+-------+----------+-------------------------------+
-; Port   ; Type  ; Severity ; Details                       ;
-+--------+-------+----------+-------------------------------+
-; enable ; Input ; Info     ; Stuck at VCC                  ;
-; rst    ; Input ; Info     ; Stuck at GND                  ;
-+--------+-------+----------+-------------------------------+
++----------------------------------------------+
+; Port Connectivity Checks: "registrador:REG5" ;
++------+-------+----------+--------------------+
+; Port ; Type  ; Severity ; Details            ;
++------+-------+----------+--------------------+
+; rst  ; Input ; Info     ; Stuck at GND       ;
++------+-------+----------+--------------------+
 
 
-+-------------------------------------------------------+
-; Port Connectivity Checks: "Fluxo_Dados:FD"            ;
-+---------------------+-------+----------+--------------+
-; Port                ; Type  ; Severity ; Details      ;
-+---------------------+-------+----------+--------------+
-; entrada_dados[9..2] ; Input ; Info     ; Stuck at GND ;
-; entrada_dados[1]    ; Input ; Info     ; Stuck at VCC ;
-; entrada_dados[0]    ; Input ; Info     ; Stuck at GND ;
-+---------------------+-------+----------+--------------+
++--------------------------------------------+
+; Port Connectivity Checks: "hex:HEX_4"      ;
++----------+-------+----------+--------------+
+; Port     ; Type  ; Severity ; Details      ;
++----------+-------+----------+--------------+
+; apaga    ; Input ; Info     ; Stuck at GND ;
+; negativo ; Input ; Info     ; Stuck at GND ;
+; overflow ; Input ; Info     ; Stuck at GND ;
++----------+-------+----------+--------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "registrador:REG4" ;
++------+-------+----------+--------------------+
+; Port ; Type  ; Severity ; Details            ;
++------+-------+----------+--------------------+
+; rst  ; Input ; Info     ; Stuck at GND       ;
++------+-------+----------+--------------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "hex:HEX_3"      ;
++----------+-------+----------+--------------+
+; Port     ; Type  ; Severity ; Details      ;
++----------+-------+----------+--------------+
+; apaga    ; Input ; Info     ; Stuck at GND ;
+; negativo ; Input ; Info     ; Stuck at GND ;
+; overflow ; Input ; Info     ; Stuck at GND ;
++----------+-------+----------+--------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "registrador:REG3" ;
++------+-------+----------+--------------------+
+; Port ; Type  ; Severity ; Details            ;
++------+-------+----------+--------------------+
+; rst  ; Input ; Info     ; Stuck at GND       ;
++------+-------+----------+--------------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "hex:HEX_2"      ;
++----------+-------+----------+--------------+
+; Port     ; Type  ; Severity ; Details      ;
++----------+-------+----------+--------------+
+; apaga    ; Input ; Info     ; Stuck at GND ;
+; negativo ; Input ; Info     ; Stuck at GND ;
+; overflow ; Input ; Info     ; Stuck at GND ;
++----------+-------+----------+--------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "registrador:REG2" ;
++------+-------+----------+--------------------+
+; Port ; Type  ; Severity ; Details            ;
++------+-------+----------+--------------------+
+; rst  ; Input ; Info     ; Stuck at GND       ;
++------+-------+----------+--------------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "hex:HEX_1"      ;
++----------+-------+----------+--------------+
+; Port     ; Type  ; Severity ; Details      ;
++----------+-------+----------+--------------+
+; apaga    ; Input ; Info     ; Stuck at GND ;
+; negativo ; Input ; Info     ; Stuck at GND ;
+; overflow ; Input ; Info     ; Stuck at GND ;
++----------+-------+----------+--------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "registrador:REG1" ;
++------+-------+----------+--------------------+
+; Port ; Type  ; Severity ; Details            ;
++------+-------+----------+--------------------+
+; rst  ; Input ; Info     ; Stuck at GND       ;
++------+-------+----------+--------------------+
+
+
++--------------------------------------------+
+; Port Connectivity Checks: "hex:HEX_0"      ;
++----------+-------+----------+--------------+
+; Port     ; Type  ; Severity ; Details      ;
++----------+-------+----------+--------------+
+; apaga    ; Input ; Info     ; Stuck at GND ;
+; negativo ; Input ; Info     ; Stuck at GND ;
+; overflow ; Input ; Info     ; Stuck at GND ;
++----------+-------+----------+--------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "registrador:REG0" ;
++------+-------+----------+--------------------+
+; Port ; Type  ; Severity ; Details            ;
++------+-------+----------+--------------------+
+; rst  ; Input ; Info     ; Stuck at GND       ;
++------+-------+----------+--------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "divisorInterface:BASEDETEMPO|flipFlop:registraUmSegundo" ;
++--------+-------+----------+---------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                 ;
++--------+-------+----------+---------------------------------------------------------+
+; din    ; Input ; Info     ; Stuck at VCC                                            ;
+; enable ; Input ; Info     ; Stuck at VCC                                            ;
++--------+-------+----------+---------------------------------------------------------+
+
+
++------------------------------------------------------+
+; Port Connectivity Checks: "mux2x1:MUX"               ;
++--------------------+-------+----------+--------------+
+; Port               ; Type  ; Severity ; Details      ;
++--------------------+-------+----------+--------------+
+; entradaa_mux[9..1] ; Input ; Info     ; Stuck at GND ;
++--------------------+-------+----------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "decodificador:DEC"                                                                                         ;
++-----------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                        ; Type   ; Severity ; Details                                                                             ;
++-----------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; decodificadorcontrole[9..7] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------+
+; Port Connectivity Checks: "CPU:CPU|Fluxo_Dados:FD|registrador:PC" ;
++--------+-------+----------+---------------------------------------+
+; Port   ; Type  ; Severity ; Details                               ;
++--------+-------+----------+---------------------------------------+
+; enable ; Input ; Info     ; Stuck at VCC                          ;
+; rst    ; Input ; Info     ; Stuck at GND                          ;
++--------+-------+----------+---------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -559,23 +880,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 20                          ;
-;     ENA               ; 12                          ;
+; arriav_ff             ; 13                          ;
+;     ENA               ; 5                           ;
 ;     plain             ; 8                           ;
-; arriav_lcell_comb     ; 44                          ;
+; arriav_lcell_comb     ; 31                          ;
 ;     arith             ; 8                           ;
 ;         1 data inputs ; 8                           ;
-;     normal            ; 36                          ;
-;         0 data inputs ; 1                           ;
-;         2 data inputs ; 2                           ;
-;         3 data inputs ; 1                           ;
-;         4 data inputs ; 16                          ;
-;         5 data inputs ; 9                           ;
-;         6 data inputs ; 7                           ;
-; boundary_port         ; 31                          ;
+;     normal            ; 23                          ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 4                           ;
+;         4 data inputs ; 3                           ;
+;         5 data inputs ; 12                          ;
+;         6 data inputs ; 1                           ;
+; boundary_port         ; 43                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 3.45                        ;
+; Max LUT depth         ; 2.70                        ;
+; Average LUT depth     ; 1.97                        ;
 +-----------------------+-----------------------------+
 
 
@@ -594,7 +915,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun Oct  4 16:25:30 2020
+    Info: Processing started: Tue Oct  6 11:47:45 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Relogio -c Relogio
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -607,20 +928,20 @@ Info (12021): Found 2 design units, including 1 entities, in source file bancoRe
     Info (12022): Found design unit 1: bancoRegistradorOld-arch_name File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/bancoRegistradorOld.vhd Line: 27
     Info (12023): Found entity 1: bancoRegistradorOld File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/bancoRegistradorOld.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file fluxoDados.vhd
-    Info (12022): Found design unit 1: Fluxo_Dados-arch_name File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 25
+    Info (12022): Found design unit 1: Fluxo_Dados-arch_name File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 26
     Info (12023): Found entity 1: Fluxo_Dados File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file unidadeControle.vhd
     Info (12022): Found design unit 1: Unidade_Controle-arch_name File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/unidadeControle.vhd Line: 22
     Info (12023): Found entity 1: Unidade_Controle File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/unidadeControle.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file relogio.vhd
-    Info (12022): Found design unit 1: relogio-arch_name File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 20
-    Info (12023): Found entity 1: relogio File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 5
+    Info (12022): Found design unit 1: relogio-arch_name File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 31
+    Info (12023): Found entity 1: relogio File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file mux2x1.vhd
     Info (12022): Found design unit 1: mux2x1-comportamento File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/mux2x1.vhd Line: 14
     Info (12023): Found entity 1: mux2x1 File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/mux2x1.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file hex.vhd
-    Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/hex.vhd Line: 16
-    Info (12023): Found entity 1: conversorHex7Seg File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/hex.vhd Line: 4
+    Info (12022): Found design unit 1: hex-comportamento File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/hex.vhd Line: 17
+    Info (12023): Found entity 1: hex File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/hex.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file somador.vhd
     Info (12022): Found design unit 1: somaConstante-comportamento File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/somador.vhd Line: 16
     Info (12023): Found entity 1: somaConstante File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/somador.vhd Line: 5
@@ -644,66 +965,83 @@ Info (12021): Found 2 design units, including 1 entities, in source file CPU.vhd
     Info (12023): Found entity 1: CPU File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd Line: 5
 Warning (12019): Can't analyze file -- file divisorInterface.v is missing
 Info (12021): Found 2 design units, including 1 entities, in source file divisorInterface.vhd
-    Info (12022): Found design unit 1: divisorInterface-interface File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/divisorInterface.vhd Line: 13
+    Info (12022): Found design unit 1: divisorInterface-interface File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/divisorInterface.vhd Line: 14
     Info (12023): Found entity 1: divisorInterface File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/divisorInterface.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file flipFlop.vhd
     Info (12022): Found design unit 1: flipFlop-comportamento File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/flipFlop.vhd Line: 14
     Info (12023): Found entity 1: flipFlop File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/flipFlop.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file decodificador.vhd
-    Info (12022): Found design unit 1: decodificador-arch_name File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/decodificador.vhd Line: 30
+    Info (12022): Found design unit 1: decodificador-arch_name File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/decodificador.vhd Line: 29
     Info (12023): Found entity 1: decodificador File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/decodificador.vhd Line: 6
-Info (12127): Elaborating entity "CPU" for the top level hierarchy
-Info (12128): Elaborating entity "Fluxo_Dados" for hierarchy "Fluxo_Dados:FD" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd Line: 29
-Info (12128): Elaborating entity "registrador" for hierarchy "Fluxo_Dados:FD|registrador:PC" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 52
-Info (12128): Elaborating entity "mux2x1" for hierarchy "Fluxo_Dados:FD|mux2x1:MuxProxPC" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 55
-Info (12128): Elaborating entity "mux2x1" for hierarchy "Fluxo_Dados:FD|mux2x1:muxRAM_Imediato" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 59
-Info (12128): Elaborating entity "somaConstante" for hierarchy "Fluxo_Dados:FD|somaConstante:somaUm" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 68
-Info (12128): Elaborating entity "memoriaROM" for hierarchy "Fluxo_Dados:FD|memoriaROM:ROM" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 71
-Info (12128): Elaborating entity "bancoRegistrador" for hierarchy "Fluxo_Dados:FD|bancoRegistrador:bancoReg" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 75
-Info (12128): Elaborating entity "ULA" for hierarchy "Fluxo_Dados:FD|ULA:ULA" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 82
-Info (12128): Elaborating entity "Unidade_Controle" for hierarchy "Unidade_Controle:UC" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd Line: 34
+Warning (12019): Can't analyze file -- file hexInterface.vhd is missing
+Info (12127): Elaborating entity "relogio" for the top level hierarchy
+Info (12128): Elaborating entity "CPU" for hierarchy "CPU:CPU" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 71
+Info (12128): Elaborating entity "Fluxo_Dados" for hierarchy "CPU:CPU|Fluxo_Dados:FD" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd Line: 30
+Info (12128): Elaborating entity "registrador" for hierarchy "CPU:CPU|Fluxo_Dados:FD|registrador:PC" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 53
+Info (12128): Elaborating entity "mux2x1" for hierarchy "CPU:CPU|Fluxo_Dados:FD|mux2x1:MuxProxPC" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 56
+Info (12128): Elaborating entity "mux2x1" for hierarchy "CPU:CPU|Fluxo_Dados:FD|mux2x1:muxRAM_Imediato" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 60
+Info (12128): Elaborating entity "somaConstante" for hierarchy "CPU:CPU|Fluxo_Dados:FD|somaConstante:somaUm" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 69
+Info (12128): Elaborating entity "memoriaROM" for hierarchy "CPU:CPU|Fluxo_Dados:FD|memoriaROM:ROM" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 72
+Info (12128): Elaborating entity "bancoRegistrador" for hierarchy "CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 76
+Info (12128): Elaborating entity "ULA" for hierarchy "CPU:CPU|Fluxo_Dados:FD|ULA:ULA" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 83
+Info (12128): Elaborating entity "Unidade_Controle" for hierarchy "CPU:CPU|Unidade_Controle:UC" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd Line: 35
 Warning (10873): Using initial value X (don't care) for net "palavraControle[1..0]" at unidadeControle.vhd(19) File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/unidadeControle.vhd Line: 19
-Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276007): RAM logic "Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador" is uninferred due to asynchronous read logic File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/bancoRegistrador.vhd Line: 30
+Info (12128): Elaborating entity "decodificador" for hierarchy "decodificador:DEC" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 74
+Warning (10873): Using initial value X (don't care) for net "decodificadorControle[5..0]" at decodificador.vhd(26) File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/decodificador.vhd Line: 26
+Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 77
+Info (12128): Elaborating entity "divisorInterface" for hierarchy "divisorInterface:BASEDETEMPO" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 85
+Info (12128): Elaborating entity "divisor" for hierarchy "divisorInterface:BASEDETEMPO|divisor:baseTempo" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/divisorInterface.vhd Line: 19
+Info (12128): Elaborating entity "flipFlop" for hierarchy "divisorInterface:BASEDETEMPO|flipFlop:registraUmSegundo" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/divisorInterface.vhd Line: 23
+Info (12128): Elaborating entity "registrador" for hierarchy "registrador:REG0" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 88
+Info (12128): Elaborating entity "hex" for hierarchy "hex:HEX_0" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 90
+Info (276014): Found 2 instances of uninferred RAM logic
+    Info (276004): RAM logic "memoriaRAM:RAM|ram" is uninferred due to inappropriate RAM size File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/memoriaRAM.vhd Line: 25
+    Info (276007): RAM logic "CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador" is uninferred due to asynchronous read logic File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/bancoRegistrador.vhd Line: 30
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13049): Converted tri-state buffer "divisorInterface:BASEDETEMPO|leituraUmSegundo" feeding internal logic into a wire File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/divisorInterface.vhd Line: 10
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "decodificadorEnd[0]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd Line: 18
-    Warning (13410): Pin "decodificadorEnd[1]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd Line: 18
-    Warning (13410): Pin "decodificadorEnd[2]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd Line: 18
-    Warning (13410): Pin "decodificadorEnd[3]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd Line: 18
-    Warning (13410): Pin "decodificadorEnd[4]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd Line: 18
-    Warning (13410): Pin "decodificadorEnd[5]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd Line: 18
-    Warning (13410): Pin "decodificadorEnd[6]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd Line: 18
-    Warning (13410): Pin "decodificadorEnd[9]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd Line: 18
-    Warning (13410): Pin "saida_dados[3]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd Line: 19
-    Warning (13410): Pin "saida_dados[4]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd Line: 19
-    Warning (13410): Pin "saida_dados[5]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd Line: 19
-    Warning (13410): Pin "saida_dados[6]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd Line: 19
-    Warning (13410): Pin "saida_dados[7]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd Line: 19
-    Warning (13410): Pin "saida_dados[8]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd Line: 19
-    Warning (13410): Pin "saida_dados[9]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd Line: 19
+    Warning (13410): Pin "HEX0[1]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 22
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 23
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 24
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 24
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 24
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 24
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 24
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 24
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 24
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 25
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 25
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 25
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 25
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 25
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 25
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 25
+    Warning (13410): Pin "HEX4[0]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 26
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 26
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 26
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 26
+    Warning (13410): Pin "HEX4[4]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 26
+    Warning (13410): Pin "HEX4[5]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 26
+    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 26
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 27
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 27
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 27
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 27
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 27
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 27
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 27
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 120 registers lost all their fanouts during netlist optimizations.
+Info (17049): 140 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 10 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "entrada_dados[0]" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd Line: 15
-    Warning (15610): No output dependent on input pin "entrada_dados[1]" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd Line: 15
-    Warning (15610): No output dependent on input pin "entrada_dados[2]" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd Line: 15
-    Warning (15610): No output dependent on input pin "entrada_dados[3]" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd Line: 15
-    Warning (15610): No output dependent on input pin "entrada_dados[4]" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd Line: 15
-    Warning (15610): No output dependent on input pin "entrada_dados[5]" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd Line: 15
-    Warning (15610): No output dependent on input pin "entrada_dados[6]" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd Line: 15
-    Warning (15610): No output dependent on input pin "entrada_dados[7]" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd Line: 15
-    Warning (15610): No output dependent on input pin "entrada_dados[8]" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd Line: 15
-    Warning (15610): No output dependent on input pin "entrada_dados[9]" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd Line: 15
-Info (21057): Implemented 86 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 11 input pins
-    Info (21059): Implemented 20 output pins
-    Info (21061): Implemented 55 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 30 warnings
-    Info: Peak virtual memory: 1048 megabytes
-    Info: Processing ended: Sun Oct  4 16:25:52 2020
-    Info: Elapsed time: 00:00:22
-    Info: Total CPU time (on all processors): 00:00:58
+Info (21057): Implemented 74 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 42 output pins
+    Info (21061): Implemented 31 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 38 warnings
+    Info: Peak virtual memory: 1057 megabytes
+    Info: Processing ended: Tue Oct  6 11:48:12 2020
+    Info: Elapsed time: 00:00:27
+    Info: Total CPU time (on all processors): 00:01:12
 
 
