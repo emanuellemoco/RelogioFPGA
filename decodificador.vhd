@@ -42,7 +42,7 @@ ARCHITECTURE arch_name OF decodificador IS
   ALIAS habReg3 : std_logic IS decodificadorControle(16);
   ALIAS habReg4 : std_logic IS decodificadorControle(17);
   ALIAS habReg5 : std_logic IS decodificadorControle(18);
-  
+
 
 
 
@@ -89,7 +89,8 @@ BEGIN
     '0';
   habReg5 <= '1' WHEN (unsigned(endereco) = 6 AND opcode = wr) ELSE
     '0';
-    
+  
+
 
 
   --decodificador port map 

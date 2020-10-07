@@ -19,13 +19,15 @@ ENTITY relogio IS
       PORT (
 
             CLOCK_50 : IN std_logic;
+            SW : IN std_logic_vector(DATA_WIDTH-1 DOWNTO 0);
             HEX0 : OUT std_logic_vector(6 DOWNTO 0);
             HEX1 : OUT std_logic_vector(6 DOWNTO 0);
             HEX2 : OUT std_logic_vector(6 DOWNTO 0);
             HEX3 : OUT std_logic_vector(6 DOWNTO 0);
             HEX4 : OUT std_logic_vector(6 DOWNTO 0);
             HEX5 : OUT std_logic_vector(6 DOWNTO 0);
-            tempo : OUT std_logic
+            LEDR : OUT std_logic_vector(DATA_WIDTH-1 downto 0)
+
 
       );
 END ENTITY;
@@ -46,22 +48,23 @@ ARCHITECTURE arch_name OF relogio IS
       SIGNAL reg3Out : std_logic_vector(HEX_WIDTH - 1 downto 0);
       SIGNAL reg4Out : std_logic_vector(HEX_WIDTH - 1 downto 0);
       SIGNAL reg5Out : std_logic_vector(HEX_WIDTH - 1 downto 0);
-      
+     
       
       ALIAS enderecoRAM : std_logic_vector(5 DOWNTO 0) IS decodificadorControle(5 DOWNTO 0);
-      ALIAS selMUX : std_logic IS decodificadorControle(6);
-      ALIAS habRegHEX : std_logic IS decodificadorControle(7);
-      ALIAS habRegLED : std_logic IS decodificadorControle(8);
-      ALIAS habLeituraRAM : std_logic IS decodificadorControle(9);
-      ALIAS habEscritaRAM : std_logic IS decodificadorControle(10);
-      ALIAS habLeituraInterface : std_logic IS decodificadorControle(11);
-      ALIAS limpaLeituraInterface : std_logic IS decodificadorControle(12);
-      ALIAS habReg0 : std_logic IS decodificadorControle(13);
-      ALIAS habReg1 : std_logic IS decodificadorControle(14);
-      ALIAS habReg2 : std_logic IS decodificadorControle(15);
-      ALIAS habReg3 : std_logic IS decodificadorControle(16);
-      ALIAS habReg4 : std_logic IS decodificadorControle(17);
-      ALIAS habReg5 : std_logic IS decodificadorControle(18);
+      ALIAS selMUX : std_logic IS decodificadorControle(7 downto 6);
+      ALIAS habRegHEX : std_logic IS decodificadorControle(8);
+      ALIAS habRegLED : std_logic IS decodificadorControle(9);
+      ALIAS habLeituraRAM : std_logic IS decodificadorControle(10);
+      ALIAS habEscritaRAM : std_logic IS decodificadorControle(11);
+      ALIAS habLeituraInterface : std_logic IS decodificadorControle(12);
+      ALIAS limpaLeituraInterface : std_logic IS decodificadorControle(13);
+      ALIAS habReg0 : std_logic IS decodificadorControle(14);
+      ALIAS habReg1 : std_logic IS decodificadorControle(15);
+      ALIAS habReg2 : std_logic IS decodificadorControle(16);
+      ALIAS habReg3 : std_logic IS decodificadorControle(17);
+      ALIAS habReg4 : std_logic IS decodificadorControle(18);
+      ALIAS habReg5 : std_logic IS decodificadorControle(19);
+
       
 
       ALIAS endereco : std_logic_vector(6 DOWNTO 0) IS CPUOut(6 DOWNTO 0);
@@ -80,8 +83,9 @@ BEGIN
 
       -- HEX :  fazer interface HEX
 
-      MUX : ENTITY work.mux2x1 GENERIC MAP (larguraDados => DATA_WIDTH)
+      MUX : ENTITY work.mux3x1 GENERIC MAP (larguraDados => DATA_WIDTH)
             PORT MAP(entradaA_MUX => "000000000" & baseTempoOut, entradaB_MUX => RAMOut, seletor_MUX => selMUX, saida_MUX => muxOut);
+
 
       BASEDETEMPO : ENTITY work.divisorInterface
             PORT MAP(clk => CLOCK_50, habilitaLeitura => habLeituraInterface, limpaLeitura => limpaLeituraInterface, leituraUmSegundo => baseTempoOut);
@@ -115,10 +119,13 @@ BEGIN
             PORT MAP(DIN =>CPUOut(3 downto 0), DOUT =>reg5Out, ENABLE =>habReg5, CLK => CLOCK_50, RST =>'0');
       HEX_5: ENTITY work.hex
             PORT MAP(dadoHEX => reg5Out, apaga => '0', negativo => '0', overflow => '0', saida7seg => HEX5);
-            
-      tempo <= baseTempoOut;
+      
+      REGLED : ENTITY work.registrador GENERIC MAP (larguraDados => DATA_WIDTH)
+            PORT MAP(DIN =>CPUOut, DOUT =>LEDR, ENABLE =>habRegLED, CLK => CLOCK_50, RST =>'0');
 
-
+      REGHEX : ENTITY work.registrador GENERIC MAP (larguraDados => DATA_WIDTH)
+            PORT MAP(DIN =>CPUOut, DOUT =>LEDR, ENABLE =>habRegLED, CLK => CLOCK_50, RST =>'0');
+   
 END ARCHITECTURE;
 
 

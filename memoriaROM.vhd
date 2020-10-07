@@ -45,13 +45,8 @@ ARCHITECTURE assincrona OF memoriaROM IS
         tmp(4) := je    & R02 & R03 & NOP & b"0000000010" ;
         tmp(5) := inc   & R01 & NOP & R01 & b"0000000000" ;
         tmp(6) := wr    & R01 & NOP & NOP & b"0000000010" ;
-        tmp(7) := jmp   & NOP & NOP & NOP & b"0000000010" ;
-
-
-
-
-
-
+        tmp(7) := wr    & R01 & NOP & NOP & b"0000000111" ; 
+        tmp(8) := jmp   & NOP & NOP & NOP & b"0000000010" ;
 
     
         RETURN tmp;
