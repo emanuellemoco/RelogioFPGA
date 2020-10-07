@@ -1,87 +1,87 @@
-LIBRARY ieee;
-USE ieee.std_logic_1164.ALL;
-USE ieee.numeric_std.ALL;
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
-ENTITY bancoRegistradorOld IS
-  GENERIC (
-    ADDR_WIDTH : NATURAL := 4;
-    DATA_WIDTH : NATURAL := 10
+entity bancoRegistradorOld is
+  generic (
+    ADDR_WIDTH : natural := 4;
+    DATA_WIDTH : natural := 10
   );
 
-  PORT (
+  port (
     -- Input ports
-    enable : IN std_logic;
-    clk : IN std_logic;
-    end_regA : IN std_logic_vector(ADDR_WIDTH - 1 DOWNTO 0);
-    end_regB : IN std_logic_vector(ADDR_WIDTH - 1 DOWNTO 0);
-    end_regC : IN std_logic_vector(ADDR_WIDTH - 1 DOWNTO 0);
+    enable : in std_logic;
+    clk : in std_logic;
+    end_regA : in std_logic_vector(ADDR_WIDTH - 1 downto 0);
+    end_regB : in std_logic_vector(ADDR_WIDTH - 1 downto 0);
+    end_regC : in std_logic_vector(ADDR_WIDTH - 1 downto 0);
 
-    data_input : IN std_logic_vector(DATA_WIDTH - 1 DOWNTO 0);
+    data_input : in std_logic_vector(DATA_WIDTH - 1 downto 0);
 
     -- Output ports
-    regA_out : OUT std_logic_vector(DATA_WIDTH - 1 DOWNTO 0);
-    regB_out : OUT std_logic_vector(DATA_WIDTH - 1 DOWNTO 0)
+    regA_out : out std_logic_vector(DATA_WIDTH - 1 downto 0);
+    regB_out : out std_logic_vector(DATA_WIDTH - 1 downto 0)
   );
-END ENTITY;
+end entity;
 
-ARCHITECTURE arch_name OF bancoRegistradorOld IS
+architecture arch_name of bancoRegistradorOld is
 
-SIGNAL reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7 : std_logic_vector(DATA_WIDTH - 1 DOWNTO 0);
-SIGNAL enable0, enable1, enable2, enable3, enable4, enable5, enable6, enable7 : std_logic;
+  signal reg0, reg1, reg2, reg3, reg4, reg5, reg6, reg7 : std_logic_vector(DATA_WIDTH - 1 downto 0);
+  signal enable0, enable1, enable2, enable3, enable4, enable5, enable6, enable7 : std_logic;
 
-BEGIN
-  enable0 <= '1' WHEN (end_regC = "0000" AND enable = '1') ELSE
+begin
+  enable0 <= '1' when (end_regC = "0000" and enable = '1') else
     '0';
-  enable1 <= '1' WHEN (end_regC = "0001" AND enable = '1') ELSE
+  enable1 <= '1' when (end_regC = "0001" and enable = '1') else
     '0';
-  enable2 <= '1' WHEN (end_regC = "0010" AND enable = '1') ELSE
+  enable2 <= '1' when (end_regC = "0010" and enable = '1') else
     '0';
-  enable3 <= '1' WHEN (end_regC = "0011" AND enable = '1') ELSE
+  enable3 <= '1' when (end_regC = "0011" and enable = '1') else
     '0';
-  enable4 <= '1' WHEN (end_regC = "0100" AND enable = '1') ELSE
+  enable4 <= '1' when (end_regC = "0100" and enable = '1') else
     '0';
-  enable5 <= '1' WHEN (end_regC = "0101" AND enable = '1') ELSE
+  enable5 <= '1' when (end_regC = "0101" and enable = '1') else
     '0';
-  enable6 <= '1' WHEN (end_regC = "0110" AND enable = '1') ELSE
+  enable6 <= '1' when (end_regC = "0110" and enable = '1') else
     '0';
-  enable7 <= '1' WHEN (end_regC = "0111" AND enable = '1') ELSE
+  enable7 <= '1' when (end_regC = "0111" and enable = '1') else
     '0';
 
-  R0 : ENTITY work.registrador GENERIC MAP (larguraDados => DATA_WIDTH)
-    PORT MAP(DIN => data_input, DOUT => reg0, ENABLE => enable0, CLK => clk, RST => '0');
-  R1 : ENTITY work.registrador GENERIC MAP (larguraDados => DATA_WIDTH)
-    PORT MAP(DIN => data_input, DOUT => reg1, ENABLE => enable1, CLK => clk, RST => '0');
-  R2 : ENTITY work.registrador GENERIC MAP (larguraDados => DATA_WIDTH)
-    PORT MAP(DIN => data_input, DOUT => reg2, ENABLE => enable2, CLK => clk, RST => '0');
-  R3 : ENTITY work.registrador GENERIC MAP (larguraDados => DATA_WIDTH)
-    PORT MAP(DIN => data_input, DOUT => reg3, ENABLE => enable3, CLK => clk, RST => '0');
-  R4 : ENTITY work.registrador GENERIC MAP (larguraDados => DATA_WIDTH)
-    PORT MAP(DIN => data_input, DOUT => reg4, ENABLE => enable4, CLK => clk, RST => '0');
-  R5 : ENTITY work.registrador GENERIC MAP (larguraDados => DATA_WIDTH)
-    PORT MAP(DIN => data_input, DOUT => reg5, ENABLE => enable5, CLK => clk, RST => '0');
-  R6 : ENTITY work.registrador GENERIC MAP (larguraDados => DATA_WIDTH)
-    PORT MAP(DIN => data_input, DOUT => reg6, ENABLE => enable6, CLK => clk, RST => '0');
-  R7 : ENTITY work.registrador GENERIC MAP (larguraDados => DATA_WIDTH)
-    PORT MAP(DIN => data_input, DOUT => reg7, ENABLE => enable7, CLK => clk, RST => '0');
+  R0 : entity work.registrador generic map (larguraDados => DATA_WIDTH)
+    port map(DIN => data_input, DOUT => reg0, ENABLE => enable0, CLK => clk, RST => '0');
+  R1 : entity work.registrador generic map (larguraDados => DATA_WIDTH)
+    port map(DIN => data_input, DOUT => reg1, ENABLE => enable1, CLK => clk, RST => '0');
+  R2 : entity work.registrador generic map (larguraDados => DATA_WIDTH)
+    port map(DIN => data_input, DOUT => reg2, ENABLE => enable2, CLK => clk, RST => '0');
+  R3 : entity work.registrador generic map (larguraDados => DATA_WIDTH)
+    port map(DIN => data_input, DOUT => reg3, ENABLE => enable3, CLK => clk, RST => '0');
+  R4 : entity work.registrador generic map (larguraDados => DATA_WIDTH)
+    port map(DIN => data_input, DOUT => reg4, ENABLE => enable4, CLK => clk, RST => '0');
+  R5 : entity work.registrador generic map (larguraDados => DATA_WIDTH)
+    port map(DIN => data_input, DOUT => reg5, ENABLE => enable5, CLK => clk, RST => '0');
+  R6 : entity work.registrador generic map (larguraDados => DATA_WIDTH)
+    port map(DIN => data_input, DOUT => reg6, ENABLE => enable6, CLK => clk, RST => '0');
+  R7 : entity work.registrador generic map (larguraDados => DATA_WIDTH)
+    port map(DIN => data_input, DOUT => reg7, ENABLE => enable7, CLK => clk, RST => '0');
 
-  regA_out <= reg0 WHEN end_regA = "000" ELSE
-    reg1 WHEN end_regA = "001" ELSE
-    reg2 WHEN end_regA = "010" ELSE
-    reg3 WHEN end_regA = "011" ELSE
-    reg4 WHEN end_regA = "011" ELSE
-    reg5 WHEN end_regA = "100" ELSE
-    reg6 WHEN end_regA = "101" ELSE
-    reg6 WHEN end_regA = "110" ELSE
+  regA_out <= reg0 when end_regA = "000" else
+    reg1 when end_regA = "001" else
+    reg2 when end_regA = "010" else
+    reg3 when end_regA = "011" else
+    reg4 when end_regA = "011" else
+    reg5 when end_regA = "100" else
+    reg6 when end_regA = "101" else
+    reg6 when end_regA = "110" else
     reg7;
 
-  regB_out <= reg0 WHEN end_regB = "000" ELSE
-    reg1 WHEN end_regB = "001" ELSE
-    reg2 WHEN end_regB = "010" ELSE
-    reg3 WHEN end_regB = "011" ELSE
-    reg4 WHEN end_regB = "011" ELSE
-    reg5 WHEN end_regB = "100" ELSE
-    reg6 WHEN end_regB = "101" ELSE
-    reg6 WHEN end_regB = "110" ELSE
+  regB_out <= reg0 when end_regB = "000" else
+    reg1 when end_regB = "001" else
+    reg2 when end_regB = "010" else
+    reg3 when end_regB = "011" else
+    reg4 when end_regB = "011" else
+    reg5 when end_regB = "100" else
+    reg6 when end_regB = "101" else
+    reg6 when end_regB = "110" else
     reg7;
 
-END ARCHITECTURE;
+end architecture;

@@ -1,40 +1,40 @@
-LIBRARY ieee;
-USE ieee.std_logic_1164.ALL;
-USE ieee.numeric_std.ALL;
- 
-ENTITY CPU IS
-  GENERIC (
-    DATA_WIDTH : NATURAL := 10;
-    ADDR_WIDTH : NATURAL := 8;
-    ROM_DATA_WIDTH : NATURAL := 26
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity CPU is
+  generic (
+    DATA_WIDTH : natural := 10;
+    ADDR_WIDTH : natural := 8;
+    ROM_DATA_WIDTH : natural := 26
   );
 
-  PORT (
+  port (
     -- Input ports
-    clk : IN std_logic;
-    entrada_dados : IN std_logic_vector(DATA_WIDTH - 1 DOWNTO 0);
+    clk : in std_logic;
+    entrada_dados : in std_logic_vector(DATA_WIDTH - 1 downto 0);
 
     -- Output ports
-    decodificadorEnd : OUT std_logic_vector(10 DOWNTO 0);
-    saida_dados : OUT std_logic_vector(DATA_WIDTH - 1 DOWNTO 0)
+    decodificadorEnd : out std_logic_vector(10 downto 0);
+    saida_dados : out std_logic_vector(DATA_WIDTH - 1 downto 0)
   );
-END ENTITY;
-ARCHITECTURE arch_name OF CPU IS
-  SIGNAL saidaReg : std_logic_vector(DATA_WIDTH - 1 DOWNTO 0);
-  SIGNAL palavraControle : std_logic_vector(8 DOWNTO 0);
-  SIGNAL opCode : std_logic_vector(3 DOWNTO 0);
-  SIGNAL endPerif : std_logic_vector(6 DOWNTO 0);
-  SIGNAL equal_ULA : std_logic;
+end entity;
+architecture arch_name of CPU is
+  signal saidaReg : std_logic_vector(DATA_WIDTH - 1 downto 0);
+  signal palavraControle : std_logic_vector(8 downto 0);
+  signal opCode : std_logic_vector(3 downto 0);
+  signal endPerif : std_logic_vector(6 downto 0);
+  signal equal_ULA : std_logic;
 
-BEGIN
-  FD : ENTITY work.Fluxo_Dados GENERIC MAP (DATA_WIDTH => DATA_WIDTH, ROM_DATA_WIDTH => ROM_DATA_WIDTH, ADDR_WIDTH => ADDR_WIDTH)
-    PORT MAP(
+begin
+  FD : entity work.Fluxo_Dados generic map (DATA_WIDTH => DATA_WIDTH, ROM_DATA_WIDTH => ROM_DATA_WIDTH, ADDR_WIDTH => ADDR_WIDTH)
+    port map(
       CLK => clk, palavraControle => palavraControle, entrada_dados => entrada_dados,
-      opCode => opCode, endPerif   => endPerif,  data_out => saida_dados, equal_ULA => equal_ULA);
+      opCode => opCode, endPerif => endPerif, data_out => saida_dados, equal_ULA => equal_ULA);
 
-  UC : ENTITY work.Unidade_Controle GENERIC MAP (DATA_WIDTH => DATA_WIDTH, ADDR_WIDTH => ADDR_WIDTH)
-    PORT MAP(CLK => clk, opCode => opCode, equal_ULA => equal_ULA, palavraControle => palavraControle);
+  UC : entity work.Unidade_Controle generic map (DATA_WIDTH => DATA_WIDTH, ADDR_WIDTH => ADDR_WIDTH)
+    port map(CLK => clk, opCode => opCode, equal_ULA => equal_ULA, palavraControle => palavraControle);
 
-    decodificadorEnd <= opcode & endPerif ;
+  decodificadorEnd <= opcode & endPerif;
 
-    END ARCHITECTURE;
+end architecture;

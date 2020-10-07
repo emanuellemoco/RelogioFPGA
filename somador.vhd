@@ -1,19 +1,19 @@
-LIBRARY ieee;
-USE ieee.std_logic_1164.ALL;
-USE ieee.numeric_std.ALL; --Soma (esta biblioteca =ieee)
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all; --Soma (esta biblioteca =ieee)
 
-ENTITY somaConstante IS
-    GENERIC (
-        larguraDados : NATURAL := 32;
-        constante : NATURAL := 4
+entity somaConstante is
+    generic (
+        larguraDados : natural := 32;
+        constante : natural := 4
     );
-    PORT (
-        entrada : IN STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0);
-        saida : OUT STD_LOGIC_VECTOR((larguraDados - 1) DOWNTO 0)
+    port (
+        entrada : in STD_LOGIC_VECTOR((larguraDados - 1) downto 0);
+        saida : out STD_LOGIC_VECTOR((larguraDados - 1) downto 0)
     );
-END ENTITY;
+end entity;
 
-ARCHITECTURE comportamento OF somaConstante IS
-BEGIN
+architecture comportamento of somaConstante is
+begin
     saida <= std_logic_vector(unsigned(entrada) + constante);
-END ARCHITECTURE;
+end architecture;

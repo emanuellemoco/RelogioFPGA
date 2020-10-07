@@ -1,38 +1,38 @@
-LIBRARY ieee;
-USE ieee.std_logic_1164.ALL;
-USE ieee.numeric_std.ALL;
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
-ENTITY memoriaRAM IS
-    GENERIC (
-        dataWidth : NATURAL := 8;
-        addrWidth : NATURAL := 8
+entity memoriaRAM is
+    generic (
+        dataWidth : natural := 8;
+        addrWidth : natural := 8
     );
-    PORT (
-        addr : IN std_logic_vector(addrWidth - 1 DOWNTO 0);
-        we : IN std_logic := '1';
-        clk : IN std_logic;
-        dado_in : IN std_logic_vector(dataWidth - 1 DOWNTO 0);
-        dado_out : OUT std_logic_vector(dataWidth - 1 DOWNTO 0)
+    port (
+        addr : in std_logic_vector(addrWidth - 1 downto 0);
+        we : in std_logic := '1';
+        clk : in std_logic;
+        dado_in : in std_logic_vector(dataWidth - 1 downto 0);
+        dado_out : out std_logic_vector(dataWidth - 1 downto 0)
     );
-END ENTITY;
+end entity;
 
-ARCHITECTURE rtl OF memoriaRAM IS
+architecture rtl of memoriaRAM is
     -- Build a 2-D array type for the RAM
-    SUBTYPE word_t IS std_logic_vector(dataWidth - 1 DOWNTO 0);
-    TYPE memory_t IS ARRAY((2 ** addrWidth - 1) DOWNTO 0) OF word_t;
+    subtype word_t is std_logic_vector(dataWidth - 1 downto 0);
+    type memory_t is array((2 ** addrWidth - 1) downto 0) of word_t;
 
     -- Declare the RAM signal.
-    SIGNAL ram : memory_t;
-BEGIN
-    PROCESS (clk)
-    BEGIN
-        IF (rising_edge(clk)) THEN
-            IF (we = '1') THEN
+    signal ram : memory_t;
+begin
+    process (clk)
+    begin
+        if (rising_edge(clk)) then
+            if (we = '1') then
                 ram(to_integer(unsigned(addr))) <= dado_in;
-            END IF;
-        END IF;
-    END PROCESS;
+            end if;
+        end if;
+    end process;
 
     -- A leitura é sempre assincrona:
     dado_out <= ram(to_integer(unsigned(addr)));
-END ARCHITECTURE;
+end architecture;

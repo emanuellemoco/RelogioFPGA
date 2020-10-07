@@ -1,36 +1,36 @@
-LIBRARY IEEE;
-USE IEEE.STD_LOGIC_1164.ALL;
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
 
-ENTITY flipFlop IS
+entity flipFlop is
 
-    PORT (
-        DIN : IN std_logic;
-        DOUT : OUT std_logic;
-        ENABLE : IN std_logic;
-        CLK, RST : IN std_logic
+    port (
+        DIN : in std_logic;
+        DOUT : out std_logic;
+        ENABLE : in std_logic;
+        CLK, RST : in std_logic
     );
-END ENTITY;
+end entity;
 
-ARCHITECTURE comportamento OF flipFlop IS
-BEGIN
+architecture comportamento of flipFlop is
+begin
 
-    PROCESS (RST, CLK)
-    BEGIN
+    process (RST, CLK)
+    begin
 
         -- The asynchronous reset signal has the highest priority
-        IF (RST = '1') THEN
+        if (RST = '1') then
             DOUT <= '0'; -- Código reconfigurável.
-        ELSE
+        else
             -- At a clock edge, if asynchronous signals have not taken priority,
             -- respond to the appropriate synchronous signal.
             -- Check for synchronous reset, then synchronous load.
             -- If none of these takes precedence, update the register output
             -- to be the register input.
-            IF (rising_edge(CLK)) THEN
-                IF (ENABLE = '1') THEN
+            if (rising_edge(CLK)) then
+                if (ENABLE = '1') then
                     DOUT <= DIN;
-                END IF;
-            END IF;
-        END IF;
-    END PROCESS;
-END ARCHITECTURE;
+                end if;
+            end if;
+        end if;
+    end process;
+end architecture;

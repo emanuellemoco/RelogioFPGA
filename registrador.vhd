@@ -1,38 +1,38 @@
-LIBRARY IEEE;
-USE IEEE.STD_LOGIC_1164.ALL;
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
 
-ENTITY registrador IS
-    GENERIC (
-        larguraDados : NATURAL := 8
+entity registrador is
+    generic (
+        larguraDados : natural := 8
     );
-    PORT (
-        DIN : IN std_logic_vector(larguraDados - 1 DOWNTO 0);
-        DOUT : OUT std_logic_vector(larguraDados - 1 DOWNTO 0);
-        ENABLE : IN std_logic;
-        CLK, RST : IN std_logic
+    port (
+        DIN : in std_logic_vector(larguraDados - 1 downto 0);
+        DOUT : out std_logic_vector(larguraDados - 1 downto 0);
+        ENABLE : in std_logic;
+        CLK, RST : in std_logic
     );
-END ENTITY;
+end entity;
 
-ARCHITECTURE comportamento OF registrador IS
-BEGIN
+architecture comportamento of registrador is
+begin
     -- In Altera devices, register signals have a set priority.
     -- The HDL design should reflect this priority.
-    PROCESS (RST, CLK)
-    BEGIN
+    process (RST, CLK)
+    begin
         -- The asynchronous reset signal has the highest priority
-        IF (RST = '1') THEN
-            DOUT <= (OTHERS => '0'); -- Código reconfigurável.
-        ELSE
+        if (RST = '1') then
+            DOUT <= (others => '0'); -- Código reconfigurável.
+        else
             -- At a clock edge, if asynchronous signals have not taken priority,
             -- respond to the appropriate synchronous signal.
             -- Check for synchronous reset, then synchronous load.
             -- If none of these takes precedence, update the register output
             -- to be the register input.
-            IF (rising_edge(CLK)) THEN
-                IF (ENABLE = '1') THEN
+            if (rising_edge(CLK)) then
+                if (ENABLE = '1') then
                     DOUT <= DIN;
-                END IF;
-            END IF;
-        END IF;
-    END PROCESS;
-END ARCHITECTURE;
+                end if;
+            end if;
+        end if;
+    end process;
+end architecture;

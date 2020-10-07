@@ -1,32 +1,32 @@
-LIBRARY ieee;
-USE ieee.std_logic_1164.ALL;
-USE ieee.numeric_std.ALL;
-USE work.constantes.ALL;
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use work.constantes.all;
 
-ENTITY Unidade_Controle IS
-  GENERIC (
-    DATA_WIDTH : NATURAL := 10;
-    ADDR_WIDTH : NATURAL := 8
+entity Unidade_Controle is
+  generic (
+    DATA_WIDTH : natural := 10;
+    ADDR_WIDTH : natural := 8
   );
 
-  PORT (
+  port (
     -- Input ports
-    CLK : IN std_logic;
-    opCode : IN std_logic_vector(3 DOWNTO 0);
-    equal_ULA : IN std_logic;
+    CLK : in std_logic;
+    opCode : in std_logic_vector(3 downto 0);
+    equal_ULA : in std_logic;
 
     -- Output ports
-    palavraControle : OUT std_logic_vector(8 DOWNTO 0)
+    palavraControle : out std_logic_vector(8 downto 0)
   );
-END ENTITY;
-ARCHITECTURE arch_name OF Unidade_Controle IS
-  ALIAS selMuxProxPC : std_logic IS palavraControle(8);
-  ALIAS selMuxImedRam : std_logic IS palavraControle(7);
-  ALIAS selMuxULAImed : std_logic IS palavraControle(6);
-  ALIAS HabEscritaReg : std_logic IS palavraControle(5);
-  ALIAS selOperacaoULA : std_logic_vector(2 DOWNTO 0) IS palavraControle(4 DOWNTO 2);
-  ALIAS habLeituraMEM : std_logic IS palavraControle(1);
-  ALIAS habEscritaMEM : std_logic IS palavraControle(0);
+end entity;
+architecture arch_name of Unidade_Controle is
+  alias selMuxProxPC : std_logic is palavraControle(8);
+  alias selMuxImedRam : std_logic is palavraControle(7);
+  alias selMuxULAImed : std_logic is palavraControle(6);
+  alias HabEscritaReg : std_logic is palavraControle(5);
+  alias selOperacaoULA : std_logic_vector(2 downto 0) is palavraControle(4 downto 2);
+  alias habLeituraMEM : std_logic is palavraControle(1);
+  alias habEscritaMEM : std_logic is palavraControle(0);
 
   ---------------INSTRUÇÕES---------------
   ----------------------------------------
@@ -38,20 +38,20 @@ ARCHITECTURE arch_name OF Unidade_Controle IS
   -- load -----------------------------0101 carrega valor       OK
   -- jmp  -----------------------------0110                     OK
 
-BEGIN
+begin
 
-  selMuxImedRam <= '1' WHEN opcode = leaw ELSE
+  selMuxImedRam <= '1' when opcode = leaw else
     '0';
-  selMuxULAImed <= '1' WHEN opcode = add OR opcode = inc ELSE
+  selMuxULAImed <= '1' when opcode = add or opcode = inc else
     '0';
-  HabEscritaReg <= '1' WHEN opcode = leaw OR opcode = add OR opcode = rd OR opcode = inc ELSE 
+  HabEscritaReg <= '1' when opcode = leaw or opcode = add or opcode = rd or opcode = inc else
     '0';
-  selOperacaoULA <= "010" WHEN opcode = leaw ELSE
-    "000" WHEN opcode = add ELSE
-    "100" WHEN opcode = inc ELSE
-    "001" WHEN opcode = je ELSE 
+  selOperacaoULA <= "010" when opcode = leaw else
+    "000" when opcode = add else
+    "100" when opcode = inc else
+    "001" when opcode = je else
     "010";
-  selMuxProxPC <= '1' WHEN opcode = jmp OR (opCode = je AND equal_ULA = '1') ELSE
+  selMuxProxPC <= '1' when opcode = jmp or (opCode = je and equal_ULA = '1') else
     '0';
   -- Para instanciar, a atribuição de sinais (e generics) segue a ordem: (nomeSinalArquivoDefinicaoComponente => nomeSinalNesteArquivo)
   -- regA:  entity work.nome_do_componente generic map (DATA_WIDTH => DATA_WIDTH)
@@ -68,4 +68,4 @@ BEGIN
   --else '0';
 
   --habEscritaMEM <= '1' opcode="0010" else '0';
-END ARCHITECTURE;
+end architecture;
