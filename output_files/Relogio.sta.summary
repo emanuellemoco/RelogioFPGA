@@ -3,51 +3,99 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1100mV 85C Model Setup 'CLOCK_50'
-Slack : -6.754
-TNS   : -777.082
+Slack : -8.890
+TNS   : -1830.914
 
 Type  : Slow 1100mV 85C Model Hold 'CLOCK_50'
-Slack : 0.829
+Slack : 0.241
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Recovery 'divisorInterface:BASEDETEMPO|divisor:baseTempo|tick'
+Slack : -6.706
+TNS   : -6.706
+
+Type  : Slow 1100mV 85C Model Removal 'divisorInterface:BASEDETEMPO|divisor:baseTempo|tick'
+Slack : 3.528
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -0.538
-TNS   : -125.460
+TNS   : -223.182
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'divisorInterface:BASEDETEMPO|divisor:baseTempo|tick'
+Slack : -0.538
+TNS   : -0.829
 
 Type  : Slow 1100mV 0C Model Setup 'CLOCK_50'
-Slack : -6.891
-TNS   : -780.754
+Slack : -8.917
+TNS   : -1826.857
 
 Type  : Slow 1100mV 0C Model Hold 'CLOCK_50'
-Slack : 0.896
+Slack : -0.091
+TNS   : -0.223
+
+Type  : Slow 1100mV 0C Model Recovery 'divisorInterface:BASEDETEMPO|divisor:baseTempo|tick'
+Slack : -6.824
+TNS   : -6.824
+
+Type  : Slow 1100mV 0C Model Removal 'divisorInterface:BASEDETEMPO|divisor:baseTempo|tick'
+Slack : 3.671
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -0.538
-TNS   : -111.268
+TNS   : -198.155
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'divisorInterface:BASEDETEMPO|divisor:baseTempo|tick'
+Slack : -0.538
+TNS   : -0.820
 
 Type  : Fast 1100mV 85C Model Setup 'CLOCK_50'
-Slack : -2.808
-TNS   : -315.791
+Slack : -4.149
+TNS   : -839.304
 
 Type  : Fast 1100mV 85C Model Hold 'CLOCK_50'
-Slack : 0.305
+Slack : -0.170
+TNS   : -1.310
+
+Type  : Fast 1100mV 85C Model Recovery 'divisorInterface:BASEDETEMPO|divisor:baseTempo|tick'
+Slack : -3.076
+TNS   : -3.076
+
+Type  : Fast 1100mV 85C Model Removal 'divisorInterface:BASEDETEMPO|divisor:baseTempo|tick'
+Slack : 1.600
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
-Slack : -0.408
-TNS   : -64.618
+Slack : -0.573
+TNS   : -114.955
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'divisorInterface:BASEDETEMPO|divisor:baseTempo|tick'
+Slack : 0.071
+TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'CLOCK_50'
-Slack : -2.500
-TNS   : -278.909
+Slack : -3.665
+TNS   : -738.909
 
 Type  : Fast 1100mV 0C Model Hold 'CLOCK_50'
-Slack : 0.297
+Slack : -0.319
+TNS   : -3.884
+
+Type  : Fast 1100mV 0C Model Recovery 'divisorInterface:BASEDETEMPO|divisor:baseTempo|tick'
+Slack : -2.860
+TNS   : -2.860
+
+Type  : Fast 1100mV 0C Model Removal 'divisorInterface:BASEDETEMPO|divisor:baseTempo|tick'
+Slack : 1.550
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
-Slack : -0.446
-TNS   : -77.336
+Slack : -0.615
+TNS   : -137.644
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'divisorInterface:BASEDETEMPO|divisor:baseTempo|tick'
+Slack : 0.075
+TNS   : 0.000
 
 ------------------------------------------------------------

@@ -1,5 +1,5 @@
 Fitter report for Relogio
-Thu Oct  8 10:28:03 2020
+Thu Oct  8 15:32:17 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -34,7 +34,9 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  26. I/O Rules Matrix
  27. Fitter Device Options
  28. Operating Settings and Conditions
- 29. Fitter Messages
+ 29. Estimated Delay Added for Hold Timing Summary
+ 30. Estimated Delay Added for Hold Timing Details
+ 31. Fitter Messages
 
 
 
@@ -60,15 +62,15 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Thu Oct  8 10:28:03 2020       ;
+; Fitter Status                   ; Successful - Thu Oct  8 15:32:17 2020       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; Relogio                                     ;
 ; Top-level Entity Name           ; relogio                                     ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CEBA4F23C7                                 ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 144 / 18,480 ( < 1 % )                      ;
-; Total registers                 ; 142                                         ;
+; Logic utilization (in ALMs)     ; 273 / 18,480 ( 1 % )                        ;
+; Total registers                 ; 254                                         ;
 ; Total pins                      ; 67 / 224 ( 30 % )                           ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 3,153,920 ( 0 % )                       ;
@@ -150,34 +152,39 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.05        ;
+; Average used               ; 1.08        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   1.8%      ;
-;     Processor 3            ;   1.7%      ;
-;     Processor 4            ;   1.7%      ;
+;     Processor 2            ;   3.0%      ;
+;     Processor 3            ;   2.4%      ;
+;     Processor 4            ;   2.4%      ;
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Netlist Optimizations                                                                                                                                                                                                                                                  ;
-+-----------------------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+---------------------------------------------------------+------------------+-----------------------+
-; Node                                          ; Action     ; Operation                                         ; Reason                     ; Node Port ; Node Port Name ; Destination Node                                        ; Destination Port ; Destination Port Name ;
-+-----------------------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+---------------------------------------------------------+------------------+-----------------------+
-; CLOCK_50~inputCLKENA0                         ; Created    ; Placement                                         ; Fitter Periphery Placement ;           ;                ;                                                         ;                  ;                       ;
-; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[0] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[0]~DUPLICATE ;                  ;                       ;
-; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[1] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[1]~DUPLICATE ;                  ;                       ;
-; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[2] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[2]~DUPLICATE ;                  ;                       ;
-; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[3] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[3]~DUPLICATE ;                  ;                       ;
-; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[4] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[4]~DUPLICATE ;                  ;                       ;
-; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[5] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[5]~DUPLICATE ;                  ;                       ;
-; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[6] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[6]~DUPLICATE ;                  ;                       ;
-; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[7] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[7]~DUPLICATE ;                  ;                       ;
-; registrador:REG1|DOUT[0]                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; registrador:REG1|DOUT[0]~DUPLICATE                      ;                  ;                       ;
-; registrador:REG5|DOUT[1]                      ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; registrador:REG5|DOUT[1]~DUPLICATE                      ;                  ;                       ;
-+-----------------------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+---------------------------------------------------------+------------------+-----------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Netlist Optimizations                                                                                                                                                                                                                                                                              ;
++-------------------------------------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+-----------------------------------------------------------------------+------------------+-----------------------+
+; Node                                                        ; Action     ; Operation                                         ; Reason                     ; Node Port ; Node Port Name ; Destination Node                                                      ; Destination Port ; Destination Port Name ;
++-------------------------------------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+-----------------------------------------------------------------------+------------------+-----------------------+
+; CLOCK_50~inputCLKENA0                                       ; Created    ; Placement                                         ; Fitter Periphery Placement ;           ;                ;                                                                       ;                  ;                       ;
+; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[0]               ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[0]~DUPLICATE               ;                  ;                       ;
+; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[1]               ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[1]~DUPLICATE               ;                  ;                       ;
+; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[2]               ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[2]~DUPLICATE               ;                  ;                       ;
+; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[3]               ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[3]~DUPLICATE               ;                  ;                       ;
+; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[4]               ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[4]~DUPLICATE               ;                  ;                       ;
+; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[5]               ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[5]~DUPLICATE               ;                  ;                       ;
+; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[6]               ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[6]~DUPLICATE               ;                  ;                       ;
+; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[7]               ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[7]~DUPLICATE               ;                  ;                       ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[0]  ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[0]~DUPLICATE  ;                  ;                       ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[10] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[10]~DUPLICATE ;                  ;                       ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[11] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[11]~DUPLICATE ;                  ;                       ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[16] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[16]~DUPLICATE ;                  ;                       ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[20] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[20]~DUPLICATE ;                  ;                       ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[23] ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[23]~DUPLICATE ;                  ;                       ;
+; registrador:REG5|DOUT[2]                                    ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; registrador:REG5|DOUT[2]~DUPLICATE                                    ;                  ;                       ;
++-------------------------------------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+-----------------------------------------------------------------------+------------------+-----------------------+
 
 
 +----------------------------------------------------------------------------------------------+
@@ -196,8 +203,8 @@ refer to the applicable agreement for further details.
 ; Type                ; Total [A + B]      ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+--------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                    ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 469 ) ; 0.00 % ( 0 / 469 )         ; 0.00 % ( 0 / 469 )       ;
-;     -- Achieved     ; 0.00 % ( 0 / 469 ) ; 0.00 % ( 0 / 469 )         ; 0.00 % ( 0 / 469 )       ;
+;     -- Requested    ; 0.00 % ( 0 / 757 ) ; 0.00 % ( 0 / 757 )         ; 0.00 % ( 0 / 757 )       ;
+;     -- Achieved     ; 0.00 % ( 0 / 757 ) ; 0.00 % ( 0 / 757 )         ; 0.00 % ( 0 / 757 )       ;
 ;                     ;                    ;                            ;                          ;
 ; Routing (by net)    ;                    ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )   ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -220,7 +227,7 @@ refer to the applicable agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 469 )    ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 757 )    ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 0 )      ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -231,78 +238,78 @@ refer to the applicable agreement for further details.
 The pin-out file can be found in /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/output_files/Relogio.pin.
 
 
-+------------------------------------------------------------------------------------------+
-; Fitter Resource Usage Summary                                                            ;
-+-------------------------------------------------------------+--------------------+-------+
-; Resource                                                    ; Usage              ; %     ;
-+-------------------------------------------------------------+--------------------+-------+
-; Logic utilization (ALMs needed / total ALMs on device)      ; 144 / 18,480       ; < 1 % ;
-; ALMs needed [=A-B+C]                                        ; 144                ;       ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 177 / 18,480       ; < 1 % ;
-;         [a] ALMs used for LUT logic and registers           ; 21                 ;       ;
-;         [b] ALMs used for LUT logic                         ; 110                ;       ;
-;         [c] ALMs used for registers                         ; 46                 ;       ;
-;         [d] ALMs used for memory (up to half of total ALMs) ; 0                  ;       ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 36 / 18,480        ; < 1 % ;
-;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 3 / 18,480         ; < 1 % ;
-;         [a] Due to location constrained logic               ; 0                  ;       ;
-;         [b] Due to LAB-wide signal conflicts                ; 0                  ;       ;
-;         [c] Due to LAB input limits                         ; 3                  ;       ;
-;         [d] Due to virtual I/Os                             ; 0                  ;       ;
-;                                                             ;                    ;       ;
-; Difficulty packing design                                   ; Low                ;       ;
-;                                                             ;                    ;       ;
-; Total LABs:  partially or completely used                   ; 23 / 1,848         ; 1 %   ;
-;     -- Logic LABs                                           ; 23                 ;       ;
-;     -- Memory LABs (up to half of total LABs)               ; 0                  ;       ;
-;                                                             ;                    ;       ;
-; Combinational ALUT usage for logic                          ; 202                ;       ;
-;     -- 7 input functions                                    ; 40                 ;       ;
-;     -- 6 input functions                                    ; 46                 ;       ;
-;     -- 5 input functions                                    ; 35                 ;       ;
-;     -- 4 input functions                                    ; 48                 ;       ;
-;     -- <=3 input functions                                  ; 33                 ;       ;
-; Combinational ALUT usage for route-throughs                 ; 44                 ;       ;
-;                                                             ;                    ;       ;
-; Dedicated logic registers                                   ; 142                ;       ;
-;     -- By type:                                             ;                    ;       ;
-;         -- Primary logic registers                          ; 132 / 36,960       ; < 1 % ;
-;         -- Secondary logic registers                        ; 10 / 36,960        ; < 1 % ;
-;     -- By function:                                         ;                    ;       ;
-;         -- Design implementation registers                  ; 132                ;       ;
-;         -- Routing optimization registers                   ; 10                 ;       ;
-;                                                             ;                    ;       ;
-; Virtual pins                                                ; 0                  ;       ;
-; I/O pins                                                    ; 67 / 224           ; 30 %  ;
-;     -- Clock pins                                           ; 4 / 9              ; 44 %  ;
-;     -- Dedicated input pins                                 ; 0 / 11             ; 0 %   ;
-;                                                             ;                    ;       ;
-; M10K blocks                                                 ; 0 / 308            ; 0 %   ;
-; Total MLAB memory bits                                      ; 0                  ;       ;
-; Total block memory bits                                     ; 0 / 3,153,920      ; 0 %   ;
-; Total block memory implementation bits                      ; 0 / 3,153,920      ; 0 %   ;
-;                                                             ;                    ;       ;
-; Total DSP Blocks                                            ; 0 / 66             ; 0 %   ;
-;                                                             ;                    ;       ;
-; Fractional PLLs                                             ; 0 / 4              ; 0 %   ;
-; Global signals                                              ; 1                  ;       ;
-;     -- Global clocks                                        ; 1 / 16             ; 6 %   ;
-;     -- Quadrant clocks                                      ; 0 / 88             ; 0 %   ;
-; SERDES Transmitters                                         ; 0 / 68             ; 0 %   ;
-; SERDES Receivers                                            ; 0 / 68             ; 0 %   ;
-; JTAGs                                                       ; 0 / 1              ; 0 %   ;
-; ASMI blocks                                                 ; 0 / 1              ; 0 %   ;
-; CRC blocks                                                  ; 0 / 1              ; 0 %   ;
-; Remote update blocks                                        ; 0 / 1              ; 0 %   ;
-; Oscillator blocks                                           ; 0 / 1              ; 0 %   ;
-; Impedance control blocks                                    ; 0 / 3              ; 0 %   ;
-; Average interconnect usage (total/H/V)                      ; 0.4% / 0.4% / 0.4% ;       ;
-; Peak interconnect usage (total/H/V)                         ; 5.8% / 5.5% / 6.6% ;       ;
-; Maximum fan-out                                             ; 142                ;       ;
-; Highest non-global fan-out                                  ; 20                 ;       ;
-; Total fan-out                                               ; 1612               ;       ;
-; Average fan-out                                             ; 3.08               ;       ;
-+-------------------------------------------------------------+--------------------+-------+
++---------------------------------------------------------------------------------------------+
+; Fitter Resource Usage Summary                                                               ;
++-------------------------------------------------------------+-----------------------+-------+
+; Resource                                                    ; Usage                 ; %     ;
++-------------------------------------------------------------+-----------------------+-------+
+; Logic utilization (ALMs needed / total ALMs on device)      ; 273 / 18,480          ; 1 %   ;
+; ALMs needed [=A-B+C]                                        ; 273                   ;       ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 298 / 18,480          ; 2 %   ;
+;         [a] ALMs used for LUT logic and registers           ; 46                    ;       ;
+;         [b] ALMs used for LUT logic                         ; 179                   ;       ;
+;         [c] ALMs used for registers                         ; 73                    ;       ;
+;         [d] ALMs used for memory (up to half of total ALMs) ; 0                     ;       ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 27 / 18,480           ; < 1 % ;
+;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 2 / 18,480            ; < 1 % ;
+;         [a] Due to location constrained logic               ; 0                     ;       ;
+;         [b] Due to LAB-wide signal conflicts                ; 0                     ;       ;
+;         [c] Due to LAB input limits                         ; 2                     ;       ;
+;         [d] Due to virtual I/Os                             ; 0                     ;       ;
+;                                                             ;                       ;       ;
+; Difficulty packing design                                   ; Low                   ;       ;
+;                                                             ;                       ;       ;
+; Total LABs:  partially or completely used                   ; 40 / 1,848            ; 2 %   ;
+;     -- Logic LABs                                           ; 40                    ;       ;
+;     -- Memory LABs (up to half of total LABs)               ; 0                     ;       ;
+;                                                             ;                       ;       ;
+; Combinational ALUT usage for logic                          ; 384                   ;       ;
+;     -- 7 input functions                                    ; 8                     ;       ;
+;     -- 6 input functions                                    ; 151                   ;       ;
+;     -- 5 input functions                                    ; 38                    ;       ;
+;     -- 4 input functions                                    ; 115                   ;       ;
+;     -- <=3 input functions                                  ; 72                    ;       ;
+; Combinational ALUT usage for route-throughs                 ; 22                    ;       ;
+;                                                             ;                       ;       ;
+; Dedicated logic registers                                   ; 254                   ;       ;
+;     -- By type:                                             ;                       ;       ;
+;         -- Primary logic registers                          ; 238 / 36,960          ; < 1 % ;
+;         -- Secondary logic registers                        ; 16 / 36,960           ; < 1 % ;
+;     -- By function:                                         ;                       ;       ;
+;         -- Design implementation registers                  ; 239                   ;       ;
+;         -- Routing optimization registers                   ; 15                    ;       ;
+;                                                             ;                       ;       ;
+; Virtual pins                                                ; 0                     ;       ;
+; I/O pins                                                    ; 67 / 224              ; 30 %  ;
+;     -- Clock pins                                           ; 4 / 9                 ; 44 %  ;
+;     -- Dedicated input pins                                 ; 0 / 11                ; 0 %   ;
+;                                                             ;                       ;       ;
+; M10K blocks                                                 ; 0 / 308               ; 0 %   ;
+; Total MLAB memory bits                                      ; 0                     ;       ;
+; Total block memory bits                                     ; 0 / 3,153,920         ; 0 %   ;
+; Total block memory implementation bits                      ; 0 / 3,153,920         ; 0 %   ;
+;                                                             ;                       ;       ;
+; Total DSP Blocks                                            ; 0 / 66                ; 0 %   ;
+;                                                             ;                       ;       ;
+; Fractional PLLs                                             ; 0 / 4                 ; 0 %   ;
+; Global signals                                              ; 1                     ;       ;
+;     -- Global clocks                                        ; 1 / 16                ; 6 %   ;
+;     -- Quadrant clocks                                      ; 0 / 88                ; 0 %   ;
+; SERDES Transmitters                                         ; 0 / 68                ; 0 %   ;
+; SERDES Receivers                                            ; 0 / 68                ; 0 %   ;
+; JTAGs                                                       ; 0 / 1                 ; 0 %   ;
+; ASMI blocks                                                 ; 0 / 1                 ; 0 %   ;
+; CRC blocks                                                  ; 0 / 1                 ; 0 %   ;
+; Remote update blocks                                        ; 0 / 1                 ; 0 %   ;
+; Oscillator blocks                                           ; 0 / 1                 ; 0 %   ;
+; Impedance control blocks                                    ; 0 / 3                 ; 0 %   ;
+; Average interconnect usage (total/H/V)                      ; 0.7% / 0.7% / 0.7%    ;       ;
+; Peak interconnect usage (total/H/V)                         ; 11.9% / 11.7% / 12.5% ;       ;
+; Maximum fan-out                                             ; 252                   ;       ;
+; Highest non-global fan-out                                  ; 49                    ;       ;
+; Total fan-out                                               ; 2703                  ;       ;
+; Average fan-out                                             ; 3.40                  ;       ;
++-------------------------------------------------------------+-----------------------+-------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -310,44 +317,44 @@ The pin-out file can be found in /home/emanuelle/Desktop/INSPER/DesComp/relogioF
 +-------------------------------------------------------------+-----------------------+--------------------------------+
 ; Statistic                                                   ; Top                   ; hard_block:auto_generated_inst ;
 +-------------------------------------------------------------+-----------------------+--------------------------------+
-; Logic utilization (ALMs needed / total ALMs on device)      ; 144 / 18480 ( < 1 % ) ; 0 / 18480 ( 0 % )              ;
-; ALMs needed [=A-B+C]                                        ; 144                   ; 0                              ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 177 / 18480 ( < 1 % ) ; 0 / 18480 ( 0 % )              ;
-;         [a] ALMs used for LUT logic and registers           ; 21                    ; 0                              ;
-;         [b] ALMs used for LUT logic                         ; 110                   ; 0                              ;
-;         [c] ALMs used for registers                         ; 46                    ; 0                              ;
+; Logic utilization (ALMs needed / total ALMs on device)      ; 273 / 18480 ( 1 % )   ; 0 / 18480 ( 0 % )              ;
+; ALMs needed [=A-B+C]                                        ; 273                   ; 0                              ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 298 / 18480 ( 2 % )   ; 0 / 18480 ( 0 % )              ;
+;         [a] ALMs used for LUT logic and registers           ; 46                    ; 0                              ;
+;         [b] ALMs used for LUT logic                         ; 179                   ; 0                              ;
+;         [c] ALMs used for registers                         ; 73                    ; 0                              ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                     ; 0                              ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 36 / 18480 ( < 1 % )  ; 0 / 18480 ( 0 % )              ;
-;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 3 / 18480 ( < 1 % )   ; 0 / 18480 ( 0 % )              ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 27 / 18480 ( < 1 % )  ; 0 / 18480 ( 0 % )              ;
+;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 2 / 18480 ( < 1 % )   ; 0 / 18480 ( 0 % )              ;
 ;         [a] Due to location constrained logic               ; 0                     ; 0                              ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                     ; 0                              ;
-;         [c] Due to LAB input limits                         ; 3                     ; 0                              ;
+;         [c] Due to LAB input limits                         ; 2                     ; 0                              ;
 ;         [d] Due to virtual I/Os                             ; 0                     ; 0                              ;
 ;                                                             ;                       ;                                ;
 ; Difficulty packing design                                   ; Low                   ; Low                            ;
 ;                                                             ;                       ;                                ;
-; Total LABs:  partially or completely used                   ; 23 / 1848 ( 1 % )     ; 0 / 1848 ( 0 % )               ;
-;     -- Logic LABs                                           ; 23                    ; 0                              ;
+; Total LABs:  partially or completely used                   ; 40 / 1848 ( 2 % )     ; 0 / 1848 ( 0 % )               ;
+;     -- Logic LABs                                           ; 40                    ; 0                              ;
 ;     -- Memory LABs (up to half of total LABs)               ; 0                     ; 0                              ;
 ;                                                             ;                       ;                                ;
-; Combinational ALUT usage for logic                          ; 202                   ; 0                              ;
-;     -- 7 input functions                                    ; 40                    ; 0                              ;
-;     -- 6 input functions                                    ; 46                    ; 0                              ;
-;     -- 5 input functions                                    ; 35                    ; 0                              ;
-;     -- 4 input functions                                    ; 48                    ; 0                              ;
-;     -- <=3 input functions                                  ; 33                    ; 0                              ;
-; Combinational ALUT usage for route-throughs                 ; 44                    ; 0                              ;
+; Combinational ALUT usage for logic                          ; 384                   ; 0                              ;
+;     -- 7 input functions                                    ; 8                     ; 0                              ;
+;     -- 6 input functions                                    ; 151                   ; 0                              ;
+;     -- 5 input functions                                    ; 38                    ; 0                              ;
+;     -- 4 input functions                                    ; 115                   ; 0                              ;
+;     -- <=3 input functions                                  ; 72                    ; 0                              ;
+; Combinational ALUT usage for route-throughs                 ; 22                    ; 0                              ;
 ; Memory ALUT usage                                           ; 0                     ; 0                              ;
 ;     -- 64-address deep                                      ; 0                     ; 0                              ;
 ;     -- 32-address deep                                      ; 0                     ; 0                              ;
 ;                                                             ;                       ;                                ;
 ; Dedicated logic registers                                   ; 0                     ; 0                              ;
 ;     -- By type:                                             ;                       ;                                ;
-;         -- Primary logic registers                          ; 132 / 36960 ( < 1 % ) ; 0 / 36960 ( 0 % )              ;
-;         -- Secondary logic registers                        ; 10 / 36960 ( < 1 % )  ; 0 / 36960 ( 0 % )              ;
+;         -- Primary logic registers                          ; 238 / 36960 ( < 1 % ) ; 0 / 36960 ( 0 % )              ;
+;         -- Secondary logic registers                        ; 16 / 36960 ( < 1 % )  ; 0 / 36960 ( 0 % )              ;
 ;     -- By function:                                         ;                       ;                                ;
-;         -- Design implementation registers                  ; 132                   ; 0                              ;
-;         -- Routing optimization registers                   ; 10                    ; 0                              ;
+;         -- Design implementation registers                  ; 239                   ; 0                              ;
+;         -- Routing optimization registers                   ; 15                    ; 0                              ;
 ;                                                             ;                       ;                                ;
 ;                                                             ;                       ;                                ;
 ; Virtual pins                                                ; 0                     ; 0                              ;
@@ -364,8 +371,8 @@ The pin-out file can be found in /home/emanuelle/Desktop/INSPER/DesComp/relogioF
 ;     -- Registered Output Connections                        ; 0                     ; 0                              ;
 ;                                                             ;                       ;                                ;
 ; Internal Connections                                        ;                       ;                                ;
-;     -- Total Connections                                    ; 1612                  ; 0                              ;
-;     -- Registered Connections                               ; 490                   ; 0                              ;
+;     -- Total Connections                                    ; 2703                  ; 0                              ;
+;     -- Registered Connections                               ; 959                   ; 0                              ;
 ;                                                             ;                       ;                                ;
 ; External Connections                                        ;                       ;                                ;
 ;     -- Top                                                  ; 0                     ; 0                              ;
@@ -397,7 +404,7 @@ The pin-out file can be found in /home/emanuelle/Desktop/INSPER/DesComp/relogioF
 +----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
 ; Name     ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
-; CLOCK_50 ; M9    ; 3B       ; 22           ; 0            ; 0            ; 142                   ; 0                  ; yes    ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
+; CLOCK_50 ; M9    ; 3B       ; 22           ; 0            ; 0            ; 253                   ; 0                  ; yes    ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
 ; KEY[0]   ; U7    ; 3A       ; 10           ; 0            ; 91           ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
 ; KEY[1]   ; W9    ; 3A       ; 11           ; 0            ; 34           ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
 ; KEY[2]   ; M7    ; 3A       ; 14           ; 0            ; 0            ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; --                        ; User                 ; no        ;
@@ -1034,37 +1041,41 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +----------+--------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                                                       ;
-+--------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+-----------------------------------------------------------+------------------+--------------+
-; Compilation Hierarchy Node           ; ALMs needed [=A-B+C] ; [A] ALMs used in final placement ; [B] Estimate of ALMs recoverable by dense packing ; [C] Estimate of ALMs unavailable ; ALMs used for memory ; Combinational ALUTs ; Dedicated Logic Registers ; I/O Registers ; Block Memory Bits ; M10Ks ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                       ; Entity Name      ; Library Name ;
-+--------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+-----------------------------------------------------------+------------------+--------------+
-; |relogio                             ; 144.0 (0.5)          ; 176.0 (0.5)                      ; 34.5 (0.0)                                        ; 2.5 (0.0)                        ; 0.0 (0.0)            ; 202 (1)             ; 142 (0)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 67   ; 0            ; |relogio                                                  ; relogio          ; work         ;
-;    |CPU:CPU|                         ; 105.5 (0.0)          ; 130.3 (0.0)                      ; 27.2 (0.0)                                        ; 2.3 (0.0)                        ; 0.0 (0.0)            ; 142 (0)             ; 96 (0)                    ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|CPU:CPU                                          ; CPU              ; work         ;
-;       |Fluxo_Dados:FD|               ; 97.1 (0.0)           ; 121.7 (0.0)                      ; 26.8 (0.0)                                        ; 2.3 (0.0)                        ; 0.0 (0.0)            ; 128 (0)             ; 96 (0)                    ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD                           ; Fluxo_Dados      ; work         ;
-;          |ULA:ULA|                   ; 6.3 (6.3)            ; 6.3 (6.3)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 13 (13)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|ULA:ULA                   ; ULA              ; work         ;
-;          |bancoRegistrador:bancoReg| ; 51.5 (51.5)          ; 75.0 (75.0)                      ; 25.2 (25.2)                                       ; 1.7 (1.7)                        ; 0.0 (0.0)            ; 50 (50)             ; 80 (80)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg ; bancoRegistrador ; work         ;
-;          |memoriaROM:ROM|            ; 19.0 (19.0)          ; 19.2 (19.2)                      ; 0.3 (0.3)                                         ; 0.1 (0.1)                        ; 0.0 (0.0)            ; 31 (31)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|memoriaROM:ROM            ; memoriaROM       ; work         ;
-;          |mux2x1:muxULA_Imediato|    ; 15.6 (15.6)          ; 17.2 (17.2)                      ; 2.0 (2.0)                                         ; 0.4 (0.4)                        ; 0.0 (0.0)            ; 26 (26)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato    ; mux2x1           ; work         ;
-;          |registrador:PC|            ; 2.0 (2.0)            ; 2.7 (2.7)                        ; 0.7 (0.7)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 16 (16)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|registrador:PC            ; registrador      ; work         ;
-;          |somaConstante:somaUm|      ; 1.3 (1.3)            ; 1.3 (1.3)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 8 (8)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|somaConstante:somaUm      ; somaConstante    ; work         ;
-;       |Unidade_Controle:UC|          ; 8.4 (8.4)            ; 8.7 (8.7)                        ; 0.3 (0.3)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 14 (14)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Unidade_Controle:UC                      ; Unidade_Controle ; work         ;
-;    |decodificador:DEC|               ; 11.0 (11.0)          ; 11.0 (11.0)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 17 (17)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|decodificador:DEC                                ; decodificador    ; work         ;
-;    |hex:HEX_0|                       ; 2.5 (2.5)            ; 3.5 (3.5)                        ; 1.0 (1.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 7 (7)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|hex:HEX_0                                        ; hex              ; work         ;
-;    |hex:HEX_1|                       ; 2.5 (2.5)            ; 2.6 (2.6)                        ; 0.1 (0.1)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 7 (7)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|hex:HEX_1                                        ; hex              ; work         ;
-;    |hex:HEX_2|                       ; 2.3 (2.3)            ; 3.0 (3.0)                        ; 0.7 (0.7)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 7 (7)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|hex:HEX_2                                        ; hex              ; work         ;
-;    |hex:HEX_3|                       ; 2.2 (2.2)            ; 3.0 (3.0)                        ; 0.8 (0.8)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 7 (7)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|hex:HEX_3                                        ; hex              ; work         ;
-;    |hex:HEX_4|                       ; 2.5 (2.5)            ; 2.5 (2.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 7 (7)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|hex:HEX_4                                        ; hex              ; work         ;
-;    |hex:HEX_5|                       ; 2.5 (2.5)            ; 2.8 (2.8)                        ; 0.3 (0.3)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 7 (7)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|hex:HEX_5                                        ; hex              ; work         ;
-;    |memoriaRAM:RAM|                  ; 3.5 (3.5)            ; 3.7 (3.7)                        ; 0.3 (0.3)                                         ; 0.2 (0.2)                        ; 0.0 (0.0)            ; 0 (0)               ; 10 (10)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|memoriaRAM:RAM                                   ; memoriaRAM       ; work         ;
-;    |registrador:REG0|                ; 1.2 (1.2)            ; 1.5 (1.5)                        ; 0.3 (0.3)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 4 (4)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|registrador:REG0                                 ; registrador      ; work         ;
-;    |registrador:REG1|                ; 1.2 (1.2)            ; 1.4 (1.4)                        ; 0.2 (0.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 5 (5)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|registrador:REG1                                 ; registrador      ; work         ;
-;    |registrador:REG2|                ; 1.0 (1.0)            ; 1.5 (1.5)                        ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 4 (4)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|registrador:REG2                                 ; registrador      ; work         ;
-;    |registrador:REG3|                ; 1.0 (1.0)            ; 1.5 (1.5)                        ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 4 (4)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|registrador:REG3                                 ; registrador      ; work         ;
-;    |registrador:REG4|                ; 1.0 (1.0)            ; 1.2 (1.2)                        ; 0.2 (0.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 4 (4)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|registrador:REG4                                 ; registrador      ; work         ;
-;    |registrador:REG5|                ; 1.2 (1.2)            ; 2.0 (2.0)                        ; 0.8 (0.8)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 5 (5)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|registrador:REG5                                 ; registrador      ; work         ;
-;    |registrador:REGLED|              ; 1.7 (1.7)            ; 4.0 (4.0)                        ; 2.3 (2.3)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 10 (10)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|registrador:REGLED                               ; registrador      ; work         ;
-+--------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+-----------------------------------------------------------+------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                                                              ;
++--------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+------------------------------------------------------------------+------------------+--------------+
+; Compilation Hierarchy Node           ; ALMs needed [=A-B+C] ; [A] ALMs used in final placement ; [B] Estimate of ALMs recoverable by dense packing ; [C] Estimate of ALMs unavailable ; ALMs used for memory ; Combinational ALUTs ; Dedicated Logic Registers ; I/O Registers ; Block Memory Bits ; M10Ks ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                              ; Entity Name      ; Library Name ;
++--------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+------------------------------------------------------------------+------------------+--------------+
+; |relogio                             ; 273.0 (0.5)          ; 297.5 (0.5)                      ; 26.0 (0.0)                                        ; 1.5 (0.0)                        ; 0.0 (0.0)            ; 384 (1)             ; 254 (0)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 67   ; 0            ; |relogio                                                         ; relogio          ; work         ;
+;    |CPU:CPU|                         ; 217.0 (0.0)          ; 238.4 (0.0)                      ; 22.9 (0.0)                                        ; 1.5 (0.0)                        ; 0.0 (0.0)            ; 289 (0)             ; 176 (0)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|CPU:CPU                                                 ; CPU              ; work         ;
+;       |Fluxo_Dados:FD|               ; 210.3 (0.0)          ; 232.4 (0.0)                      ; 23.6 (0.0)                                        ; 1.5 (0.0)                        ; 0.0 (0.0)            ; 277 (0)             ; 176 (0)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD                                  ; Fluxo_Dados      ; work         ;
+;          |ULA:ULA|                   ; 7.5 (7.5)            ; 7.5 (7.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 14 (14)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|ULA:ULA                          ; ULA              ; work         ;
+;          |bancoRegistrador:bancoReg| ; 118.7 (118.7)        ; 139.8 (139.8)                    ; 22.5 (22.5)                                       ; 1.4 (1.4)                        ; 0.0 (0.0)            ; 119 (119)           ; 160 (160)                 ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg        ; bancoRegistrador ; work         ;
+;          |memoriaROM:ROM|            ; 61.2 (61.2)          ; 62.8 (62.8)                      ; 1.7 (1.7)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 104 (104)           ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|memoriaROM:ROM                   ; memoriaROM       ; work         ;
+;          |mux2x1:muxULA_Imediato|    ; 18.4 (18.4)          ; 18.3 (18.3)                      ; 0.0 (0.0)                                         ; 0.1 (0.1)                        ; 0.0 (0.0)            ; 32 (32)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato           ; mux2x1           ; work         ;
+;          |registrador:PC|            ; 2.0 (2.0)            ; 2.7 (2.7)                        ; 0.7 (0.7)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 16 (16)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|registrador:PC                   ; registrador      ; work         ;
+;          |somaConstante:somaUm|      ; 1.3 (1.3)            ; 1.3 (1.3)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 8 (8)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|somaConstante:somaUm             ; somaConstante    ; work         ;
+;       |Unidade_Controle:UC|          ; 6.0 (6.0)            ; 6.0 (6.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 12 (12)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Unidade_Controle:UC                             ; Unidade_Controle ; work         ;
+;    |decodificador:DEC|               ; 9.8 (9.8)            ; 9.8 (9.8)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 16 (16)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|decodificador:DEC                                       ; decodificador    ; work         ;
+;    |divisorInterface:BASEDETEMPO|    ; 16.8 (0.0)           ; 18.3 (0.0)                       ; 1.5 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 34 (0)              ; 33 (0)                    ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|divisorInterface:BASEDETEMPO                            ; divisorInterface ; work         ;
+;       |divisor:baseTempo|            ; 17.0 (17.0)          ; 18.0 (18.0)                      ; 1.0 (1.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 33 (33)             ; 32 (32)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|divisorInterface:BASEDETEMPO|divisor:baseTempo          ; divisor          ; work         ;
+;       |flipFlop:registraUmSegundo|   ; -0.2 (-0.2)          ; 0.3 (0.3)                        ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|divisorInterface:BASEDETEMPO|flipFlop:registraUmSegundo ; flipFlop         ; work         ;
+;    |hex:HEX_0|                       ; 2.5 (2.5)            ; 2.8 (2.8)                        ; 0.3 (0.3)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 7 (7)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|hex:HEX_0                                               ; hex              ; work         ;
+;    |hex:HEX_1|                       ; 2.3 (2.3)            ; 2.7 (2.7)                        ; 0.3 (0.3)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 7 (7)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|hex:HEX_1                                               ; hex              ; work         ;
+;    |hex:HEX_2|                       ; 2.3 (2.3)            ; 2.3 (2.3)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 7 (7)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|hex:HEX_2                                               ; hex              ; work         ;
+;    |hex:HEX_3|                       ; 2.5 (2.5)            ; 2.5 (2.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 7 (7)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|hex:HEX_3                                               ; hex              ; work         ;
+;    |hex:HEX_4|                       ; 2.5 (2.5)            ; 2.5 (2.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 7 (7)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|hex:HEX_4                                               ; hex              ; work         ;
+;    |hex:HEX_5|                       ; 2.3 (2.3)            ; 2.8 (2.8)                        ; 0.4 (0.4)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 7 (7)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|hex:HEX_5                                               ; hex              ; work         ;
+;    |memoriaRAM:RAM|                  ; 3.0 (3.0)            ; 3.0 (3.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 10 (10)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|memoriaRAM:RAM                                          ; memoriaRAM       ; work         ;
+;    |mux8x1:MUX|                      ; 0.8 (0.8)            ; 1.0 (1.0)                        ; 0.2 (0.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 2 (2)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|mux8x1:MUX                                              ; mux8x1           ; work         ;
+;    |registrador:REG0|                ; 1.2 (1.2)            ; 1.7 (1.7)                        ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 4 (4)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|registrador:REG0                                        ; registrador      ; work         ;
+;    |registrador:REG1|                ; 1.0 (1.0)            ; 1.2 (1.2)                        ; 0.2 (0.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 4 (4)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|registrador:REG1                                        ; registrador      ; work         ;
+;    |registrador:REG2|                ; 1.2 (1.2)            ; 1.2 (1.2)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 4 (4)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|registrador:REG2                                        ; registrador      ; work         ;
+;    |registrador:REG3|                ; 1.0 (1.0)            ; 1.0 (1.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 4 (4)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|registrador:REG3                                        ; registrador      ; work         ;
+;    |registrador:REG4|                ; 1.2 (1.2)            ; 1.2 (1.2)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 4 (4)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|registrador:REG4                                        ; registrador      ; work         ;
+;    |registrador:REG5|                ; 1.0 (1.0)            ; 1.2 (1.2)                        ; 0.2 (0.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 5 (5)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|registrador:REG5                                        ; registrador      ; work         ;
+;    |registrador:REGLED|              ; 3.3 (3.3)            ; 3.4 (3.4)                        ; 0.1 (0.1)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 10 (10)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |relogio|registrador:REGLED                                      ; registrador      ; work         ;
++--------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+------------------------------------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -1125,20 +1136,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; LEDR[7]  ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; LEDR[8]  ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; LEDR[9]  ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
-; CLOCK_50 ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; CLOCK_50 ; Input    ; -- ; (0)  ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; SW[0]    ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; KEY[0]   ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; SW[3]    ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; SW[3]    ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; KEY[3]   ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; SW[2]    ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; KEY[2]   ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; SW[1]    ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; SW[1]    ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; KEY[1]   ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; SW[2]    ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; KEY[2]   ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; SW[4]    ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; SW[5]    ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; SW[5]    ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; SW[6]    ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; SW[7]    ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; SW[8]    ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; SW[7]    ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; SW[8]    ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; SW[9]    ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 +----------+----------+----+------+------+----+------+-------+--------+------------------------+--------------------------+
 
@@ -1149,34 +1160,35 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Source Pin / Fanout                                                  ; Pad To Core Index ; Setting ;
 +----------------------------------------------------------------------+-------------------+---------+
 ; CLOCK_50                                                             ;                   ;         ;
+;      - divisorInterface:BASEDETEMPO|divisor:baseTempo|tick           ; 1                 ; 0       ;
 ; SW[0]                                                                ;                   ;         ;
-;      - CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato|saida_MUX[0]~24 ; 0                 ; 0       ;
+;      - CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato|saida_MUX[0]~2  ; 0                 ; 0       ;
 ; KEY[0]                                                               ;                   ;         ;
-;      - CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato|saida_MUX[0]~24 ; 1                 ; 0       ;
+;      - CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato|saida_MUX[0]~43 ; 1                 ; 0       ;
 ; SW[3]                                                                ;                   ;         ;
-;      - CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato|saida_MUX[3]~3  ; 1                 ; 0       ;
+;      - CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato|saida_MUX[3]~35 ; 0                 ; 0       ;
 ; KEY[3]                                                               ;                   ;         ;
-;      - CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato|saida_MUX[3]~3  ; 0                 ; 0       ;
-; SW[2]                                                                ;                   ;         ;
-;      - CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato|saida_MUX[2]~6  ; 0                 ; 0       ;
-; KEY[2]                                                               ;                   ;         ;
-;      - CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato|saida_MUX[2]~6  ; 0                 ; 0       ;
+;      - CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato|saida_MUX[3]~20 ; 0                 ; 0       ;
 ; SW[1]                                                                ;                   ;         ;
-;      - CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato|saida_MUX[1]~8  ; 0                 ; 0       ;
+;      - CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato|saida_MUX[1]~31 ; 1                 ; 0       ;
 ; KEY[1]                                                               ;                   ;         ;
-;      - CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato|saida_MUX[1]~8  ; 1                 ; 0       ;
+;      - CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato|saida_MUX[1]~18 ; 1                 ; 0       ;
+; SW[2]                                                                ;                   ;         ;
+;      - CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato|saida_MUX[2]~27 ; 0                 ; 0       ;
+; KEY[2]                                                               ;                   ;         ;
+;      - CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato|saida_MUX[2]~19 ; 1                 ; 0       ;
 ; SW[4]                                                                ;                   ;         ;
-;      - CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato|saida_MUX[4]~13 ; 0                 ; 0       ;
+;      - CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato|saida_MUX[4]~21 ; 0                 ; 0       ;
 ; SW[5]                                                                ;                   ;         ;
-;      - CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato|saida_MUX[5]~15 ; 1                 ; 0       ;
+;      - CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato|saida_MUX[5]~22 ; 0                 ; 0       ;
 ; SW[6]                                                                ;                   ;         ;
-;      - CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato|saida_MUX[6]~17 ; 0                 ; 0       ;
+;      - CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato|saida_MUX[6]~23 ; 0                 ; 0       ;
 ; SW[7]                                                                ;                   ;         ;
-;      - CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato|saida_MUX[7]~19 ; 0                 ; 0       ;
+;      - CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato|saida_MUX[7]~24 ; 1                 ; 0       ;
 ; SW[8]                                                                ;                   ;         ;
-;      - CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato|saida_MUX[8]~21 ; 1                 ; 0       ;
+;      - CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato|saida_MUX[8]~25 ; 0                 ; 0       ;
 ; SW[9]                                                                ;                   ;         ;
-;      - CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato|saida_MUX[9]~23 ; 0                 ; 0       ;
+;      - CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato|saida_MUX[9]~26 ; 0                 ; 0       ;
 +----------------------------------------------------------------------+-------------------+---------+
 
 
@@ -1185,24 +1197,36 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------+---------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 ; Name                                                             ; Location            ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +------------------------------------------------------------------+---------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; CLOCK_50                                                         ; PIN_M9              ; 142     ; Clock        ; yes    ; Global Clock         ; GCLK6            ; --                        ;
-; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~296 ; LABCELL_X35_Y7_N27  ; 10      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~297 ; LABCELL_X35_Y7_N0   ; 10      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~298 ; LABCELL_X35_Y7_N54  ; 10      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~299 ; LABCELL_X35_Y7_N39  ; 10      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~341 ; LABCELL_X35_Y7_N57  ; 10      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~342 ; LABCELL_X35_Y7_N42  ; 10      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~343 ; LABCELL_X35_Y7_N24  ; 10      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~344 ; LABCELL_X35_Y7_N6   ; 10      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; CPU:CPU|Unidade_Controle:UC|palavraControle[8]                   ; MLABCELL_X37_Y7_N6  ; 16      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
-; decodificador:DEC|decodificadorControle[11]                      ; LABCELL_X36_Y4_N9   ; 10      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; decodificador:DEC|decodificadorControle[14]                      ; LABCELL_X40_Y4_N54  ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; decodificador:DEC|decodificadorControle[15]                      ; LABCELL_X40_Y4_N27  ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; decodificador:DEC|decodificadorControle[16]                      ; LABCELL_X40_Y4_N36  ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; decodificador:DEC|decodificadorControle[17]                      ; LABCELL_X40_Y4_N57  ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; decodificador:DEC|decodificadorControle[18]                      ; LABCELL_X40_Y4_N3   ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; decodificador:DEC|decodificadorControle[19]                      ; LABCELL_X40_Y4_N42  ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; decodificador:DEC|decodificadorControle[9]                       ; MLABCELL_X37_Y5_N15 ; 10      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; CLOCK_50                                                         ; PIN_M9              ; 252     ; Clock        ; yes    ; Global Clock         ; GCLK6            ; --                        ;
+; CLOCK_50                                                         ; PIN_M9              ; 2       ; Clock        ; no     ; --                   ; --               ; --                        ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~226 ; LABCELL_X35_Y6_N57  ; 10      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~227 ; MLABCELL_X37_Y6_N39 ; 10      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~228 ; LABCELL_X35_Y6_N54  ; 10      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~229 ; MLABCELL_X37_Y6_N45 ; 10      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~281 ; LABCELL_X35_Y6_N12  ; 10      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~283 ; LABCELL_X39_Y4_N36  ; 10      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~284 ; LABCELL_X35_Y6_N15  ; 10      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~285 ; LABCELL_X39_Y4_N27  ; 10      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~286 ; LABCELL_X35_Y6_N3   ; 10      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~287 ; LABCELL_X35_Y6_N48  ; 10      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~288 ; LABCELL_X35_Y6_N51  ; 10      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~289 ; LABCELL_X35_Y6_N39  ; 10      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~290 ; LABCELL_X35_Y6_N6   ; 10      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~291 ; LABCELL_X39_Y4_N18  ; 10      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~292 ; LABCELL_X35_Y6_N9   ; 10      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~293 ; LABCELL_X39_Y4_N21  ; 10      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; CPU:CPU|Unidade_Controle:UC|palavraControle[8]                   ; LABCELL_X36_Y5_N18  ; 16      ; Sync. load   ; no     ; --                   ; --               ; --                        ;
+; decodificador:DEC|decodificadorControle[11]                      ; MLABCELL_X37_Y4_N30 ; 10      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; decodificador:DEC|decodificadorControle[13]~5                    ; LABCELL_X35_Y3_N6   ; 1       ; Async. clear ; no     ; --                   ; --               ; --                        ;
+; decodificador:DEC|decodificadorControle[14]                      ; LABCELL_X39_Y4_N54  ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; decodificador:DEC|decodificadorControle[15]                      ; LABCELL_X39_Y4_N30  ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; decodificador:DEC|decodificadorControle[16]                      ; LABCELL_X39_Y4_N15  ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; decodificador:DEC|decodificadorControle[17]                      ; LABCELL_X39_Y4_N33  ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; decodificador:DEC|decodificadorControle[18]                      ; LABCELL_X39_Y4_N42  ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; decodificador:DEC|decodificadorControle[19]                      ; LABCELL_X39_Y4_N45  ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; decodificador:DEC|decodificadorControle[9]                       ; LABCELL_X39_Y4_N12  ; 10      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|Equal0~6          ; LABCELL_X25_Y4_N6   ; 32      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick              ; FF_X25_Y3_N59       ; 2       ; Clock        ; no     ; --                   ; --               ; --                        ;
 +------------------------------------------------------------------+---------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1211,33 +1235,33 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------+----------+---------+----------------------+------------------+---------------------------+
 ; Name     ; Location ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +----------+----------+---------+----------------------+------------------+---------------------------+
-; CLOCK_50 ; PIN_M9   ; 142     ; Global Clock         ; GCLK6            ; --                        ;
+; CLOCK_50 ; PIN_M9   ; 252     ; Global Clock         ; GCLK6            ; --                        ;
 +----------+----------+---------+----------------------+------------------+---------------------------+
 
 
-+--------------------------------------------------------+
-; Routing Usage Summary                                  ;
-+------------------------------+-------------------------+
-; Routing Resource Type        ; Usage                   ;
-+------------------------------+-------------------------+
-; Block interconnects          ; 579 / 140,056 ( < 1 % ) ;
-; C12 interconnects            ; 8 / 6,048 ( < 1 % )     ;
-; C2 interconnects             ; 216 / 54,648 ( < 1 % )  ;
-; C4 interconnects             ; 156 / 25,920 ( < 1 % )  ;
-; DQS bus muxes                ; 0 / 17 ( 0 % )          ;
-; DQS-18 I/O buses             ; 0 / 17 ( 0 % )          ;
-; DQS-9 I/O buses              ; 0 / 17 ( 0 % )          ;
-; Direct links                 ; 69 / 140,056 ( < 1 % )  ;
-; Global clocks                ; 1 / 16 ( 6 % )          ;
-; Local interconnects          ; 133 / 36,960 ( < 1 % )  ;
-; Quadrant clocks              ; 0 / 88 ( 0 % )          ;
-; R14 interconnects            ; 41 / 5,984 ( < 1 % )    ;
-; R14/C12 interconnect drivers ; 42 / 9,504 ( < 1 % )    ;
-; R3 interconnects             ; 279 / 60,192 ( < 1 % )  ;
-; R6 interconnects             ; 279 / 127,072 ( < 1 % ) ;
-; Spine clocks                 ; 1 / 120 ( < 1 % )       ;
-; Wire stub REs                ; 0 / 7,344 ( 0 % )       ;
-+------------------------------+-------------------------+
++----------------------------------------------------------+
+; Routing Usage Summary                                    ;
++------------------------------+---------------------------+
+; Routing Resource Type        ; Usage                     ;
++------------------------------+---------------------------+
+; Block interconnects          ; 1,023 / 140,056 ( < 1 % ) ;
+; C12 interconnects            ; 7 / 6,048 ( < 1 % )       ;
+; C2 interconnects             ; 436 / 54,648 ( < 1 % )    ;
+; C4 interconnects             ; 236 / 25,920 ( < 1 % )    ;
+; DQS bus muxes                ; 0 / 17 ( 0 % )            ;
+; DQS-18 I/O buses             ; 0 / 17 ( 0 % )            ;
+; DQS-9 I/O buses              ; 0 / 17 ( 0 % )            ;
+; Direct links                 ; 80 / 140,056 ( < 1 % )    ;
+; Global clocks                ; 1 / 16 ( 6 % )            ;
+; Local interconnects          ; 254 / 36,960 ( < 1 % )    ;
+; Quadrant clocks              ; 0 / 88 ( 0 % )            ;
+; R14 interconnects            ; 57 / 5,984 ( < 1 % )      ;
+; R14/C12 interconnect drivers ; 61 / 9,504 ( < 1 % )      ;
+; R3 interconnects             ; 495 / 60,192 ( < 1 % )    ;
+; R6 interconnects             ; 601 / 127,072 ( < 1 % )   ;
+; Spine clocks                 ; 2 / 120 ( 2 % )           ;
+; Wire stub REs                ; 0 / 7,344 ( 0 % )         ;
++------------------------------+---------------------------+
 
 
 +------------------------------------------+
@@ -1355,10 +1379,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; KEY[0]             ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
 ; SW[3]              ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
 ; KEY[3]             ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
-; SW[2]              ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
-; KEY[2]             ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
 ; SW[1]              ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
 ; KEY[1]             ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
+; SW[2]              ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
+; KEY[2]             ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
 ; SW[4]              ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
 ; SW[5]              ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
 ; SW[6]              ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ;
@@ -1411,6 +1435,94 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------+--------+
 
 
++-------------------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Summary                                                               ;
++------------------------------------------------------------------+----------------------+-------------------+
+; Source Clock(s)                                                  ; Destination Clock(s) ; Delay Added in ns ;
++------------------------------------------------------------------+----------------------+-------------------+
+; CLOCK_50,divisorInterface:BASEDETEMPO|divisor:baseTempo|tick,I/O ; CLOCK_50             ; 8.2               ;
+; CLOCK_50                                                         ; CLOCK_50             ; 7.5               ;
++------------------------------------------------------------------+----------------------+-------------------+
+Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
+This will disable optimization of problematic paths and expose them for further analysis using the Timing Analyzer.
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                                                                                                          ;
++------------------------------------------------------------------+-----------------------------------------------------------------+-------------------+
+; Source Register                                                  ; Destination Register                                            ; Delay Added in ns ;
++------------------------------------------------------------------+-----------------------------------------------------------------+-------------------+
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick              ; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick             ; 4.544             ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[24]      ; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick             ; 2.272             ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[23]      ; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick             ; 2.272             ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[22]      ; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick             ; 2.272             ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[21]      ; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick             ; 2.272             ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[19]      ; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick             ; 2.272             ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[18]      ; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick             ; 2.272             ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[17]      ; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick             ; 2.272             ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[16]      ; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick             ; 2.272             ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[15]      ; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick             ; 2.272             ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[14]      ; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick             ; 2.272             ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[13]      ; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick             ; 2.272             ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[12]      ; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick             ; 2.272             ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[11]      ; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick             ; 2.272             ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[10]      ; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick             ; 2.272             ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[9]       ; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick             ; 2.272             ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[8]       ; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick             ; 2.272             ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[7]       ; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick             ; 2.272             ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[6]       ; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick             ; 2.272             ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[5]       ; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick             ; 2.272             ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[4]       ; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick             ; 2.272             ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[3]       ; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick             ; 2.272             ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[2]       ; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick             ; 2.272             ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[1]       ; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick             ; 2.272             ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[0]       ; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick             ; 2.272             ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[20]      ; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick             ; 2.272             ;
+; divisorInterface:BASEDETEMPO|flipFlop:registraUmSegundo|DOUT     ; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~45 ; 1.931             ;
+; KEY[0]                                                           ; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~45 ; 1.573             ;
+; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[4]                    ; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~45 ; 1.573             ;
+; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[0]                    ; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~45 ; 1.573             ;
+; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[7]                    ; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~45 ; 1.573             ;
+; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[2]                    ; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~45 ; 1.573             ;
+; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[1]                    ; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~45 ; 1.573             ;
+; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[5]                    ; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~45 ; 1.573             ;
+; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[3]                    ; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~45 ; 1.573             ;
+; CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[6]                    ; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~45 ; 1.573             ;
+; memoriaRAM:RAM|ram~17                                            ; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~45 ; 1.215             ;
+; SW[0]                                                            ; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~45 ; 1.215             ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~15  ; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~45 ; 0.857             ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~55  ; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~45 ; 0.857             ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~95  ; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~45 ; 0.857             ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~135 ; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~45 ; 0.857             ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~25  ; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~45 ; 0.857             ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~65  ; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~45 ; 0.857             ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~105 ; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~45 ; 0.857             ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~145 ; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~45 ; 0.857             ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~35  ; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~45 ; 0.857             ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~75  ; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~45 ; 0.857             ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~115 ; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~45 ; 0.857             ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~155 ; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~45 ; 0.857             ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~45  ; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~45 ; 0.857             ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~85  ; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~45 ; 0.857             ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~125 ; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~45 ; 0.857             ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~165 ; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~45 ; 0.857             ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~21  ; registrador:REGLED|DOUT[6]                                      ; 0.492             ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~118 ; registrador:REGLED|DOUT[3]                                      ; 0.481             ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~16  ; registrador:REGLED|DOUT[1]                                      ; 0.447             ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~31  ; registrador:REGLED|DOUT[6]                                      ; 0.446             ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~26  ; registrador:REGLED|DOUT[1]                                      ; 0.406             ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~36  ; registrador:REGLED|DOUT[1]                                      ; 0.301             ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~121 ; registrador:REGLED|DOUT[6]                                      ; 0.191             ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~19  ; registrador:REGLED|DOUT[4]                                      ; 0.185             ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~91  ; registrador:REGLED|DOUT[6]                                      ; 0.062             ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~46  ; registrador:REGLED|DOUT[1]                                      ; 0.041             ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~29  ; registrador:REGLED|DOUT[4]                                      ; 0.013             ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~39  ; registrador:REGLED|DOUT[4]                                      ; 0.013             ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~49  ; registrador:REGLED|DOUT[4]                                      ; 0.013             ;
++------------------------------------------------------------------+-----------------------------------------------------------------+-------------------+
+Note: This table only shows the top 67 path(s) that have the largest delay added for hold.
+
+
 +-----------------+
 ; Fitter Messages ;
 +-----------------+
@@ -1424,7 +1536,7 @@ Warning (292013): Feature LogicLock is only available with a valid subscription 
 Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details
 Info (184020): Starting Fitter periphery placement operations
 Info (11191): Automatically promoted 1 clock (1 global)
-    Info (11162): CLOCK_50~inputCLKENA0 with 132 fanout uses global clock CLKCTRL_G6
+    Info (11162): CLOCK_50~inputCLKENA0 with 237 fanout uses global clock CLKCTRL_G6
 Info (184021): Fitter periphery placement operations ending: elapsed time is 00:00:00
 Info (176233): Starting register packing
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'Relogio.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
@@ -1436,30 +1548,30 @@ Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
 Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "FPGA_RESET_N" is assigned to location or region, but does not exist in design
-Info (11798): Fitter preparation operations ending: elapsed time is 00:00:10
+Info (11798): Fitter preparation operations ending: elapsed time is 00:00:14
 Info (170189): Fitter placement preparation operations beginning
 Info (14951): The Fitter is using Advanced Physical Optimization.
-Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:03
+Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:06
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:02
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:03
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 4% of the available device resources in the region that extends from location X33_Y0 to location X43_Y10
+    Info (170196): Router estimated peak interconnect usage is 8% of the available device resources in the region that extends from location X33_Y0 to location X43_Y10
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:05
-Info (11888): Total time spent on timing analysis during the Fitter is 1.06 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:12
+Info (11888): Total time spent on timing analysis during the Fitter is 3.05 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:07
+Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:08
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Info: Quartus Prime Fitter was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 2130 megabytes
-    Info: Processing ended: Thu Oct  8 10:28:04 2020
-    Info: Elapsed time: 00:00:44
-    Info: Total CPU time (on all processors): 00:01:19
+    Info: Peak virtual memory: 2133 megabytes
+    Info: Processing ended: Thu Oct  8 15:32:18 2020
+    Info: Elapsed time: 00:01:10
+    Info: Total CPU time (on all processors): 00:02:14
 
 
