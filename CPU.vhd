@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 entity CPU is
   generic (
     DATA_WIDTH : natural := 10;
-    ADDR_WIDTH : natural := 8;
+    ADDR_WIDTH : natural := 10;
     ROM_DATA_WIDTH : natural := 26
   );
 

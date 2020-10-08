@@ -6,7 +6,7 @@ entity Fluxo_Dados is
   generic (
     DATA_WIDTH : natural := 10;
     ROM_DATA_WIDTH : natural := 26;
-    ADDR_WIDTH : natural := 8
+    ADDR_WIDTH : natural := 10
   );
   --OPCODE   REGA REGB REGC IMEDIATO/ENDEREÇO
   --0000    0000 0000 0000    0000000000

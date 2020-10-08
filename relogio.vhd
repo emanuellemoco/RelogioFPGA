@@ -13,7 +13,7 @@ entity relogio is
             ROM_DATA_WIDTH : natural := 26;
             HEX_WIDTH : natural := 4;
             RAM_ADDR_WIDTH : natural := 6;
-            ADDR_WIDTH : natural := 8
+            ADDR_WIDTH : natural := 10
       );
 
       port (
