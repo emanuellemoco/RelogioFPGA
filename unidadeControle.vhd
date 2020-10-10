@@ -42,14 +42,15 @@ begin
 
   selMuxImedRam <= '1' when opcode = leaw else
     '0';
-  selMuxULAImed <= '1' when opcode = add or opcode = inc else
+  selMuxULAImed <= '1' when opcode = add or opcode = inc or opcode = andw  else
     '0';
-  HabEscritaReg <= '1' when opcode = leaw or opcode = add or opcode = rd or opcode = inc else
+  HabEscritaReg <= '1' when opcode = leaw or opcode = add or opcode = rd or opcode = inc or opcode = andw else
     '0';
   selOperacaoULA <= "010" when opcode = leaw else
     "000" when opcode = add else
     "100" when opcode = inc else
     "001" when opcode = je else
+    "110" when opcode = andw else
     "010";
   selMuxProxPC <= '1' when opcode = jmp or (opCode = je and equal_ULA = '1') else
     '0';

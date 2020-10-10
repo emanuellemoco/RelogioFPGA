@@ -3,6 +3,9 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity divisorInterface is
+   generic (
+      TIME : natural := 25000000
+   );
    port (
       clk : in std_logic;
       habilitaLeitura : in std_logic;
@@ -17,7 +20,7 @@ architecture interface of divisorInterface is
 begin
 
    baseTempo : entity work.divisor
-      generic map(divisor => 25000000) --25000000
+      generic map(divisor => TIME) --25000000
       port map(clk => clk, saida_clk => saidaclk_reg1seg);
 
    registraUmSegundo : entity work.flipFlop

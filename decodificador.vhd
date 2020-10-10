@@ -23,26 +23,26 @@ ENTITY decodificador IS
 
     entrada : IN std_logic_vector(DECODE_WIDTH - 1 DOWNTO 0);
 
-    decodificadorControle : OUT std_logic_vector(19 DOWNTO 0)
+    decodificadorControle : OUT std_logic_vector(20 DOWNTO 0)
   );
 END ENTITY;
 ARCHITECTURE arch_name OF decodificador IS
 
-ALIAS enderecoRAM : std_logic_vector(5 DOWNTO 0) IS decodificadorControle(5 DOWNTO 0);
-ALIAS selMUX : std_logic_vector IS decodificadorControle(7 downto 6);
-ALIAS habRegHEX : std_logic IS decodificadorControle(8);
-ALIAS habRegLED : std_logic IS decodificadorControle(9);
-ALIAS habLeituraRAM : std_logic IS decodificadorControle(10);
-ALIAS habEscritaRAM : std_logic IS decodificadorControle(11);
-ALIAS habLeituraInterface : std_logic IS decodificadorControle(12);
-ALIAS limpaLeituraInterface : std_logic IS decodificadorControle(13);
-ALIAS habReg0 : std_logic IS decodificadorControle(14);
-ALIAS habReg1 : std_logic IS decodificadorControle(15);
-ALIAS habReg2 : std_logic IS decodificadorControle(16);
-ALIAS habReg3 : std_logic IS decodificadorControle(17);
-ALIAS habReg4 : std_logic IS decodificadorControle(18);
-ALIAS habReg5 : std_logic IS decodificadorControle(19);
-
+alias enderecoRAM : std_logic_vector(5 downto 0) is decodificadorControle(5 downto 0);
+alias selMUX : std_logic_vector is decodificadorControle(7 downto 6);
+alias selMUXtempo : std_logic is decodificadorControle(8);
+alias habRegHEX : std_logic is decodificadorControle(9);
+alias habRegLED : std_logic is decodificadorControle(10);
+alias habLeituraRAM : std_logic is decodificadorControle(11);
+alias habEscritaRAM : std_logic is decodificadorControle(12);
+alias habLeituraInterface : std_logic is decodificadorControle(13);
+alias limpaLeituraInterface : std_logic is decodificadorControle(14);
+alias habReg0 : std_logic is decodificadorControle(15);
+alias habReg1 : std_logic is decodificadorControle(16);
+alias habReg2 : std_logic is decodificadorControle(17);
+alias habReg3 : std_logic is decodificadorControle(18);
+alias habReg4 : std_logic is decodificadorControle(19);
+alias habReg5 : std_logic is decodificadorControle(20);
 
 
 
@@ -57,13 +57,16 @@ BEGIN
   -- LED ------------------------------[7]
   -- SW  ------------------------------[8]
   -- KEY ------------------------------[9]
-  -- RAM -----------------------------[10~63]
+  -- BASE F ---------------------------[10]
+  -- RAM -----------------------------[11~63]
 
-  selMux <= "01" WHEN (unsigned(endereco) >= 10) ELSE
+  selMux <= "01" WHEN (unsigned(endereco) >= 11) ELSE
             "10" WHEN (unsigned(endereco) = 8) ELSE
             "11" WHEN (unsigned(endereco) = 9)  ELSE 
     "00";
-	 
+
+  selMUXtempo <= '1' WHEN (unsigned(endereco) = 10) ELSE '0';
+  
 
   habRegHEX <= '1' WHEN (unsigned(endereco) >= 1 AND unsigned(endereco) <= 6) AND opcode = wr ELSE
     '0';
@@ -71,16 +74,16 @@ BEGIN
   habRegLED <= '1' WHEN (unsigned(endereco) = 7) AND opcode = wr ELSE
     '0';
 
-  habLeituraRAM <= '1' WHEN (unsigned(endereco) >= 10 AND opcode = rd) ELSE
+  habLeituraRAM <= '1' WHEN (unsigned(endereco) >= 11 AND opcode = rd) ELSE
     '0';
 
-  habEscritaRAM <= '1' WHEN (unsigned(endereco) >= 10 AND opcode = wr) ELSE
+  habEscritaRAM <= '1' WHEN (unsigned(endereco) >= 11 AND opcode = wr) ELSE
     '0';
 
-  habLeituraInterface <= '1' WHEN (unsigned(endereco) = 0 AND opcode = rd) ELSE
+  habLeituraInterface <= '1' WHEN (unsigned(endereco) = 0 AND opcode = rd) or (unsigned(endereco) = 10 AND opcode = rd)  ELSE
     '0';
 
-  limpaLeituraInterface <= '1' WHEN (unsigned(endereco) = 0 AND opcode = cl) ELSE
+  limpaLeituraInterface <= '1' WHEN (unsigned(endereco) = 0 AND opcode = cl) or (unsigned(endereco) = 10 AND opcode = cl) ELSE
     '0';
   habReg0 <= '1' WHEN (unsigned(endereco) =1 AND opcode = wr) ELSE
     '0';

@@ -13,16 +13,18 @@ package constantes is
     -- codigos das instrucoes do DLX:
     subtype opCode is std_logic_vector(OPCODE_WIDTH - 1 downto 0);
     subtype registradores is std_logic_vector(OPCODE_WIDTH - 1 downto 0);
-    constant leaw : opCode := "0000";
+    constant leaw: opCode := "0000";
     constant add : opCode := "0001";
-    constant wr : opCode := "0010";
+    constant wr  : opCode := "0010";
     constant inc : opCode := "0011";
-    constant je : opCode := "0100";
-    constant rd : opCode := "0101";
+    constant je  : opCode := "0100";
+    constant rd  : opCode := "0101";
     constant jmp : opCode := "0110";
     constant NOP : opCode := "0000";
-    constant nope : opCode := "0111";
-    constant cl : opCode := "1000";
+    constant nope: opCode := "0111";
+    constant cl  : opCode := "1000";
+    constant andw: opCode := "1001";
+    
 
     constant R01 : registradores := "0001";
     constant R02 : registradores := "0010";

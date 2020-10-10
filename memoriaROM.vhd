@@ -23,6 +23,7 @@ end entity;
 -- jmp  -----------------------------0110                     OK
 -- nope -----------------------------0111
 -- cl -------------------------------1000 limpa
+-- andw -----------------------------1001                     OK
 
 --   Testar:
 --   HEX            OK
@@ -36,8 +37,8 @@ end entity;
   -- LED ------------------------------[7]
   -- SW  ------------------------------[8]
   -- KEY ------------------------------[9]
-  -- RAM -----------------------------[10~63]
-
+  -- BASE F ---------------------------[10]
+  -- RAM -----------------------------[11~63]
 
 architecture assincrona of memoriaROM is
 
@@ -70,14 +71,28 @@ architecture assincrona of memoriaROM is
         tmp(3)  := leaw & NOP & NOP & R04 & b"0000000000";
         tmp(4)  := leaw & NOP & NOP & R05 & b"0000000000";
         tmp(5)  := leaw & NOP & NOP & R06 & b"0000000000";
+        --Checa se o SW do Fast está ligado                                                 1111111111
+        tmp(6)  := leaw & NOP & NOP & R07 & b"1000000000";                              --  1000000000 <--
+        tmp(7)  := rd   & NOP & NOP & R08 & b"0000001000"; --8 - SW                     --  1000000000  <--
+        tmp(8)  := andw & R07 & R08 & R09 & b"0000000000"; 
+        tmp(9)  := je   & R09 & R07 & NOP & b"0000010010"; --goto tmp(18)         
         --Checa se 01 segundo passou
-        tmp(6)  := leaw & NOP & NOP & R07 & b"0000000001";
-        tmp(7)  := rd   & NOP & NOP & R08 & b"0000000000"; --*********
-        tmp(8)  := je   & R07 & R08 & NOP & b"0001000000"; --goto tmp(64)         
+        tmp(10) := leaw & NOP & NOP & R07 & b"0000000001"; 
+        tmp(11) := rd   & NOP & NOP & R08 & b"0000000000";
+        tmp(12) := je   & R07 & R08 & NOP & b"0001000000"; --goto tmp(64)         
         -- Checa se o input do sw mudou 
-        tmp(9)  := rd   & NOP & NOP & R08 & b"0000001000"; --8 - SW
-        tmp(10) := je   & R07 & R08 & NOP & b"0010000000"; --goto tmp(128)
-        tmp(11) := jmp  & NOP & NOP & NOP & b"0000000110"; --goto tmp(6) 
+        tmp(13) := leaw & NOP & NOP & R07 & b"0000000001"; 
+        tmp(14) := rd   & NOP & NOP & R08 & b"0000001000"; --8 - SW
+        tmp(15) := andw & R07 & R08 & R09 & b"0000000000"; --8 - SW 
+        tmp(16) := je   & R07 & R09 & NOP & b"0010000000"; --goto tmp(128)
+        tmp(17) := jmp  & NOP & NOP & NOP & b"0000000110"; --goto tmp(6) 
+        --Checa se 01 segundo FAST passou
+        tmp(18) := leaw & NOP & NOP & R07 & b"0000000001"; --*********
+        tmp(19) := rd   & NOP & NOP & R08 & b"0000001010"; -- SW 10 - muda base tempo
+        tmp(20) := je   & R07 & R08 & NOP & b"0001000000"; --goto tmp(64)
+        tmp(21) := jmp  & NOP & NOP & NOP & b"0000001101"; --goto tmp(13) 
+
+       
         
         -------------- ATUALIZA HORARIO NO HEX -------------------------------
         -- Checa se a unidade do segundo é 9
@@ -147,14 +162,9 @@ architecture assincrona of memoriaROM is
         tmp(113) := jmp  & NOP & NOP & NOP & b"0000000110"; --goto tmp(6)
         
 
-        
-        
-
-   
-
         ------------------------SETTA HORARIO---------------------------
         --Setta o horário 
-        tmp(128) := rd   & NOP & NOP & R08 & b"0000001001";  --********* -- 9 - KEY    "0000001111"
+        tmp(128) := rd   & NOP & NOP & R08 & b"0000001001"; --********* -- 9 - KEY    "0000001111"
         tmp(129) := leaw & NOP & NOP & R09 & b"0000001101"; --key 1 - segundo 
         tmp(130) := je   & R08 & R09 & NOP & b"0011001000"; --goto tmp(200) 
         tmp(131) := leaw & NOP & NOP & R09 & b"0000001011"; --key 2 - minuto
@@ -163,10 +173,11 @@ architecture assincrona of memoriaROM is
         tmp(134) := je   & R08 & R09 & NOP & b"0100001001"; --goto tmp(265)
         tmp(135) := leaw & NOP & NOP & R09 & b"0000001110"; --key 0 - reseta
         tmp(136) := je   & R08 & R09 & NOP & b"0010010110"; --goto tmp(150)
-        tmp(137) := leaw & NOP & NOP & R09 & b"0000000000"; --key 0 - reseta
-        tmp(138) := rd   & NOP & NOP & R08 & b"0000001000";  --********* -- 8 - SW   
-        tmp(139) := je   & R08 & R09 & NOP & b"0000000110"; --goto tmp(06)
-        tmp(140) := jmp  & NOP & NOP & NOP & b"0010000000"; --goto tmp(128) 
+        tmp(137) := leaw & NOP & NOP & R09 & b"0000000001"; --key 0 - reseta
+        tmp(138) := rd   & NOP & NOP & R08 & b"0000001000"; --8 - SW
+        tmp(139) := andw & R08 & R09 & R10 & b"0000000000"; 
+        tmp(140) := je   & R09 & R10 & NOP & b"0010000000"; --goto tmp(128)
+        tmp(141) := jmp  & NOP & NOP & NOP & b"0000000110"; --goto tmp(6) 
         
         -- Zerando o horario
         tmp(150) := leaw & NOP & NOP & R01 & b"0000000000";

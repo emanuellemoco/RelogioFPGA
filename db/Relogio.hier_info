@@ -2,6 +2,7 @@
 CLOCK_50 => cpu:CPU.clk
 CLOCK_50 => memoriaram:RAM.clk
 CLOCK_50 => divisorinterface:BASEDETEMPO.clk
+CLOCK_50 => divisorinterface:BASEDETEMPOFAST.clk
 CLOCK_50 => registrador:REG0.CLK
 CLOCK_50 => registrador:REG1.CLK
 CLOCK_50 => registrador:REG2.CLK
@@ -661,26 +662,30 @@ opCode[0] => Equal0.IN3
 opCode[0] => Equal1.IN0
 opCode[0] => Equal2.IN1
 opCode[0] => Equal3.IN1
-opCode[0] => Equal4.IN3
+opCode[0] => Equal4.IN1
 opCode[0] => Equal5.IN3
+opCode[0] => Equal6.IN3
 opCode[1] => Equal0.IN2
 opCode[1] => Equal1.IN3
 opCode[1] => Equal2.IN0
 opCode[1] => Equal3.IN3
-opCode[1] => Equal4.IN1
-opCode[1] => Equal5.IN2
+opCode[1] => Equal4.IN3
+opCode[1] => Equal5.IN1
+opCode[1] => Equal6.IN2
 opCode[2] => Equal0.IN1
 opCode[2] => Equal1.IN2
 opCode[2] => Equal2.IN3
-opCode[2] => Equal3.IN0
+opCode[2] => Equal3.IN2
 opCode[2] => Equal4.IN0
 opCode[2] => Equal5.IN0
+opCode[2] => Equal6.IN0
 opCode[3] => Equal0.IN0
 opCode[3] => Equal1.IN1
 opCode[3] => Equal2.IN2
-opCode[3] => Equal3.IN2
+opCode[3] => Equal3.IN0
 opCode[3] => Equal4.IN2
-opCode[3] => Equal5.IN1
+opCode[3] => Equal5.IN2
+opCode[3] => Equal6.IN1
 equal_ULA => selMuxProxPC.IN1
 palavraControle[0] <= <GND>
 palavraControle[1] <= <GND>
@@ -707,6 +712,7 @@ entrada[0] => Equal8.IN13
 entrada[0] => Equal9.IN13
 entrada[0] => Equal10.IN13
 entrada[0] => Equal11.IN13
+entrada[0] => Equal12.IN13
 entrada[1] => Equal0.IN12
 entrada[1] => Equal1.IN12
 entrada[1] => LessThan0.IN13
@@ -720,6 +726,7 @@ entrada[1] => Equal8.IN12
 entrada[1] => Equal9.IN12
 entrada[1] => Equal10.IN12
 entrada[1] => Equal11.IN12
+entrada[1] => Equal12.IN12
 entrada[2] => Equal0.IN11
 entrada[2] => Equal1.IN11
 entrada[2] => LessThan0.IN12
@@ -733,6 +740,7 @@ entrada[2] => Equal8.IN11
 entrada[2] => Equal9.IN11
 entrada[2] => Equal10.IN11
 entrada[2] => Equal11.IN11
+entrada[2] => Equal12.IN11
 entrada[3] => Equal0.IN10
 entrada[3] => Equal1.IN10
 entrada[3] => LessThan0.IN11
@@ -746,6 +754,7 @@ entrada[3] => Equal8.IN10
 entrada[3] => Equal9.IN10
 entrada[3] => Equal10.IN10
 entrada[3] => Equal11.IN10
+entrada[3] => Equal12.IN10
 entrada[4] => Equal0.IN9
 entrada[4] => Equal1.IN9
 entrada[4] => LessThan0.IN10
@@ -759,6 +768,7 @@ entrada[4] => Equal8.IN9
 entrada[4] => Equal9.IN9
 entrada[4] => Equal10.IN9
 entrada[4] => Equal11.IN9
+entrada[4] => Equal12.IN9
 entrada[5] => Equal0.IN8
 entrada[5] => Equal1.IN8
 entrada[5] => LessThan0.IN9
@@ -772,6 +782,7 @@ entrada[5] => Equal8.IN8
 entrada[5] => Equal9.IN8
 entrada[5] => Equal10.IN8
 entrada[5] => Equal11.IN8
+entrada[5] => Equal12.IN8
 entrada[6] => Equal0.IN7
 entrada[6] => Equal1.IN7
 entrada[6] => LessThan0.IN8
@@ -785,18 +796,19 @@ entrada[6] => Equal8.IN7
 entrada[6] => Equal9.IN7
 entrada[6] => Equal10.IN7
 entrada[6] => Equal11.IN7
+entrada[6] => Equal12.IN7
 entrada[7] => Equal3.IN1
 entrada[7] => Equal5.IN3
-entrada[7] => Equal12.IN3
+entrada[7] => Equal13.IN3
 entrada[8] => Equal3.IN3
 entrada[8] => Equal5.IN2
-entrada[8] => Equal12.IN0
+entrada[8] => Equal13.IN0
 entrada[9] => Equal3.IN0
 entrada[9] => Equal5.IN1
-entrada[9] => Equal12.IN2
+entrada[9] => Equal13.IN2
 entrada[10] => Equal3.IN2
 entrada[10] => Equal5.IN0
-entrada[10] => Equal12.IN1
+entrada[10] => Equal13.IN1
 decodificadorControle[0] <= <GND>
 decodificadorControle[1] <= <GND>
 decodificadorControle[2] <= <GND>
@@ -805,18 +817,19 @@ decodificadorControle[4] <= <GND>
 decodificadorControle[5] <= <GND>
 decodificadorControle[6] <= selMUX.DB_MAX_OUTPUT_PORT_TYPE
 decodificadorControle[7] <= selMUX.DB_MAX_OUTPUT_PORT_TYPE
-decodificadorControle[8] <= habRegHEX.DB_MAX_OUTPUT_PORT_TYPE
-decodificadorControle[9] <= habRegLED.DB_MAX_OUTPUT_PORT_TYPE
-decodificadorControle[10] <= habLeituraRAM.DB_MAX_OUTPUT_PORT_TYPE
-decodificadorControle[11] <= habEscritaRAM.DB_MAX_OUTPUT_PORT_TYPE
-decodificadorControle[12] <= habLeituraInterface.DB_MAX_OUTPUT_PORT_TYPE
-decodificadorControle[13] <= limpaLeituraInterface.DB_MAX_OUTPUT_PORT_TYPE
-decodificadorControle[14] <= habReg0.DB_MAX_OUTPUT_PORT_TYPE
-decodificadorControle[15] <= habReg1.DB_MAX_OUTPUT_PORT_TYPE
-decodificadorControle[16] <= habReg2.DB_MAX_OUTPUT_PORT_TYPE
-decodificadorControle[17] <= habReg3.DB_MAX_OUTPUT_PORT_TYPE
-decodificadorControle[18] <= habReg4.DB_MAX_OUTPUT_PORT_TYPE
-decodificadorControle[19] <= habReg5.DB_MAX_OUTPUT_PORT_TYPE
+decodificadorControle[8] <= Equal6.DB_MAX_OUTPUT_PORT_TYPE
+decodificadorControle[9] <= habRegHEX.DB_MAX_OUTPUT_PORT_TYPE
+decodificadorControle[10] <= habRegLED.DB_MAX_OUTPUT_PORT_TYPE
+decodificadorControle[11] <= habLeituraRAM.DB_MAX_OUTPUT_PORT_TYPE
+decodificadorControle[12] <= habEscritaRAM.DB_MAX_OUTPUT_PORT_TYPE
+decodificadorControle[13] <= habLeituraInterface.DB_MAX_OUTPUT_PORT_TYPE
+decodificadorControle[14] <= limpaLeituraInterface.DB_MAX_OUTPUT_PORT_TYPE
+decodificadorControle[15] <= habReg0.DB_MAX_OUTPUT_PORT_TYPE
+decodificadorControle[16] <= habReg1.DB_MAX_OUTPUT_PORT_TYPE
+decodificadorControle[17] <= habReg2.DB_MAX_OUTPUT_PORT_TYPE
+decodificadorControle[18] <= habReg3.DB_MAX_OUTPUT_PORT_TYPE
+decodificadorControle[19] <= habReg4.DB_MAX_OUTPUT_PORT_TYPE
+decodificadorControle[20] <= habReg5.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |relogio|memoriaRAM:RAM
@@ -888,6 +901,17 @@ dado_out[6] <= ram.DATAOUT6
 dado_out[7] <= ram.DATAOUT7
 dado_out[8] <= ram.DATAOUT8
 dado_out[9] <= ram.DATAOUT9
+
+
+|relogio|mux2x1:MUXTEMPO
+entradaA_MUX[0] => saida_MUX.DATAA
+entradaA_MUX[1] => saida_MUX.DATAA
+entradaB_MUX[0] => saida_MUX.DATAB
+entradaB_MUX[1] => saida_MUX.DATAB
+seletor_MUX => saida_MUX.OUTPUTSELECT
+seletor_MUX => saida_MUX.OUTPUTSELECT
+saida_MUX[0] <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
+saida_MUX[1] <= saida_MUX.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |relogio|mux8x1:MUX
@@ -987,6 +1011,46 @@ saida_clk <= tick.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |relogio|divisorInterface:BASEDETEMPO|flipFlop:registraUmSegundo
+DIN => DOUT~reg0.DATAIN
+DOUT <= DOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ENABLE => DOUT~reg0.ENA
+CLK => DOUT~reg0.CLK
+RST => DOUT~reg0.ACLR
+
+
+|relogio|divisorInterface:BASEDETEMPOFAST
+clk => divisor:baseTempo.clk
+habilitaLeitura => leituraUmSegundo.OUTPUTSELECT
+limpaLeitura => flipflop:registraUmSegundo.RST
+leituraUmSegundo <= leituraUmSegundo.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio|divisorInterface:BASEDETEMPOFAST|divisor:baseTempo
+clk => tick.CLK
+clk => contador[0].CLK
+clk => contador[1].CLK
+clk => contador[2].CLK
+clk => contador[3].CLK
+clk => contador[4].CLK
+clk => contador[5].CLK
+clk => contador[6].CLK
+clk => contador[7].CLK
+clk => contador[8].CLK
+clk => contador[9].CLK
+clk => contador[10].CLK
+clk => contador[11].CLK
+clk => contador[12].CLK
+clk => contador[13].CLK
+clk => contador[14].CLK
+clk => contador[15].CLK
+clk => contador[16].CLK
+clk => contador[17].CLK
+clk => contador[18].CLK
+clk => contador[19].CLK
+saida_clk <= tick.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|relogio|divisorInterface:BASEDETEMPOFAST|flipFlop:registraUmSegundo
 DIN => DOUT~reg0.DATAIN
 DOUT <= DOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
 ENABLE => DOUT~reg0.ENA
