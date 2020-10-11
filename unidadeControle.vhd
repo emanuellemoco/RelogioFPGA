@@ -5,7 +5,7 @@ use work.constantes.all;
 
 entity Unidade_Controle is
   generic (
-    DATA_WIDTH : natural := 10;
+    DATA_WIDTH : natural := 8;
     ADDR_WIDTH : natural := 8
   );
 

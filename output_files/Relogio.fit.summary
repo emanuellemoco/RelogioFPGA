@@ -1,13 +1,13 @@
-Fitter Status : Successful - Sat Oct 10 19:40:01 2020
+Fitter Status : Successful - Sun Oct 11 18:54:46 2020
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : Relogio
 Top-level Entity Name : relogio
 Family : Cyclone V
 Device : 5CEBA4F23C7
 Timing Models : Final
-Logic utilization (in ALMs) : 369 / 18,480 ( 2 % )
-Total registers : 284
-Total pins : 67 / 224 ( 30 % )
+Logic utilization (in ALMs) : 347 / 18,480 ( 2 % )
+Total registers : 250
+Total pins : 63 / 224 ( 28 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 3,153,920 ( 0 % )
 Total RAM Blocks : 0 / 308 ( 0 % )

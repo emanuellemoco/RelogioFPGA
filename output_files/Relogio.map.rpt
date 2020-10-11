@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Relogio
-Sat Oct 10 19:38:57 2020
+Sun Oct 11 18:53:37 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -89,14 +89,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Oct 10 19:38:57 2020       ;
+; Analysis & Synthesis Status     ; Successful - Sun Oct 11 18:53:36 2020       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; Relogio                                     ;
 ; Top-level Entity Name           ; relogio                                     ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 263                                         ;
-; Total pins                      ; 67                                          ;
+; Total registers                 ; 227                                         ;
+; Total pins                      ; 63                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -246,24 +246,24 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 371            ;
+; Estimate of Logic utilization (ALMs needed) ; 346            ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 497            ;
-;     -- 7 input functions                    ; 1              ;
-;     -- 6 input functions                    ; 222            ;
-;     -- 5 input functions                    ; 81             ;
-;     -- 4 input functions                    ; 109            ;
-;     -- <=3 input functions                  ; 84             ;
+; Combinational ALUT usage for logic          ; 465            ;
+;     -- 7 input functions                    ; 2              ;
+;     -- 6 input functions                    ; 207            ;
+;     -- 5 input functions                    ; 71             ;
+;     -- 4 input functions                    ; 105            ;
+;     -- <=3 input functions                  ; 80             ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 263            ;
+; Dedicated logic registers                   ; 227            ;
 ;                                             ;                ;
-; I/O pins                                    ; 67             ;
+; I/O pins                                    ; 63             ;
 ;                                             ;                ;
 ; Total DSP Blocks                            ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 261            ;
-; Total fan-out                               ; 3288           ;
+; Maximum fan-out                             ; 225            ;
+; Total fan-out                               ; 3013           ;
 ; Average fan-out                             ; 3.68           ;
 +---------------------------------------------+----------------+
 
@@ -273,16 +273,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------+------------------+--------------+
 ; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                  ; Entity Name      ; Library Name ;
 +---------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------+------------------+--------------+
-; |relogio                              ; 497 (0)             ; 263 (0)                   ; 0                 ; 0          ; 67   ; 0            ; |relogio                                                             ; relogio          ; work         ;
-;    |CPU:CPU|                          ; 374 (0)             ; 170 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU                                                     ; CPU              ; work         ;
-;       |Fluxo_Dados:FD|                ; 362 (0)             ; 170 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD                                      ; Fluxo_Dados      ; work         ;
-;          |ULA:ULA|                    ; 14 (14)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|ULA:ULA                              ; ULA              ; work         ;
-;          |bancoRegistrador:bancoReg|  ; 117 (117)           ; 160 (160)                 ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg            ; bancoRegistrador ; work         ;
+; |relogio                              ; 465 (0)             ; 227 (0)                   ; 0                 ; 0          ; 63   ; 0            ; |relogio                                                             ; relogio          ; work         ;
+;    |CPU:CPU|                          ; 342 (0)             ; 138 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU                                                     ; CPU              ; work         ;
+;       |Fluxo_Dados:FD|                ; 332 (0)             ; 138 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD                                      ; Fluxo_Dados      ; work         ;
+;          |ULA:ULA|                    ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|ULA:ULA                              ; ULA              ; work         ;
+;          |bancoRegistrador:bancoReg|  ; 97 (97)             ; 128 (128)                 ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg            ; bancoRegistrador ; work         ;
 ;          |memoriaROM:ROM|             ; 186 (186)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|memoriaROM:ROM                       ; memoriaROM       ; work         ;
-;          |mux2x1:muxULA_Imediato|     ; 35 (35)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato               ; mux2x1           ; work         ;
+;          |mux2x1:muxULA_Imediato|     ; 27 (27)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato               ; mux2x1           ; work         ;
 ;          |registrador:PC|             ; 0 (0)               ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|registrador:PC                       ; registrador      ; work         ;
 ;          |somaConstante:somaUm|       ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|somaConstante:somaUm                 ; somaConstante    ; work         ;
-;       |Unidade_Controle:UC|           ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Unidade_Controle:UC                                 ; Unidade_Controle ; work         ;
+;       |Unidade_Controle:UC|           ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Unidade_Controle:UC                                 ; Unidade_Controle ; work         ;
 ;    |decodificador:DEC|                ; 18 (18)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|decodificador:DEC                                           ; decodificador    ; work         ;
 ;    |divisorInterface:BASEDETEMPOFAST| ; 26 (0)              ; 22 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |relogio|divisorInterface:BASEDETEMPOFAST                            ; divisorInterface ; work         ;
 ;       |divisor:baseTempo|             ; 26 (26)             ; 21 (21)                   ; 0                 ; 0          ; 0    ; 0            ; |relogio|divisorInterface:BASEDETEMPOFAST|divisor:baseTempo          ; divisor          ; work         ;
@@ -296,7 +296,7 @@ refer to the applicable agreement for further details.
 ;    |hex:HEX_3|                        ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|hex:HEX_3                                                   ; hex              ; work         ;
 ;    |hex:HEX_4|                        ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|hex:HEX_4                                                   ; hex              ; work         ;
 ;    |hex:HEX_5|                        ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|hex:HEX_5                                                   ; hex              ; work         ;
-;    |memoriaRAM:RAM|                   ; 0 (0)               ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |relogio|memoriaRAM:RAM                                              ; memoriaRAM       ; work         ;
+;    |memoriaRAM:RAM|                   ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|memoriaRAM:RAM                                              ; memoriaRAM       ; work         ;
 ;    |mux2x1:MUXTEMPO|                  ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|mux2x1:MUXTEMPO                                             ; mux2x1           ; work         ;
 ;    |mux8x1:MUX|                       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|mux8x1:MUX                                                  ; mux8x1           ; work         ;
 ;    |registrador:REG0|                 ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|registrador:REG0                                            ; registrador      ; work         ;
@@ -305,7 +305,7 @@ refer to the applicable agreement for further details.
 ;    |registrador:REG3|                 ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|registrador:REG3                                            ; registrador      ; work         ;
 ;    |registrador:REG4|                 ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|registrador:REG4                                            ; registrador      ; work         ;
 ;    |registrador:REG5|                 ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|registrador:REG5                                            ; registrador      ; work         ;
-;    |registrador:REGLED|               ; 0 (0)               ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |relogio|registrador:REGLED                                          ; registrador      ; work         ;
+;    |registrador:REGLED|               ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|registrador:REGLED                                          ; registrador      ; work         ;
 +---------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -315,12 +315,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 263   ;
+; Total registers                              ; 227   ;
 ; Number of registers using Synchronous Clear  ; 45    ;
 ; Number of registers using Synchronous Load   ; 10    ;
 ; Number of registers using Asynchronous Clear ; 2     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 204   ;
+; Number of registers using Clock Enable       ; 168   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -331,10 +331,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |relogio|decodificador:DEC|decodificadorControle[6]                 ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |relogio|CPU:CPU|Fluxo_Dados:FD|ULA:ULA|Add0                        ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |relogio|CPU:CPU|Fluxo_Dados:FD|ULA:ULA|Add0                        ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |relogio|CPU:CPU|Unidade_Controle:UC|palavraControle[3]             ;
 ; 11:1               ; 3 bits    ; 21 LEs        ; 18 LEs               ; 3 LEs                  ; No         ; |relogio|CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato|saida_MUX[1] ;
-; 10:1               ; 6 bits    ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; No         ; |relogio|CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato|saida_MUX[7] ;
+; 10:1               ; 4 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |relogio|CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato|saida_MUX[4] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
 
 
@@ -343,7 +343,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+-------+------------------------------------------------+
 ; Parameter Name ; Value ; Type                                           ;
 +----------------+-------+------------------------------------------------+
-; DATA_WIDTH     ; 10    ; Signed Integer                                 ;
+; DATA_WIDTH     ; 8     ; Signed Integer                                 ;
 ; DECODE_WIDTH   ; 11    ; Signed Integer                                 ;
 ; ROM_DATA_WIDTH ; 26    ; Signed Integer                                 ;
 ; HEX_WIDTH      ; 4     ; Signed Integer                                 ;
@@ -358,7 +358,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+-----------------------------+
 ; Parameter Name ; Value ; Type                        ;
 +----------------+-------+-----------------------------+
-; data_width     ; 10    ; Signed Integer              ;
+; data_width     ; 8     ; Signed Integer              ;
 ; addr_width     ; 10    ; Signed Integer              ;
 ; rom_data_width ; 26    ; Signed Integer              ;
 +----------------+-------+-----------------------------+
@@ -370,7 +370,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+--------------------------------------------+
 ; Parameter Name ; Value ; Type                                       ;
 +----------------+-------+--------------------------------------------+
-; data_width     ; 10    ; Signed Integer                             ;
+; data_width     ; 8     ; Signed Integer                             ;
 ; rom_data_width ; 26    ; Signed Integer                             ;
 ; addr_width     ; 10    ; Signed Integer                             ;
 +----------------+-------+--------------------------------------------+
@@ -402,7 +402,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+-------------------------------------------------------------------+
 ; Parameter Name ; Value ; Type                                                              ;
 +----------------+-------+-------------------------------------------------------------------+
-; larguradados   ; 10    ; Signed Integer                                                    ;
+; larguradados   ; 8     ; Signed Integer                                                    ;
 +----------------+-------+-------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -412,7 +412,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+-------------------------------------------------------------------+
 ; Parameter Name ; Value ; Type                                                              ;
 +----------------+-------+-------------------------------------------------------------------+
-; larguradados   ; 10    ; Signed Integer                                                    ;
+; larguradados   ; 8     ; Signed Integer                                                    ;
 +----------------+-------+-------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -444,7 +444,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------+-------+-----------------------------------------------------------------+
 ; Parameter Name      ; Value ; Type                                                            ;
 +---------------------+-------+-----------------------------------------------------------------+
-; larguradados        ; 10    ; Signed Integer                                                  ;
+; larguradados        ; 8     ; Signed Integer                                                  ;
 ; larguraendbancoregs ; 4     ; Signed Integer                                                  ;
 +---------------------+-------+-----------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
@@ -455,7 +455,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+----------------------------------------------------+
 ; Parameter Name ; Value ; Type                                               ;
 +----------------+-------+----------------------------------------------------+
-; larguradados   ; 10    ; Signed Integer                                     ;
+; larguradados   ; 8     ; Signed Integer                                     ;
 +----------------+-------+----------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -465,7 +465,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+-------------------------------------------------+
 ; Parameter Name ; Value ; Type                                            ;
 +----------------+-------+-------------------------------------------------+
-; data_width     ; 10    ; Signed Integer                                  ;
+; data_width     ; 8     ; Signed Integer                                  ;
 ; addr_width     ; 10    ; Signed Integer                                  ;
 +----------------+-------+-------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
@@ -486,7 +486,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+------------------------------------+
 ; Parameter Name ; Value ; Type                               ;
 +----------------+-------+------------------------------------+
-; datawidth      ; 10    ; Signed Integer                     ;
+; datawidth      ; 8     ; Signed Integer                     ;
 ; addrwidth      ; 6     ; Signed Integer                     ;
 +----------------+-------+------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
@@ -507,7 +507,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+--------------------------------+
 ; Parameter Name ; Value ; Type                           ;
 +----------------+-------+--------------------------------+
-; larguradados   ; 10    ; Signed Integer                 ;
+; larguradados   ; 8     ; Signed Integer                 ;
 +----------------+-------+--------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -617,7 +617,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+----------------------------------------+
 ; Parameter Name ; Value ; Type                                   ;
 +----------------+-------+----------------------------------------+
-; larguradados   ; 10    ; Signed Integer                         ;
+; larguradados   ; 8     ; Signed Integer                         ;
 +----------------+-------+----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -776,8 +776,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------------------+-------+----------+--------------+
 ; Port               ; Type  ; Severity ; Details      ;
 +--------------------+-------+----------+--------------+
-; entradaa_mux[9..2] ; Input ; Info     ; Stuck at GND ;
-; entradad_mux[9..4] ; Input ; Info     ; Stuck at GND ;
+; entradaa_mux[7..2] ; Input ; Info     ; Stuck at GND ;
+; entradad_mux[7..4] ; Input ; Info     ; Stuck at GND ;
 +--------------------+-------+----------+--------------+
 
 
@@ -816,28 +816,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 263                         ;
+; arriav_ff             ; 227                         ;
 ;     CLR               ; 2                           ;
-;     ENA               ; 204                         ;
+;     ENA               ; 168                         ;
 ;     SCLR              ; 45                          ;
 ;     SLD               ; 10                          ;
 ;     plain             ; 2                           ;
-; arriav_lcell_comb     ; 497                         ;
-;     arith             ; 66                          ;
+; arriav_lcell_comb     ; 465                         ;
+;     arith             ; 64                          ;
 ;         1 data inputs ; 56                          ;
-;         5 data inputs ; 10                          ;
-;     extend            ; 1                           ;
-;         7 data inputs ; 1                           ;
-;     normal            ; 430                         ;
-;         2 data inputs ; 8                           ;
-;         3 data inputs ; 20                          ;
-;         4 data inputs ; 109                         ;
-;         5 data inputs ; 71                          ;
-;         6 data inputs ; 222                         ;
-; boundary_port         ; 67                          ;
+;         5 data inputs ; 8                           ;
+;     extend            ; 2                           ;
+;         7 data inputs ; 2                           ;
+;     normal            ; 399                         ;
+;         2 data inputs ; 6                           ;
+;         3 data inputs ; 18                          ;
+;         4 data inputs ; 105                         ;
+;         5 data inputs ; 63                          ;
+;         6 data inputs ; 207                         ;
+; boundary_port         ; 63                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 8.00                        ;
-; Average LUT depth     ; 4.96                        ;
+; Average LUT depth     ; 4.87                        ;
 +-----------------------+-----------------------------+
 
 
@@ -856,7 +856,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sat Oct 10 19:38:36 2020
+    Info: Processing started: Sun Oct 11 18:53:13 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Relogio -c Relogio
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -923,6 +923,7 @@ Info (12128): Elaborating entity "CPU" for hierarchy "CPU:CPU" File: /home/emanu
 Info (12128): Elaborating entity "Fluxo_Dados" for hierarchy "CPU:CPU|Fluxo_Dados:FD" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd Line: 30
 Info (12128): Elaborating entity "registrador" for hierarchy "CPU:CPU|Fluxo_Dados:FD|registrador:PC" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 53
 Info (12128): Elaborating entity "mux2x1" for hierarchy "CPU:CPU|Fluxo_Dados:FD|mux2x1:MuxProxPC" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 56
+Info (12128): Elaborating entity "mux2x1" for hierarchy "CPU:CPU|Fluxo_Dados:FD|mux2x1:muxRAM_Imediato" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 60
 Info (12128): Elaborating entity "somaConstante" for hierarchy "CPU:CPU|Fluxo_Dados:FD|somaConstante:somaUm" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 69
 Info (12128): Elaborating entity "memoriaROM" for hierarchy "CPU:CPU|Fluxo_Dados:FD|memoriaROM:ROM" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 72
 Info (12128): Elaborating entity "bancoRegistrador" for hierarchy "CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 74
@@ -941,20 +942,21 @@ Info (12128): Elaborating entity "divisorInterface" for hierarchy "divisorInterf
 Info (12128): Elaborating entity "divisor" for hierarchy "divisorInterface:BASEDETEMPOFAST|divisor:baseTempo" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/divisorInterface.vhd Line: 22
 Info (12128): Elaborating entity "registrador" for hierarchy "registrador:REG0" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 100
 Info (12128): Elaborating entity "hex" for hierarchy "hex:HEX_0" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 102
+Info (12128): Elaborating entity "registrador" for hierarchy "registrador:REGLED" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 130
 Info (276014): Found 2 instances of uninferred RAM logic
     Info (276004): RAM logic "memoriaRAM:RAM|ram" is uninferred due to inappropriate RAM size File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/memoriaRAM.vhd Line: 25
     Info (276007): RAM logic "CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador" is uninferred due to asynchronous read logic File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/bancoRegistrador.vhd Line: 30
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 770 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 15 input pins
-    Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 703 logic cells
+Info (21057): Implemented 698 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 13 input pins
+    Info (21059): Implemented 50 output pins
+    Info (21061): Implemented 635 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 1064 megabytes
-    Info: Processing ended: Sat Oct 10 19:38:57 2020
-    Info: Elapsed time: 00:00:21
-    Info: Total CPU time (on all processors): 00:00:52
+    Info: Peak virtual memory: 1063 megabytes
+    Info: Processing ended: Sun Oct 11 18:53:37 2020
+    Info: Elapsed time: 00:00:24
+    Info: Total CPU time (on all processors): 00:01:00
 
 

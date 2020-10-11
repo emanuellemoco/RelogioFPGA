@@ -4,7 +4,7 @@ use ieee.numeric_std.all;
 
 entity Fluxo_Dados is
   generic (
-    DATA_WIDTH : natural := 10;
+    DATA_WIDTH : natural := 8;
     ROM_DATA_WIDTH : natural := 26;
     ADDR_WIDTH : natural := 10
   );
@@ -59,7 +59,7 @@ begin
       seletor_MUX => selMuxProxPC, saida_MUX => MuxProxPC_PC);
   muxRAM_Imediato : entity work.mux2x1 generic map (larguraDados => DATA_WIDTH)
     port map(
-      entradaA_MUX => entrada_dados, entradaB_MUX => Instrucao(9 downto 0),
+      entradaA_MUX => entrada_dados, entradaB_MUX => Instrucao(DATA_WIDTH -1  downto 0),
       seletor_MUX => selMuxImedRam, saida_MUX => muxRamImed);
   muxULA_Imediato : entity work.mux2x1 generic map (larguraDados => DATA_WIDTH)
     port map(

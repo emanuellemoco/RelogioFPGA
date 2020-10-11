@@ -47,9 +47,7 @@ architecture assincrona of memoriaROM is
     function initMemory
         return blocoMemoria is variable tmp : blocoMemoria := (others => (others => '0'));
     begin
-
-
-
+        
     -- Arrumar horario: 
     -- SW0 p cima 
     -- Cada KEY(3-1) adiciona +1
@@ -72,7 +70,7 @@ architecture assincrona of memoriaROM is
         tmp(4)  := leaw & NOP & NOP & R05 & b"0000000000";
         tmp(5)  := leaw & NOP & NOP & R06 & b"0000000000";
         --Checa se o SW do Fast está ligado                                                 1111111111
-        tmp(6)  := leaw & NOP & NOP & R07 & b"1000000000";                              --  1000000000 <--
+        tmp(6)  := leaw & NOP & NOP & R07 & b"0010000000";                              --  1000000000 <--
         tmp(7)  := rd   & NOP & NOP & R08 & b"0000001000"; --8 - SW                     --  1000000000  <--
         tmp(8)  := andw & R07 & R08 & R09 & b"0000000000"; 
         tmp(9)  := je   & R09 & R07 & NOP & b"0000010010"; --goto tmp(18)         
@@ -227,7 +225,7 @@ architecture assincrona of memoriaROM is
         tmp(234) := jmp  & NOP & NOP & NOP & b"0011011100"; --goto tmp(220)
 
         ---------------QUEIMA CLOCK 3
-        tmp(235) := leaw & NOP & NOP & R11 & b"0000000100"; --********* 
+        tmp(235) := leaw & NOP & NOP & R11 & b"0001000000"; --********* 
         tmp(236) := je   & R11 & R10 & NOP & b"0010000000"; --********* --goto tmp(128)
         tmp(237) := leaw & NOP & NOP & R09 & b"0000000000";
         tmp(238) := inc  & R10 & NOP & R10 & b"0000000000";

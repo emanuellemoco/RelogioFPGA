@@ -8,7 +8,7 @@ use work.constantes.all;
 
 entity relogio is
       generic (
-            DATA_WIDTH : natural := 10;
+            DATA_WIDTH : natural := 8;
             DECODE_WIDTH : natural := 11;
             ROM_DATA_WIDTH : natural := 26;
             HEX_WIDTH : natural := 4;
@@ -88,7 +88,7 @@ begin
         seletor_MUX => selMUXtempo, saida_MUX => tempoOut);
 
       MUX : entity work.mux8x1 generic map (larguraDados => DATA_WIDTH)
-            port map(entradaA_MUX => "00000000" & tempoOut, entradaB_MUX => RAMOut, entradaC_MUX => SW, entradaD_MUX =>"000000" & KEY, 
+            port map(entradaA_MUX => "000000" & tempoOut, entradaB_MUX => RAMOut, entradaC_MUX => SW, entradaD_MUX =>"0000" & KEY, 
              seletor_MUX => selMUX, saida_MUX => muxOut);
       
       BASEDETEMPO : entity work.divisorInterface generic map (TIME => 25000000)

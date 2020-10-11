@@ -1,5 +1,5 @@
 Timing Analyzer report for Relogio
-Sat Oct 10 19:40:22 2020
+Sun Oct 11 18:55:08 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -101,14 +101,14 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.48        ;
+; Average used               ; 1.43        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  16.0%      ;
-;     Processor 3            ;  15.9%      ;
-;     Processor 4            ;  15.8%      ;
+;     Processor 2            ;  14.5%      ;
+;     Processor 3            ;  14.3%      ;
+;     Processor 4            ;  14.0%      ;
 +----------------------------+-------------+
 
 
@@ -128,7 +128,7 @@ refer to the applicable agreement for further details.
 +-----------+-----------------+------------+------+
 ; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
 +-----------+-----------------+------------+------+
-; 98.39 MHz ; 98.39 MHz       ; CLOCK_50   ;      ;
+; 97.64 MHz ; 97.64 MHz       ; CLOCK_50   ;      ;
 +-----------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -144,7 +144,7 @@ HTML report is unavailable in plain text report export.
 +----------+--------+-----------------+
 ; Clock    ; Slack  ; End Point TNS   ;
 +----------+--------+-----------------+
-; CLOCK_50 ; -9.164 ; -2034.024       ;
+; CLOCK_50 ; -9.242 ; -1722.078       ;
 +----------+--------+-----------------+
 
 
@@ -153,7 +153,7 @@ HTML report is unavailable in plain text report export.
 +----------+-------+-----------------+
 ; Clock    ; Slack ; End Point TNS   ;
 +----------+-------+-----------------+
-; CLOCK_50 ; 0.441 ; 0.000           ;
+; CLOCK_50 ; 0.440 ; 0.000           ;
 +----------+-------+-----------------+
 
 
@@ -162,8 +162,8 @@ HTML report is unavailable in plain text report export.
 +---------------------------------------------------------+--------+---------------+
 ; Clock                                                   ; Slack  ; End Point TNS ;
 +---------------------------------------------------------+--------+---------------+
-; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; -7.039 ; -7.039        ;
-; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; -6.822 ; -6.822        ;
+; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; -7.302 ; -7.302        ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; -7.301 ; -7.301        ;
 +---------------------------------------------------------+--------+---------------+
 
 
@@ -172,8 +172,8 @@ HTML report is unavailable in plain text report export.
 +---------------------------------------------------------+-------+---------------+
 ; Clock                                                   ; Slack ; End Point TNS ;
 +---------------------------------------------------------+-------+---------------+
-; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; 3.511 ; 0.000         ;
-; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; 3.747 ; 0.000         ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; 3.886 ; 0.000         ;
+; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; 3.898 ; 0.000         ;
 +---------------------------------------------------------+-------+---------------+
 
 
@@ -182,9 +182,9 @@ HTML report is unavailable in plain text report export.
 +---------------------------------------------------------+--------+---------------+
 ; Clock                                                   ; Slack  ; End Point TNS ;
 +---------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                ; -0.544 ; -247.242      ;
-; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; -0.538 ; -0.960        ;
-; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; -0.538 ; -0.904        ;
+; CLOCK_50                                                ; -0.538 ; -218.528      ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; -0.538 ; -0.820        ;
+; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; -0.538 ; -0.812        ;
 +---------------------------------------------------------+--------+---------------+
 
 
@@ -199,7 +199,7 @@ No synchronizer chains to report.
 +-----------+-----------------+------------+------+
 ; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
 +-----------+-----------------+------------+------+
-; 98.03 MHz ; 98.03 MHz       ; CLOCK_50   ;      ;
+; 96.57 MHz ; 96.57 MHz       ; CLOCK_50   ;      ;
 +-----------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -209,7 +209,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------+--------+----------------+
 ; Clock    ; Slack  ; End Point TNS  ;
 +----------+--------+----------------+
-; CLOCK_50 ; -9.201 ; -2017.132      ;
+; CLOCK_50 ; -9.355 ; -1716.256      ;
 +----------+--------+----------------+
 
 
@@ -218,7 +218,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------+-------+----------------+
 ; Clock    ; Slack ; End Point TNS  ;
 +----------+-------+----------------+
-; CLOCK_50 ; 0.377 ; 0.000          ;
+; CLOCK_50 ; 0.317 ; 0.000          ;
 +----------+-------+----------------+
 
 
@@ -227,8 +227,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------------------------------+--------+---------------+
 ; Clock                                                   ; Slack  ; End Point TNS ;
 +---------------------------------------------------------+--------+---------------+
-; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; -7.075 ; -7.075        ;
-; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; -6.867 ; -6.867        ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; -7.451 ; -7.451        ;
+; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; -7.445 ; -7.445        ;
 +---------------------------------------------------------+--------+---------------+
 
 
@@ -237,8 +237,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------------------------------+-------+---------------+
 ; Clock                                                   ; Slack ; End Point TNS ;
 +---------------------------------------------------------+-------+---------------+
-; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; 3.656 ; 0.000         ;
-; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; 3.883 ; 0.000         ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; 3.953 ; 0.000         ;
+; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; 3.955 ; 0.000         ;
 +---------------------------------------------------------+-------+---------------+
 
 
@@ -247,9 +247,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------------------------------+--------+---------------+
 ; Clock                                                   ; Slack  ; End Point TNS ;
 +---------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                ; -0.571 ; -220.888      ;
-; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; -0.538 ; -0.965        ;
-; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; -0.538 ; -0.913        ;
+; CLOCK_50                                                ; -0.561 ; -194.265      ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; -0.538 ; -0.806        ;
+; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; -0.538 ; -0.799        ;
 +---------------------------------------------------------+--------+---------------+
 
 
@@ -264,17 +264,17 @@ No synchronizer chains to report.
 +----------+--------+-----------------+
 ; Clock    ; Slack  ; End Point TNS   ;
 +----------+--------+-----------------+
-; CLOCK_50 ; -4.465 ; -937.215        ;
+; CLOCK_50 ; -4.464 ; -807.670        ;
 +----------+--------+-----------------+
 
 
 +------------------------------------+
 ; Fast 1100mV 85C Model Hold Summary ;
-+----------+-------+-----------------+
-; Clock    ; Slack ; End Point TNS   ;
-+----------+-------+-----------------+
-; CLOCK_50 ; 0.069 ; 0.000           ;
-+----------+-------+-----------------+
++----------+--------+----------------+
+; Clock    ; Slack  ; End Point TNS  ;
++----------+--------+----------------+
+; CLOCK_50 ; -0.084 ; -0.084         ;
++----------+--------+----------------+
 
 
 +----------------------------------------------------------------------------------+
@@ -282,8 +282,8 @@ No synchronizer chains to report.
 +---------------------------------------------------------+--------+---------------+
 ; Clock                                                   ; Slack  ; End Point TNS ;
 +---------------------------------------------------------+--------+---------------+
-; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; -3.112 ; -3.112        ;
-; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; -2.989 ; -2.989        ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; -3.403 ; -3.403        ;
+; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; -3.370 ; -3.370        ;
 +---------------------------------------------------------+--------+---------------+
 
 
@@ -292,8 +292,8 @@ No synchronizer chains to report.
 +---------------------------------------------------------+-------+---------------+
 ; Clock                                                   ; Slack ; End Point TNS ;
 +---------------------------------------------------------+-------+---------------+
-; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; 1.568 ; 0.000         ;
-; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; 1.699 ; 0.000         ;
+; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; 1.846 ; 0.000         ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; 1.876 ; 0.000         ;
 +---------------------------------------------------------+-------+---------------+
 
 
@@ -302,9 +302,9 @@ No synchronizer chains to report.
 +---------------------------------------------------------+--------+---------------+
 ; Clock                                                   ; Slack  ; End Point TNS ;
 +---------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                ; -0.653 ; -127.158      ;
-; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; -0.086 ; -0.086        ;
-; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; -0.055 ; -0.055        ;
+; CLOCK_50                                                ; -0.633 ; -113.220      ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; 0.040  ; 0.000         ;
+; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; 0.042  ; 0.000         ;
 +---------------------------------------------------------+--------+---------------+
 
 
@@ -319,7 +319,7 @@ No synchronizer chains to report.
 +----------+--------+----------------+
 ; Clock    ; Slack  ; End Point TNS  ;
 +----------+--------+----------------+
-; CLOCK_50 ; -3.966 ; -828.745       ;
+; CLOCK_50 ; -3.948 ; -709.546       ;
 +----------+--------+----------------+
 
 
@@ -328,7 +328,7 @@ No synchronizer chains to report.
 +----------+--------+---------------+
 ; Clock    ; Slack  ; End Point TNS ;
 +----------+--------+---------------+
-; CLOCK_50 ; -0.084 ; -0.303        ;
+; CLOCK_50 ; -0.223 ; -0.223        ;
 +----------+--------+---------------+
 
 
@@ -337,8 +337,8 @@ No synchronizer chains to report.
 +---------------------------------------------------------+--------+---------------+
 ; Clock                                                   ; Slack  ; End Point TNS ;
 +---------------------------------------------------------+--------+---------------+
-; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; -2.892 ; -2.892        ;
-; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; -2.786 ; -2.786        ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; -3.149 ; -3.149        ;
+; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; -3.115 ; -3.115        ;
 +---------------------------------------------------------+--------+---------------+
 
 
@@ -347,8 +347,8 @@ No synchronizer chains to report.
 +---------------------------------------------------------+-------+---------------+
 ; Clock                                                   ; Slack ; End Point TNS ;
 +---------------------------------------------------------+-------+---------------+
-; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; 1.522 ; 0.000         ;
-; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; 1.634 ; 0.000         ;
+; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; 1.755 ; 0.000         ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; 1.788 ; 0.000         ;
 +---------------------------------------------------------+-------+---------------+
 
 
@@ -357,9 +357,9 @@ No synchronizer chains to report.
 +---------------------------------------------------------+--------+---------------+
 ; Clock                                                   ; Slack  ; End Point TNS ;
 +---------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                ; -0.690 ; -152.930      ;
-; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; -0.037 ; -0.037        ;
-; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; -0.013 ; -0.013        ;
+; CLOCK_50                                                ; -0.680 ; -135.408      ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; 0.061  ; 0.000         ;
+; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; 0.075  ; 0.000         ;
 +---------------------------------------------------------+--------+---------------+
 
 
@@ -374,14 +374,14 @@ No synchronizer chains to report.
 +----------------------------------------------------------+-----------+--------+----------+---------+---------------------+
 ; Clock                                                    ; Setup     ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
 +----------------------------------------------------------+-----------+--------+----------+---------+---------------------+
-; Worst-case Slack                                         ; -9.201    ; -0.084 ; -7.075   ; 1.522   ; -0.690              ;
-;  CLOCK_50                                                ; -9.201    ; -0.084 ; N/A      ; N/A     ; -0.690              ;
-;  divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; N/A       ; N/A    ; -7.075   ; 1.634   ; -0.538              ;
-;  divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; N/A       ; N/A    ; -6.867   ; 1.522   ; -0.538              ;
-; Design-wide TNS                                          ; -2034.024 ; -0.303 ; -13.942  ; 0.0     ; -249.106            ;
-;  CLOCK_50                                                ; -2034.024 ; -0.303 ; N/A      ; N/A     ; -247.242            ;
-;  divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; N/A       ; N/A    ; -7.075   ; 0.000   ; -0.913              ;
-;  divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; N/A       ; N/A    ; -6.867   ; 0.000   ; -0.965              ;
+; Worst-case Slack                                         ; -9.355    ; -0.223 ; -7.451   ; 1.755   ; -0.680              ;
+;  CLOCK_50                                                ; -9.355    ; -0.223 ; N/A      ; N/A     ; -0.680              ;
+;  divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; N/A       ; N/A    ; -7.445   ; 1.755   ; -0.538              ;
+;  divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; N/A       ; N/A    ; -7.451   ; 1.788   ; -0.538              ;
+; Design-wide TNS                                          ; -1722.078 ; -0.223 ; -14.896  ; 0.0     ; -220.16             ;
+;  CLOCK_50                                                ; -1722.078 ; -0.223 ; N/A      ; N/A     ; -218.528            ;
+;  divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; N/A       ; N/A    ; -7.445   ; 0.000   ; -0.812              ;
+;  divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; N/A       ; N/A    ; -7.451   ; 0.000   ; -0.820              ;
 +----------------------------------------------------------+-----------+--------+----------+---------+---------------------+
 
 
@@ -440,8 +440,6 @@ No synchronizer chains to report.
 ; LEDR[5] ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; LEDR[6] ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 ; LEDR[7] ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
-; LEDR[8] ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
-; LEDR[9] ; 3.3-V LVTTL  ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
 +---------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
 
 
@@ -463,8 +461,6 @@ No synchronizer chains to report.
 ; SW[5]    ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; SW[6]    ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; SW[7]    ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
-; SW[8]    ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
-; SW[9]    ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 +----------+--------------+-----------------+-----------------+
 
 
@@ -523,8 +519,6 @@ No synchronizer chains to report.
 ; LEDR[5] ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.01e-07 V                   ; 3.13 V              ; -0.229 V            ; 0.132 V                              ; 0.377 V                              ; 4.37e-10 s                  ; 1.58e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 2.01e-07 V                  ; 3.13 V             ; -0.229 V           ; 0.132 V                             ; 0.377 V                             ; 4.37e-10 s                 ; 1.58e-10 s                 ; Yes                       ; No                        ;
 ; LEDR[6] ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.1e-07 V                    ; 3.12 V              ; -0.169 V            ; 0.165 V                              ; 0.384 V                              ; 4.57e-10 s                  ; 1.75e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 2.1e-07 V                   ; 3.12 V             ; -0.169 V           ; 0.165 V                             ; 0.384 V                             ; 4.57e-10 s                 ; 1.75e-10 s                 ; Yes                       ; No                        ;
 ; LEDR[7] ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.58e-07 V                   ; 3.09 V              ; -0.13 V             ; 0.032 V                              ; 0.298 V                              ; 4.39e-10 s                  ; 1.69e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 1.58e-07 V                  ; 3.09 V             ; -0.13 V            ; 0.032 V                             ; 0.298 V                             ; 4.39e-10 s                 ; 1.69e-10 s                 ; Yes                       ; Yes                       ;
-; LEDR[8] ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.01e-07 V                   ; 3.13 V              ; -0.229 V            ; 0.131 V                              ; 0.38 V                               ; 4.37e-10 s                  ; 1.58e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 2.01e-07 V                  ; 3.13 V             ; -0.229 V           ; 0.131 V                             ; 0.38 V                              ; 4.37e-10 s                 ; 1.58e-10 s                 ; Yes                       ; No                        ;
-; LEDR[9] ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.01e-07 V                   ; 3.13 V              ; -0.229 V            ; 0.132 V                              ; 0.377 V                              ; 4.37e-10 s                  ; 1.58e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 2.01e-07 V                  ; 3.13 V             ; -0.229 V           ; 0.132 V                             ; 0.377 V                             ; 4.37e-10 s                 ; 1.58e-10 s                 ; Yes                       ; No                        ;
 +---------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
@@ -583,8 +577,6 @@ No synchronizer chains to report.
 ; LEDR[5] ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.02e-05 V                   ; 3.11 V              ; -0.117 V            ; 0.087 V                              ; 0.148 V                              ; 5.31e-10 s                  ; 3.14e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 2.02e-05 V                  ; 3.11 V             ; -0.117 V           ; 0.087 V                             ; 0.148 V                             ; 5.31e-10 s                 ; 3.14e-10 s                 ; Yes                       ; No                        ;
 ; LEDR[6] ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.1e-05 V                    ; 3.11 V              ; -0.0931 V           ; 0.115 V                              ; 0.142 V                              ; 5.74e-10 s                  ; 3.17e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 2.1e-05 V                   ; 3.11 V             ; -0.0931 V          ; 0.115 V                             ; 0.142 V                             ; 5.74e-10 s                 ; 3.17e-10 s                 ; Yes                       ; Yes                       ;
 ; LEDR[7] ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 1.66e-05 V                   ; 3.09 V              ; -0.0542 V           ; 0.04 V                               ; 0.089 V                              ; 5.35e-10 s                  ; 3.01e-10 s                  ; Yes                        ; Yes                        ; 3.08 V                      ; 1.66e-05 V                  ; 3.09 V             ; -0.0542 V          ; 0.04 V                              ; 0.089 V                             ; 5.35e-10 s                 ; 3.01e-10 s                 ; Yes                       ; Yes                       ;
-; LEDR[8] ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.02e-05 V                   ; 3.11 V              ; -0.117 V            ; 0.087 V                              ; 0.147 V                              ; 5.3e-10 s                   ; 3.14e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 2.02e-05 V                  ; 3.11 V             ; -0.117 V           ; 0.087 V                             ; 0.147 V                             ; 5.3e-10 s                  ; 3.14e-10 s                 ; Yes                       ; No                        ;
-; LEDR[9] ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.08 V                       ; 2.02e-05 V                   ; 3.11 V              ; -0.117 V            ; 0.087 V                              ; 0.148 V                              ; 5.31e-10 s                  ; 3.14e-10 s                  ; Yes                        ; No                         ; 3.08 V                      ; 2.02e-05 V                  ; 3.11 V             ; -0.117 V           ; 0.087 V                             ; 0.148 V                             ; 5.31e-10 s                 ; 3.14e-10 s                 ; Yes                       ; No                        ;
 +---------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
@@ -643,8 +635,6 @@ No synchronizer chains to report.
 ; LEDR[5] ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.72e-06 V                   ; 3.7 V               ; -0.49 V             ; 0.117 V                              ; 0.621 V                              ; 3.84e-10 s                  ; 1.48e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 4.72e-06 V                  ; 3.7 V              ; -0.49 V            ; 0.117 V                             ; 0.621 V                             ; 3.84e-10 s                 ; 1.48e-10 s                 ; Yes                       ; No                        ;
 ; LEDR[6] ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.94e-06 V                   ; 3.69 V              ; -0.414 V            ; 0.134 V                              ; 0.585 V                              ; 4.19e-10 s                  ; 1.53e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 4.94e-06 V                  ; 3.69 V             ; -0.414 V           ; 0.134 V                             ; 0.585 V                             ; 4.19e-10 s                 ; 1.53e-10 s                 ; Yes                       ; No                        ;
 ; LEDR[7] ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 3.63e-06 V                   ; 3.64 V              ; -0.326 V            ; 0.091 V                              ; 0.479 V                              ; 3.83e-10 s                  ; 1.5e-10 s                   ; Yes                        ; No                         ; 3.63 V                      ; 3.63e-06 V                  ; 3.64 V             ; -0.326 V           ; 0.091 V                             ; 0.479 V                             ; 3.83e-10 s                 ; 1.5e-10 s                  ; Yes                       ; No                        ;
-; LEDR[8] ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.72e-06 V                   ; 3.7 V               ; -0.49 V             ; 0.117 V                              ; 0.622 V                              ; 3.84e-10 s                  ; 1.48e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 4.72e-06 V                  ; 3.7 V              ; -0.49 V            ; 0.117 V                             ; 0.622 V                             ; 3.84e-10 s                 ; 1.48e-10 s                 ; Yes                       ; No                        ;
-; LEDR[9] ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 4.72e-06 V                   ; 3.7 V               ; -0.49 V             ; 0.117 V                              ; 0.621 V                              ; 3.84e-10 s                  ; 1.48e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 4.72e-06 V                  ; 3.7 V              ; -0.49 V            ; 0.117 V                             ; 0.621 V                             ; 3.84e-10 s                 ; 1.48e-10 s                 ; Yes                       ; No                        ;
 +---------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
@@ -703,8 +693,6 @@ No synchronizer chains to report.
 ; LEDR[5] ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000229 V                   ; 3.65 V              ; -0.319 V            ; 0.041 V                              ; 0.528 V                              ; 4.29e-10 s                  ; 1.87e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000229 V                  ; 3.65 V             ; -0.319 V           ; 0.041 V                             ; 0.528 V                             ; 4.29e-10 s                 ; 1.87e-10 s                 ; Yes                       ; No                        ;
 ; LEDR[6] ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000238 V                   ; 3.64 V              ; -0.254 V            ; 0.052 V                              ; 0.543 V                              ; 4.59e-10 s                  ; 1.96e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000238 V                  ; 3.64 V             ; -0.254 V           ; 0.052 V                             ; 0.543 V                             ; 4.59e-10 s                 ; 1.96e-10 s                 ; Yes                       ; No                        ;
 ; LEDR[7] ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000184 V                   ; 3.64 V              ; -0.19 V             ; 0.019 V                              ; 0.425 V                              ; 4.44e-10 s                  ; 1.91e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000184 V                  ; 3.64 V             ; -0.19 V            ; 0.019 V                             ; 0.425 V                             ; 4.44e-10 s                 ; 1.91e-10 s                 ; Yes                       ; No                        ;
-; LEDR[8] ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000229 V                   ; 3.65 V              ; -0.316 V            ; 0.041 V                              ; 0.53 V                               ; 4.29e-10 s                  ; 1.87e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000229 V                  ; 3.65 V             ; -0.316 V           ; 0.041 V                             ; 0.53 V                              ; 4.29e-10 s                 ; 1.87e-10 s                 ; Yes                       ; No                        ;
-; LEDR[9] ; 3.3-V LVTTL  ; 0 s                 ; 0 s                 ; 3.63 V                       ; 0.000229 V                   ; 3.65 V              ; -0.319 V            ; 0.041 V                              ; 0.528 V                              ; 4.29e-10 s                  ; 1.87e-10 s                  ; Yes                        ; No                         ; 3.63 V                      ; 0.000229 V                  ; 3.65 V             ; -0.319 V           ; 0.041 V                             ; 0.528 V                             ; 4.29e-10 s                 ; 1.87e-10 s                 ; Yes                       ; No                        ;
 +---------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
@@ -713,7 +701,7 @@ No synchronizer chains to report.
 +---------------------------------------------------------+----------+----------+----------+----------+----------+
 ; From Clock                                              ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------------------------------------------+----------+----------+----------+----------+----------+
-; CLOCK_50                                                ; CLOCK_50 ; 1676407  ; 0        ; 0        ; 0        ;
+; CLOCK_50                                                ; CLOCK_50 ; 1199659  ; 0        ; 0        ; 0        ;
 ; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; CLOCK_50 ; 17       ; 1        ; 0        ; 0        ;
 ; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; CLOCK_50 ; 17       ; 1        ; 0        ; 0        ;
 +---------------------------------------------------------+----------+----------+----------+----------+----------+
@@ -725,7 +713,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +---------------------------------------------------------+----------+----------+----------+----------+----------+
 ; From Clock                                              ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------------------------------------------+----------+----------+----------+----------+----------+
-; CLOCK_50                                                ; CLOCK_50 ; 1676407  ; 0        ; 0        ; 0        ;
+; CLOCK_50                                                ; CLOCK_50 ; 1199659  ; 0        ; 0        ; 0        ;
 ; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; CLOCK_50 ; 17       ; 1        ; 0        ; 0        ;
 ; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; CLOCK_50 ; 17       ; 1        ; 0        ; 0        ;
 +---------------------------------------------------------+----------+----------+----------+----------+----------+
@@ -773,10 +761,10 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 14    ; 14   ;
-; Unconstrained Input Port Paths  ; 224   ; 224  ;
-; Unconstrained Output Ports      ; 52    ; 52   ;
-; Unconstrained Output Port Paths ; 178   ; 178  ;
+; Unconstrained Input Ports       ; 12    ; 12   ;
+; Unconstrained Input Port Paths  ; 192   ; 192  ;
+; Unconstrained Output Ports      ; 50    ; 50   ;
+; Unconstrained Output Port Paths ; 176   ; 176  ;
 +---------------------------------+-------+------+
 
 
@@ -808,8 +796,6 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; SW[5]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; SW[6]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; SW[7]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SW[8]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SW[9]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +------------+--------------------------------------------------------------------------------------+
 
 
@@ -868,8 +854,6 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; LEDR[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; LEDR[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; LEDR[7]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; LEDR[8]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; LEDR[9]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +-------------+---------------------------------------------------------------------------------------+
 
 
@@ -890,8 +874,6 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; SW[5]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; SW[6]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; SW[7]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SW[8]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; SW[9]      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +------------+--------------------------------------------------------------------------------------+
 
 
@@ -950,8 +932,6 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; LEDR[5]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; LEDR[6]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; LEDR[7]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; LEDR[8]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; LEDR[9]     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +-------------+---------------------------------------------------------------------------------------+
 
 
@@ -961,7 +941,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sat Oct 10 19:40:11 2020
+    Info: Processing started: Sun Oct 11 18:54:56 2020
 Info: Command: quartus_sta Relogio -c Relogio
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -972,132 +952,132 @@ Critical Warning (332012): Synopsys Design Constraints File file not found: 'Rel
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
 Info (332105): Deriving Clocks
     Info (332105): create_clock -period 1.000 -name CLOCK_50 CLOCK_50
-    Info (332105): create_clock -period 1.000 -name divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick
     Info (332105): create_clock -period 1.000 -name divisorInterface:BASEDETEMPO|divisor:baseTempo|tick divisorInterface:BASEDETEMPO|divisor:baseTempo|tick
+    Info (332105): create_clock -period 1.000 -name divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -9.164
+Info (332146): Worst-case setup slack is -9.242
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -9.164           -2034.024 CLOCK_50 
-Info (332146): Worst-case hold slack is 0.441
+    Info (332119):    -9.242           -1722.078 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.440
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.441               0.000 CLOCK_50 
-Info (332146): Worst-case recovery slack is -7.039
+    Info (332119):     0.440               0.000 CLOCK_50 
+Info (332146): Worst-case recovery slack is -7.302
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -7.039              -7.039 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
-    Info (332119):    -6.822              -6.822 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
-Info (332146): Worst-case removal slack is 3.511
+    Info (332119):    -7.302              -7.302 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
+    Info (332119):    -7.301              -7.301 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
+Info (332146): Worst-case removal slack is 3.886
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     3.511               0.000 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
-    Info (332119):     3.747               0.000 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
-Info (332146): Worst-case minimum pulse width slack is -0.544
+    Info (332119):     3.886               0.000 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
+    Info (332119):     3.898               0.000 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
+Info (332146): Worst-case minimum pulse width slack is -0.538
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.544            -247.242 CLOCK_50 
-    Info (332119):    -0.538              -0.960 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
-    Info (332119):    -0.538              -0.904 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
+    Info (332119):    -0.538            -218.528 CLOCK_50 
+    Info (332119):    -0.538              -0.820 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
+    Info (332119):    -0.538              -0.812 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -9.201
+Info (332146): Worst-case setup slack is -9.355
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -9.201           -2017.132 CLOCK_50 
-Info (332146): Worst-case hold slack is 0.377
+    Info (332119):    -9.355           -1716.256 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.317
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.377               0.000 CLOCK_50 
-Info (332146): Worst-case recovery slack is -7.075
+    Info (332119):     0.317               0.000 CLOCK_50 
+Info (332146): Worst-case recovery slack is -7.451
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -7.075              -7.075 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
-    Info (332119):    -6.867              -6.867 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
-Info (332146): Worst-case removal slack is 3.656
+    Info (332119):    -7.451              -7.451 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
+    Info (332119):    -7.445              -7.445 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
+Info (332146): Worst-case removal slack is 3.953
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     3.656               0.000 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
-    Info (332119):     3.883               0.000 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
-Info (332146): Worst-case minimum pulse width slack is -0.571
+    Info (332119):     3.953               0.000 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
+    Info (332119):     3.955               0.000 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
+Info (332146): Worst-case minimum pulse width slack is -0.561
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.571            -220.888 CLOCK_50 
-    Info (332119):    -0.538              -0.965 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
-    Info (332119):    -0.538              -0.913 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
+    Info (332119):    -0.561            -194.265 CLOCK_50 
+    Info (332119):    -0.538              -0.806 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
+    Info (332119):    -0.538              -0.799 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -4.465
+Info (332146): Worst-case setup slack is -4.464
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.465            -937.215 CLOCK_50 
-Info (332146): Worst-case hold slack is 0.069
+    Info (332119):    -4.464            -807.670 CLOCK_50 
+Info (332146): Worst-case hold slack is -0.084
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.069               0.000 CLOCK_50 
-Info (332146): Worst-case recovery slack is -3.112
+    Info (332119):    -0.084              -0.084 CLOCK_50 
+Info (332146): Worst-case recovery slack is -3.403
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.112              -3.112 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
-    Info (332119):    -2.989              -2.989 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
-Info (332146): Worst-case removal slack is 1.568
+    Info (332119):    -3.403              -3.403 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
+    Info (332119):    -3.370              -3.370 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
+Info (332146): Worst-case removal slack is 1.846
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     1.568               0.000 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
-    Info (332119):     1.699               0.000 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
-Info (332146): Worst-case minimum pulse width slack is -0.653
+    Info (332119):     1.846               0.000 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
+    Info (332119):     1.876               0.000 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
+Info (332146): Worst-case minimum pulse width slack is -0.633
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.653            -127.158 CLOCK_50 
-    Info (332119):    -0.086              -0.086 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
-    Info (332119):    -0.055              -0.055 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
+    Info (332119):    -0.633            -113.220 CLOCK_50 
+    Info (332119):     0.040               0.000 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
+    Info (332119):     0.042               0.000 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
 Info: Analyzing Fast 1100mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -3.966
+Info (332146): Worst-case setup slack is -3.948
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.966            -828.745 CLOCK_50 
-Info (332146): Worst-case hold slack is -0.084
+    Info (332119):    -3.948            -709.546 CLOCK_50 
+Info (332146): Worst-case hold slack is -0.223
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.084              -0.303 CLOCK_50 
-Info (332146): Worst-case recovery slack is -2.892
+    Info (332119):    -0.223              -0.223 CLOCK_50 
+Info (332146): Worst-case recovery slack is -3.149
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -2.892              -2.892 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
-    Info (332119):    -2.786              -2.786 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
-Info (332146): Worst-case removal slack is 1.522
+    Info (332119):    -3.149              -3.149 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
+    Info (332119):    -3.115              -3.115 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
+Info (332146): Worst-case removal slack is 1.755
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     1.522               0.000 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
-    Info (332119):     1.634               0.000 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
-Info (332146): Worst-case minimum pulse width slack is -0.690
+    Info (332119):     1.755               0.000 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
+    Info (332119):     1.788               0.000 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
+Info (332146): Worst-case minimum pulse width slack is -0.680
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.690            -152.930 CLOCK_50 
-    Info (332119):    -0.037              -0.037 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
-    Info (332119):    -0.013              -0.013 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
+    Info (332119):    -0.680            -135.408 CLOCK_50 
+    Info (332119):     0.061               0.000 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
+    Info (332119):     0.075               0.000 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 1124 megabytes
-    Info: Processing ended: Sat Oct 10 19:40:22 2020
-    Info: Elapsed time: 00:00:11
+    Info: Peak virtual memory: 1128 megabytes
+    Info: Processing ended: Sun Oct 11 18:55:08 2020
+    Info: Elapsed time: 00:00:12
     Info: Total CPU time (on all processors): 00:00:16
 
 
