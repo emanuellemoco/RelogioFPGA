@@ -20,17 +20,20 @@ architecture comportamento of ULA is
   signal soma : STD_LOGIC_VECTOR((larguraDados - 1) downto 0);
   signal sub : STD_LOGIC_VECTOR((larguraDados - 1) downto 0);
   signal op_and : STD_LOGIC_VECTOR((larguraDados - 1) downto 0);
-  signal op_or : STD_LOGIC_VECTOR((larguraDados - 1) downto 0);
+  signal op_je : STD_LOGIC_VECTOR((larguraDados - 1) downto 0);
   signal op_xor : STD_LOGIC_VECTOR((larguraDados - 1) downto 0);
   signal op_not : STD_LOGIC_VECTOR((larguraDados - 1) downto 0);
   signal op_inc : STD_LOGIC_VECTOR((larguraDados - 1) downto 0);
+  signal op_cmp : STD_LOGIC_VECTOR((larguraDados - 1) downto 0);
   signal ULAout : STD_LOGIC_VECTOR((larguraDados - 1) downto 0);
 
 begin
   soma <= STD_LOGIC_VECTOR(unsigned(entradaA) + unsigned(entradaB));
   sub <= STD_LOGIC_VECTOR(unsigned(entradaA) - unsigned(entradaB));
   op_and <= entradaA and entradaB;
-  op_or <= entradaA or entradaB;
+  op_je <= entradaA;
+  op_cmp <= "00000001" when (unsigned(entradaA) = unsigned(entradaB)) else
+  "00000000";
 
   --op_inc <= STD_LOGIC_VECTOR(to_unsigned(to_integer(unsigned(entradaA)) + 1,10));
 
@@ -45,14 +48,13 @@ begin
     entradaA when (seletor = "010") else --entradaA WHEN (seletor = "010") ELSE
     entradaB when (seletor = "011") else
     op_inc when (seletor = "100") else
-    --          op_xor when   (seletor = "xxx") else
-    --          op_not when   (seletor = "101") else
+    op_cmp when (seletor = "101") else
     op_and when (seletor = "110") else
-    op_or when (seletor = "111") else
+    op_je when (seletor = "111") else
 
     entradaA; -- outra opcao: saida = entradaA
 
-  flagZero <= '1' when (seletor = "001") and (unsigned(entradaA) = unsigned(entradaB)) else
+  flagZero <= '1' when (seletor = "111") and (unsigned(entradaA) = 0) else
     '0';
   saida <= ULAout;
 

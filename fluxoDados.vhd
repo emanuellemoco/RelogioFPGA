@@ -1,11 +1,12 @@
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
+use work.constantes.all;
 
 entity Fluxo_Dados is
   generic (
     DATA_WIDTH : natural := 8;
-    ROM_DATA_WIDTH : natural := 26;
+    ROM_DATA_WIDTH : natural := 16;
     ADDR_WIDTH : natural := 10
   );
   --OPCODE   REGA REGB REGC IMEDIATO/ENDEREÇO
@@ -29,7 +30,7 @@ architecture arch_name of Fluxo_Dados is
   signal SomaUm_MuxProxPC : std_logic_vector(ADDR_WIDTH - 1 downto 0);
   signal MuxProxPC_PC : std_logic_vector(ADDR_WIDTH - 1 downto 0);
   signal saida_muxULAImed : std_logic_vector(DATA_WIDTH - 1 downto 0);
-  signal Instrucao : std_logic_vector(ROM_DATA_WIDTH - 1 downto 0); -- ??????????????????
+  signal Instrucao : std_logic_vector(ROM_DATA_WIDTH - 1 downto 0); 
   signal Acumulador_ULA_A : std_logic_vector(DATA_WIDTH - 1 downto 0);
   signal saidaULA : std_logic_vector(DATA_WIDTH - 1 downto 0);
   signal DadoLidoRAM_ULA_B : std_logic_vector(DATA_WIDTH - 1 downto 0);
@@ -37,6 +38,7 @@ architecture arch_name of Fluxo_Dados is
   signal muxRamImed : std_logic_vector(DATA_WIDTH - 1 downto 0);
   signal regA : std_logic_vector(DATA_WIDTH - 1 downto 0);
   signal regB : std_logic_vector(DATA_WIDTH - 1 downto 0);
+  signal endRegA : std_logic_vector(3 downto 0);
   alias enderecoJUMP : std_logic_vector(ADDR_WIDTH - 1 downto 0) is Instrucao(ADDR_WIDTH - 1 downto 0);
   alias selMuxProxPC : std_logic is palavraControle(8);
   alias selMuxImedRam : std_logic is palavraControle(7);
@@ -45,10 +47,12 @@ architecture arch_name of Fluxo_Dados is
   alias selOperacaoULA : std_logic_vector(2 downto 0) is palavraControle(4 downto 2);
   alias habLeituraMEM : std_logic is palavraControle(1);
   alias habEscritaMEM : std_logic is palavraControle(0);
+  alias opCodeLocal : std_logic_vector is Instrucao(15 downto 12);
+
 
   constant INCREMENTO : natural := 1;
 begin
-
+  
   -- Para instanciar, a atribuição de sinais (e generics) segue a ordem: (nomeSinalArquivoDefinicaoComponente => nomeSinalNesteArquivo)
   PC : entity work.registrador generic map (larguraDados => ADDR_WIDTH)
     port map(DIN => MuxProxPC_PC, DOUT => PC_ROM, ENABLE => '1', CLK => clk, RST => '0');
@@ -73,8 +77,8 @@ begin
     port map(Endereco => PC_ROM, Dado => Instrucao);
   bancoReg : entity work.bancoRegistrador generic map (larguraDados => DATA_WIDTH, larguraEndBancoRegs => 4)
     port map(
-      CLK => clk, enderecoA => Instrucao(21 downto 18), enderecoB => Instrucao(17 downto 14), enderecoC =>
-      Instrucao(13 downto 10), dadoEscritaC => saida_muxULAImed, escreveC => HabEscritaReg, saidaA => regA, saidaB => regB);
+      CLK => clk, enderecoA => endRegA, enderecoB => Instrucao(7 downto 4), enderecoC =>
+      Instrucao(11 downto 8), dadoEscritaC => saida_muxULAImed, escreveC => HabEscritaReg, saidaA => regA, saidaB => regB);
 
   -- old:port map (enable => HabEscritaReg , CLK=> clk,  end_regA => Instrucao(21 downto 18), end_regB =>Instrucao(17 downto 14) , data_input => saidaULA , regA_out => regA , regB_out => regB);
 
@@ -86,8 +90,14 @@ begin
   -- estendeSinal:  entity work.estendeSinalGenerico   generic map (larguraDadoEntrada => 12, larguraDadoSaida => DATA_WIDTH)
   --         port map (estendeSinal_IN => imediato_entradaExtSinal, estendeSinal_OUT => saidaExtSinal_muxULAImed_0);
 
-  data_out <= regA;
-  opCode <= Instrucao(25 downto 22);
-  endPerif <= Instrucao(6 downto 0);
+  data_out <= "00000100";
+  opCode <= Instrucao(15 downto 12);
+  
+  endPerif <= Instrucao(10 downto 4) when opCodeLocal = wr    else 
+  Instrucao(6 downto 0);
+
+  endRegA <= "1111" when Instrucao(15 downto 12) = je else
+            Instrucao(3 downto 0); 
+
 
 end architecture;

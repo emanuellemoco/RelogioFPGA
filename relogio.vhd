@@ -10,7 +10,7 @@ entity relogio is
       generic (
             DATA_WIDTH : natural := 8;
             DECODE_WIDTH : natural := 11;
-            ROM_DATA_WIDTH : natural := 26;
+            ROM_DATA_WIDTH : natural := 16;
             HEX_WIDTH : natural := 4;
             RAM_ADDR_WIDTH : natural := 6;
             ADDR_WIDTH : natural := 10
@@ -30,7 +30,8 @@ entity relogio is
             HEX3 : out std_logic_vector(6 downto 0);
             HEX4 : out std_logic_vector(6 downto 0);
             HEX5 : out std_logic_vector(6 downto 0);
-            LEDR : out std_logic_vector(DATA_WIDTH - 1 downto 0)
+            LEDR : out std_logic_vector(DATA_WIDTH - 1 downto 0);
+            decodeR : out std_logic_vector(DECODE_WIDTH -1 downto 0) 
       );
 end entity;
 architecture arch_name of relogio is
@@ -73,6 +74,8 @@ architecture arch_name of relogio is
       alias opcode : std_logic_vector(3 downto 0) is CPUOut(10 downto 7);
 
 begin
+
+      decodeR <= decode;
 
       CPU : entity work.CPU generic map(DATA_WIDTH => DATA_WIDTH, ADDR_WIDTH => ADDR_WIDTH, ROM_DATA_WIDTH => ROM_DATA_WIDTH)
             port map(clk => CLOCK_50, entrada_dados => muxOut, decodificadorEnd => decode, saida_dados => CPUOut);

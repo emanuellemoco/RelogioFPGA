@@ -24,7 +24,7 @@ package constantes is
     constant nope: opCode := "0111";
     constant cl  : opCode := "1000";
     constant andw: opCode := "1001";
-    
+    constant cmp : opCode := "1010";
 
     constant R01 : registradores := "0001";
     constant R02 : registradores := "0010";

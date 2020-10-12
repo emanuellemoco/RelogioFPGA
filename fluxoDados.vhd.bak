@@ -5,7 +5,7 @@ USE ieee.numeric_std.ALL;
 ENTITY Fluxo_Dados IS
   GENERIC (
     DATA_WIDTH : NATURAL := 10;
-    ROM_DATA_WIDTH : NATURAL := 26;
+    
     ADDR_WIDTH : NATURAL := 8
   );
   --OPCODE   REGA REGB REGC IMEDIATO/ENDEREÇO

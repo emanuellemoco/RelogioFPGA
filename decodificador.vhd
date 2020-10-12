@@ -98,11 +98,4 @@ BEGIN
   habReg5 <= '1' WHEN (unsigned(endereco) = 6 AND opcode = wr) ELSE
     '0';
   
-
-
-
-  --decodificador port map 
-  -- interfaceTempo
-  --RAM
-  -- LED
 END ARCHITECTURE;
