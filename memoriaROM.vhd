@@ -43,9 +43,15 @@ architecture assincrona of memoriaROM is
     function initMemory
         return blocoMemoria is variable tmp : blocoMemoria := (others => (others => '0'));
     begin
-   
-        tmp(0) := wr   & "00000111" & R01;
+        tmp(0) := leaw & R01 & "00000011";
+        tmp(1) := leaw & R02 & "00000011";
+        tmp(2) := cmp  & R15 & R02 & R01;
+        tmp(3) := je   &  "000000000000"; 
 
+        --tmp(1) := wr   & "00001111" & R01;
+        --tmp(2) := rd   & R01 & "00001111";
+        --tmp(3) := wr   & "00000111" & R01;
+        --tmp(4) := jmp  & "000000000000"; 
 
 
                                     

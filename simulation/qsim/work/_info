@@ -101,7 +101,7 @@ R24
 R18
 R19
 Erelogio
-Z25 w1602014239
+Z25 w1602548483
 R2
 R3
 R4
@@ -111,18 +111,18 @@ R7
 R8
 R9
 R10
-R0
+Z26 d/home/leo/Desktop/DesComp/Projeto/simulation/qsim
 R11
 R12
 l0
 L38
-VcM;a?jSozGJmJePXNeBLh3
-!s100 EI5HScR;PSne_4<Co?>4Q3
+Vn35l=1h[ZH>G2`F]kN9oT1
+!s100 6;Y_F4DU3lmVkWQSNO[2X3
 R13
 32
-Z26 !s110 1602014241
+Z27 !s110 1602548484
 !i10b 1
-Z27 !s108 1602014241.000000
+Z28 !s108 1602548484.000000
 R16
 R17
 !i113 1
@@ -138,57 +138,57 @@ R7
 R8
 R9
 R10
-DEx4 work 7 relogio 0 22 cM;a?jSozGJmJePXNeBLh3
-l406
-L98
-VMHoTF_XZScX>iO>mEJm6k2
-!s100 8IeV`AdQmmK0h3mj@gAP@2
+DEx4 work 7 relogio 0 22 n35l=1h[ZH>G2`F]kN9oT1
+l247
+L131
+VZTceDmcJZLG`aQj>o5i?N3
+!s100 CaLSRmioeeEJOnB5zz_8Z2
 R13
 32
-R26
-!i10b 1
 R27
+!i10b 1
+R28
 R16
 R17
 !i113 1
 R18
 R19
 Erelogio_vhd_vec_tst
-Z28 w1602014237
+Z29 w1602548427
 R8
 R9
-R0
-R21
-R22
+R26
+Z30 8Waveform1.vwf.vht
+Z31 FWaveform1.vwf.vht
 l0
 L31
 V8fAT_NVeRUO1cLeCafeg51
 !s100 YRTn@SE;O[:Pz_Zn_SZcH2
 R13
 32
-R26
-!i10b 1
 R27
-R23
-R24
+!i10b 1
+R28
+Z32 !s90 -work|work|Waveform1.vwf.vht|
+Z33 !s107 Waveform1.vwf.vht|
 !i113 1
 R18
 R19
 Arelogio_arch
 R8
 R9
-Z29 DEx4 work 19 relogio_vhd_vec_tst 0 22 8fAT_NVeRUO1cLeCafeg51
-l56
+Z34 DEx4 work 19 relogio_vhd_vec_tst 0 22 8fAT_NVeRUO1cLeCafeg51
+l62
 L33
-VN`f^WLD3Qj^j:]DEhkN<G0
-!s100 K5kPmU70dGO?X6Wn]6;TX1
+Z35 VE8hQ4i`V9X7H[W:IKY9Ki2
+Z36 !s100 ]lXWED>0Gb8R=hBW8:aJD2
 R13
 32
-R26
-!i10b 1
 R27
-R23
-R24
+!i10b 1
+R28
+R32
+R33
 !i113 1
 R18
 R19

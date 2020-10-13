@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Relogio
-Mon Oct 12 19:10:16 2020
+Mon Oct 12 21:13:06 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -16,55 +16,56 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   8. Registers Removed During Synthesis
   9. Removed Registers Triggering Further Register Optimizations
  10. General Register Statistics
- 11. Parameter Settings for User Entity Instance: Top-level Entity: |relogio
- 12. Parameter Settings for User Entity Instance: CPU:CPU
- 13. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD
- 14. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|registrador:PC
- 15. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|mux2x1:MuxProxPC
- 16. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|mux2x1:muxRAM_Imediato
- 17. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato
- 18. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|somaConstante:somaUm
- 19. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|memoriaROM:ROM
- 20. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg
- 21. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|ULA:ULA
- 22. Parameter Settings for User Entity Instance: CPU:CPU|Unidade_Controle:UC
- 23. Parameter Settings for User Entity Instance: decodificador:DEC
- 24. Parameter Settings for User Entity Instance: memoriaRAM:RAM
- 25. Parameter Settings for User Entity Instance: mux2x1:MUXTEMPO
- 26. Parameter Settings for User Entity Instance: mux8x1:MUX
- 27. Parameter Settings for User Entity Instance: divisorInterface:BASEDETEMPO
- 28. Parameter Settings for User Entity Instance: divisorInterface:BASEDETEMPO|divisor:baseTempo
- 29. Parameter Settings for User Entity Instance: divisorInterface:BASEDETEMPOFAST
- 30. Parameter Settings for User Entity Instance: divisorInterface:BASEDETEMPOFAST|divisor:baseTempo
- 31. Parameter Settings for User Entity Instance: registrador:REG0
- 32. Parameter Settings for User Entity Instance: registrador:REG1
- 33. Parameter Settings for User Entity Instance: registrador:REG2
- 34. Parameter Settings for User Entity Instance: registrador:REG3
- 35. Parameter Settings for User Entity Instance: registrador:REG4
- 36. Parameter Settings for User Entity Instance: registrador:REG5
- 37. Parameter Settings for User Entity Instance: registrador:REGLED
- 38. Port Connectivity Checks: "registrador:REGLED"
- 39. Port Connectivity Checks: "hex:HEX_5"
- 40. Port Connectivity Checks: "registrador:REG5"
- 41. Port Connectivity Checks: "hex:HEX_4"
- 42. Port Connectivity Checks: "registrador:REG4"
- 43. Port Connectivity Checks: "hex:HEX_3"
- 44. Port Connectivity Checks: "registrador:REG3"
- 45. Port Connectivity Checks: "hex:HEX_2"
- 46. Port Connectivity Checks: "registrador:REG2"
- 47. Port Connectivity Checks: "hex:HEX_1"
- 48. Port Connectivity Checks: "registrador:REG1"
- 49. Port Connectivity Checks: "hex:HEX_0"
- 50. Port Connectivity Checks: "registrador:REG0"
- 51. Port Connectivity Checks: "divisorInterface:BASEDETEMPOFAST|flipFlop:registraUmSegundo"
- 52. Port Connectivity Checks: "divisorInterface:BASEDETEMPO|flipFlop:registraUmSegundo"
- 53. Port Connectivity Checks: "mux8x1:MUX"
- 54. Port Connectivity Checks: "mux2x1:MUXTEMPO"
- 55. Port Connectivity Checks: "decodificador:DEC"
- 56. Port Connectivity Checks: "CPU:CPU|Fluxo_Dados:FD|registrador:PC"
- 57. Post-Synthesis Netlist Statistics for Top Partition
- 58. Elapsed Time Per Partition
- 59. Analysis & Synthesis Messages
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |relogio
+ 13. Parameter Settings for User Entity Instance: CPU:CPU
+ 14. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD
+ 15. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|registrador:PC
+ 16. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|mux2x1:MuxProxPC
+ 17. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|mux2x1:muxRAM_Imediato
+ 18. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato
+ 19. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|somaConstante:somaUm
+ 20. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|memoriaROM:ROM
+ 21. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg
+ 22. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|ULA:ULA
+ 23. Parameter Settings for User Entity Instance: CPU:CPU|Unidade_Controle:UC
+ 24. Parameter Settings for User Entity Instance: decodificador:DEC
+ 25. Parameter Settings for User Entity Instance: memoriaRAM:RAM
+ 26. Parameter Settings for User Entity Instance: mux2x1:MUXTEMPO
+ 27. Parameter Settings for User Entity Instance: mux8x1:MUX
+ 28. Parameter Settings for User Entity Instance: divisorInterface:BASEDETEMPO
+ 29. Parameter Settings for User Entity Instance: divisorInterface:BASEDETEMPO|divisor:baseTempo
+ 30. Parameter Settings for User Entity Instance: divisorInterface:BASEDETEMPOFAST
+ 31. Parameter Settings for User Entity Instance: divisorInterface:BASEDETEMPOFAST|divisor:baseTempo
+ 32. Parameter Settings for User Entity Instance: registrador:REG0
+ 33. Parameter Settings for User Entity Instance: registrador:REG1
+ 34. Parameter Settings for User Entity Instance: registrador:REG2
+ 35. Parameter Settings for User Entity Instance: registrador:REG3
+ 36. Parameter Settings for User Entity Instance: registrador:REG4
+ 37. Parameter Settings for User Entity Instance: registrador:REG5
+ 38. Parameter Settings for User Entity Instance: registrador:REGLED
+ 39. Port Connectivity Checks: "registrador:REGLED"
+ 40. Port Connectivity Checks: "hex:HEX_5"
+ 41. Port Connectivity Checks: "registrador:REG5"
+ 42. Port Connectivity Checks: "hex:HEX_4"
+ 43. Port Connectivity Checks: "registrador:REG4"
+ 44. Port Connectivity Checks: "hex:HEX_3"
+ 45. Port Connectivity Checks: "registrador:REG3"
+ 46. Port Connectivity Checks: "hex:HEX_2"
+ 47. Port Connectivity Checks: "registrador:REG2"
+ 48. Port Connectivity Checks: "hex:HEX_1"
+ 49. Port Connectivity Checks: "registrador:REG1"
+ 50. Port Connectivity Checks: "hex:HEX_0"
+ 51. Port Connectivity Checks: "registrador:REG0"
+ 52. Port Connectivity Checks: "divisorInterface:BASEDETEMPOFAST|flipFlop:registraUmSegundo"
+ 53. Port Connectivity Checks: "divisorInterface:BASEDETEMPO|flipFlop:registraUmSegundo"
+ 54. Port Connectivity Checks: "mux8x1:MUX"
+ 55. Port Connectivity Checks: "mux2x1:MUXTEMPO"
+ 56. Port Connectivity Checks: "decodificador:DEC"
+ 57. Port Connectivity Checks: "CPU:CPU|Fluxo_Dados:FD|registrador:PC"
+ 58. Post-Synthesis Netlist Statistics for Top Partition
+ 59. Elapsed Time Per Partition
+ 60. Analysis & Synthesis Messages
 
 
 
@@ -90,13 +91,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Oct 12 19:10:16 2020       ;
+; Analysis & Synthesis Status     ; Successful - Mon Oct 12 21:13:06 2020       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; Relogio                                     ;
 ; Top-level Entity Name           ; relogio                                     ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 10                                          ;
+; Total registers                 ; 18                                          ;
 ; Total pins                      ; 74                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -210,35 +211,34 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-4         ;   0.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                   ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                            ; Library ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------+---------+
-; mux3x1.vhd                       ; yes             ; User VHDL File  ; /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/mux3x1.vhd           ;         ;
-; constantes.vhd                   ; yes             ; User VHDL File  ; /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/constantes.vhd       ;         ;
-; bancoRegistrador.vhd             ; yes             ; User VHDL File  ; /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/bancoRegistrador.vhd ;         ;
-; fluxoDados.vhd                   ; yes             ; User VHDL File  ; /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd       ;         ;
-; unidadeControle.vhd              ; yes             ; User VHDL File  ; /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/unidadeControle.vhd  ;         ;
-; relogio.vhd                      ; yes             ; User VHDL File  ; /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd          ;         ;
-; mux2x1.vhd                       ; yes             ; User VHDL File  ; /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/mux2x1.vhd           ;         ;
-; hex.vhd                          ; yes             ; User VHDL File  ; /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/hex.vhd              ;         ;
-; somador.vhd                      ; yes             ; User VHDL File  ; /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/somador.vhd          ;         ;
-; ULA.vhd                          ; yes             ; User VHDL File  ; /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/ULA.vhd              ;         ;
-; divisor.vhd                      ; yes             ; User VHDL File  ; /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/divisor.vhd          ;         ;
-; registrador.vhd                  ; yes             ; User VHDL File  ; /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/registrador.vhd      ;         ;
-; memoriaROM.vhd                   ; yes             ; User VHDL File  ; /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/memoriaROM.vhd       ;         ;
-; memoriaRAM.vhd                   ; yes             ; User VHDL File  ; /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/memoriaRAM.vhd       ;         ;
-; CPU.vhd                          ; yes             ; User VHDL File  ; /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd              ;         ;
-; divisorInterface.vhd             ; yes             ; User VHDL File  ; /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/divisorInterface.vhd ;         ;
-; flipFlop.vhd                     ; yes             ; User VHDL File  ; /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/flipFlop.vhd         ;         ;
-; decodificador.vhd                ; yes             ; User VHDL File  ; /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/decodificador.vhd    ;         ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                  ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                           ; Library ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------+---------+
+; mux3x1.vhd                       ; yes             ; User VHDL File  ; /home/leo/Desktop/DesComp/Projeto/mux3x1.vhd           ;         ;
+; constantes.vhd                   ; yes             ; User VHDL File  ; /home/leo/Desktop/DesComp/Projeto/constantes.vhd       ;         ;
+; bancoRegistrador.vhd             ; yes             ; User VHDL File  ; /home/leo/Desktop/DesComp/Projeto/bancoRegistrador.vhd ;         ;
+; fluxoDados.vhd                   ; yes             ; User VHDL File  ; /home/leo/Desktop/DesComp/Projeto/fluxoDados.vhd       ;         ;
+; unidadeControle.vhd              ; yes             ; User VHDL File  ; /home/leo/Desktop/DesComp/Projeto/unidadeControle.vhd  ;         ;
+; relogio.vhd                      ; yes             ; User VHDL File  ; /home/leo/Desktop/DesComp/Projeto/relogio.vhd          ;         ;
+; mux2x1.vhd                       ; yes             ; User VHDL File  ; /home/leo/Desktop/DesComp/Projeto/mux2x1.vhd           ;         ;
+; hex.vhd                          ; yes             ; User VHDL File  ; /home/leo/Desktop/DesComp/Projeto/hex.vhd              ;         ;
+; somador.vhd                      ; yes             ; User VHDL File  ; /home/leo/Desktop/DesComp/Projeto/somador.vhd          ;         ;
+; ULA.vhd                          ; yes             ; User VHDL File  ; /home/leo/Desktop/DesComp/Projeto/ULA.vhd              ;         ;
+; divisor.vhd                      ; yes             ; User VHDL File  ; /home/leo/Desktop/DesComp/Projeto/divisor.vhd          ;         ;
+; registrador.vhd                  ; yes             ; User VHDL File  ; /home/leo/Desktop/DesComp/Projeto/registrador.vhd      ;         ;
+; memoriaROM.vhd                   ; yes             ; User VHDL File  ; /home/leo/Desktop/DesComp/Projeto/memoriaROM.vhd       ;         ;
+; memoriaRAM.vhd                   ; yes             ; User VHDL File  ; /home/leo/Desktop/DesComp/Projeto/memoriaRAM.vhd       ;         ;
+; CPU.vhd                          ; yes             ; User VHDL File  ; /home/leo/Desktop/DesComp/Projeto/CPU.vhd              ;         ;
+; divisorInterface.vhd             ; yes             ; User VHDL File  ; /home/leo/Desktop/DesComp/Projeto/divisorInterface.vhd ;         ;
+; flipFlop.vhd                     ; yes             ; User VHDL File  ; /home/leo/Desktop/DesComp/Projeto/flipFlop.vhd         ;         ;
+; decodificador.vhd                ; yes             ; User VHDL File  ; /home/leo/Desktop/DesComp/Projeto/decodificador.vhd    ;         ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -246,116 +246,230 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 7              ;
+; Estimate of Logic utilization (ALMs needed) ; 18             ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 13             ;
+; Combinational ALUT usage for logic          ; 32             ;
 ;     -- 7 input functions                    ; 0              ;
-;     -- 6 input functions                    ; 0              ;
-;     -- 5 input functions                    ; 0              ;
-;     -- 4 input functions                    ; 3              ;
-;     -- <=3 input functions                  ; 10             ;
+;     -- 6 input functions                    ; 2              ;
+;     -- 5 input functions                    ; 9              ;
+;     -- 4 input functions                    ; 5              ;
+;     -- <=3 input functions                  ; 16             ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 10             ;
+; Dedicated logic registers                   ; 18             ;
 ;                                             ;                ;
 ; I/O pins                                    ; 74             ;
 ;                                             ;                ;
 ; Total DSP Blocks                            ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 10             ;
-; Total fan-out                               ; 129            ;
-; Average fan-out                             ; 0.75           ;
+; Maximum fan-out                             ; 18             ;
+; Total fan-out                               ; 238            ;
+; Average fan-out                             ; 1.20           ;
 +---------------------------------------------+----------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                            ;
-+---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------+---------------+--------------+
-; Compilation Hierarchy Node      ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                  ; Entity Name   ; Library Name ;
-+---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------+---------------+--------------+
-; |relogio                        ; 13 (0)              ; 10 (0)                    ; 0                 ; 0          ; 74   ; 0            ; |relogio                                             ; relogio       ; work         ;
-;    |CPU:CPU|                    ; 13 (0)              ; 10 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU                                     ; CPU           ; work         ;
-;       |Fluxo_Dados:FD|          ; 13 (0)              ; 10 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD                      ; Fluxo_Dados   ; work         ;
-;          |memoriaROM:ROM|       ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|memoriaROM:ROM       ; memoriaROM    ; work         ;
-;          |registrador:PC|       ; 0 (0)               ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|registrador:PC       ; registrador   ; work         ;
-;          |somaConstante:somaUm| ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|somaConstante:somaUm ; somaConstante ; work         ;
-+---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------+---------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                         ;
++--------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------+------------------+--------------+
+; Compilation Hierarchy Node           ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                       ; Entity Name      ; Library Name ;
++--------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------+------------------+--------------+
+; |relogio                             ; 32 (0)              ; 18 (0)                    ; 0                 ; 0          ; 74   ; 0            ; |relogio                                                  ; relogio          ; work         ;
+;    |CPU:CPU|                         ; 32 (0)              ; 18 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU                                          ; CPU              ; work         ;
+;       |Fluxo_Dados:FD|               ; 31 (2)              ; 18 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD                           ; Fluxo_Dados      ; work         ;
+;          |bancoRegistrador:bancoReg| ; 8 (8)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg ; bancoRegistrador ; work         ;
+;          |memoriaROM:ROM|            ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|memoriaROM:ROM            ; memoriaROM       ; work         ;
+;          |mux2x1:MuxProxPC|          ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|mux2x1:MuxProxPC          ; mux2x1           ; work         ;
+;          |mux2x1:muxULA_Imediato|    ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato    ; mux2x1           ; work         ;
+;          |registrador:PC|            ; 0 (0)               ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|registrador:PC            ; registrador      ; work         ;
+;          |somaConstante:somaUm|      ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|somaConstante:somaUm      ; somaConstante    ; work         ;
+;       |Unidade_Controle:UC|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Unidade_Controle:UC                      ; Unidade_Controle ; work         ;
++--------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                          ;
-+--------------------------------------------------------------------+----------------------------------------+
-; Register name                                                      ; Reason for Removal                     ;
-+--------------------------------------------------------------------+----------------------------------------+
-; registrador:REGLED|DOUT[3..7]                                      ; Stuck at GND due to stuck port data_in ;
-; registrador:REGLED|DOUT[2]                                         ; Stuck at VCC due to stuck port data_in ;
-; registrador:REGLED|DOUT[0,1]                                       ; Stuck at GND due to stuck port data_in ;
-; registrador:REG5|DOUT[3]                                           ; Stuck at GND due to stuck port data_in ;
-; registrador:REG5|DOUT[2]                                           ; Stuck at VCC due to stuck port data_in ;
-; registrador:REG5|DOUT[0,1]                                         ; Stuck at GND due to stuck port data_in ;
-; registrador:REG4|DOUT[3]                                           ; Stuck at GND due to stuck port data_in ;
-; registrador:REG4|DOUT[2]                                           ; Stuck at VCC due to stuck port data_in ;
-; registrador:REG4|DOUT[0,1]                                         ; Stuck at GND due to stuck port data_in ;
-; registrador:REG3|DOUT[3]                                           ; Stuck at GND due to stuck port data_in ;
-; registrador:REG3|DOUT[2]                                           ; Stuck at VCC due to stuck port data_in ;
-; registrador:REG3|DOUT[0,1]                                         ; Stuck at GND due to stuck port data_in ;
-; registrador:REG2|DOUT[3]                                           ; Stuck at GND due to stuck port data_in ;
-; registrador:REG2|DOUT[2]                                           ; Stuck at VCC due to stuck port data_in ;
-; registrador:REG2|DOUT[0,1]                                         ; Stuck at GND due to stuck port data_in ;
-; registrador:REG1|DOUT[3]                                           ; Stuck at GND due to stuck port data_in ;
-; registrador:REG1|DOUT[2]                                           ; Stuck at VCC due to stuck port data_in ;
-; registrador:REG1|DOUT[0,1]                                         ; Stuck at GND due to stuck port data_in ;
-; registrador:REG0|DOUT[3]                                           ; Stuck at GND due to stuck port data_in ;
-; registrador:REG0|DOUT[2]                                           ; Stuck at VCC due to stuck port data_in ;
-; registrador:REG0|DOUT[0,1]                                         ; Stuck at GND due to stuck port data_in ;
-; divisorInterface:BASEDETEMPO|flipFlop:registraUmSegundo|DOUT       ; Lost fanout                            ;
-; divisorInterface:BASEDETEMPOFAST|flipFlop:registraUmSegundo|DOUT   ; Lost fanout                            ;
-; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|contador[0..2]  ; Lost fanout                            ;
-; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick            ; Lost fanout                            ;
-; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|contador[3..19] ; Lost fanout                            ;
-; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[0..7]      ; Lost fanout                            ;
-; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick                ; Lost fanout                            ;
-; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[8..24]     ; Lost fanout                            ;
-; Total Number of Removed Registers = 81                             ;                                        ;
-+--------------------------------------------------------------------+----------------------------------------+
++------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                               ;
++--------------------------------------------------------------------+---------------------------------------------+
+; Register name                                                      ; Reason for Removal                          ;
++--------------------------------------------------------------------+---------------------------------------------+
+; divisorInterface:BASEDETEMPOFAST|flipFlop:registraUmSegundo|DOUT   ; Lost fanout                                 ;
+; registrador:REGLED|DOUT[0..7]                                      ; Stuck at GND due to stuck port clock_enable ;
+; registrador:REG5|DOUT[0..3]                                        ; Stuck at GND due to stuck port clock_enable ;
+; registrador:REG4|DOUT[0..3]                                        ; Stuck at GND due to stuck port clock_enable ;
+; registrador:REG3|DOUT[0..3]                                        ; Stuck at GND due to stuck port clock_enable ;
+; registrador:REG2|DOUT[0..3]                                        ; Stuck at GND due to stuck port clock_enable ;
+; registrador:REG1|DOUT[0..3]                                        ; Stuck at GND due to stuck port clock_enable ;
+; registrador:REG0|DOUT[0..3]                                        ; Stuck at GND due to stuck port clock_enable ;
+; divisorInterface:BASEDETEMPO|flipFlop:registraUmSegundo|DOUT       ; Stuck at VCC due to stuck port data_in      ;
+; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|contador[0..2]  ; Lost fanout                                 ;
+; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick            ; Lost fanout                                 ;
+; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|contador[3..19] ; Lost fanout                                 ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[0..7]      ; Lost fanout                                 ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick                ; Lost fanout                                 ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[8..24]     ; Lost fanout                                 ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~45    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~53    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~61    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~69    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~77    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~85    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~93    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~101   ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~46    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~54    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~62    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~70    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~78    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~86    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~94    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~102   ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~15    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~23    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~31    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~39    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~47    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~55    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~63    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~71    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~79    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~87    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~95    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~103   ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~111   ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~119   ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~127   ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~135   ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~16    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~24    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~32    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~40    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~48    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~56    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~64    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~72    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~80    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~88    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~96    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~104   ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~112   ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~120   ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~128   ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~136   ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~17    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~25    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~33    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~41    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~49    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~57    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~65    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~73    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~81    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~89    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~97    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~105   ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~113   ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~121   ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~129   ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~137   ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~18    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~26    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~34    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~42    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~50    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~58    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~66    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~74    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~82    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~90    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~98    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~106   ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~114   ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~122   ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~130   ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~138   ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~19    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~27    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~35    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~43    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~51    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~59    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~67    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~75    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~83    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~91    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~99    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~107   ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~115   ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~123   ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~131   ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~139   ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~20    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~28    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~36    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~44    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~52    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~60    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~68    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~76    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~84    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~92    ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~100   ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~108   ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~116   ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~124   ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~132   ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~140   ; Stuck at GND due to stuck port data_in      ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~109   ; Stuck at GND due to stuck port clock_enable ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~125   ; Stuck at GND due to stuck port clock_enable ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~110   ; Stuck at GND due to stuck port clock_enable ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~126   ; Stuck at GND due to stuck port clock_enable ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~117   ; Stuck at GND due to stuck port clock_enable ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~37    ; Stuck at GND due to stuck port clock_enable ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~118   ; Stuck at GND due to stuck port clock_enable ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~38    ; Stuck at GND due to stuck port clock_enable ;
+; Total Number of Removed Registers = 201                            ;                                             ;
++--------------------------------------------------------------------+---------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                              ;
-+------------------------------------------------------------------+--------------------+------------------------------------------------------------------+
-; Register name                                                    ; Reason for Removal ; Registers Removed due to This Register                           ;
-+------------------------------------------------------------------+--------------------+------------------------------------------------------------------+
-; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[7]       ; Lost Fanouts       ; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[6],      ;
-;                                                                  ;                    ; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[5],      ;
-;                                                                  ;                    ; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[4],      ;
-;                                                                  ;                    ; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[3],      ;
-;                                                                  ;                    ; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[2],      ;
-;                                                                  ;                    ; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[1],      ;
-;                                                                  ;                    ; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[0],      ;
-;                                                                  ;                    ; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[8],      ;
-;                                                                  ;                    ; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[9],      ;
-;                                                                  ;                    ; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[10],     ;
-;                                                                  ;                    ; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[11],     ;
-;                                                                  ;                    ; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[12]      ;
-; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|contador[2]   ; Lost Fanouts       ; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|contador[1],  ;
-;                                                                  ;                    ; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|contador[0],  ;
-;                                                                  ;                    ; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|contador[3],  ;
-;                                                                  ;                    ; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|contador[4],  ;
-;                                                                  ;                    ; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|contador[5],  ;
-;                                                                  ;                    ; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|contador[6],  ;
-;                                                                  ;                    ; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|contador[7]   ;
-; divisorInterface:BASEDETEMPO|flipFlop:registraUmSegundo|DOUT     ; Lost Fanouts       ; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick,             ;
-;                                                                  ;                    ; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[13],     ;
-;                                                                  ;                    ; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[14],     ;
-;                                                                  ;                    ; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[15],     ;
-;                                                                  ;                    ; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[16]      ;
-; divisorInterface:BASEDETEMPOFAST|flipFlop:registraUmSegundo|DOUT ; Lost Fanouts       ; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick,         ;
-;                                                                  ;                    ; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|contador[8],  ;
-;                                                                  ;                    ; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|contador[9],  ;
-;                                                                  ;                    ; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|contador[10], ;
-;                                                                  ;                    ; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|contador[11]  ;
-+------------------------------------------------------------------+--------------------+------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                      ;
++------------------------------------------------------------------+---------------------------+-------------------------------------------------------------------+
+; Register name                                                    ; Reason for Removal        ; Registers Removed due to This Register                            ;
++------------------------------------------------------------------+---------------------------+-------------------------------------------------------------------+
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[7]       ; Lost Fanouts              ; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[6],       ;
+;                                                                  ;                           ; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[5],       ;
+;                                                                  ;                           ; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[4],       ;
+;                                                                  ;                           ; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[3],       ;
+;                                                                  ;                           ; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[2],       ;
+;                                                                  ;                           ; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[1],       ;
+;                                                                  ;                           ; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[0],       ;
+;                                                                  ;                           ; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[8],       ;
+;                                                                  ;                           ; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[9],       ;
+;                                                                  ;                           ; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[10],      ;
+;                                                                  ;                           ; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[11],      ;
+;                                                                  ;                           ; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[12]       ;
+; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|contador[2]   ; Lost Fanouts              ; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|contador[1],   ;
+;                                                                  ;                           ; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|contador[0],   ;
+;                                                                  ;                           ; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|contador[3],   ;
+;                                                                  ;                           ; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|contador[4],   ;
+;                                                                  ;                           ; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|contador[5],   ;
+;                                                                  ;                           ; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|contador[6],   ;
+;                                                                  ;                           ; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|contador[7]    ;
+; divisorInterface:BASEDETEMPOFAST|flipFlop:registraUmSegundo|DOUT ; Lost Fanouts              ; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick,          ;
+;                                                                  ;                           ; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|contador[8],   ;
+;                                                                  ;                           ; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|contador[9],   ;
+;                                                                  ;                           ; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|contador[10],  ;
+;                                                                  ;                           ; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|contador[11]   ;
+; divisorInterface:BASEDETEMPO|flipFlop:registraUmSegundo|DOUT     ; Stuck at VCC              ; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick,              ;
+;                                                                  ; due to stuck port data_in ; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[13],      ;
+;                                                                  ;                           ; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[14],      ;
+;                                                                  ;                           ; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[15],      ;
+;                                                                  ;                           ; divisorInterface:BASEDETEMPO|divisor:baseTempo|contador[16]       ;
+; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~45  ; Stuck at GND              ; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~109, ;
+;                                                                  ; due to stuck port data_in ; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~125, ;
+;                                                                  ;                           ; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~117, ;
+;                                                                  ;                           ; CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador~37   ;
++------------------------------------------------------------------+---------------------------+-------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -363,14 +477,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 10    ;
+; Total registers                              ; 18    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 8     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |relogio|CPU:CPU|Unidade_Controle:UC|palavraControle[2] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------+
@@ -851,18 +974,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 10                          ;
+; arriav_ff             ; 18                          ;
+;     ENA               ; 8                           ;
 ;     plain             ; 10                          ;
-; arriav_lcell_comb     ; 15                          ;
+; arriav_lcell_comb     ; 34                          ;
 ;     arith             ; 10                          ;
 ;         1 data inputs ; 10                          ;
-;     normal            ; 5                           ;
+;     normal            ; 24                          ;
 ;         0 data inputs ; 2                           ;
-;         4 data inputs ; 3                           ;
+;         3 data inputs ; 6                           ;
+;         4 data inputs ; 5                           ;
+;         5 data inputs ; 9                           ;
+;         6 data inputs ; 2                           ;
 ; boundary_port         ; 74                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.61                        ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 3.15                        ;
 +-----------------------+-----------------------------+
 
 
@@ -881,179 +1008,177 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Oct 12 19:09:59 2020
+    Info: Processing started: Mon Oct 12 21:12:01 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Relogio -c Relogio
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file mux3x1.vhd
-    Info (12022): Found design unit 1: mux8x1-comportamento File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/mux3x1.vhd Line: 14
-    Info (12023): Found entity 1: mux8x1 File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/mux3x1.vhd Line: 4
+    Info (12022): Found design unit 1: mux8x1-comportamento File: /home/leo/Desktop/DesComp/Projeto/mux3x1.vhd Line: 14
+    Info (12023): Found entity 1: mux8x1 File: /home/leo/Desktop/DesComp/Projeto/mux3x1.vhd Line: 4
 Info (12021): Found 1 design units, including 0 entities, in source file constantes.vhd
-    Info (12022): Found design unit 1: constantes File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/constantes.vhd Line: 6
+    Info (12022): Found design unit 1: constantes File: /home/leo/Desktop/DesComp/Projeto/constantes.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file bancoRegistrador.vhd
-    Info (12022): Found design unit 1: bancoRegistrador-comportamento File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/bancoRegistrador.vhd Line: 24
-    Info (12023): Found entity 1: bancoRegistrador File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/bancoRegistrador.vhd Line: 5
+    Info (12022): Found design unit 1: bancoRegistrador-comportamento File: /home/leo/Desktop/DesComp/Projeto/bancoRegistrador.vhd Line: 24
+    Info (12023): Found entity 1: bancoRegistrador File: /home/leo/Desktop/DesComp/Projeto/bancoRegistrador.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file bancoRegistradorOld.vhd
-    Info (12022): Found design unit 1: bancoRegistradorOld-arch_name File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/bancoRegistradorOld.vhd Line: 27
-    Info (12023): Found entity 1: bancoRegistradorOld File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/bancoRegistradorOld.vhd Line: 5
+    Info (12022): Found design unit 1: bancoRegistradorOld-arch_name File: /home/leo/Desktop/DesComp/Projeto/bancoRegistradorOld.vhd Line: 27
+    Info (12023): Found entity 1: bancoRegistradorOld File: /home/leo/Desktop/DesComp/Projeto/bancoRegistradorOld.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file fluxoDados.vhd
-    Info (12022): Found design unit 1: Fluxo_Dados-arch_name File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 27
-    Info (12023): Found entity 1: Fluxo_Dados File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 6
+    Info (12022): Found design unit 1: Fluxo_Dados-arch_name File: /home/leo/Desktop/DesComp/Projeto/fluxoDados.vhd Line: 27
+    Info (12023): Found entity 1: Fluxo_Dados File: /home/leo/Desktop/DesComp/Projeto/fluxoDados.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file unidadeControle.vhd
-    Info (12022): Found design unit 1: Unidade_Controle-arch_name File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/unidadeControle.vhd Line: 22
-    Info (12023): Found entity 1: Unidade_Controle File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/unidadeControle.vhd Line: 6
+    Info (12022): Found design unit 1: Unidade_Controle-arch_name File: /home/leo/Desktop/DesComp/Projeto/unidadeControle.vhd Line: 22
+    Info (12023): Found entity 1: Unidade_Controle File: /home/leo/Desktop/DesComp/Projeto/unidadeControle.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file relogio.vhd
-    Info (12022): Found design unit 1: relogio-arch_name File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 37
-    Info (12023): Found entity 1: relogio File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 9
+    Info (12022): Found design unit 1: relogio-arch_name File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 37
+    Info (12023): Found entity 1: relogio File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file mux2x1.vhd
-    Info (12022): Found design unit 1: mux2x1-comportamento File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/mux2x1.vhd Line: 14
-    Info (12023): Found entity 1: mux2x1 File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/mux2x1.vhd Line: 4
+    Info (12022): Found design unit 1: mux2x1-comportamento File: /home/leo/Desktop/DesComp/Projeto/mux2x1.vhd Line: 14
+    Info (12023): Found entity 1: mux2x1 File: /home/leo/Desktop/DesComp/Projeto/mux2x1.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file hex.vhd
-    Info (12022): Found design unit 1: hex-comportamento File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/hex.vhd Line: 17
-    Info (12023): Found entity 1: hex File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/hex.vhd Line: 4
+    Info (12022): Found design unit 1: hex-comportamento File: /home/leo/Desktop/DesComp/Projeto/hex.vhd Line: 17
+    Info (12023): Found entity 1: hex File: /home/leo/Desktop/DesComp/Projeto/hex.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file somador.vhd
-    Info (12022): Found design unit 1: somaConstante-comportamento File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/somador.vhd Line: 16
-    Info (12023): Found entity 1: somaConstante File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/somador.vhd Line: 5
+    Info (12022): Found design unit 1: somaConstante-comportamento File: /home/leo/Desktop/DesComp/Projeto/somador.vhd Line: 16
+    Info (12023): Found entity 1: somaConstante File: /home/leo/Desktop/DesComp/Projeto/somador.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file ULA.vhd
-    Info (12022): Found design unit 1: ULA-comportamento File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/ULA.vhd Line: 17
-    Info (12023): Found entity 1: ULA File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/ULA.vhd Line: 5
+    Info (12022): Found design unit 1: ULA-comportamento File: /home/leo/Desktop/DesComp/Projeto/ULA.vhd Line: 17
+    Info (12023): Found entity 1: ULA File: /home/leo/Desktop/DesComp/Projeto/ULA.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file divisor.vhd
-    Info (12022): Found design unit 1: divisor-divInteiro File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/divisor.vhd Line: 15
-    Info (12023): Found entity 1: divisor File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/divisor.vhd Line: 5
+    Info (12022): Found design unit 1: divisor-divInteiro File: /home/leo/Desktop/DesComp/Projeto/divisor.vhd Line: 15
+    Info (12023): Found entity 1: divisor File: /home/leo/Desktop/DesComp/Projeto/divisor.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file registrador.vhd
-    Info (12022): Found design unit 1: registrador-comportamento File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/registrador.vhd Line: 16
-    Info (12023): Found entity 1: registrador File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/registrador.vhd Line: 4
+    Info (12022): Found design unit 1: registrador-comportamento File: /home/leo/Desktop/DesComp/Projeto/registrador.vhd Line: 16
+    Info (12023): Found entity 1: registrador File: /home/leo/Desktop/DesComp/Projeto/registrador.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file memoriaROM.vhd
-    Info (12022): Found design unit 1: memoriaROM-assincrona File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/memoriaROM.vhd Line: 39
-    Info (12023): Found entity 1: memoriaROM File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/memoriaROM.vhd Line: 5
+    Info (12022): Found design unit 1: memoriaROM-assincrona File: /home/leo/Desktop/DesComp/Projeto/memoriaROM.vhd Line: 39
+    Info (12023): Found entity 1: memoriaROM File: /home/leo/Desktop/DesComp/Projeto/memoriaROM.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file memoriaRAM.vhd
-    Info (12022): Found design unit 1: memoriaRAM-rtl File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/memoriaRAM.vhd Line: 19
-    Info (12023): Found entity 1: memoriaRAM File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/memoriaRAM.vhd Line: 5
+    Info (12022): Found design unit 1: memoriaRAM-rtl File: /home/leo/Desktop/DesComp/Projeto/memoriaRAM.vhd Line: 19
+    Info (12023): Found entity 1: memoriaRAM File: /home/leo/Desktop/DesComp/Projeto/memoriaRAM.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file CPU.vhd
-    Info (12022): Found design unit 1: CPU-arch_name File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd Line: 22
-    Info (12023): Found entity 1: CPU File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd Line: 5
+    Info (12022): Found design unit 1: CPU-arch_name File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 22
+    Info (12023): Found entity 1: CPU File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 5
 Warning (12019): Can't analyze file -- file divisorInterface.v is missing
 Info (12021): Found 2 design units, including 1 entities, in source file divisorInterface.vhd
-    Info (12022): Found design unit 1: divisorInterface-interface File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/divisorInterface.vhd Line: 17
-    Info (12023): Found entity 1: divisorInterface File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/divisorInterface.vhd Line: 5
+    Info (12022): Found design unit 1: divisorInterface-interface File: /home/leo/Desktop/DesComp/Projeto/divisorInterface.vhd Line: 17
+    Info (12023): Found entity 1: divisorInterface File: /home/leo/Desktop/DesComp/Projeto/divisorInterface.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file flipFlop.vhd
-    Info (12022): Found design unit 1: flipFlop-comportamento File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/flipFlop.vhd Line: 14
-    Info (12023): Found entity 1: flipFlop File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/flipFlop.vhd Line: 4
+    Info (12022): Found design unit 1: flipFlop-comportamento File: /home/leo/Desktop/DesComp/Projeto/flipFlop.vhd Line: 14
+    Info (12023): Found entity 1: flipFlop File: /home/leo/Desktop/DesComp/Projeto/flipFlop.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file decodificador.vhd
-    Info (12022): Found design unit 1: decodificador-arch_name File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/decodificador.vhd Line: 29
-    Info (12023): Found entity 1: decodificador File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/decodificador.vhd Line: 6
+    Info (12022): Found design unit 1: decodificador-arch_name File: /home/leo/Desktop/DesComp/Projeto/decodificador.vhd Line: 29
+    Info (12023): Found entity 1: decodificador File: /home/leo/Desktop/DesComp/Projeto/decodificador.vhd Line: 6
 Warning (12019): Can't analyze file -- file hexInterface.vhd is missing
 Info (12127): Elaborating entity "relogio" for the top level hierarchy
-Info (12128): Elaborating entity "CPU" for hierarchy "CPU:CPU" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 80
-Info (12128): Elaborating entity "Fluxo_Dados" for hierarchy "CPU:CPU|Fluxo_Dados:FD" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd Line: 30
-Info (12128): Elaborating entity "registrador" for hierarchy "CPU:CPU|Fluxo_Dados:FD|registrador:PC" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 57
-Info (12128): Elaborating entity "mux2x1" for hierarchy "CPU:CPU|Fluxo_Dados:FD|mux2x1:MuxProxPC" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 60
-Info (12128): Elaborating entity "mux2x1" for hierarchy "CPU:CPU|Fluxo_Dados:FD|mux2x1:muxRAM_Imediato" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 64
-Info (12128): Elaborating entity "somaConstante" for hierarchy "CPU:CPU|Fluxo_Dados:FD|somaConstante:somaUm" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 73
-Info (12128): Elaborating entity "memoriaROM" for hierarchy "CPU:CPU|Fluxo_Dados:FD|memoriaROM:ROM" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 76
-Info (12128): Elaborating entity "bancoRegistrador" for hierarchy "CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 78
-Info (12128): Elaborating entity "ULA" for hierarchy "CPU:CPU|Fluxo_Dados:FD|ULA:ULA" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 85
-Info (12128): Elaborating entity "Unidade_Controle" for hierarchy "CPU:CPU|Unidade_Controle:UC" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd Line: 35
-Warning (10873): Using initial value X (don't care) for net "palavraControle[1..0]" at unidadeControle.vhd(19) File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/unidadeControle.vhd Line: 19
-Info (12128): Elaborating entity "decodificador" for hierarchy "decodificador:DEC" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 83
-Warning (10873): Using initial value X (don't care) for net "decodificadorControle[5..0]" at decodificador.vhd(26) File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/decodificador.vhd Line: 26
-Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 86
-Info (12128): Elaborating entity "mux2x1" for hierarchy "mux2x1:MUXTEMPO" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 89
-Info (12128): Elaborating entity "mux8x1" for hierarchy "mux8x1:MUX" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 93
-Info (12128): Elaborating entity "divisorInterface" for hierarchy "divisorInterface:BASEDETEMPO" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 97
-Info (12128): Elaborating entity "divisor" for hierarchy "divisorInterface:BASEDETEMPO|divisor:baseTempo" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/divisorInterface.vhd Line: 22
-Info (12128): Elaborating entity "flipFlop" for hierarchy "divisorInterface:BASEDETEMPO|flipFlop:registraUmSegundo" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/divisorInterface.vhd Line: 26
-Info (12128): Elaborating entity "divisorInterface" for hierarchy "divisorInterface:BASEDETEMPOFAST" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 100
-Info (12128): Elaborating entity "divisor" for hierarchy "divisorInterface:BASEDETEMPOFAST|divisor:baseTempo" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/divisorInterface.vhd Line: 22
-Info (12128): Elaborating entity "registrador" for hierarchy "registrador:REG0" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 103
-Info (12128): Elaborating entity "hex" for hierarchy "hex:HEX_0" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 105
-Info (12128): Elaborating entity "registrador" for hierarchy "registrador:REGLED" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 133
+Info (12128): Elaborating entity "CPU" for hierarchy "CPU:CPU" File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 80
+Info (12128): Elaborating entity "Fluxo_Dados" for hierarchy "CPU:CPU|Fluxo_Dados:FD" File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 30
+Info (12128): Elaborating entity "registrador" for hierarchy "CPU:CPU|Fluxo_Dados:FD|registrador:PC" File: /home/leo/Desktop/DesComp/Projeto/fluxoDados.vhd Line: 57
+Info (12128): Elaborating entity "mux2x1" for hierarchy "CPU:CPU|Fluxo_Dados:FD|mux2x1:MuxProxPC" File: /home/leo/Desktop/DesComp/Projeto/fluxoDados.vhd Line: 60
+Info (12128): Elaborating entity "mux2x1" for hierarchy "CPU:CPU|Fluxo_Dados:FD|mux2x1:muxRAM_Imediato" File: /home/leo/Desktop/DesComp/Projeto/fluxoDados.vhd Line: 64
+Info (12128): Elaborating entity "somaConstante" for hierarchy "CPU:CPU|Fluxo_Dados:FD|somaConstante:somaUm" File: /home/leo/Desktop/DesComp/Projeto/fluxoDados.vhd Line: 73
+Info (12128): Elaborating entity "memoriaROM" for hierarchy "CPU:CPU|Fluxo_Dados:FD|memoriaROM:ROM" File: /home/leo/Desktop/DesComp/Projeto/fluxoDados.vhd Line: 76
+Info (12128): Elaborating entity "bancoRegistrador" for hierarchy "CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg" File: /home/leo/Desktop/DesComp/Projeto/fluxoDados.vhd Line: 78
+Info (12128): Elaborating entity "ULA" for hierarchy "CPU:CPU|Fluxo_Dados:FD|ULA:ULA" File: /home/leo/Desktop/DesComp/Projeto/fluxoDados.vhd Line: 85
+Info (12128): Elaborating entity "Unidade_Controle" for hierarchy "CPU:CPU|Unidade_Controle:UC" File: /home/leo/Desktop/DesComp/Projeto/CPU.vhd Line: 35
+Warning (10873): Using initial value X (don't care) for net "palavraControle[1..0]" at unidadeControle.vhd(19) File: /home/leo/Desktop/DesComp/Projeto/unidadeControle.vhd Line: 19
+Info (12128): Elaborating entity "decodificador" for hierarchy "decodificador:DEC" File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 83
+Warning (10873): Using initial value X (don't care) for net "decodificadorControle[5..0]" at decodificador.vhd(26) File: /home/leo/Desktop/DesComp/Projeto/decodificador.vhd Line: 26
+Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM" File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 86
+Info (12128): Elaborating entity "mux2x1" for hierarchy "mux2x1:MUXTEMPO" File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 89
+Info (12128): Elaborating entity "mux8x1" for hierarchy "mux8x1:MUX" File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 93
+Info (12128): Elaborating entity "divisorInterface" for hierarchy "divisorInterface:BASEDETEMPO" File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 97
+Info (12128): Elaborating entity "divisor" for hierarchy "divisorInterface:BASEDETEMPO|divisor:baseTempo" File: /home/leo/Desktop/DesComp/Projeto/divisorInterface.vhd Line: 22
+Info (12128): Elaborating entity "flipFlop" for hierarchy "divisorInterface:BASEDETEMPO|flipFlop:registraUmSegundo" File: /home/leo/Desktop/DesComp/Projeto/divisorInterface.vhd Line: 26
+Info (12128): Elaborating entity "divisorInterface" for hierarchy "divisorInterface:BASEDETEMPOFAST" File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 100
+Info (12128): Elaborating entity "divisor" for hierarchy "divisorInterface:BASEDETEMPOFAST|divisor:baseTempo" File: /home/leo/Desktop/DesComp/Projeto/divisorInterface.vhd Line: 22
+Info (12128): Elaborating entity "registrador" for hierarchy "registrador:REG0" File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 103
+Info (12128): Elaborating entity "hex" for hierarchy "hex:HEX_0" File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 105
+Info (12128): Elaborating entity "registrador" for hierarchy "registrador:REGLED" File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 133
 Info (276014): Found 2 instances of uninferred RAM logic
-    Info (276004): RAM logic "memoriaRAM:RAM|ram" is uninferred due to inappropriate RAM size File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/memoriaRAM.vhd Line: 25
-    Info (276007): RAM logic "CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador" is uninferred due to asynchronous read logic File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/bancoRegistrador.vhd Line: 30
+    Info (276004): RAM logic "memoriaRAM:RAM|ram" is uninferred due to inappropriate RAM size File: /home/leo/Desktop/DesComp/Projeto/memoriaRAM.vhd Line: 25
+    Info (276007): RAM logic "CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg|registrador" is uninferred due to asynchronous read logic File: /home/leo/Desktop/DesComp/Projeto/bancoRegistrador.vhd Line: 30
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0[0]" is stuck at VCC File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 27
-    Warning (13410): Pin "HEX0[1]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 27
-    Warning (13410): Pin "HEX0[2]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 27
-    Warning (13410): Pin "HEX0[3]" is stuck at VCC File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 27
-    Warning (13410): Pin "HEX0[4]" is stuck at VCC File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 27
-    Warning (13410): Pin "HEX0[5]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 27
-    Warning (13410): Pin "HEX0[6]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 27
-    Warning (13410): Pin "HEX1[0]" is stuck at VCC File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 28
-    Warning (13410): Pin "HEX1[1]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 28
-    Warning (13410): Pin "HEX1[2]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 28
-    Warning (13410): Pin "HEX1[3]" is stuck at VCC File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 28
-    Warning (13410): Pin "HEX1[4]" is stuck at VCC File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 28
-    Warning (13410): Pin "HEX1[5]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 28
-    Warning (13410): Pin "HEX1[6]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 28
-    Warning (13410): Pin "HEX2[0]" is stuck at VCC File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 29
-    Warning (13410): Pin "HEX2[1]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 29
-    Warning (13410): Pin "HEX2[2]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 29
-    Warning (13410): Pin "HEX2[3]" is stuck at VCC File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 29
-    Warning (13410): Pin "HEX2[4]" is stuck at VCC File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 29
-    Warning (13410): Pin "HEX2[5]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 29
-    Warning (13410): Pin "HEX2[6]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 29
-    Warning (13410): Pin "HEX3[0]" is stuck at VCC File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 30
-    Warning (13410): Pin "HEX3[1]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 30
-    Warning (13410): Pin "HEX3[2]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 30
-    Warning (13410): Pin "HEX3[3]" is stuck at VCC File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 30
-    Warning (13410): Pin "HEX3[4]" is stuck at VCC File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 30
-    Warning (13410): Pin "HEX3[5]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 30
-    Warning (13410): Pin "HEX3[6]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 30
-    Warning (13410): Pin "HEX4[0]" is stuck at VCC File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 31
-    Warning (13410): Pin "HEX4[1]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 31
-    Warning (13410): Pin "HEX4[2]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 31
-    Warning (13410): Pin "HEX4[3]" is stuck at VCC File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 31
-    Warning (13410): Pin "HEX4[4]" is stuck at VCC File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 31
-    Warning (13410): Pin "HEX4[5]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 31
-    Warning (13410): Pin "HEX4[6]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 31
-    Warning (13410): Pin "HEX5[0]" is stuck at VCC File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 32
-    Warning (13410): Pin "HEX5[1]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 32
-    Warning (13410): Pin "HEX5[2]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 32
-    Warning (13410): Pin "HEX5[3]" is stuck at VCC File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 32
-    Warning (13410): Pin "HEX5[4]" is stuck at VCC File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 32
-    Warning (13410): Pin "HEX5[5]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 32
-    Warning (13410): Pin "HEX5[6]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 32
-    Warning (13410): Pin "LEDR[0]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 33
-    Warning (13410): Pin "LEDR[1]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 33
-    Warning (13410): Pin "LEDR[2]" is stuck at VCC File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 33
-    Warning (13410): Pin "LEDR[3]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 33
-    Warning (13410): Pin "LEDR[4]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 33
-    Warning (13410): Pin "LEDR[5]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 33
-    Warning (13410): Pin "LEDR[6]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 33
-    Warning (13410): Pin "LEDR[7]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 33
-    Warning (13410): Pin "decodeR[3]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 34
-    Warning (13410): Pin "decodeR[4]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 34
-    Warning (13410): Pin "decodeR[5]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 34
-    Warning (13410): Pin "decodeR[6]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 34
-    Warning (13410): Pin "decodeR[7]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 34
-    Warning (13410): Pin "decodeR[9]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 34
-    Warning (13410): Pin "decodeR[10]" is stuck at GND File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 34
+    Warning (13410): Pin "HEX0[0]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 27
+    Warning (13410): Pin "HEX0[1]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 27
+    Warning (13410): Pin "HEX0[2]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 27
+    Warning (13410): Pin "HEX0[3]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 27
+    Warning (13410): Pin "HEX0[4]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 27
+    Warning (13410): Pin "HEX0[5]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 27
+    Warning (13410): Pin "HEX0[6]" is stuck at VCC File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 27
+    Warning (13410): Pin "HEX1[0]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 28
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 28
+    Warning (13410): Pin "HEX1[2]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 28
+    Warning (13410): Pin "HEX1[3]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 28
+    Warning (13410): Pin "HEX1[4]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 28
+    Warning (13410): Pin "HEX1[5]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 28
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 28
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 29
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 29
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 29
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 29
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 29
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 29
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 29
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 30
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 30
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 30
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 30
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 30
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 30
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 30
+    Warning (13410): Pin "HEX4[0]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX4[4]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX4[5]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 31
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 32
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 32
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 32
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 32
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 32
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 32
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 32
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 33
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 33
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 33
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 33
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 33
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 33
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 33
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 33
+    Warning (13410): Pin "decodeR[2]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 34
+    Warning (13410): Pin "decodeR[3]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 34
+    Warning (13410): Pin "decodeR[4]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 34
+    Warning (13410): Pin "decodeR[6]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 34
+    Warning (13410): Pin "decodeR[7]" is stuck at GND File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 34
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 49 registers lost all their fanouts during netlist optimizations.
+Info (17049): 48 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 12 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "SW[0]" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 23
-    Warning (15610): No output dependent on input pin "SW[1]" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 23
-    Warning (15610): No output dependent on input pin "SW[2]" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 23
-    Warning (15610): No output dependent on input pin "SW[3]" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 23
-    Warning (15610): No output dependent on input pin "SW[4]" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 23
-    Warning (15610): No output dependent on input pin "SW[5]" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 23
-    Warning (15610): No output dependent on input pin "SW[6]" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 23
-    Warning (15610): No output dependent on input pin "SW[7]" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 23
-    Warning (15610): No output dependent on input pin "KEY[0]" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 24
-    Warning (15610): No output dependent on input pin "KEY[1]" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 24
-    Warning (15610): No output dependent on input pin "KEY[2]" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 24
-    Warning (15610): No output dependent on input pin "KEY[3]" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 24
-Info (21057): Implemented 87 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "SW[0]" File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 23
+    Warning (15610): No output dependent on input pin "SW[1]" File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 23
+    Warning (15610): No output dependent on input pin "SW[2]" File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 23
+    Warning (15610): No output dependent on input pin "SW[3]" File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 23
+    Warning (15610): No output dependent on input pin "SW[4]" File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 23
+    Warning (15610): No output dependent on input pin "SW[5]" File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 23
+    Warning (15610): No output dependent on input pin "SW[6]" File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 23
+    Warning (15610): No output dependent on input pin "SW[7]" File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 23
+    Warning (15610): No output dependent on input pin "KEY[0]" File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 24
+    Warning (15610): No output dependent on input pin "KEY[1]" File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 24
+    Warning (15610): No output dependent on input pin "KEY[2]" File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 24
+    Warning (15610): No output dependent on input pin "KEY[3]" File: /home/leo/Desktop/DesComp/Projeto/relogio.vhd Line: 24
+Info (21057): Implemented 114 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 13 input pins
     Info (21059): Implemented 61 output pins
-    Info (21061): Implemented 13 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 76 warnings
-    Info: Peak virtual memory: 1060 megabytes
-    Info: Processing ended: Mon Oct 12 19:10:16 2020
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:44
+    Info (21061): Implemented 40 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 74 warnings
+    Info: Peak virtual memory: 1043 megabytes
+    Info: Processing ended: Mon Oct 12 21:13:06 2020
+    Info: Elapsed time: 00:01:05
+    Info: Total CPU time (on all processors): 00:00:28
 
 

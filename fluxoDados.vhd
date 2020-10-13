@@ -90,7 +90,7 @@ begin
   -- estendeSinal:  entity work.estendeSinalGenerico   generic map (larguraDadoEntrada => 12, larguraDadoSaida => DATA_WIDTH)
   --         port map (estendeSinal_IN => imediato_entradaExtSinal, estendeSinal_OUT => saidaExtSinal_muxULAImed_0);
 
-  data_out <= "00000100";
+  data_out <= regA;
   opCode <= Instrucao(15 downto 12);
   
   endPerif <= Instrucao(10 downto 4) when opCodeLocal = wr    else 

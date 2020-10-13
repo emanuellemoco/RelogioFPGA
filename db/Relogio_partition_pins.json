@@ -12,11 +12,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "decodeR[2]",
+					"name" : "decodeR[5]",
 					"strict" : false
 				},
 				{
 					"name" : "decodeR[8]",
+					"strict" : false
+				},
+				{
+					"name" : "decodeR[9]",
+					"strict" : false
+				},
+				{
+					"name" : "decodeR[10]",
 					"strict" : false
 				},
 				{

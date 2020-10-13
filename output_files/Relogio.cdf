@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(5CEBA4F23) Path("/home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/output_files/") File("Relogio.sof") MfrSpec(OpMask(1));
+		Device PartName(5CEBA4F23) Path("/home/leo/Desktop/DesComp/Projeto/output_files/") File("Relogio.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
