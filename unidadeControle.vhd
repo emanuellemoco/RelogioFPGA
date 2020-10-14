@@ -42,31 +42,18 @@ begin
 
   selMuxImedRam <= '1' when opcode = leaw else
     '0';
-  selMuxULAImed <= '1' when opcode = add or opcode = inc or opcode = andw  else
+  selMuxULAImed <= '1' when opcode = add or opcode = inc or opcode = andw or opcode = notw else
     '0';
-  HabEscritaReg <= '1' when opcode = leaw or opcode = add or opcode = rd or opcode = inc or opcode = andw else
+  HabEscritaReg <= '1' when opcode = leaw or opcode = add or opcode = rd or opcode = inc or opcode = andw or opcode = notw else
     '0';
   selOperacaoULA <= "010" when opcode = leaw else
     "000" when opcode = add else
     "100" when opcode = inc else
     "001" when opcode = je else
+    "101" when opcode = notw else
     "110" when opcode = andw else
     "010";
   selMuxProxPC <= '1' when opcode = jmp or (opCode = je and equal_ULA = '1') else
     '0';
-  -- Para instanciar, a atribuição de sinais (e generics) segue a ordem: (nomeSinalArquivoDefinicaoComponente => nomeSinalNesteArquivo)
-  -- regA:  entity work.nome_do_componente generic map (DATA_WIDTH => DATA_WIDTH)
-  --        port map (dataIN => dataIN, dataOUT =>  RegAmuxA, enable =>  habRegA, clk =>  clk, rst => rst);
-  --selMucProxPC <= '1' when opCode = "1000" else '0';
-  --selMuxULAImed <= '0' when opcode = "0101" else '1';
-  --selHabEscritaAcumulador <= '1' when opCode = "0011" or opcode = "0101" else '0';
-  --selOperacaoULA <= "000" when opcode = "0011" or opcode =je else
-  --"001" when opcode = "0101" or opcode = jmp else
-  --"010" when opcode ="" --NAO SEI EM Q CASOS CARREGAR O A 
-  --"011" when opcode="0100" or opcode="0110" else --CARREGA B QUANDO SOMA/SUBTRAI COM A MEMORIA?
-  --"100" when opcode = "0111" else "010";
-  --habLeituraMEM <= '1' when opCode = add or opcode="0100" or opcode="0110" 
-  --else '0';
 
-  --habEscritaMEM <= '1' opcode="0010" else '0';
 end architecture;

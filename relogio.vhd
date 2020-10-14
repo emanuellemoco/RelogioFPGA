@@ -30,7 +30,7 @@ entity relogio is
             HEX3 : out std_logic_vector(6 downto 0);
             HEX4 : out std_logic_vector(6 downto 0);
             HEX5 : out std_logic_vector(6 downto 0);
-            LEDR : out std_logic_vector(DATA_WIDTH - 1 downto 0)
+            LEDR : out std_logic_vector(9 downto 0)
       );
 end entity;
 architecture arch_name of relogio is
@@ -73,6 +73,7 @@ architecture arch_name of relogio is
       alias opcode : std_logic_vector(3 downto 0) is CPUOut(10 downto 7);
 
 begin
+
 
       CPU : entity work.CPU generic map(DATA_WIDTH => DATA_WIDTH, ADDR_WIDTH => ADDR_WIDTH, ROM_DATA_WIDTH => ROM_DATA_WIDTH)
             port map(clk => CLOCK_50, entrada_dados => muxOut, decodificadorEnd => decode, saida_dados => CPUOut);
@@ -128,6 +129,10 @@ begin
             port map(dadoHEX => reg5Out, apaga => '0', negativo => '0', overflow => '0', saida7seg => HEX5);
 
       REGLED : entity work.registrador generic map (larguraDados => DATA_WIDTH)
-            port map(DIN => CPUOut, DOUT => LEDR, ENABLE => habRegLED, CLK => CLOCK_50, RST => '0');
+            port map(DIN => CPUOut, DOUT => LEDR(DATA_WIDTH -1 DOWNTO 0), ENABLE => habRegLED, CLK => CLOCK_50, RST => '0');
+      
+      
+      LEDR(9 downto 8) <= "00";
+
 
 end architecture;

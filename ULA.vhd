@@ -31,7 +31,7 @@ begin
   sub <= STD_LOGIC_VECTOR(unsigned(entradaA) - unsigned(entradaB));
   op_and <= entradaA and entradaB;
   op_or <= entradaA or entradaB;
-
+  op_not <= NOT entradaA;
   --op_inc <= STD_LOGIC_VECTOR(to_unsigned(to_integer(unsigned(entradaA)) + 1,10));
 
   op_inc <= STD_LOGIC_VECTOR(unsigned(entradaA) + 1);
@@ -45,8 +45,7 @@ begin
     entradaA when (seletor = "010") else --entradaA WHEN (seletor = "010") ELSE
     entradaB when (seletor = "011") else
     op_inc when (seletor = "100") else
-    --          op_xor when   (seletor = "xxx") else
-    --          op_not when   (seletor = "101") else
+    op_not when (seletor = "101") else
     op_and when (seletor = "110") else
     op_or when (seletor = "111") else
 

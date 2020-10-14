@@ -14,21 +14,17 @@ entity memoriaROM is
 end entity;
 ---------------INSTRUÇÕES---------------
 ----------------------------------------
--- leaw -----------------------------0000                     OK
--- add  -----------------------------0001                     OK
--- rw--------------------------------0010 grava/escreve valor OK
--- inc  -----------------------------0011                     OK
--- je   -----------------------------0100                     OK
--- rd -------------------------------0101 carrega/le valor    OK
--- jmp  -----------------------------0110                     OK
+-- leaw -----------------------------0000                     
+-- add  -----------------------------0001                     
+-- rw--------------------------------0010 grava/escreve valor 
+-- inc  -----------------------------0011                     
+-- je   -----------------------------0100                     
+-- rd -------------------------------0101 carrega/le valor    
+-- jmp  -----------------------------0110                     
 -- nope -----------------------------0111
 -- cl -------------------------------1000 limpa
--- andw -----------------------------1001                     OK
-
---   Testar:
---   HEX            OK
---   RAM            OK
---   Base tempo
+-- andw -----------------------------1001
+-- notw ------------------------------1010
 
 
   -- -------------Endereçamento------------
@@ -55,6 +51,13 @@ architecture assincrona of memoriaROM is
     -- KEY3 ---- KEY2 ----- KEY1 ----- KEY0
     --  h  ----  m  -----  s  ----- ok
 
+    -- Modo AM/PM:
+    -- SW 1 p cima
+
+    -- Modo FAST
+    -- SW 2 p cima
+    
+
     --- H  H ---- M   M  --- S  S
     --- R6 R5 --- R4  R3 --- R2 R1
 
@@ -62,35 +65,36 @@ architecture assincrona of memoriaROM is
         
         -- LAÇO PRINCPAL: checa os segundos e os sw
         
-        -- Zera os registradores do HEX
-        tmp(0)  := leaw & NOP & NOP & R01 & b"0000000000";
-        tmp(1)  := leaw & NOP & NOP & R02 & b"0000000000";
-        tmp(2)  := leaw & NOP & NOP & R03 & b"0000000000";
-        tmp(3)  := leaw & NOP & NOP & R04 & b"0000000000";
-        tmp(4)  := leaw & NOP & NOP & R05 & b"0000000000";
-        tmp(5)  := leaw & NOP & NOP & R06 & b"0000000000";
+        -- Zera os registradores do HEX e o LED AM/PM
+        tmp(0)  := leaw & NOP & NOP & R15 & b"0000000000"; 
+        tmp(1)  := leaw & NOP & NOP & R01 & b"0000000000";
+        tmp(2)  := leaw & NOP & NOP & R02 & b"0000000000";
+        tmp(3)  := leaw & NOP & NOP & R03 & b"0000000000";
+        tmp(4)  := leaw & NOP & NOP & R04 & b"0000000000";
+        tmp(5)  := leaw & NOP & NOP & R05 & b"0000000000";
+        tmp(6)  := leaw & NOP & NOP & R06 & b"0000000000";
         --Checa se o SW do Fast está ligado                                                 1111111111
-        tmp(6)  := leaw & NOP & NOP & R07 & b"0010000000";                              --  1000000000 <--
-        tmp(7)  := rd   & NOP & NOP & R08 & b"0000001000"; --8 - SW                     --  1000000000  <--
-        tmp(8)  := andw & R07 & R08 & R09 & b"0000000000"; 
-        tmp(9)  := je   & R09 & R07 & NOP & b"0000010010"; --goto tmp(18)         
+        tmp(7)  := leaw & NOP & NOP & R07 & b"0000000100";                              --  1000000000 <--
+        tmp(8)  := rd   & NOP & NOP & R08 & b"0000001000"; --8 - SW                     --  1000000000  <--
+        tmp(9)  := andw & R07 & R08 & R09 & b"0000000000"; 
+        tmp(10)  := je   & R09 & R07 & NOP & b"0000010011"; --goto tmp(19)         
         --Checa se 01 segundo passou
-        tmp(10) := leaw & NOP & NOP & R07 & b"0000000001"; 
-        tmp(11) := rd   & NOP & NOP & R08 & b"0000000000";
-        tmp(12) := je   & R07 & R08 & NOP & b"0001000000"; --goto tmp(64)         
+        tmp(11) := leaw & NOP & NOP & R07 & b"0000000001"; 
+        tmp(12) := rd   & NOP & NOP & R08 & b"0000000000";
+        tmp(13) := je   & R07 & R08 & NOP & b"0001000000"; --goto tmp(64)         
         -- Checa se o input do sw mudou 
-        tmp(13) := leaw & NOP & NOP & R07 & b"0000000001"; 
-        tmp(14) := rd   & NOP & NOP & R08 & b"0000001000"; --8 - SW
-        tmp(15) := andw & R07 & R08 & R09 & b"0000000000"; --8 - SW 
-        tmp(16) := je   & R07 & R09 & NOP & b"0010000000"; --goto tmp(128)
-        tmp(17) := jmp  & NOP & NOP & NOP & b"0000000110"; --goto tmp(6) 
+        tmp(14) := leaw & NOP & NOP & R07 & b"0000000001"; 
+        tmp(15) := rd   & NOP & NOP & R08 & b"0000001000"; --8 - SW
+        tmp(16) := andw & R07 & R08 & R09 & b"0000000000"; --8 - SW 
+        tmp(17) := je   & R07 & R09 & NOP & b"0010000000"; --goto tmp(128)
+        tmp(18) := jmp  & NOP & NOP & NOP & b"0000000111"; --goto tmp(7) 
         --Checa se 01 segundo FAST passou
-        tmp(18) := leaw & NOP & NOP & R07 & b"0000000001"; --*********
-        tmp(19) := rd   & NOP & NOP & R08 & b"0000001010"; -- SW 10 - muda base tempo
-        tmp(20) := je   & R07 & R08 & NOP & b"0001000000"; --goto tmp(64)
-        tmp(21) := jmp  & NOP & NOP & NOP & b"0000001101"; --goto tmp(13) 
+        tmp(19) := leaw & NOP & NOP & R07 & b"0000000001"; --*********
+        tmp(20) := rd   & NOP & NOP & R08 & b"0000001010"; -- SW 10 - muda base tempo
+        tmp(21) := je   & R07 & R08 & NOP & b"0001000000"; --goto tmp(64)
+        tmp(22) := jmp  & NOP & NOP & NOP & b"0000001110"; --goto tmp(14) 
 
-       
+       --uwu
         
         -------------- ATUALIZA HORARIO NO HEX -------------------------------
         -- Checa se a unidade do segundo é 9
@@ -99,7 +103,7 @@ architecture assincrona of memoriaROM is
         tmp(66) := je   & R01 & R07 & NOP & b"0001000110"; --goto tmp(70)        
         tmp(67) := inc  & R01 & NOP & R01 & b"0000000000"; 
         tmp(68) := wr   & R01 & NOP & NOP & b"0000000001";
-        tmp(69) := jmp  & NOP & NOP & NOP & b"0000000110"; --goto tmp(6)
+        tmp(69) := jmp  & NOP & NOP & NOP & b"0000001000"; --goto tmp(8) 
         -- Checa se a dezena do segundo é 5
         tmp(70) := leaw & NOP & NOP & R01 & b"0000000000";  
         tmp(71) := wr   & R01 & NOP & NOP & b"0000000001";  
@@ -107,7 +111,7 @@ architecture assincrona of memoriaROM is
         tmp(73) := je   & R02 & R07 & NOP & b"0001001101"; --goto tmp(77)
         tmp(74) := inc  & R02 & NOP & R02 & b"0000000010"; 
         tmp(75) := wr   & R02 & NOP & NOP & b"0000000010";
-        tmp(76) := jmp  & NOP & NOP & NOP & b"0000000110"; --goto tmp(6)
+        tmp(76) := jmp  & NOP & NOP & NOP & b"0000001000"; --goto tmp(8)  
         -- Checa se a unidade da minuto é 9  
         tmp(77) := leaw & NOP & NOP & R02 & b"0000000000";
         tmp(78) := wr   & R02 & NOP & NOP & b"0000000010";    
@@ -115,7 +119,7 @@ architecture assincrona of memoriaROM is
         tmp(80) := je   & R03 & R07 & NOP & b"0001010100"; --goto tmp(84)
         tmp(81) := inc  & R03 & NOP & R03 & b"0000000000"; 
         tmp(82) := wr   & R03 & NOP & NOP & b"0000000011";
-        tmp(83) := jmp  & NOP & NOP & NOP & b"0000000110"; --goto tmp(6)
+        tmp(83) := jmp  & NOP & NOP & NOP & b"0000001000"; --goto tmp(8)  
 
         -- Checa se a dezena da minuto é 5
         tmp(84) := leaw & NOP & NOP & R03 & b"0000000000";
@@ -124,40 +128,46 @@ architecture assincrona of memoriaROM is
         tmp(87) := je   & R04 & R07 & NOP & b"0001011011"; --goto tmp(91)
         tmp(88) := inc  & R04 & NOP & R04 & b"0000000000"; 
         tmp(89) := wr   & R04 & NOP & NOP & b"0000000100";
-        tmp(90) := jmp  & NOP & NOP & NOP & b"0000000110"; --goto tmp(6)
+        tmp(90) := jmp  & NOP & NOP & NOP & b"0000001000"; --goto tmp(8)  
 
-        ------- ver dezena da hora  é 2 
+        ----- Limpa a dezena do minuto
         tmp(91) := leaw & NOP & NOP & R04 & b"0000000000";
         tmp(92) := wr   & R04 & NOP & NOP & b"0000000100";
+        ------Checa se mostra a hora em AM/PM ou 24h
         tmp(93) := leaw & NOP & NOP & R07 & b"0000000010";
-        tmp(94) := je   & R06 & R07 & NOP & b"0001100000"; --goto tmp(96) 
-        tmp(95) := jmp  & NOP & NOP & NOP & b"0001101000"; --goto tmp(104)
+        tmp(94) := rd   & NOP & NOP & R08 & b"0000001000";
+        tmp(95) := andw & R07 & R08 & R09 & b"0000000000";
+        tmp(96) := je   & R09 & R07 & NOP & b"0100101100"; --goto tmp(300)
+        ------- ver dezena da hora  é 2    
+        tmp(97) := leaw & NOP & NOP & R07 & b"0000000010";
+        tmp(98) := je   & R06 & R07 & NOP & b"0001100100"; --goto tmp(100) 
+        tmp(99) := jmp  & NOP & NOP & NOP & b"0001101100"; --goto tmp(108)
 
         ----------Checa se unidade da hora for 3 e zera
-        tmp(96) := leaw & NOP & NOP & R07 & b"0000000011"; --*********
-        tmp(97) := je   & R05 & R07 & NOP & b"0001100011"; --goto tmp(99)
-        tmp(98) := jmp  & NOP & NOP & NOP & b"0001101000"; --goto tmp(104)
+        tmp(100) := leaw & NOP & NOP & R07 & b"0000000011"; --*********
+        tmp(101) := je   & R05 & R07 & NOP & b"0001100111"; --goto tmp(103)
+        tmp(102) := jmp  & NOP & NOP & NOP & b"0001101100"; --goto tmp(108)
 
         -- Zera
-        tmp(99)  := leaw & NOP & NOP & R05 & b"0000000000"; 
-        tmp(100) := wr   & R05 & NOP & NOP & b"0000000101";
-        tmp(101) := leaw & NOP & NOP & R06 & b"0000000000";
-        tmp(102) := wr   & R06 & NOP & NOP & b"0000000110";
-        tmp(103) := jmp  & NOP & NOP & NOP & b"0000000110"; --goto tmp(6)
+        tmp(103)  := leaw & NOP & NOP & R05 & b"0000000000"; 
+        tmp(104) := wr   & R05 & NOP & NOP & b"0000000101";
+        tmp(105) := leaw & NOP & NOP & R06 & b"0000000000";
+        tmp(106) := wr   & R06 & NOP & NOP & b"0000000110";
+        tmp(107) := jmp  & NOP & NOP & NOP & b"0000001000"; --goto tmp(8)  
         
         --Checar se a unidade da hora é == 9
-        tmp(104) := leaw & NOP & NOP & R09 & b"0000001001"; --********* -- carrega 9
-        tmp(105) := je   & R09 & R05 & NOP & b"0001101101"; --goto tmp(109) 
-        tmp(106) := inc  & R05 & NOP & R05 & b"0000000000";
-        tmp(107) := wr   & R05 & NOP & NOP & b"0000000101";
-        tmp(108) := jmp  & NOP & NOP & NOP & b"0000000110"; --goto tmp(6)
+        tmp(108) := leaw & NOP & NOP & R09 & b"0000001001"; --********* -- carrega 9
+        tmp(109) := je   & R09 & R05 & NOP & b"0001110001"; --goto tmp(113) 
+        tmp(110) := inc  & R05 & NOP & R05 & b"0000000000";
+        tmp(111) := wr   & R05 & NOP & NOP & b"0000000101";
+        tmp(112) := jmp  & NOP & NOP & NOP & b"0000001000"; --goto tmp(8)  
         
         --Zera a unidade hora e +1 no dezena
-        tmp(109) := leaw & NOP & NOP & R05 & b"0000000000"; 
-        tmp(110) := inc  & R06 & NOP & R06 & b"0000000000";
-        tmp(111) := wr   & R05 & NOP & NOP & b"0000000101";
-        tmp(112) := wr   & R06 & NOP & NOP & b"0000000110";
-        tmp(113) := jmp  & NOP & NOP & NOP & b"0000000110"; --goto tmp(6)
+        tmp(113) := leaw & NOP & NOP & R05 & b"0000000000"; 
+        tmp(114) := inc  & R06 & NOP & R06 & b"0000000000";
+        tmp(115) := wr   & R05 & NOP & NOP & b"0000000101";
+        tmp(116) := wr   & R06 & NOP & NOP & b"0000000110";
+        tmp(117) := jmp  & NOP & NOP & NOP & b"0000001000"; --goto tmp(8)  
         
 
         ------------------------SETTA HORARIO---------------------------
@@ -175,7 +185,7 @@ architecture assincrona of memoriaROM is
         tmp(138) := rd   & NOP & NOP & R08 & b"0000001000"; --8 - SW
         tmp(139) := andw & R08 & R09 & R10 & b"0000000000"; 
         tmp(140) := je   & R09 & R10 & NOP & b"0010000000"; --goto tmp(128)
-        tmp(141) := jmp  & NOP & NOP & NOP & b"0000000110"; --goto tmp(6) 
+        tmp(141) := jmp  & NOP & NOP & NOP & b"0000001000"; --goto tmp(8)   
         
         -- Zerando o horario
         tmp(150) := leaw & NOP & NOP & R01 & b"0000000000";
@@ -298,7 +308,40 @@ architecture assincrona of memoriaROM is
         tmp(287) := jmp  & NOP & NOP & NOP & b"0100011000"; --goto tmp(280)
 
         --------------------fim SETTA HORARIO---------------------------
+        
+        
+        ----Checa se a dezena da hora é 1
+        tmp(300) := leaw & NOP & NOP & R07 & b"0000000001";
+        tmp(301) := je   & R06 & R07 & NOP & b"0100101111"; --goto tmp(303) 
+        tmp(302) := jmp  & NOP & NOP & NOP & b"0001101100"; --goto tmp(108)
 
+        ----------Checa se unidade da hora for 1 e zera
+        tmp(303) := leaw & NOP & NOP & R07 & b"0000000001"; --*********
+        tmp(304) := je   & R05 & R07 & NOP & b"0100110010"; --goto tmp(306)
+        tmp(305) := jmp  & NOP & NOP & NOP & b"0100111001"; --goto tmp(313)
+
+        -- Zera
+        tmp(306) := notw & R15 & NOP & R15 & b"0000000000"; 
+        tmp(307) := wr   & R15 & NOP & NOP & b"0000000111";
+        tmp(308) := leaw & NOP & NOP & R05 & b"0000000000"; 
+        tmp(309) := wr   & R05 & NOP & NOP & b"0000000101";
+        tmp(310) := leaw & NOP & NOP & R06 & b"0000000000";
+        tmp(311) := wr   & R06 & NOP & NOP & b"0000000110";
+        tmp(312) := jmp  & NOP & NOP & NOP & b"0000001000"; --goto tmp(8)  
+
+        --Checar se a unidade da hora é == 9
+        tmp(313) := leaw & NOP & NOP & R09 & b"0000001001"; --********* -- carrega 9
+        tmp(314) := je   & R09 & R05 & NOP & b"0100111110"; --goto tmp(318) 
+        tmp(315) := inc  & R05 & NOP & R05 & b"0000000000";
+        tmp(316) := wr   & R05 & NOP & NOP & b"0000000101";
+        tmp(317) := jmp  & NOP & NOP & NOP & b"0000001000"; --goto tmp(8)  
+
+        --Zera a unidade hora e +1 no dezena
+        tmp(318) := leaw & NOP & NOP & R05 & b"0000000000"; 
+        tmp(319) := inc  & R06 & NOP & R06 & b"0000000000";
+        tmp(320) := wr   & R05 & NOP & NOP & b"0000000101";
+        tmp(321) := wr   & R06 & NOP & NOP & b"0000000110";
+        tmp(322) := jmp  & NOP & NOP & NOP & b"0000001000"; --goto tmp(8)  
 
 
 
