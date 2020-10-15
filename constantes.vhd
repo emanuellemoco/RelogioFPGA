@@ -25,6 +25,7 @@ package constantes is
     constant cl  : opCode := "1000";
     constant andw: opCode := "1001";
     constant notw: opCode := "1010";
+    constant sub: opCode := "1011";
 
     constant R01 : registradores := "0001";
     constant R02 : registradores := "0010";
