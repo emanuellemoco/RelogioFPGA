@@ -16,11 +16,12 @@ entity Unidade_Controle is
     equal_ULA : in std_logic;
 
     -- Output ports
-    palavraControle : out std_logic_vector(8 downto 0)
+    palavraControle : out std_logic_vector(10 downto 0)
   );
 end entity;
 architecture arch_name of Unidade_Controle is
-  alias selMuxProxPC : std_logic is palavraControle(8);
+  alias habFunc : std_logic is palavraControle(10);
+  alias selMuxProxPC : std_logic_vector(1 downto 0) is palavraControle(9 downto 8);
   alias selMuxImedRam : std_logic is palavraControle(7);
   alias selMuxULAImed : std_logic is palavraControle(6);
   alias HabEscritaReg : std_logic is palavraControle(5);
@@ -28,33 +29,28 @@ architecture arch_name of Unidade_Controle is
   alias habLeituraMEM : std_logic is palavraControle(1);
   alias habEscritaMEM : std_logic is palavraControle(0);
 
-  ---------------INSTRUÇÕES---------------
-  ----------------------------------------
-  -- leaw -----------------------------0000                     OK
-  -- add  -----------------------------0001                     OK
-  -- store-----------------------------0010 grava valor         OK
-  -- inc  -----------------------------0011                     OK
-  -- je   -----------------------------0100                     OK
-  -- load -----------------------------0101 carrega valor       OK
-  -- jmp  -----------------------------0110                     OK
 
 begin
 
   selMuxImedRam <= '1' when opcode = leaw else
     '0';
-  selMuxULAImed <= '1' when opcode = add or opcode = inc or opcode = andw or opcode = notw or opcode = sub else
+  selMuxULAImed <= '1' when opcode = add or opcode = inc or opcode = andw or opcode = notw or opcode = subw else
     '0';
-  HabEscritaReg <= '1' when opcode = leaw or opcode = add or opcode = rd or opcode = inc or opcode = andw or opcode = notw or opcode = sub else
+  HabEscritaReg <= '1' when opcode = leaw or opcode = add or opcode = rd or opcode = inc or opcode = andw or opcode = notw or opcode = subw else
     '0';
   selOperacaoULA <= "010" when opcode = leaw else
     "000" when opcode = add else
-    "001" when opcode = sub else 
+    "001" when opcode = subw else 
     "100" when opcode = inc else
     "001" when opcode = je else
     "101" when opcode = notw else
     "110" when opcode = andw else
     "010";
-  selMuxProxPC <= '1' when opcode = jmp or (opCode = je and equal_ULA = '1') else
-    '0';
+  selMuxProxPC <= 
+    "01" when opcode = jmp or (opCode = je and equal_ULA = '1') else
+    "10" when opcode = ret else 
+    "00";
+
+    habFunc <= '1' when opcode = func else '0';
 
 end architecture;

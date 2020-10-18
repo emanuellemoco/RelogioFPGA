@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Relogio
-Wed Oct 14 16:10:57 2020
+Sun Oct 18 12:07:20 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -19,51 +19,54 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  11. Parameter Settings for User Entity Instance: CPU:CPU
  12. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD
  13. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|registrador:PC
- 14. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|mux2x1:MuxProxPC
+ 14. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|mux8x1:MuxProxPC
  15. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|mux2x1:muxRAM_Imediato
  16. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato
  17. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|somaConstante:somaUm
- 18. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|memoriaROM:ROM
- 19. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg
- 20. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|ULA:ULA
- 21. Parameter Settings for User Entity Instance: CPU:CPU|Unidade_Controle:UC
- 22. Parameter Settings for User Entity Instance: decodificador:DEC
- 23. Parameter Settings for User Entity Instance: memoriaRAM:RAM
- 24. Parameter Settings for User Entity Instance: mux2x1:MUXTEMPO
- 25. Parameter Settings for User Entity Instance: mux8x1:MUX
- 26. Parameter Settings for User Entity Instance: divisorInterface:BASEDETEMPO
- 27. Parameter Settings for User Entity Instance: divisorInterface:BASEDETEMPO|divisor:baseTempo
- 28. Parameter Settings for User Entity Instance: divisorInterface:BASEDETEMPOFAST
- 29. Parameter Settings for User Entity Instance: divisorInterface:BASEDETEMPOFAST|divisor:baseTempo
- 30. Parameter Settings for User Entity Instance: registrador:REG0
- 31. Parameter Settings for User Entity Instance: registrador:REG1
- 32. Parameter Settings for User Entity Instance: registrador:REG2
- 33. Parameter Settings for User Entity Instance: registrador:REG3
- 34. Parameter Settings for User Entity Instance: registrador:REG4
- 35. Parameter Settings for User Entity Instance: registrador:REG5
- 36. Parameter Settings for User Entity Instance: registrador:REGLED
- 37. Port Connectivity Checks: "registrador:REGLED"
- 38. Port Connectivity Checks: "hex:HEX_5"
- 39. Port Connectivity Checks: "registrador:REG5"
- 40. Port Connectivity Checks: "hex:HEX_4"
- 41. Port Connectivity Checks: "registrador:REG4"
- 42. Port Connectivity Checks: "hex:HEX_3"
- 43. Port Connectivity Checks: "registrador:REG3"
- 44. Port Connectivity Checks: "hex:HEX_2"
- 45. Port Connectivity Checks: "registrador:REG2"
- 46. Port Connectivity Checks: "hex:HEX_1"
- 47. Port Connectivity Checks: "registrador:REG1"
- 48. Port Connectivity Checks: "hex:HEX_0"
- 49. Port Connectivity Checks: "registrador:REG0"
- 50. Port Connectivity Checks: "divisorInterface:BASEDETEMPOFAST|flipFlop:registraUmSegundo"
- 51. Port Connectivity Checks: "divisorInterface:BASEDETEMPO|flipFlop:registraUmSegundo"
- 52. Port Connectivity Checks: "mux8x1:MUX"
- 53. Port Connectivity Checks: "mux2x1:MUXTEMPO"
- 54. Port Connectivity Checks: "decodificador:DEC"
- 55. Port Connectivity Checks: "CPU:CPU|Fluxo_Dados:FD|registrador:PC"
- 56. Post-Synthesis Netlist Statistics for Top Partition
- 57. Elapsed Time Per Partition
- 58. Analysis & Synthesis Messages
+ 18. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|registrador:FUNC
+ 19. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|memoriaROM:ROM
+ 20. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg
+ 21. Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|ULA:ULA
+ 22. Parameter Settings for User Entity Instance: CPU:CPU|Unidade_Controle:UC
+ 23. Parameter Settings for User Entity Instance: decodificador:DEC
+ 24. Parameter Settings for User Entity Instance: memoriaRAM:RAM
+ 25. Parameter Settings for User Entity Instance: mux2x1:MUXTEMPO
+ 26. Parameter Settings for User Entity Instance: mux8x1:MUX
+ 27. Parameter Settings for User Entity Instance: divisorInterface:BASEDETEMPO
+ 28. Parameter Settings for User Entity Instance: divisorInterface:BASEDETEMPO|divisor:baseTempo
+ 29. Parameter Settings for User Entity Instance: divisorInterface:BASEDETEMPOFAST
+ 30. Parameter Settings for User Entity Instance: divisorInterface:BASEDETEMPOFAST|divisor:baseTempo
+ 31. Parameter Settings for User Entity Instance: registrador:REG0
+ 32. Parameter Settings for User Entity Instance: registrador:REG1
+ 33. Parameter Settings for User Entity Instance: registrador:REG2
+ 34. Parameter Settings for User Entity Instance: registrador:REG3
+ 35. Parameter Settings for User Entity Instance: registrador:REG4
+ 36. Parameter Settings for User Entity Instance: registrador:REG5
+ 37. Parameter Settings for User Entity Instance: registrador:REGLED
+ 38. Port Connectivity Checks: "registrador:REGLED"
+ 39. Port Connectivity Checks: "hex:HEX_5"
+ 40. Port Connectivity Checks: "registrador:REG5"
+ 41. Port Connectivity Checks: "hex:HEX_4"
+ 42. Port Connectivity Checks: "registrador:REG4"
+ 43. Port Connectivity Checks: "hex:HEX_3"
+ 44. Port Connectivity Checks: "registrador:REG3"
+ 45. Port Connectivity Checks: "hex:HEX_2"
+ 46. Port Connectivity Checks: "registrador:REG2"
+ 47. Port Connectivity Checks: "hex:HEX_1"
+ 48. Port Connectivity Checks: "registrador:REG1"
+ 49. Port Connectivity Checks: "hex:HEX_0"
+ 50. Port Connectivity Checks: "registrador:REG0"
+ 51. Port Connectivity Checks: "divisorInterface:BASEDETEMPOFAST|flipFlop:registraUmSegundo"
+ 52. Port Connectivity Checks: "divisorInterface:BASEDETEMPO|flipFlop:registraUmSegundo"
+ 53. Port Connectivity Checks: "mux8x1:MUX"
+ 54. Port Connectivity Checks: "mux2x1:MUXTEMPO"
+ 55. Port Connectivity Checks: "decodificador:DEC"
+ 56. Port Connectivity Checks: "CPU:CPU|Fluxo_Dados:FD|registrador:FUNC"
+ 57. Port Connectivity Checks: "CPU:CPU|Fluxo_Dados:FD|mux8x1:MuxProxPC"
+ 58. Port Connectivity Checks: "CPU:CPU|Fluxo_Dados:FD|registrador:PC"
+ 59. Post-Synthesis Netlist Statistics for Top Partition
+ 60. Elapsed Time Per Partition
+ 61. Analysis & Synthesis Messages
 
 
 
@@ -89,13 +92,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Oct 14 16:10:57 2020       ;
+; Analysis & Synthesis Status     ; Successful - Sun Oct 18 12:07:20 2020       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; Relogio                                     ;
 ; Top-level Entity Name           ; relogio                                     ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 227                                         ;
+; Total registers                 ; 237                                         ;
 ; Total pins                      ; 65                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -246,25 +249,25 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 386            ;
+; Estimate of Logic utilization (ALMs needed) ; 396            ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 502            ;
+; Combinational ALUT usage for logic          ; 525            ;
 ;     -- 7 input functions                    ; 9              ;
-;     -- 6 input functions                    ; 242            ;
-;     -- 5 input functions                    ; 60             ;
-;     -- 4 input functions                    ; 112            ;
-;     -- <=3 input functions                  ; 79             ;
+;     -- 6 input functions                    ; 240            ;
+;     -- 5 input functions                    ; 84             ;
+;     -- 4 input functions                    ; 106            ;
+;     -- <=3 input functions                  ; 86             ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 227            ;
+; Dedicated logic registers                   ; 237            ;
 ;                                             ;                ;
 ; I/O pins                                    ; 65             ;
 ;                                             ;                ;
 ; Total DSP Blocks                            ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 225            ;
-; Total fan-out                               ; 3238           ;
-; Average fan-out                             ; 3.77           ;
+; Maximum fan-out                             ; 235            ;
+; Total fan-out                               ; 3349           ;
+; Average fan-out                             ; 3.75           ;
 +---------------------------------------------+----------------+
 
 
@@ -273,17 +276,19 @@ refer to the applicable agreement for further details.
 +---------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------+------------------+--------------+
 ; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                  ; Entity Name      ; Library Name ;
 +---------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------+------------------+--------------+
-; |relogio                              ; 502 (0)             ; 227 (0)                   ; 0                 ; 0          ; 65   ; 0            ; |relogio                                                             ; relogio          ; work         ;
-;    |CPU:CPU|                          ; 378 (0)             ; 138 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU                                                     ; CPU              ; work         ;
-;       |Fluxo_Dados:FD|                ; 368 (0)             ; 138 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD                                      ; Fluxo_Dados      ; work         ;
+; |relogio                              ; 525 (0)             ; 237 (0)                   ; 0                 ; 0          ; 65   ; 0            ; |relogio                                                             ; relogio          ; work         ;
+;    |CPU:CPU|                          ; 401 (0)             ; 148 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU                                                     ; CPU              ; work         ;
+;       |Fluxo_Dados:FD|                ; 387 (0)             ; 148 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD                                      ; Fluxo_Dados      ; work         ;
 ;          |ULA:ULA|                    ; 14 (14)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|ULA:ULA                              ; ULA              ; work         ;
-;          |bancoRegistrador:bancoReg|  ; 98 (98)             ; 128 (128)                 ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg            ; bancoRegistrador ; work         ;
-;          |memoriaROM:ROM|             ; 213 (213)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|memoriaROM:ROM                       ; memoriaROM       ; work         ;
+;          |bancoRegistrador:bancoReg|  ; 96 (96)             ; 128 (128)                 ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg            ; bancoRegistrador ; work         ;
+;          |memoriaROM:ROM|             ; 218 (218)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|memoriaROM:ROM                       ; memoriaROM       ; work         ;
 ;          |mux2x1:muxULA_Imediato|     ; 33 (33)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato               ; mux2x1           ; work         ;
+;          |mux8x1:MuxProxPC|           ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|mux8x1:MuxProxPC                     ; mux8x1           ; work         ;
+;          |registrador:FUNC|           ; 0 (0)               ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|registrador:FUNC                     ; registrador      ; work         ;
 ;          |registrador:PC|             ; 0 (0)               ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|registrador:PC                       ; registrador      ; work         ;
 ;          |somaConstante:somaUm|       ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|somaConstante:somaUm                 ; somaConstante    ; work         ;
-;       |Unidade_Controle:UC|           ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Unidade_Controle:UC                                 ; Unidade_Controle ; work         ;
-;    |decodificador:DEC|                ; 21 (21)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|decodificador:DEC                                           ; decodificador    ; work         ;
+;       |Unidade_Controle:UC|           ; 14 (14)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Unidade_Controle:UC                                 ; Unidade_Controle ; work         ;
+;    |decodificador:DEC|                ; 20 (20)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|decodificador:DEC                                           ; decodificador    ; work         ;
 ;    |divisorInterface:BASEDETEMPOFAST| ; 26 (0)              ; 22 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |relogio|divisorInterface:BASEDETEMPOFAST                            ; divisorInterface ; work         ;
 ;       |divisor:baseTempo|             ; 26 (26)             ; 21 (21)                   ; 0                 ; 0          ; 0    ; 0            ; |relogio|divisorInterface:BASEDETEMPOFAST|divisor:baseTempo          ; divisor          ; work         ;
 ;       |flipFlop:registraUmSegundo|    ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|divisorInterface:BASEDETEMPOFAST|flipFlop:registraUmSegundo ; flipFlop         ; work         ;
@@ -298,6 +303,7 @@ refer to the applicable agreement for further details.
 ;    |hex:HEX_5|                        ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|hex:HEX_5                                                   ; hex              ; work         ;
 ;    |memoriaRAM:RAM|                   ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|memoriaRAM:RAM                                              ; memoriaRAM       ; work         ;
 ;    |mux2x1:MUXTEMPO|                  ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|mux2x1:MUXTEMPO                                             ; mux2x1           ; work         ;
+;    |mux8x1:MUX|                       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|mux8x1:MUX                                                  ; mux8x1           ; work         ;
 ;    |registrador:REG0|                 ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|registrador:REG0                                            ; registrador      ; work         ;
 ;    |registrador:REG1|                 ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|registrador:REG1                                            ; registrador      ; work         ;
 ;    |registrador:REG2|                 ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|registrador:REG2                                            ; registrador      ; work         ;
@@ -314,12 +320,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 227   ;
+; Total registers                              ; 237   ;
 ; Number of registers using Synchronous Clear  ; 45    ;
-; Number of registers using Synchronous Load   ; 10    ;
+; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 2     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 168   ;
+; Number of registers using Clock Enable       ; 178   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -329,11 +335,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
+; 4:1                ; 10 bits   ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; Yes        ; |relogio|CPU:CPU|Fluxo_Dados:FD|registrador:PC|DOUT[1]              ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |relogio|decodificador:DEC|decodificadorControle[7]                 ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |relogio|CPU:CPU|Fluxo_Dados:FD|ULA:ULA|Add0                        ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |relogio|CPU:CPU|Unidade_Controle:UC|palavraControle[2]             ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |relogio|CPU:CPU|Unidade_Controle:UC|palavraControle[3]             ;
 ; 14:1               ; 3 bits    ; 27 LEs        ; 21 LEs               ; 6 LEs                  ; No         ; |relogio|CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato|saida_MUX[1] ;
-; 13:1               ; 4 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; No         ; |relogio|CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato|saida_MUX[4] ;
+; 13:1               ; 4 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; No         ; |relogio|CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato|saida_MUX[7] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------+
 
 
@@ -387,7 +394,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +--------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|mux2x1:MuxProxPC ;
+; Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|mux8x1:MuxProxPC ;
 +----------------+-------+-------------------------------------------------------------+
 ; Parameter Name ; Value ; Type                                                        ;
 +----------------+-------+-------------------------------------------------------------+
@@ -424,6 +431,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; larguradados   ; 10    ; Signed Integer                                                  ;
 ; constante      ; 1     ; Signed Integer                                                  ;
 +----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CPU:CPU|Fluxo_Dados:FD|registrador:FUNC ;
++----------------+-------+-------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                        ;
++----------------+-------+-------------------------------------------------------------+
+; larguradados   ; 10    ; Signed Integer                                              ;
++----------------+-------+-------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -800,6 +817,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
++---------------------------------------------------------------------+
+; Port Connectivity Checks: "CPU:CPU|Fluxo_Dados:FD|registrador:FUNC" ;
++------+-------+----------+-------------------------------------------+
+; Port ; Type  ; Severity ; Details                                   ;
++------+-------+----------+-------------------------------------------+
+; rst  ; Input ; Info     ; Stuck at GND                              ;
++------+-------+----------+-------------------------------------------+
+
+
++---------------------------------------------------------------------+
+; Port Connectivity Checks: "CPU:CPU|Fluxo_Dados:FD|mux8x1:MuxProxPC" ;
++--------------+-------+----------+-----------------------------------+
+; Port         ; Type  ; Severity ; Details                           ;
++--------------+-------+----------+-----------------------------------+
+; entradad_mux ; Input ; Info     ; Stuck at GND                      ;
++--------------+-------+----------+-----------------------------------+
+
+
 +-------------------------------------------------------------------+
 ; Port Connectivity Checks: "CPU:CPU|Fluxo_Dados:FD|registrador:PC" ;
 +--------+-------+----------+---------------------------------------+
@@ -815,29 +850,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 227                         ;
+; arriav_ff             ; 237                         ;
 ;     CLR               ; 2                           ;
-;     ENA               ; 168                         ;
+;     ENA               ; 178                         ;
 ;     SCLR              ; 45                          ;
-;     SLD               ; 10                          ;
-;     plain             ; 2                           ;
-; arriav_lcell_comb     ; 503                         ;
+;     plain             ; 12                          ;
+; arriav_lcell_comb     ; 526                         ;
 ;     arith             ; 64                          ;
 ;         1 data inputs ; 56                          ;
 ;         5 data inputs ; 8                           ;
 ;     extend            ; 9                           ;
 ;         7 data inputs ; 9                           ;
-;     normal            ; 430                         ;
+;     normal            ; 453                         ;
 ;         0 data inputs ; 1                           ;
-;         2 data inputs ; 12                          ;
-;         3 data inputs ; 11                          ;
-;         4 data inputs ; 112                         ;
-;         5 data inputs ; 52                          ;
-;         6 data inputs ; 242                         ;
+;         2 data inputs ; 16                          ;
+;         3 data inputs ; 14                          ;
+;         4 data inputs ; 106                         ;
+;         5 data inputs ; 76                          ;
+;         6 data inputs ; 240                         ;
 ; boundary_port         ; 65                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 9.00                        ;
-; Average LUT depth     ; 5.22                        ;
+; Average LUT depth     ; 5.46                        ;
 +-----------------------+-----------------------------+
 
 
@@ -846,7 +880,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:05     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -856,7 +890,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Wed Oct 14 16:10:22 2020
+    Info: Processing started: Sun Oct 18 12:06:56 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Relogio -c Relogio
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -899,7 +933,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file registr
     Info (12022): Found design unit 1: registrador-comportamento File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/registrador.vhd Line: 16
     Info (12023): Found entity 1: registrador File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/registrador.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file memoriaROM.vhd
-    Info (12022): Found design unit 1: memoriaROM-assincrona File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/memoriaROM.vhd Line: 39
+    Info (12022): Found design unit 1: memoriaROM-assincrona File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/memoriaROM.vhd Line: 42
     Info (12023): Found entity 1: memoriaROM File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/memoriaROM.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file memoriaRAM.vhd
     Info (12022): Found design unit 1: memoriaRAM-rtl File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/memoriaRAM.vhd Line: 19
@@ -921,13 +955,13 @@ Warning (12019): Can't analyze file -- file hexInterface.vhd is missing
 Info (12127): Elaborating entity "relogio" for the top level hierarchy
 Info (12128): Elaborating entity "CPU" for hierarchy "CPU:CPU" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 78
 Info (12128): Elaborating entity "Fluxo_Dados" for hierarchy "CPU:CPU|Fluxo_Dados:FD" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd Line: 30
-Info (12128): Elaborating entity "registrador" for hierarchy "CPU:CPU|Fluxo_Dados:FD|registrador:PC" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 53
-Info (12128): Elaborating entity "mux2x1" for hierarchy "CPU:CPU|Fluxo_Dados:FD|mux2x1:MuxProxPC" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 56
-Info (12128): Elaborating entity "mux2x1" for hierarchy "CPU:CPU|Fluxo_Dados:FD|mux2x1:muxRAM_Imediato" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 60
-Info (12128): Elaborating entity "somaConstante" for hierarchy "CPU:CPU|Fluxo_Dados:FD|somaConstante:somaUm" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 69
-Info (12128): Elaborating entity "memoriaROM" for hierarchy "CPU:CPU|Fluxo_Dados:FD|memoriaROM:ROM" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 72
-Info (12128): Elaborating entity "bancoRegistrador" for hierarchy "CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 74
-Info (12128): Elaborating entity "ULA" for hierarchy "CPU:CPU|Fluxo_Dados:FD|ULA:ULA" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 81
+Info (12128): Elaborating entity "registrador" for hierarchy "CPU:CPU|Fluxo_Dados:FD|registrador:PC" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 55
+Info (12128): Elaborating entity "mux8x1" for hierarchy "CPU:CPU|Fluxo_Dados:FD|mux8x1:MuxProxPC" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 58
+Info (12128): Elaborating entity "mux2x1" for hierarchy "CPU:CPU|Fluxo_Dados:FD|mux2x1:muxRAM_Imediato" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 62
+Info (12128): Elaborating entity "somaConstante" for hierarchy "CPU:CPU|Fluxo_Dados:FD|somaConstante:somaUm" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 71
+Info (12128): Elaborating entity "memoriaROM" for hierarchy "CPU:CPU|Fluxo_Dados:FD|memoriaROM:ROM" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 77
+Info (12128): Elaborating entity "bancoRegistrador" for hierarchy "CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 79
+Info (12128): Elaborating entity "ULA" for hierarchy "CPU:CPU|Fluxo_Dados:FD|ULA:ULA" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd Line: 86
 Info (12128): Elaborating entity "Unidade_Controle" for hierarchy "CPU:CPU|Unidade_Controle:UC" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd Line: 35
 Warning (10873): Using initial value X (don't care) for net "palavraControle[1..0]" at unidadeControle.vhd(19) File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/unidadeControle.vhd Line: 19
 Info (12128): Elaborating entity "decodificador" for hierarchy "decodificador:DEC" File: /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd Line: 81
@@ -952,14 +986,14 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 737 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 770 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 13 input pins
     Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 672 logic cells
+    Info (21061): Implemented 705 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 1067 megabytes
-    Info: Processing ended: Wed Oct 14 16:10:57 2020
-    Info: Elapsed time: 00:00:35
-    Info: Total CPU time (on all processors): 00:01:16
+    Info: Peak virtual memory: 1053 megabytes
+    Info: Processing ended: Sun Oct 18 12:07:20 2020
+    Info: Elapsed time: 00:00:24
+    Info: Total CPU time (on all processors): 00:00:59
 
 

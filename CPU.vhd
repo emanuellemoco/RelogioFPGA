@@ -21,7 +21,7 @@ entity CPU is
 end entity;
 architecture arch_name of CPU is
   signal saidaReg : std_logic_vector(DATA_WIDTH - 1 downto 0);
-  signal palavraControle : std_logic_vector(8 downto 0);
+  signal palavraControle : std_logic_vector(10 downto 0);
   signal opCode : std_logic_vector(3 downto 0);
   signal endPerif : std_logic_vector(6 downto 0);
   signal equal_ULA : std_logic;
