@@ -47,7 +47,7 @@ begin
     "110" when opcode = andw else
     "010";
   selMuxProxPC <= 
-    "01" when opcode = jmp or (opCode = je and equal_ULA = '1') else
+    "01" when opcode = jmp or (opCode = je and equal_ULA = '1') or opcode = func else
     "10" when opcode = ret else 
     "00";
 

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Relogio
-Sun Oct 18 12:07:20 2020
+Sun Oct 18 16:01:39 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -92,7 +92,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Oct 18 12:07:20 2020       ;
+; Analysis & Synthesis Status     ; Successful - Sun Oct 18 16:01:39 2020       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; Relogio                                     ;
 ; Top-level Entity Name           ; relogio                                     ;
@@ -212,7 +212,7 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
 ;     Processor 3            ;   0.0%      ;
 ;     Processor 4            ;   0.0%      ;
 +----------------------------+-------------+
@@ -249,14 +249,14 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 396            ;
+; Estimate of Logic utilization (ALMs needed) ; 389            ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 525            ;
-;     -- 7 input functions                    ; 9              ;
-;     -- 6 input functions                    ; 240            ;
-;     -- 5 input functions                    ; 84             ;
-;     -- 4 input functions                    ; 106            ;
-;     -- <=3 input functions                  ; 86             ;
+; Combinational ALUT usage for logic          ; 510            ;
+;     -- 7 input functions                    ; 14             ;
+;     -- 6 input functions                    ; 236            ;
+;     -- 5 input functions                    ; 90             ;
+;     -- 4 input functions                    ; 95             ;
+;     -- <=3 input functions                  ; 75             ;
 ;                                             ;                ;
 ; Dedicated logic registers                   ; 237            ;
 ;                                             ;                ;
@@ -266,8 +266,8 @@ refer to the applicable agreement for further details.
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
 ; Maximum fan-out                             ; 235            ;
-; Total fan-out                               ; 3349           ;
-; Average fan-out                             ; 3.75           ;
+; Total fan-out                               ; 3320           ;
+; Average fan-out                             ; 3.79           ;
 +---------------------------------------------+----------------+
 
 
@@ -276,19 +276,19 @@ refer to the applicable agreement for further details.
 +---------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------+------------------+--------------+
 ; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                  ; Entity Name      ; Library Name ;
 +---------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------+------------------+--------------+
-; |relogio                              ; 525 (0)             ; 237 (0)                   ; 0                 ; 0          ; 65   ; 0            ; |relogio                                                             ; relogio          ; work         ;
-;    |CPU:CPU|                          ; 401 (0)             ; 148 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU                                                     ; CPU              ; work         ;
-;       |Fluxo_Dados:FD|                ; 387 (0)             ; 148 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD                                      ; Fluxo_Dados      ; work         ;
-;          |ULA:ULA|                    ; 14 (14)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|ULA:ULA                              ; ULA              ; work         ;
+; |relogio                              ; 510 (0)             ; 237 (0)                   ; 0                 ; 0          ; 65   ; 0            ; |relogio                                                             ; relogio          ; work         ;
+;    |CPU:CPU|                          ; 388 (0)             ; 148 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU                                                     ; CPU              ; work         ;
+;       |Fluxo_Dados:FD|                ; 375 (0)             ; 148 (0)                   ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD                                      ; Fluxo_Dados      ; work         ;
+;          |ULA:ULA|                    ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|ULA:ULA                              ; ULA              ; work         ;
 ;          |bancoRegistrador:bancoReg|  ; 96 (96)             ; 128 (128)                 ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|bancoRegistrador:bancoReg            ; bancoRegistrador ; work         ;
-;          |memoriaROM:ROM|             ; 218 (218)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|memoriaROM:ROM                       ; memoriaROM       ; work         ;
-;          |mux2x1:muxULA_Imediato|     ; 33 (33)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato               ; mux2x1           ; work         ;
-;          |mux8x1:MuxProxPC|           ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|mux8x1:MuxProxPC                     ; mux8x1           ; work         ;
+;          |memoriaROM:ROM|             ; 216 (216)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|memoriaROM:ROM                       ; memoriaROM       ; work         ;
+;          |mux2x1:muxULA_Imediato|     ; 29 (29)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|mux2x1:muxULA_Imediato               ; mux2x1           ; work         ;
+;          |mux8x1:MuxProxPC|           ; 13 (13)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|mux8x1:MuxProxPC                     ; mux8x1           ; work         ;
 ;          |registrador:FUNC|           ; 0 (0)               ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|registrador:FUNC                     ; registrador      ; work         ;
 ;          |registrador:PC|             ; 0 (0)               ; 10 (10)                   ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|registrador:PC                       ; registrador      ; work         ;
 ;          |somaConstante:somaUm|       ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Fluxo_Dados:FD|somaConstante:somaUm                 ; somaConstante    ; work         ;
-;       |Unidade_Controle:UC|           ; 14 (14)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Unidade_Controle:UC                                 ; Unidade_Controle ; work         ;
-;    |decodificador:DEC|                ; 20 (20)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|decodificador:DEC                                           ; decodificador    ; work         ;
+;       |Unidade_Controle:UC|           ; 13 (13)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|CPU:CPU|Unidade_Controle:UC                                 ; Unidade_Controle ; work         ;
+;    |decodificador:DEC|                ; 18 (18)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|decodificador:DEC                                           ; decodificador    ; work         ;
 ;    |divisorInterface:BASEDETEMPOFAST| ; 26 (0)              ; 22 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |relogio|divisorInterface:BASEDETEMPOFAST                            ; divisorInterface ; work         ;
 ;       |divisor:baseTempo|             ; 26 (26)             ; 21 (21)                   ; 0                 ; 0          ; 0    ; 0            ; |relogio|divisorInterface:BASEDETEMPOFAST|divisor:baseTempo          ; divisor          ; work         ;
 ;       |flipFlop:registraUmSegundo|    ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |relogio|divisorInterface:BASEDETEMPOFAST|flipFlop:registraUmSegundo ; flipFlop         ; work         ;
@@ -855,23 +855,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA               ; 178                         ;
 ;     SCLR              ; 45                          ;
 ;     plain             ; 12                          ;
-; arriav_lcell_comb     ; 526                         ;
+; arriav_lcell_comb     ; 511                         ;
 ;     arith             ; 64                          ;
 ;         1 data inputs ; 56                          ;
 ;         5 data inputs ; 8                           ;
-;     extend            ; 9                           ;
-;         7 data inputs ; 9                           ;
-;     normal            ; 453                         ;
+;     extend            ; 14                          ;
+;         7 data inputs ; 14                          ;
+;     normal            ; 433                         ;
 ;         0 data inputs ; 1                           ;
-;         2 data inputs ; 16                          ;
-;         3 data inputs ; 14                          ;
-;         4 data inputs ; 106                         ;
-;         5 data inputs ; 76                          ;
-;         6 data inputs ; 240                         ;
+;         2 data inputs ; 9                           ;
+;         3 data inputs ; 10                          ;
+;         4 data inputs ; 95                          ;
+;         5 data inputs ; 82                          ;
+;         6 data inputs ; 236                         ;
 ; boundary_port         ; 65                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 9.00                        ;
-; Average LUT depth     ; 5.46                        ;
+; Average LUT depth     ; 5.16                        ;
 +-----------------------+-----------------------------+
 
 
@@ -880,7 +880,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:05     ;
 +----------------+--------------+
 
 
@@ -890,7 +890,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun Oct 18 12:06:56 2020
+    Info: Processing started: Sun Oct 18 16:01:09 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Relogio -c Relogio
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -986,14 +986,14 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 770 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 755 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 13 input pins
     Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 705 logic cells
+    Info (21061): Implemented 690 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 1053 megabytes
-    Info: Processing ended: Sun Oct 18 12:07:20 2020
-    Info: Elapsed time: 00:00:24
-    Info: Total CPU time (on all processors): 00:00:59
+    Info: Peak virtual memory: 1068 megabytes
+    Info: Processing ended: Sun Oct 18 16:01:39 2020
+    Info: Elapsed time: 00:00:30
+    Info: Total CPU time (on all processors): 00:01:07
 
 

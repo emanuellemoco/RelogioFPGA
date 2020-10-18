@@ -155,7 +155,7 @@ architecture assincrona of memoriaROM is
         tmp(102) := jmp  & NOP & NOP & NOP & b"0001101100"; --goto tmp(108)
 
         -- Zera
-        tmp(103)  := leaw & NOP & NOP & R05 & b"0000000000"; 
+        tmp(103) := leaw & NOP & NOP & R05 & b"0000000000"; 
         tmp(104) := wr   & R05 & NOP & NOP & b"0000000101";
         tmp(105) := leaw & NOP & NOP & R06 & b"0000000000";
         tmp(106) := wr   & R06 & NOP & NOP & b"0000000110";
@@ -196,10 +196,10 @@ architecture assincrona of memoriaROM is
         -- Zerando o horario
         tmp(150) := leaw & NOP & NOP & R01 & b"0000000000";
         tmp(151) := leaw & NOP & NOP & R02 & b"0000000000";
-        tmp(152) := leaw & NOP & NOP & R03 & b"0000000000";
-        tmp(153) := leaw & NOP & NOP & R04 & b"0000000000";
-        tmp(154) := leaw & NOP & NOP & R05 & b"0000000000";
-        tmp(155) := leaw & NOP & NOP & R06 & b"0000000000";
+        tmp(152) := leaw & NOP & NOP & R03 & b"0000000000"; 
+        tmp(153) := leaw & NOP & NOP & R04 & b"0000000000"; 
+        tmp(154) := leaw & NOP & NOP & R05 & b"0000000000"; 
+        tmp(155) := leaw & NOP & NOP & R06 & b"0000000000"; 
         tmp(156) := wr   & R01 & NOP & NOP & b"0000000001";
         tmp(157) := wr   & R02 & NOP & NOP & b"0000000010";
         tmp(158) := wr   & R03 & NOP & NOP & b"0000000011";
@@ -321,15 +321,16 @@ architecture assincrona of memoriaROM is
         tmp(301) := je   & R06 & R07 & NOP & b"0100101111"; --goto tmp(303) 
         tmp(302) := jmp  & NOP & NOP & NOP & b"0001101100"; --goto tmp(108)
 
-        ----------Checa se unidade da hora for 1 e zera
+        --Checa se a unidade da hora for 1 e muda AM/PM
         tmp(303) := leaw & NOP & NOP & R07 & b"0000000001"; --*********
-        tmp(304) := je   & R05 & R07 & NOP & b"0100110010"; --goto tmp(306)
-        tmp(305) := jmp  & NOP & NOP & NOP & b"0100111001"; --goto tmp(313)
+        tmp(304) := je   & R05 & R07 & NOP & b"0101000011"; --goto tmp(323)
+        ----------Checa se unidade da hora for 2 e zera
+        tmp(305) := leaw & NOP & NOP & R07 & b"0000000010"; --*********
+        tmp(306) := je   & R05 & R07 & NOP & b"0100110100"; --goto tmp(308)
+        tmp(307) := jmp  & NOP & NOP & NOP & b"0100111001"; --goto tmp(313)
 
         -- Zera
-        tmp(306) := notw & R15 & NOP & R15 & b"0000000000"; 
-        tmp(307) := wr   & R15 & NOP & NOP & b"0000000111";
-        tmp(308) := leaw & NOP & NOP & R05 & b"0000000000"; 
+        tmp(308) := leaw & NOP & NOP & R05 & b"0000000001"; 
         tmp(309) := wr   & R05 & NOP & NOP & b"0000000101";
         tmp(310) := leaw & NOP & NOP & R06 & b"0000000000";
         tmp(311) := wr   & R06 & NOP & NOP & b"0000000110";
@@ -348,6 +349,11 @@ architecture assincrona of memoriaROM is
         tmp(320) := wr   & R05 & NOP & NOP & b"0000000101";
         tmp(321) := wr   & R06 & NOP & NOP & b"0000000110";
         tmp(322) := jmp  & NOP & NOP & NOP & b"0000001000"; --goto tmp(8)  
+
+        -- Inverte o LED
+        tmp(323) := notw & R15 & NOP & R15 & b"0000000000"; 
+        tmp(324) := wr   & R15 & NOP & NOP & b"0000000111";
+        tmp(325) := jmp  & NOP & NOP & NOP & b"0100111001"; --goto tmp(313)
 
 
 

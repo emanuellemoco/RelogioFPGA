@@ -1,5 +1,5 @@
 Flow report for Relogio
-Sun Oct 18 12:08:53 2020
+Sun Oct 18 16:03:36 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,15 +40,15 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Sun Oct 18 12:08:53 2020       ;
+; Flow Status                     ; Successful - Sun Oct 18 16:03:36 2020       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; Relogio                                     ;
 ; Top-level Entity Name           ; relogio                                     ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CEBA4F23C7                                 ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 393 / 18,480 ( 2 % )                        ;
-; Total registers                 ; 269                                         ;
+; Logic utilization (in ALMs)     ; 387 / 18,480 ( 2 % )                        ;
+; Total registers                 ; 267                                         ;
 ; Total pins                      ; 65 / 224 ( 29 % )                           ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 3,153,920 ( 0 % )                       ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/18/2020 12:06:56 ;
+; Start date & time ; 10/18/2020 16:01:10 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Relogio             ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 88230073434408.160303361612085         ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 88230073434408.160304767043329         ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation ;
@@ -98,12 +98,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:23     ; 1.0                     ; 1009 MB             ; 00:00:59                           ;
-; Fitter               ; 00:01:07     ; 1.1                     ; 2117 MB             ; 00:02:12                           ;
-; Assembler            ; 00:00:06     ; 1.0                     ; 937 MB              ; 00:00:06                           ;
-; Timing Analyzer      ; 00:00:12     ; 1.4                     ; 1124 MB             ; 00:00:15                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 1123 MB             ; 00:00:02                           ;
-; Total                ; 00:01:50     ; --                      ; --                  ; 00:03:34                           ;
+; Analysis & Synthesis ; 00:00:30     ; 1.0                     ; 1027 MB             ; 00:01:07                           ;
+; Fitter               ; 00:01:26     ; 1.1                     ; 2135 MB             ; 00:02:55                           ;
+; Assembler            ; 00:00:06     ; 1.0                     ; 931 MB              ; 00:00:06                           ;
+; Timing Analyzer      ; 00:00:14     ; 1.4                     ; 1127 MB             ; 00:00:18                           ;
+; EDA Netlist Writer   ; 00:00:03     ; 1.0                     ; 1121 MB             ; 00:00:03                           ;
+; Total                ; 00:02:19     ; --                      ; --                  ; 00:04:29                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
