@@ -28,7 +28,7 @@ package constantes is
     constant subw: opCode := "1011";
     constant func: opCode := "1100";
     constant ret : opCode := "1101";
- 
+
     constant R01 : registradores := "0001";
     constant R02 : registradores := "0010";
     constant R03 : registradores := "0011";
