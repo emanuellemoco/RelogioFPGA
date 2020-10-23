@@ -1,5 +1,5 @@
 Archive Project report for Relogio
-Sun Oct 18 23:03:29 2020
+Fri Oct 23 20:10:39 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -35,7 +35,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------+
 ; Archive Project Summary                                        ;
 +------------------------+---------------------------------------+
-; Archive Project Status ; Successful - Sun Oct 18 23:03:29 2020 ;
+; Archive Project Status ; Successful - Fri Oct 23 20:10:39 2020 ;
 ; Revision Name          ; Relogio                               ;
 ; Top-level Entity Name  ; relogio                               ;
 ; Family                 ; Cyclone V                             ;
@@ -53,15 +53,15 @@ Info: Archive will store files relative to the closest common parent directory
 Info (13213): Using common directory /home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/
 Info: ----------------------------------------------------------
 Info: ----------------------------------------------------------
-Info: Generated archive '/home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/Relogio.qar'
+Info: Generated archive '/home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/RelogioD.qar'
 Info: ----------------------------------------------------------
 Info: ----------------------------------------------------------
 Info: Generated report 'Relogio.archive.rpt'
 Info (23030): Evaluation of Tcl script /opt/altera/18.1/quartus/common/tcl/apps/qpm/qar.tcl was successful
 Info: Quartus Prime Shell was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 1030 megabytes
-    Info: Processing ended: Sun Oct 18 23:03:29 2020
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Fri Oct 23 20:10:39 2020
+    Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:01
 
 
@@ -72,7 +72,6 @@ Info: Quartus Prime Shell was successful. 0 errors, 1 warning
 +----------------------------------------------------------+
 ; /opt/altera/18.1/quartus/linux64/assignment_defaults.qdf ;
 ; bancoRegistrador.vhd                                     ;
-; bancoRegistradorOld.vhd                                  ;
 ; constantes.vhd                                           ;
 ; CPU.vhd                                                  ;
 ; decodificador.vhd                                        ;

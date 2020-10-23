@@ -1,0 +1,34 @@
+Quartus Prime Archive log --	/home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/RelogioD.qarlog
+
+Archive:	/home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/RelogioD.qar
+Date:		Fri Oct 23 20:10:39 2020
+Quartus Prime		18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+	=========== Files Selected: ===========
+/home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/CPU.vhd
+/home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/Relogio.qpf
+/home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/Relogio.qsf
+/home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/ULA.vhd
+/home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/Waveform.vwf
+/home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/WaveformF.vwf
+/home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/bancoRegistrador.vhd
+/home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/constantes.vhd
+/home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/decodificador.vhd
+/home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/divisor.vhd
+/home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/divisorInterface.vhd
+/home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/flipFlop.vhd
+/home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/fluxoDados.vhd
+/home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/hex.vhd
+/home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/memoriaRAM.vhd
+/home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/memoriaROM.vhd
+/home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/mux2x1.vhd
+/home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/mux3x1.vhd
+/home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/registrador.vhd
+/home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/relogio.vhd
+/home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/somador.vhd
+/home/emanuelle/Desktop/INSPER/DesComp/relogioFPGA/unidadeControle.vhd
+/opt/altera/18.1/quartus/linux64/assignment_defaults.qdf
+	======= Total: 23 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

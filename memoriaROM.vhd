@@ -196,10 +196,10 @@ architecture assincrona of memoriaROM is
         -- Zerando o horario
         tmp(150) := leaw & NOP & NOP & R01 & b"0000000000";
         tmp(151) := leaw & NOP & NOP & R02 & b"0000000000";
-        tmp(152) := leaw & NOP & NOP & R03 & b"0000001001"; -------------- ARRUMAR - VOLTAR PRA 0 ----------------------------------
-        tmp(153) := leaw & NOP & NOP & R04 & b"0000000101"; -------------- ARRUMAR - VOLTAR PRA 0 ----------------------------------
-        tmp(154) := leaw & NOP & NOP & R05 & b"0000000001";  -------------- ARRUMAR - VOLTAR PRA 0 ----------------------------------
-        tmp(155) := leaw & NOP & NOP & R06 & b"0000000001";  -------------- ARRUMAR - VOLTAR PRA 0 ---------------------------------- 
+        tmp(152) := leaw & NOP & NOP & R03 & b"0000000000"; 
+        tmp(153) := leaw & NOP & NOP & R04 & b"0000000000"; 
+        tmp(154) := leaw & NOP & NOP & R05 & b"0000000000"; 
+        tmp(155) := leaw & NOP & NOP & R06 & b"0000000000";  
         tmp(156) := wr   & R01 & NOP & NOP & b"0000000001";
         tmp(157) := wr   & R02 & NOP & NOP & b"0000000010";
         tmp(158) := wr   & R03 & NOP & NOP & b"0000000011";
@@ -516,11 +516,7 @@ architecture assincrona of memoriaROM is
         tmp(437) := jmp  & NOP & NOP & NOP & b"0110101000"; --goto tmp(424)
         ----------- FIM Se mudou de 24 horas para AM/PM  -------------------
 
-   
-      
-
-
-                                    
+                
         return tmp;
     end initMemory;
 

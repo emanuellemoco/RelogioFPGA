@@ -95,7 +95,7 @@ begin
       BASEDETEMPO : entity work.divisorInterface generic map (TIME => 25000000)
             port map(clk => CLOCK_50, habilitaLeitura => habLeituraInterface, limpaLeitura => limpaLeituraInterface, leituraUmSegundo => baseTempoOut);
       
-      BASEDETEMPOFAST : entity work.divisorInterface generic map (TIME => 1000000)
+      BASEDETEMPOFAST : entity work.divisorInterface generic map (TIME => 100000)
             port map(clk => CLOCK_50, habilitaLeitura => habLeituraInterface, limpaLeitura => limpaLeituraInterface, leituraUmSegundo => baseTempoFastOut);
 
       REG0 : entity work.registrador generic map (larguraDados => HEX_WIDTH)
