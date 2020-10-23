@@ -195,7 +195,6 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW[9]
 set_global_assignment -name VHDL_FILE mux3x1.vhd
 set_global_assignment -name VHDL_FILE constantes.vhd
 set_global_assignment -name VHDL_FILE bancoRegistrador.vhd
-set_global_assignment -name VHDL_FILE bancoRegistradorOld.vhd
 set_global_assignment -name VHDL_FILE fluxoDados.vhd
 set_global_assignment -name VHDL_FILE unidadeControle.vhd
 set_global_assignment -name VHDL_FILE relogio.vhd
