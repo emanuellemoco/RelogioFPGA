@@ -1,5 +1,5 @@
 Timing Analyzer report for Relogio
-Fri Oct 23 13:36:34 2020
+Fri Oct 23 14:26:11 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -101,14 +101,14 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.44        ;
+; Average used               ; 1.49        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  14.8%      ;
-;     Processor 3            ;  14.6%      ;
-;     Processor 4            ;  14.5%      ;
+;     Processor 2            ;  16.6%      ;
+;     Processor 3            ;  16.4%      ;
+;     Processor 4            ;  16.4%      ;
 +----------------------------+-------------+
 
 
@@ -128,7 +128,7 @@ refer to the applicable agreement for further details.
 +-----------+-----------------+------------+------+
 ; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
 +-----------+-----------------+------------+------+
-; 95.16 MHz ; 95.16 MHz       ; CLOCK_50   ;      ;
+; 93.77 MHz ; 93.77 MHz       ; CLOCK_50   ;      ;
 +-----------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -144,7 +144,7 @@ HTML report is unavailable in plain text report export.
 +----------+--------+-----------------+
 ; Clock    ; Slack  ; End Point TNS   ;
 +----------+--------+-----------------+
-; CLOCK_50 ; -9.509 ; -1904.639       ;
+; CLOCK_50 ; -9.664 ; -1829.596       ;
 +----------+--------+-----------------+
 
 
@@ -153,7 +153,7 @@ HTML report is unavailable in plain text report export.
 +----------+-------+-----------------+
 ; Clock    ; Slack ; End Point TNS   ;
 +----------+-------+-----------------+
-; CLOCK_50 ; 0.441 ; 0.000           ;
+; CLOCK_50 ; 0.445 ; 0.000           ;
 +----------+-------+-----------------+
 
 
@@ -162,8 +162,8 @@ HTML report is unavailable in plain text report export.
 +---------------------------------------------------------+--------+---------------+
 ; Clock                                                   ; Slack  ; End Point TNS ;
 +---------------------------------------------------------+--------+---------------+
-; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; -7.339 ; -7.339        ;
-; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; -7.246 ; -7.246        ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; -7.342 ; -7.342        ;
+; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; -7.335 ; -7.335        ;
 +---------------------------------------------------------+--------+---------------+
 
 
@@ -172,8 +172,8 @@ HTML report is unavailable in plain text report export.
 +---------------------------------------------------------+-------+---------------+
 ; Clock                                                   ; Slack ; End Point TNS ;
 +---------------------------------------------------------+-------+---------------+
-; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; 3.294 ; 0.000         ;
-; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; 3.416 ; 0.000         ;
+; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; 3.723 ; 0.000         ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; 3.731 ; 0.000         ;
 +---------------------------------------------------------+-------+---------------+
 
 
@@ -182,9 +182,9 @@ HTML report is unavailable in plain text report export.
 +---------------------------------------------------------+--------+---------------+
 ; Clock                                                   ; Slack  ; End Point TNS ;
 +---------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                ; -0.561 ; -236.438      ;
-; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; -0.538 ; -0.854        ;
-; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; -0.538 ; -0.838        ;
+; CLOCK_50                                                ; -0.538 ; -233.509      ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; -0.538 ; -0.833        ;
+; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; -0.538 ; -0.827        ;
 +---------------------------------------------------------+--------+---------------+
 
 
@@ -199,7 +199,7 @@ No synchronizer chains to report.
 +-----------+-----------------+------------+------+
 ; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
 +-----------+-----------------+------------+------+
-; 96.19 MHz ; 96.19 MHz       ; CLOCK_50   ;      ;
+; 94.33 MHz ; 94.33 MHz       ; CLOCK_50   ;      ;
 +-----------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -209,7 +209,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------+--------+----------------+
 ; Clock    ; Slack  ; End Point TNS  ;
 +----------+--------+----------------+
-; CLOCK_50 ; -9.396 ; -1895.115      ;
+; CLOCK_50 ; -9.601 ; -1819.718      ;
 +----------+--------+----------------+
 
 
@@ -218,7 +218,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +----------+-------+----------------+
 ; Clock    ; Slack ; End Point TNS  ;
 +----------+-------+----------------+
-; CLOCK_50 ; 0.449 ; 0.000          ;
+; CLOCK_50 ; 0.228 ; 0.000          ;
 +----------+-------+----------------+
 
 
@@ -227,8 +227,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------------------------------+--------+---------------+
 ; Clock                                                   ; Slack  ; End Point TNS ;
 +---------------------------------------------------------+--------+---------------+
-; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; -7.423 ; -7.423        ;
-; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; -7.329 ; -7.329        ;
+; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; -7.362 ; -7.362        ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; -7.358 ; -7.358        ;
 +---------------------------------------------------------+--------+---------------+
 
 
@@ -237,8 +237,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------------------------------+-------+---------------+
 ; Clock                                                   ; Slack ; End Point TNS ;
 +---------------------------------------------------------+-------+---------------+
-; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; 3.353 ; 0.000         ;
-; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; 3.476 ; 0.000         ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; 3.824 ; 0.000         ;
+; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; 3.828 ; 0.000         ;
 +---------------------------------------------------------+-------+---------------+
 
 
@@ -247,9 +247,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------------------------------+--------+---------------+
 ; Clock                                                   ; Slack  ; End Point TNS ;
 +---------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                ; -0.582 ; -210.533      ;
-; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; -0.538 ; -0.848        ;
-; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; -0.538 ; -0.831        ;
+; CLOCK_50                                                ; -0.544 ; -207.550      ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; -0.538 ; -0.829        ;
+; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; -0.538 ; -0.823        ;
 +---------------------------------------------------------+--------+---------------+
 
 
@@ -264,7 +264,7 @@ No synchronizer chains to report.
 +----------+--------+-----------------+
 ; Clock    ; Slack  ; End Point TNS   ;
 +----------+--------+-----------------+
-; CLOCK_50 ; -4.673 ; -862.084        ;
+; CLOCK_50 ; -4.620 ; -839.326        ;
 +----------+--------+-----------------+
 
 
@@ -273,7 +273,7 @@ No synchronizer chains to report.
 +----------+-------+-----------------+
 ; Clock    ; Slack ; End Point TNS   ;
 +----------+-------+-----------------+
-; CLOCK_50 ; 0.007 ; 0.000           ;
+; CLOCK_50 ; 0.128 ; 0.000           ;
 +----------+-------+-----------------+
 
 
@@ -282,8 +282,8 @@ No synchronizer chains to report.
 +---------------------------------------------------------+--------+---------------+
 ; Clock                                                   ; Slack  ; End Point TNS ;
 +---------------------------------------------------------+--------+---------------+
-; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; -3.287 ; -3.287        ;
-; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; -3.227 ; -3.227        ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; -3.358 ; -3.358        ;
+; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; -3.350 ; -3.350        ;
 +---------------------------------------------------------+--------+---------------+
 
 
@@ -292,8 +292,8 @@ No synchronizer chains to report.
 +---------------------------------------------------------+-------+---------------+
 ; Clock                                                   ; Slack ; End Point TNS ;
 +---------------------------------------------------------+-------+---------------+
-; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; 1.450 ; 0.000         ;
-; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; 1.531 ; 0.000         ;
+; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; 1.617 ; 0.000         ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; 1.626 ; 0.000         ;
 +---------------------------------------------------------+-------+---------------+
 
 
@@ -302,9 +302,9 @@ No synchronizer chains to report.
 +---------------------------------------------------------+--------+---------------+
 ; Clock                                                   ; Slack  ; End Point TNS ;
 +---------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                ; -0.651 ; -123.132      ;
-; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; 0.003  ; 0.000         ;
-; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; 0.004  ; 0.000         ;
+; CLOCK_50                                                ; -0.619 ; -121.916      ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; 0.020  ; 0.000         ;
+; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; 0.033  ; 0.000         ;
 +---------------------------------------------------------+--------+---------------+
 
 
@@ -319,7 +319,7 @@ No synchronizer chains to report.
 +----------+--------+----------------+
 ; Clock    ; Slack  ; End Point TNS  ;
 +----------+--------+----------------+
-; CLOCK_50 ; -4.157 ; -765.569       ;
+; CLOCK_50 ; -4.114 ; -742.475       ;
 +----------+--------+----------------+
 
 
@@ -328,7 +328,7 @@ No synchronizer chains to report.
 +----------+--------+---------------+
 ; Clock    ; Slack  ; End Point TNS ;
 +----------+--------+---------------+
-; CLOCK_50 ; -0.135 ; -0.798        ;
+; CLOCK_50 ; -0.089 ; -0.446        ;
 +----------+--------+---------------+
 
 
@@ -337,8 +337,8 @@ No synchronizer chains to report.
 +---------------------------------------------------------+--------+---------------+
 ; Clock                                                   ; Slack  ; End Point TNS ;
 +---------------------------------------------------------+--------+---------------+
-; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; -3.026 ; -3.026        ;
-; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; -2.969 ; -2.969        ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; -3.116 ; -3.116        ;
+; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; -3.110 ; -3.110        ;
 +---------------------------------------------------------+--------+---------------+
 
 
@@ -347,8 +347,8 @@ No synchronizer chains to report.
 +---------------------------------------------------------+-------+---------------+
 ; Clock                                                   ; Slack ; End Point TNS ;
 +---------------------------------------------------------+-------+---------------+
-; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; 1.384 ; 0.000         ;
-; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; 1.459 ; 0.000         ;
+; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; 1.541 ; 0.000         ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; 1.547 ; 0.000         ;
 +---------------------------------------------------------+-------+---------------+
 
 
@@ -357,9 +357,9 @@ No synchronizer chains to report.
 +---------------------------------------------------------+--------+---------------+
 ; Clock                                                   ; Slack  ; End Point TNS ;
 +---------------------------------------------------------+--------+---------------+
-; CLOCK_50                                                ; -0.684 ; -146.949      ;
-; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; 0.037  ; 0.000         ;
-; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; 0.042  ; 0.000         ;
+; CLOCK_50                                                ; -0.648 ; -144.927      ;
+; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; 0.051  ; 0.000         ;
+; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; 0.064  ; 0.000         ;
 +---------------------------------------------------------+--------+---------------+
 
 
@@ -374,14 +374,14 @@ No synchronizer chains to report.
 +----------------------------------------------------------+-----------+--------+----------+---------+---------------------+
 ; Clock                                                    ; Setup     ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
 +----------------------------------------------------------+-----------+--------+----------+---------+---------------------+
-; Worst-case Slack                                         ; -9.509    ; -0.135 ; -7.423   ; 1.384   ; -0.684              ;
-;  CLOCK_50                                                ; -9.509    ; -0.135 ; N/A      ; N/A     ; -0.684              ;
-;  divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; N/A       ; N/A    ; -7.423   ; 1.459   ; -0.538              ;
-;  divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; N/A       ; N/A    ; -7.329   ; 1.384   ; -0.538              ;
-; Design-wide TNS                                          ; -1904.639 ; -0.798 ; -14.752  ; 0.0     ; -238.13             ;
-;  CLOCK_50                                                ; -1904.639 ; -0.798 ; N/A      ; N/A     ; -236.438            ;
-;  divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; N/A       ; N/A    ; -7.423   ; 0.000   ; -0.848              ;
-;  divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; N/A       ; N/A    ; -7.329   ; 0.000   ; -0.854              ;
+; Worst-case Slack                                         ; -9.664    ; -0.089 ; -7.362   ; 1.541   ; -0.648              ;
+;  CLOCK_50                                                ; -9.664    ; -0.089 ; N/A      ; N/A     ; -0.648              ;
+;  divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; N/A       ; N/A    ; -7.362   ; 1.541   ; -0.538              ;
+;  divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; N/A       ; N/A    ; -7.358   ; 1.547   ; -0.538              ;
+; Design-wide TNS                                          ; -1829.596 ; -0.446 ; -14.72   ; 0.0     ; -235.169            ;
+;  CLOCK_50                                                ; -1829.596 ; -0.446 ; N/A      ; N/A     ; -233.509            ;
+;  divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; N/A       ; N/A    ; -7.362   ; 0.000   ; -0.827              ;
+;  divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; N/A       ; N/A    ; -7.358   ; 0.000   ; -0.833              ;
 +----------------------------------------------------------+-----------+--------+----------+---------+---------------------+
 
 
@@ -711,7 +711,7 @@ No synchronizer chains to report.
 +---------------------------------------------------------+----------+----------+----------+----------+----------+
 ; From Clock                                              ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------------------------------------------+----------+----------+----------+----------+----------+
-; CLOCK_50                                                ; CLOCK_50 ; 2078384  ; 0        ; 0        ; 0        ;
+; CLOCK_50                                                ; CLOCK_50 ; 2094081  ; 0        ; 0        ; 0        ;
 ; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; CLOCK_50 ; 17       ; 1        ; 0        ; 0        ;
 ; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; CLOCK_50 ; 17       ; 1        ; 0        ; 0        ;
 +---------------------------------------------------------+----------+----------+----------+----------+----------+
@@ -723,7 +723,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +---------------------------------------------------------+----------+----------+----------+----------+----------+
 ; From Clock                                              ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------------------------------------------+----------+----------+----------+----------+----------+
-; CLOCK_50                                                ; CLOCK_50 ; 2078384  ; 0        ; 0        ; 0        ;
+; CLOCK_50                                                ; CLOCK_50 ; 2094081  ; 0        ; 0        ; 0        ;
 ; divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick ; CLOCK_50 ; 17       ; 1        ; 0        ; 0        ;
 ; divisorInterface:BASEDETEMPO|divisor:baseTempo|tick     ; CLOCK_50 ; 17       ; 1        ; 0        ; 0        ;
 +---------------------------------------------------------+----------+----------+----------+----------+----------+
@@ -951,7 +951,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri Oct 23 13:36:26 2020
+    Info: Processing started: Fri Oct 23 14:26:03 2020
 Info: Command: quartus_sta Relogio -c Relogio
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -970,123 +970,123 @@ Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -9.509
+Info (332146): Worst-case setup slack is -9.664
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -9.509           -1904.639 CLOCK_50 
-Info (332146): Worst-case hold slack is 0.441
+    Info (332119):    -9.664           -1829.596 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.445
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.441               0.000 CLOCK_50 
-Info (332146): Worst-case recovery slack is -7.339
+    Info (332119):     0.445               0.000 CLOCK_50 
+Info (332146): Worst-case recovery slack is -7.342
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -7.339              -7.339 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
-    Info (332119):    -7.246              -7.246 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
-Info (332146): Worst-case removal slack is 3.294
+    Info (332119):    -7.342              -7.342 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
+    Info (332119):    -7.335              -7.335 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
+Info (332146): Worst-case removal slack is 3.723
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     3.294               0.000 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
-    Info (332119):     3.416               0.000 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
-Info (332146): Worst-case minimum pulse width slack is -0.561
+    Info (332119):     3.723               0.000 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
+    Info (332119):     3.731               0.000 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
+Info (332146): Worst-case minimum pulse width slack is -0.538
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.561            -236.438 CLOCK_50 
-    Info (332119):    -0.538              -0.854 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
-    Info (332119):    -0.538              -0.838 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
+    Info (332119):    -0.538            -233.509 CLOCK_50 
+    Info (332119):    -0.538              -0.833 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
+    Info (332119):    -0.538              -0.827 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -9.396
+Info (332146): Worst-case setup slack is -9.601
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -9.396           -1895.115 CLOCK_50 
-Info (332146): Worst-case hold slack is 0.449
+    Info (332119):    -9.601           -1819.718 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.228
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.449               0.000 CLOCK_50 
-Info (332146): Worst-case recovery slack is -7.423
+    Info (332119):     0.228               0.000 CLOCK_50 
+Info (332146): Worst-case recovery slack is -7.362
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -7.423              -7.423 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
-    Info (332119):    -7.329              -7.329 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
-Info (332146): Worst-case removal slack is 3.353
+    Info (332119):    -7.362              -7.362 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
+    Info (332119):    -7.358              -7.358 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
+Info (332146): Worst-case removal slack is 3.824
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     3.353               0.000 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
-    Info (332119):     3.476               0.000 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
-Info (332146): Worst-case minimum pulse width slack is -0.582
+    Info (332119):     3.824               0.000 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
+    Info (332119):     3.828               0.000 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
+Info (332146): Worst-case minimum pulse width slack is -0.544
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.582            -210.533 CLOCK_50 
-    Info (332119):    -0.538              -0.848 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
-    Info (332119):    -0.538              -0.831 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
+    Info (332119):    -0.544            -207.550 CLOCK_50 
+    Info (332119):    -0.538              -0.829 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
+    Info (332119):    -0.538              -0.823 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -4.673
+Info (332146): Worst-case setup slack is -4.620
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.673            -862.084 CLOCK_50 
-Info (332146): Worst-case hold slack is 0.007
+    Info (332119):    -4.620            -839.326 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.128
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.007               0.000 CLOCK_50 
-Info (332146): Worst-case recovery slack is -3.287
+    Info (332119):     0.128               0.000 CLOCK_50 
+Info (332146): Worst-case recovery slack is -3.358
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.287              -3.287 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
-    Info (332119):    -3.227              -3.227 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
-Info (332146): Worst-case removal slack is 1.450
+    Info (332119):    -3.358              -3.358 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
+    Info (332119):    -3.350              -3.350 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
+Info (332146): Worst-case removal slack is 1.617
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     1.450               0.000 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
-    Info (332119):     1.531               0.000 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
-Info (332146): Worst-case minimum pulse width slack is -0.651
+    Info (332119):     1.617               0.000 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
+    Info (332119):     1.626               0.000 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
+Info (332146): Worst-case minimum pulse width slack is -0.619
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.651            -123.132 CLOCK_50 
-    Info (332119):     0.003               0.000 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
-    Info (332119):     0.004               0.000 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
+    Info (332119):    -0.619            -121.916 CLOCK_50 
+    Info (332119):     0.020               0.000 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
+    Info (332119):     0.033               0.000 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
 Info: Analyzing Fast 1100mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -4.157
+Info (332146): Worst-case setup slack is -4.114
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.157            -765.569 CLOCK_50 
-Info (332146): Worst-case hold slack is -0.135
+    Info (332119):    -4.114            -742.475 CLOCK_50 
+Info (332146): Worst-case hold slack is -0.089
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.135              -0.798 CLOCK_50 
-Info (332146): Worst-case recovery slack is -3.026
+    Info (332119):    -0.089              -0.446 CLOCK_50 
+Info (332146): Worst-case recovery slack is -3.116
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.026              -3.026 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
-    Info (332119):    -2.969              -2.969 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
-Info (332146): Worst-case removal slack is 1.384
+    Info (332119):    -3.116              -3.116 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
+    Info (332119):    -3.110              -3.110 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
+Info (332146): Worst-case removal slack is 1.541
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     1.384               0.000 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
-    Info (332119):     1.459               0.000 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
-Info (332146): Worst-case minimum pulse width slack is -0.684
+    Info (332119):     1.541               0.000 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
+    Info (332119):     1.547               0.000 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
+Info (332146): Worst-case minimum pulse width slack is -0.648
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.684            -146.949 CLOCK_50 
-    Info (332119):     0.037               0.000 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
-    Info (332119):     0.042               0.000 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
+    Info (332119):    -0.648            -144.927 CLOCK_50 
+    Info (332119):     0.051               0.000 divisorInterface:BASEDETEMPO|divisor:baseTempo|tick 
+    Info (332119):     0.064               0.000 divisorInterface:BASEDETEMPOFAST|divisor:baseTempo|tick 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 1127 megabytes
-    Info: Processing ended: Fri Oct 23 13:36:34 2020
+    Info: Peak virtual memory: 1128 megabytes
+    Info: Processing ended: Fri Oct 23 14:26:11 2020
     Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:11
 

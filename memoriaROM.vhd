@@ -196,10 +196,10 @@ architecture assincrona of memoriaROM is
         -- Zerando o horario
         tmp(150) := leaw & NOP & NOP & R01 & b"0000000000";
         tmp(151) := leaw & NOP & NOP & R02 & b"0000000000";
-        tmp(152) := leaw & NOP & NOP & R03 & b"0000000000"; 
-        tmp(153) := leaw & NOP & NOP & R04 & b"0000000000"; 
-        tmp(154) := leaw & NOP & NOP & R05 & b"0000000000"; 
-        tmp(155) := leaw & NOP & NOP & R06 & b"0000000000"; 
+        tmp(152) := leaw & NOP & NOP & R03 & b"0000001001"; -------------- ARRUMAR - VOLTAR PRA 0 ----------------------------------
+        tmp(153) := leaw & NOP & NOP & R04 & b"0000000101"; -------------- ARRUMAR - VOLTAR PRA 0 ----------------------------------
+        tmp(154) := leaw & NOP & NOP & R05 & b"0000000001";  -------------- ARRUMAR - VOLTAR PRA 0 ----------------------------------
+        tmp(155) := leaw & NOP & NOP & R06 & b"0000000001";  -------------- ARRUMAR - VOLTAR PRA 0 ---------------------------------- 
         tmp(156) := wr   & R01 & NOP & NOP & b"0000000001";
         tmp(157) := wr   & R02 & NOP & NOP & b"0000000010";
         tmp(158) := wr   & R03 & NOP & NOP & b"0000000011";
@@ -464,18 +464,18 @@ architecture assincrona of memoriaROM is
         --- Checa se a dezena da hora é = 1     
         tmp(403) := leaw & NOP & NOP & R07 & b"0000000001";
         tmp(404) := je   & R07 & R06 & NOP & b"0110011000"; --goto tmp(408)
-        ----- Hora < 12 então apaga os LEDS
+        ----- Hora < 1 então apaga os LEDS
         tmp(405) := leaw & NOP & NOP & R15 & b"0000000000";
         tmp(406) := wr   & R15 & NOP & NOP & b"0000000111";
         tmp(407) := jmp  & NOP & NOP & NOP & b"0000001000"; --goto tmp(8)
 
-        ---- Checa se a unidade da hora > 2 (ou seja, nao é 0, nem 1 e nem 2)
+        ---- Checa se a unidade da hora > 1 (ou seja, nao é 0, nem 1)
         tmp(408) := leaw & NOP & NOP & R07 & b"0000000000";
         tmp(409) := je   & R07 & R05 & NOP & b"0110010101"; --goto tmp(405) 
         tmp(410) := leaw & NOP & NOP & R07 & b"0000000001";
         tmp(411) := je   & R07 & R05 & NOP & b"0110010101"; --goto tmp(405) 
         tmp(412) := leaw & NOP & NOP & R07 & b"0000000010";
-        tmp(413) := je   & R07 & R05 & NOP & b"0110010101"; --goto tmp(405) 
+        tmp(413) := je   & R07 & R05 & NOP & b"0110100111"; --goto tmp(423) 
         tmp(414) := jmp  & NOP & NOP & NOP & b"0110100011"; --goto tmp(419)
 
         --- Checa se é 20 ou 21 hrs
