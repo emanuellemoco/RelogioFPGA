@@ -43,12 +43,13 @@ begin
     "001" when opcode = subw else 
     "100" when opcode = inc else
     "001" when opcode = je else
+    "011" when opcode = ret else
     "101" when opcode = notw else
     "110" when opcode = andw else
     "010";
   selMuxProxPC <= 
-    "01" when opcode = jmp or (opCode = je and equal_ULA = '1') or opcode = func else
-    "10" when opcode = ret else 
+    "01" when opcode = jmp or (opCode = je and equal_ULA = '1') or opCode = func else
+    "10" when (opcode = ret and equal_ULA = '1') else 
     "00";
 
     habFunc <= '1' when opcode = func else '0';

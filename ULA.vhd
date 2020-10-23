@@ -50,7 +50,7 @@ begin
 
     entradaA; -- outra opcao: saida = entradaA
 
-  flagZero <= '1' when ((seletor = "001") and (unsigned(entradaA) = unsigned(entradaB))) else
+  flagZero <= '1' when (((seletor = "001") or (seletor = "011")) and (unsigned(entradaA) = unsigned(entradaB))) else
     '0';
   saida <= ULAout;
 
